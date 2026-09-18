@@ -20,14 +20,14 @@ Datos del layout y de las interfaces. Casi todos son **provisionales** hasta ten
 
 | Clave | Interfaz | Tipo | Capa | Z objetivo (Ω) | Ancho (mm) | Separación (mm) | tr (ns) | Longitud (mm) | Estado | Nota |
 |---|---|---|---|--:|--:|--:|--:|--:|---|---|
-| mdi_in | EtherCAT IN (MDI) | Dif | MS | 100 | 0,2 | 0,2 | 3 | 30 | TBD | 100 Ω diferencial en el MDI de Ethernet |
-| mdi_out | EtherCAT OUT (MDI) | Dif | MS | 100 | 0,2 | 0,2 | 3 | 30 | TBD | |
-| reloj_phy | Reloj FPGA–PHY | SE | SL | 50 | 0,12 |  | 1 | 60 | TBD | |
-| datos_phy | Datos FPGA–PHY | SE | SL | 50 | 0,12 |  | 1 | 60 | TBD | |
-| reloj_ds | Reloj de los moduladores ΔΣ | SE | SL | 50 | 0,12 |  | 1 | 80 | TBD | |
-| datos_ds | Datos de los moduladores ΔΣ | SE | SL | 50 | 0,12 |  | 2 | 80 | TBD | |
-| pwm | PWM a los drivers | SE | MS | 50 | 0,29 |  | 2 | 100 | TBD | |
-| jtag_tck | JTAG TCK | SE | MS | 50 | 0,29 |  | 2 | 100 | TBD | |
+| mdi_in | EtherCAT IN (MDI) | Dif | MS | 100 | 0,2 | 0,2 | 5 | 30 | TBD | 100 Ω diferencial en el MDI de Ethernet |
+| mdi_out | EtherCAT OUT (MDI) | Dif | MS | 100 | 0,2 | 0,2 | 5 | 30 | TBD | |
+| reloj_phy | Reloj FPGA–PHY | SE | SL | 50 | 0,12 |  | 5 | 60 | TBD | |
+| datos_phy | Datos FPGA–PHY | SE | SL | 50 | 0,12 |  | 5 | 60 | TBD | |
+| reloj_ds | Reloj de los moduladores ΔΣ | SE | SL | 50 | 0,12 |  | 5 | 80 | TBD | |
+| datos_ds | Datos de los moduladores ΔΣ | SE | SL | 50 | 0,12 |  | 5 | 80 | TBD | |
+| pwm | PWM a los drivers | SE | MS | 50 | 0,29 |  | 5 | 100 | TBD | |
+| jtag_tck | JTAG TCK | SE | MS | 50 | 0,29 |  | 5 | 100 | TBD | |
 
 ## 3. Distancias de aislamiento previstas
 
@@ -35,11 +35,11 @@ Distancia mínima medida en el layout para cada caso. Las claves son fijas: `HVL
 
 | Clave | Caso | Previsto (mm) | Estado | Nota |
 |---|---|--:|---|---|
-| HVLV_coat | HV–BT, superficie con coating | 4,5 | TBD | PROVISIONAL |
+| HVLV_coat | HV–BT, superficie con coating | 5 | TBD | PROVISIONAL |
 | HVHV_coat | HV–HV, superficie con coating | 2,5 | TBD | PROVISIONAL |
 | HVHV_int | HV–HV, capas internas | 2,5 | TBD | PROVISIONAL |
 | HVHV_bare | HV–HV, terminales sin recubrir (conectores, etc.) | 3,5 | TBD | PROVISIONAL |
-| WB | Taladros del waterblock – cualquier conductor | 4,5 | TBD | PROVISIONAL |
+| WB | Taladros del waterblock – cualquier conductor | 4 | TBD | PROVISIONAL |
 
 ## 4. Consumos de la alimentación auxiliar (BT)
 

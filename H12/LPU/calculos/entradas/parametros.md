@@ -47,7 +47,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 |---|---|--:|---|---|---|---|---|
 | fsw | Frecuencia de conmutación | 30 | kHz | TFG | TBD | PWR-03 · FW-08 |  |
 | Modulacion | Modulación: «Unipolar» o «Bipolar» | Bipolar | – | TFG | TBD | PWR-03 · FW-08 |  |
-| t_dead | Tiempo muerto | 100 | ns | TFG | AC | PWR-04 · FW-08 | Red RC del TFG; pasa a ser configurable en la FPGA |
+| t_dead | Tiempo muerto | 120 | ns | TFG | AC | PWR-04 · FW-08 | Red RC del TFG; pasa a ser configurable en la FPGA |
 | MOSFET_sel | Referencia del MOSFET usado en el resto de cálculos (una de las columnas de componentes.md) | SCT012H90G3AG | – | P | AC | PWR-02 · HW-02 |  |
 | D_worst | Fracción del periodo que conduce el MOSFET más cargado | 1 | – | P | OK | SAF-05 | 1 = rueda libre permanente por los low-side (conservador). Con PWM en régimen, el más cargado conduce (1 + m)/2 |
 | Tj_assumed | Tj supuesta para evaluar RDS(on) | 125 | °C | P | AC | — | Debe ser ≥ Tj calculada (comprobación en el apartado MOSFET) |
