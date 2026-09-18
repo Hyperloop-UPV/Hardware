@@ -6,3 +6,6 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .venv/
+
+# El repositorio del equipo ignora los .csv; en esta carpeta sí hacen falta
+!*.csv
