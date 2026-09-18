@@ -123,7 +123,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | A_pad | Área del pad de drenador del MOSFET | 80 | mm² | — | TBD | HW-02 | PROVISIONAL. Comprobar con el footprint H2PAK-7 |
 | d_via | Diámetro de taladro de las vías térmicas | 0,3 | mm | — | TBD | PT-01 | PROVISIONAL. |
 | t_plat | Espesor del metalizado de las vías | 25 | µm | — | TBD | PT-01 | PROVISIONAL. |
-| N_via | Número de vías térmicas bajo cada MOSFET | 40 | – | — | TBD | — | PROVISIONAL. |
+| N_via | Número de vías térmicas bajo cada MOSFET | 10 | – | — | TBD | — | PROVISIONAL. |
 | t_solder | Espesor de la soldadura bajo el pad | 0,1 | mm | — | TBD | PT-02 | PROVISIONAL. |
 | k_solder | Conductividad de la soldadura | 50 | W/(m·K) | — | AC | — | Orden de magnitud de aleaciones SAC |
 | k_Cu | Conductividad del cobre | 385 | W/(m·K) | — | OK | — | Valor físico |
