@@ -15,7 +15,7 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(RAIZ, "calculos"))
 
 from motor.calculo import ejecuta          # noqa: E402
-from motor.cambios import compara          # noqa: E402
+from motor.cambios import compara, historial_parametros  # noqa: E402
 from motor.informe import informe, resultados_json  # noqa: E402
 from motor.lector import ErrorEntradas     # noqa: E402
 from motor.unidades import parse_numero, fmt  # noqa: E402
@@ -120,6 +120,21 @@ def test_informe_de_cambios(copia):
         assert f"| {cid} |" in texto
     texto_igual, hay_igual = compara(act, act, META)
     assert not hay_igual and "Sin cambios" in texto_igual
+
+
+def test_historial_solo_registra_cambios_de_parametros(copia):
+    base = calcula(copia)
+    ant = resultados_json(base, META)
+    cambia_parametro(copia, "Cdc", "220")
+    nuevo = calcula(copia)
+    act = resultados_json(nuevo, META)
+    texto, hay = historial_parametros(ant, act, META)
+    assert hay
+    assert "Capacidad del DC-link en placa (`Cdc`)" in texto
+    assert "Comprobación" not in texto
+
+    igual, hay_igual = historial_parametros(act, act, META)
+    assert not hay_igual and not igual
 
 
 def test_informe_general_se_genera():

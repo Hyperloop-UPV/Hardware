@@ -13,6 +13,36 @@ def _num(seccion):
         return 99
 
 
+def _cambios_entradas(ant, act):
+    ea, eb = ant.get("entradas", {}), act.get("entradas", {})
+    filas = []
+    for k in sorted(set(ea) | set(eb)):
+        a, b = ea.get(k), eb.get(k)
+        if a is None:
+            filas.append([b["etiqueta"], "(no existía)", b["texto"], b.get("estado", ""), b.get("fuente", "")])
+        elif b is None:
+            filas.append([a["etiqueta"], a["texto"], "(eliminado)", "", ""])
+        elif any(a.get(c) != b.get(c) for c in ("texto", "estado", "fuente")):
+            dif = lambda c: (f"{a.get(c) or '—'} → {b.get(c) or '—'}" if a.get(c) != b.get(c) else (b.get(c) or ""))
+            filas.append([f"{b['etiqueta']} (`{k.split('.', 1)[1]}`)", a["texto"], b["texto"], dif("estado"), dif("fuente")])
+    return filas
+
+
+def historial_parametros(ant, act, meta):
+    """Devuelve una entrada del historial de parámetros y si contiene cambios."""
+    if ant is None:
+        filas = [[v["etiqueta"], "(no existía)", v["texto"], v.get("estado", ""), v.get("fuente", "")]
+                 for _, v in sorted(act.get("entradas", {}).items())]
+        titulo = f"## {meta['fecha_texto']} · Primera ejecución"
+    else:
+        filas = _cambios_entradas(ant, act)
+        titulo = f"## {meta['fecha_texto']}"
+    if not filas:
+        return "", False
+    return "\n".join([titulo, "", f"Versión: {meta['version_texto']}", "",
+                       tabla_md(["Parámetro", "Antes", "Ahora", "Estado", "Fuente"], filas), ""]), True
+
+
 def compara(ant, act, meta):
     """Devuelve (texto Markdown, hay_cambios)."""
     L = ["# Magnet Driver Abejorro · Informe de cambios en los cálculos", ""]
@@ -27,17 +57,7 @@ def compara(ant, act, meta):
     hay = False
 
     # 1. Entradas
-    ea, eb = ant.get("entradas", {}), act.get("entradas", {})
-    filas = []
-    for k in sorted(set(ea) | set(eb)):
-        a, b = ea.get(k), eb.get(k)
-        if a is None:
-            filas.append([b["etiqueta"], "(no existía)", b["texto"], b.get("estado", ""), b.get("fuente", "")])
-        elif b is None:
-            filas.append([a["etiqueta"], a["texto"], "(eliminado)", "", ""])
-        elif any(a.get(c) != b.get(c) for c in ("texto", "estado", "fuente")):
-            dif = lambda c: (f"{a.get(c) or '—'} → {b.get(c) or '—'}" if a.get(c) != b.get(c) else (b.get(c) or ""))
-            filas.append([f"{b['etiqueta']} (`{k.split('.', 1)[1]}`)", a["texto"], b["texto"], dif("estado"), dif("fuente")])
+    filas = _cambios_entradas(ant, act)
     L += ["## 1. Entradas modificadas", ""]
     if filas:
         hay = True

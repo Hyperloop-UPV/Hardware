@@ -71,7 +71,8 @@ Requisitos: Python 3.9 o posterior. Para las pruebas: `pip install -r H12/LPU/re
 | Qué | Dónde |
 |---|---|
 | Último informe general | `docs/calculos/informe.md` (en GitHub se lee con formato) |
-| Historial de informes de cambios | `docs/calculos/cambios/README.md` |
+| Últimos informes completos de cambios | `docs/calculos/cambios/README.md` (se conservan 3) |
+| Historial de cambios de parámetros | `docs/calculos/historial_parametros.md` |
 | Informes de una ejecución concreta | GitHub > Actions > Cálculos LPU > la ejecución > «Artifacts» > `informes-lpu-<fecha>` (se conservan 90 días) |
 | Informe a fecha de hoy sin cambiar nada | GitHub > Actions > Cálculos LPU > **Run workflow** |
 | Estado de cualquier fecha pasada | Historial de git de `docs/calculos/informe.md` |

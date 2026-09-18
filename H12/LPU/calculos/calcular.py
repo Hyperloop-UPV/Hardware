@@ -22,7 +22,7 @@ RAIZ = os.path.dirname(AQUI)
 sys.path.insert(0, AQUI)
 
 from motor.calculo import ejecuta          # noqa: E402
-from motor.cambios import compara          # noqa: E402
+from motor.cambios import compara, historial_parametros  # noqa: E402
 from motor.informe import informe, resultados_json  # noqa: E402
 from motor.lector import ErrorEntradas     # noqa: E402
 
@@ -71,10 +71,28 @@ def sin_cabecera(texto):
 
 def indice_cambios(dir_cambios):
     ficheros = sorted((f for f in os.listdir(dir_cambios) if f.endswith(".md") and f != "README.md"), reverse=True)
+    for fichero in ficheros[3:]:
+        os.remove(os.path.join(dir_cambios, fichero))
+    ficheros = ficheros[:3]
     L = ["# Historial de informes de cambios", "",
-         "Un informe por cada actualización de las entradas que modifica algún resultado, del más reciente al más antiguo.", ""]
+         "Se conservan los tres informes completos más recientes. Para la trazabilidad de parámetros, consulte el historial específico.", ""]
     L += [f"- [{f[:-3]}]({f})" for f in ficheros]
     escribe(os.path.join(dir_cambios, "README.md"), "\n".join(L) + "\n")
+
+
+def actualiza_historial_parametros(ruta, entrada):
+    if not entrada:
+        return
+    previo = ""
+    if os.path.exists(ruta):
+        with open(ruta, encoding="utf-8") as f:
+            previo = f.read().rstrip()
+    encabezado = "# Historial de cambios de parámetros\n\n"
+    cuerpo = previo[len(encabezado):].rstrip() if previo.startswith(encabezado) else previo
+    partes = [encabezado.rstrip(), entrada]
+    if cuerpo:
+        partes = [encabezado.rstrip(), cuerpo, entrada]
+    escribe(ruta, "\n\n".join(partes) + "\n")
 
 
 def main():
@@ -105,6 +123,7 @@ def main():
         with open(a.base, encoding="utf-8") as f:
             anterior = json.load(f)
     txt_cambios, hay_cambios = compara(anterior, datos, meta)
+    txt_parametros, hay_parametros = historial_parametros(anterior, datos, meta)
     js = json.dumps(datos, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
 
     ff = meta["fecha_fichero"]
@@ -128,6 +147,7 @@ def main():
             dir_c = os.path.join(docs, "cambios")
             escribe(os.path.join(dir_c, f"{ff}_{sha}.md"), txt_cambios)
             indice_cambios(dir_c)
+            actualiza_historial_parametros(os.path.join(docs, "historial_parametros.md"), txt_parametros)
             escribe(os.path.join(docs, "resultados.json"), js)
             print("Publicado en docs/calculos/ (con informe de cambios).")
         else:
