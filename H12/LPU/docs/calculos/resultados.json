@@ -1,5 +1,5 @@
 {
- "commit": "694020239588f2b06334246f56779e5c75a15533",
+ "commit": "9bb4239b7bdfd53a0ea855b2d6417963af6fe4f7",
  "comprobaciones": {
   "AIS-F-ADUM4146": {
    "estado": "CUMPLE",
@@ -292,7 +292,7 @@
   "POT-01": {
    "estado": "NO CUMPLE",
    "etiqueta": "Rizado en el peor caso (L mínima, Vbus_max)",
-   "limite": "2,00",
+   "limite": "1,50",
    "seccion": "1. Potencia y bus DC",
    "unidad": "A",
    "valor": "3,52"
@@ -367,7 +367,7 @@
    "limite": "11,25",
    "seccion": "1. Potencia y bus DC",
    "unidad": "A",
-   "valor": "9,80"
+   "valor": "9,90"
   },
   "POT-11": {
    "estado": "CUMPLE",
@@ -375,7 +375,7 @@
    "limite": "11,25",
    "seccion": "1. Potencia y bus DC",
    "unidad": "A",
-   "valor": "9,80"
+   "valor": "9,90"
   },
   "POT-12": {
    "estado": "NO CUMPLE",
@@ -2416,7 +2416,7 @@
    "estado": "TBD",
    "etiqueta": "Rizado de corriente pico a pico máximo admisible",
    "fuente": "—",
-   "texto": "2 A"
+   "texto": "1,5 A"
   },
   "param.dL_clk": {
    "estado": "TBD",
@@ -2476,7 +2476,7 @@
    "estado": "TBD",
    "etiqueta": "Rendimiento de la etapa de potencia (para la corriente media de bus)",
    "fuente": "P",
-   "texto": "97 %"
+   "texto": "96 %"
   },
   "param.f_bus_clk": {
    "estado": "TBD",
@@ -2853,8 +2853,8 @@
    "texto": "DC-link ↔ puente, eficaz a Ipk"
   }
  },
- "fecha_texto": "18/09/2026 11:53 (hora de Madrid)",
- "generado": "2026-09-18T11:53:57+02:00",
+ "fecha_texto": "18/09/2026 13:21 (hora de Madrid)",
+ "generado": "2026-09-18T13:21:48+02:00",
  "resultados": {
   "A_barrel": {
    "etiqueta": "Sección de cobre de una vía",
@@ -2957,23 +2957,23 @@
   "I_bus_cont": {
    "etiqueta": "Corriente media de bus en continuo, Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,324",
+   "texto": "0,327",
    "unidad": "A",
-   "valor": 0.3240058910162003
+   "valor": 0.32738095238095244
   },
   "I_bus_pk": {
    "etiqueta": "Corriente media de bus a Ipk, Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "9,80",
+   "texto": "9,90",
    "unidad": "A",
-   "valor": 9.80117820324006
+   "valor": 9.90327380952381
   },
   "I_bus_pk_Vmax": {
    "etiqueta": "Corriente media de bus a Ipk, Vbus_max",
    "seccion": "1. Potencia y bus DC",
-   "texto": "8,47",
+   "texto": "8,56",
    "unidad": "A",
-   "valor": 8.470154002800053
+   "valor": 8.558384773662553
   },
   "I_cap_rms_pk": {
    "etiqueta": "Corriente eficaz en el DC-link en el punto Ipk, Vbus_min",
@@ -3006,16 +3006,16 @@
   "I_in_first": {
    "etiqueta": "Corriente de entrada de la primera placa, todas a Ipk",
    "seccion": "1. Potencia y bus DC",
-   "texto": "9,8",
+   "texto": "9,9",
    "unidad": "A",
-   "valor": 9.80117820324006
+   "valor": 9.90327380952381
   },
   "I_in_first_cont": {
    "etiqueta": "Corriente de entrada de la primera placa, en continuo",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,32",
+   "texto": "0,33",
    "unidad": "A",
-   "valor": 0.3240058910162003
+   "valor": 0.32738095238095244
   },
   "I_iso_in": {
    "etiqueta": "Corriente de entrada de cada fuente aislada",
@@ -3636,9 +3636,9 @@
   "fsw_min_rizado": {
    "etiqueta": "fsw mínima para cumplir el rizado con L mínima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "52,7",
+   "texto": "70,3",
    "unidad": "kHz",
-   "valor": 52734.375
+   "valor": 70312.5
   },
   "iec.V_cont.PD1": {
    "etiqueta": "IEC 60664-1 PD1 a V_cont",
@@ -3960,42 +3960,42 @@
    "seccion": "4. Pistas y vías de potencia",
    "texto": "0,00",
    "unidad": "W",
-   "valor": 8.671006002835996e-05
+   "valor": 8.852592942885264e-05
   },
   "pista.entrada_cont.dT": {
    "etiqueta": "ΔT estimado: Entrada HV (1.ª placa), continuo",
    "seccion": "4. Pistas y vías de potencia",
    "texto": "0,0",
    "unidad": "°C",
-   "valor": 0.00015814440711399907
+   "valor": 0.00016191319744741122
   },
   "pista.entrada_cont.w_req": {
    "etiqueta": "Ancho necesario: Entrada HV (1.ª placa), continuo",
    "seccion": "4. Pistas y vías de potencia",
    "texto": "0,01",
    "unidad": "mm",
-   "valor": 6.262663607674678e-06
+   "valor": 6.35282178892312e-06
   },
   "pista.entrada_pk.P": {
    "etiqueta": "Pérdidas: Entrada HV (1.ª placa), Ipk",
    "seccion": "4. Pistas y vías de potencia",
    "texto": "0,02",
    "unidad": "W",
-   "valor": 0.022673732319867617
+   "valor": 0.02314865225196626
   },
   "pista.entrada_pk.dT": {
    "etiqueta": "ΔT estimado: Entrada HV (1.ª placa), Ipk",
    "seccion": "4. Pistas y vías de potencia",
    "texto": "0,0",
    "unidad": "°C",
-   "valor": 0.046543928285992305
+   "valor": 0.047653131641358676
   },
   "pista.entrada_pk.w_req": {
    "etiqueta": "Ancho necesario: Entrada HV (1.ª placa), Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "0,69",
+   "texto": "0,70",
    "unidad": "mm",
-   "valor": 0.000690460626117948
+   "valor": 0.0007004005938655641
   },
   "pista.puente_rms.P": {
    "etiqueta": "Pérdidas: DC-link ↔ puente, eficaz a Ipk",

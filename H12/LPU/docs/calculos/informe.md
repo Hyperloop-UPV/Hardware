@@ -2,8 +2,8 @@
 
 | Dato | Valor |
 |---|---|
-| Fecha | 18/09/2026 11:53 (hora de Madrid) |
-| Versión de las entradas | commit `6940202` |
+| Fecha | 18/09/2026 13:21 (hora de Madrid) |
+| Versión de las entradas | commit `9bb4239` |
 | Motor de cálculo | 1.0 |
 | Documento base | Requisitos y arquitectura, borrador v0.2 (`docs/requisitos`) |
 | MOSFET seleccionado | SCT012H90G3AG |
@@ -41,7 +41,7 @@ Comprobaciones que no cumplen o que hay que revisar:
 
 | ID | Comprobación | Valor | Límite | Unidad | Resultado | Requisito | Depende de |
 |---|---|---|---|---|---|---|---|
-| POT-01 | Rizado en el peor caso (L mínima, Vbus_max) | 3,52 | 2,00 | A | **NO CUMPLE** | LOAD-07 | EM-C-03, FW-08 |
+| POT-01 | Rizado en el peor caso (L mínima, Vbus_max) | 3,52 | 1,50 | A | **NO CUMPLE** | LOAD-07 | EM-C-03, FW-08 |
 | POT-04 | Tensión de fallo (extrapolada) frente a la tensión continua admisible | 694 | 650 | V | **NO CUMPLE** | DCB-08 · DCB-02 | HW-03, EM-D-03 |
 | POT-05 | Tensión de fallo frente a la tensión nominal del DC-link | 694 | 650 | V | **NO CUMPLE** | DCB-08 | HW-02, HW-03 |
 | POT-07 | Capacidad instalada frente a la necesaria para no superar V_cont desde Vbus_max | 105 | 129 | µF | **NO CUMPLE** | DCB-08 | HW-03, EM-D-03 |
@@ -61,7 +61,7 @@ Modelo de primer orden: L constante en cada punto de trabajo y conmutación idea
 
 ### 1.1 Rizado de corriente en la bobina
 
-Unipolar: la salida conmuta entre 0 y ±Vbus a 2·fsw, ΔI = Vbus·m·(1−m)/(2·L·fsw), máximo en m = 0,5: Vbus/(8·L·fsw). Bipolar: ΔI = Vbus·(1−m²)/(2·L·fsw), máximo en m = 0: Vbus/(2·L·fsw). Se desprecia R frente a L. Modulación seleccionada: **Bipolar**; fsw = 30,0 kHz; rizado admisible = 2,00 A.
+Unipolar: la salida conmuta entre 0 y ±Vbus a 2·fsw, ΔI = Vbus·m·(1−m)/(2·L·fsw), máximo en m = 0,5: Vbus/(8·L·fsw). Bipolar: ΔI = Vbus·(1−m²)/(2·L·fsw), máximo en m = 0: Vbus/(2·L·fsw). Se desprecia R frente a L. Modulación seleccionada: **Bipolar**; fsw = 30,0 kHz; rizado admisible = 1,50 A.
 
 | Electroimán / punto | L (mH) | ΔI unip., Vbus_min (A) | ΔI unip., Vbus_max (A) | ΔI bip., Vbus_max (A) | ΔI con la modulación elegida (A) | Resultado |
 |---|---|---|---|---|---|---|
@@ -72,8 +72,8 @@ Unipolar: la salida conmuta entre 0 y ±Vbus a 2·fsw, ΔI = Vbus·m·(1−m)/(2
 
 | Magnitud | Valor | Unidad | Límite | Resultado | Expresión | Nota |
 |---|---|---|---|---|---|---|
-| Rizado en el peor caso (L mínima, Vbus_max) (POT-01) | 3,52 | A | 2,00 | **NO CUMPLE** | `max(ΔI) ≤ dI_pp_max` | Doc. v0.2 §6.1.3: 1,30 A (EMS) y 0,40 A (HEMS) a 400 V, unipolar |
-| fsw mínima para cumplir el rizado con L mínima | 52,7 | kHz |  |  | `Vbus_max/(k·L_min·dI_pp_max)` | k = 8 (unipolar) o 2 (bipolar) |
+| Rizado en el peor caso (L mínima, Vbus_max) (POT-01) | 3,52 | A | 1,50 | **NO CUMPLE** | `max(ΔI) ≤ dI_pp_max` | Doc. v0.2 §6.1.3: 1,30 A (EMS) y 0,40 A (HEMS) a 400 V, unipolar |
+| fsw mínima para cumplir el rizado con L mínima | 70,3 | kHz |  |  | `Vbus_max/(k·L_min·dI_pp_max)` | k = 8 (unipolar) o 2 (bipolar) |
 
 ### 1.2 Dinámica de la corriente
 
@@ -99,12 +99,12 @@ Corriente media de bus = P_bobina/(η·Vbus). La entrada del puente son pulsos d
 | Magnitud | Valor | Unidad | Límite | Resultado | Expresión | Nota |
 |---|---|---|---|---|---|---|
 | Potencia en la bobina a Ipk | 3328 | W |  |  | `Rcoil·Ipk²` |  |
-| Corriente media de bus a Ipk, Vbus_min | 9,80 | A |  |  | `P_coil_pk/(eta_pwr·Vbus_min)` | Doc. v0.2 §6.2: 13,5 A sin pérdidas |
-| Corriente media de bus a Ipk, Vbus_max | 8,47 | A |  |  | `P_coil_pk/(eta_pwr·Vbus_max)` | Doc. v0.2 §6.2: 10,8 A sin pérdidas |
-| Corriente media de bus en continuo, Vbus_min | 0,324 | A |  |  | `Rcoil·Irms_cont²/(eta_pwr·Vbus_min)` |  |
+| Corriente media de bus a Ipk, Vbus_min | 9,90 | A |  |  | `P_coil_pk/(eta_pwr·Vbus_min)` | Doc. v0.2 §6.2: 13,5 A sin pérdidas |
+| Corriente media de bus a Ipk, Vbus_max | 8,56 | A |  |  | `P_coil_pk/(eta_pwr·Vbus_max)` | Doc. v0.2 §6.2: 10,8 A sin pérdidas |
+| Corriente media de bus en continuo, Vbus_min | 0,327 | A |  |  | `Rcoil·Irms_cont²/(eta_pwr·Vbus_min)` |  |
 | Placas cuya corriente atraviesa la entrada de la primera | 1 | – |  |  | `N_MD si Bus_topo = Encadenado; si no, 1` |  |
-| Corriente de entrada de la primera placa, todas a Ipk | 9,8 | A |  |  | `N_chain·I_bus_pk` | Peor caso simultáneo |
-| Corriente de entrada de la primera placa, en continuo | 0,32 | A |  |  | `N_chain·I_bus_cont` |  |
+| Corriente de entrada de la primera placa, todas a Ipk | 9,9 | A |  |  | `N_chain·I_bus_pk` | Peor caso simultáneo |
+| Corriente de entrada de la primera placa, en continuo | 0,33 | A |  |  | `N_chain·I_bus_cont` |  |
 | Corriente eficaz de entrada al puente a Ipk | 22,9 | A |  |  | `Ipk·√m_pk` | Para las pistas DC-link ↔ puente |
 | Corriente eficaz en el DC-link en el punto Ipk, Vbus_min | 20,8 | A |  |  | `Ipk·√(m_pk·(1−m_pk))` |  |
 | Corriente eficaz en el DC-link, peor caso (m = 0,5) | 27,5 | A |  |  | `Ipk/2` | Por ejemplo, durante la subida de corriente; para elegir condensadores |
@@ -148,8 +148,8 @@ Balance de energía: ½·C·(Vf² − V0²) = E, luego Vf = √(V0² + 2E/C). Se
 
 | Magnitud | Valor | Unidad | Límite | Resultado | Expresión | Nota |
 |---|---|---|---|---|---|---|
-| Corriente media de bus a Ipk frente al fusible con factor de utilización (POT-10) | 9,80 | A | 11,25 | CUMPLE | `I_bus_pk ≤ k_fuse·I_fuse` | El pico dura t_pk: revisar con la curva tiempo-corriente del fusible |
-| Corriente de entrada de la primera placa frente al fusible (si está en el camino encadenado) (POT-11) | 9,80 | A | 11,25 | CUMPLE | `I_in_first ≤ k_fuse·I_fuse` |  |
+| Corriente media de bus a Ipk frente al fusible con factor de utilización (POT-10) | 9,90 | A | 11,25 | CUMPLE | `I_bus_pk ≤ k_fuse·I_fuse` | El pico dura t_pk: revisar con la curva tiempo-corriente del fusible |
+| Corriente de entrada de la primera placa frente al fusible (si está en el camino encadenado) (POT-11) | 9,90 | A | 11,25 | CUMPLE | `I_in_first ≤ k_fuse·I_fuse` |  |
 | Tensión nominal del fusible frente a V_cont (POT-12) | 500 | V | 650 | **NO CUMPLE** | `V_fuse ≥ V_cont` | El 0ADKC9150-BE es de 500 VDC |
 | Tensión nominal del fusible frente a la tensión de fallo (POT-13) | 500 | V | 694 | **NO CUMPLE** | `V_fuse ≥ V_fault_max` |  |
 
@@ -268,8 +268,8 @@ Incremento de temperatura admisible: dT_trace = 30 °C. La resistencia se evalú
 
 | Red | I (A) | Capa × nº | Cu (oz) | Ancho necesario por capa (mm) | Ancho previsto (mm) | ΔT estimado (°C) | R (mΩ) | P (W) | Caída (mV) | Estado |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Entrada HV (1.ª placa), Ipk | 9,80 | Ext × 2 | 2,0 | 0,69 | 35,00 | 0,0 | 0,236 | 0,02 | 2,3 | TBD |
-| Entrada HV (1.ª placa), continuo | 0,32 | Ext × 2 | 2,0 | 0,01 | 10,00 | 0,0 | 0,826 | 0,00 | 0,3 | TBD |
+| Entrada HV (1.ª placa), Ipk | 9,90 | Ext × 2 | 2,0 | 0,70 | 35,00 | 0,0 | 0,236 | 0,02 | 2,3 | TBD |
+| Entrada HV (1.ª placa), continuo | 0,33 | Ext × 2 | 2,0 | 0,01 | 10,00 | 0,0 | 0,826 | 0,00 | 0,3 | TBD |
 | DC-link ↔ puente, eficaz a Ipk | 22,87 | Ext × 2 | 2,0 | 2,22 | 15,00 | 1,3 | 0,184 | 0,10 | 4,2 | TBD |
 | Puente → bobina, Ipk | 55,00 | Ext × 2 | 2,0 | 7,45 | 15,00 | 9,5 | 0,759 | 2,29 | 41,7 | TBD |
 | Puente → bobina, continuo | 10,00 | Ext × 2 | 2,0 | 0,71 | 5,00 | 1,2 | 2,212 | 0,22 | 22,1 | TBD |
@@ -596,7 +596,7 @@ PoE es un enlace punto a punto y no encaja directamente con EtherCAT en línea (
 
 | ID | Comprobación | Apartado | Valor | Límite | Unidad | Resultado | Requisito | Depende de | Nota |
 |---|---|---|---|---|---|---|---|---|---|
-| POT-01 | Rizado en el peor caso (L mínima, Vbus_max) | 1. Potencia y bus DC | 3,52 | 2,00 | A | **NO CUMPLE** | LOAD-07 | EM-C-03, FW-08 | Doc. v0.2 §6.1.3: 1,30 A (EMS) y 0,40 A (HEMS) a 400 V, unipolar |
+| POT-01 | Rizado en el peor caso (L mínima, Vbus_max) | 1. Potencia y bus DC | 3,52 | 1,50 | A | **NO CUMPLE** | LOAD-07 | EM-C-03, FW-08 | Doc. v0.2 §6.1.3: 1,30 A (EMS) y 0,40 A (HEMS) a 400 V, unipolar |
 | POT-02 | Corriente máxima alcanzable con Vbus_min (sin pérdidas) | 1. Potencia y bus DC | 318,2 | 55,0 | A | CUMPLE | LOAD-03 |  | Margen de tensión para el lazo de corriente |
 | POT-03 | Rizado de tensión en el DC-link, peor caso (m = 0,5) | 1. Potencia y bus DC | 2,29 | 3,50 | V | CUMPLE | DCB-07 | HW-02 (ESR) | Límite: dVdc_pct·Vbus_min |
 | POT-04 | Tensión de fallo (extrapolada) frente a la tensión continua admisible | 1. Potencia y bus DC | 694 | 650 | V | **NO CUMPLE** | DCB-08 · DCB-02 | HW-03, EM-D-03 | Sin clamp, chopper ni DC-link mayor |
@@ -605,8 +605,8 @@ PoE es un enlace punto a punto y no encaja directamente con EtherCAT en línea (
 | POT-07 | Capacidad instalada frente a la necesaria para no superar V_cont desde Vbus_max | 1. Potencia y bus DC | 105 | 129 | µF | **NO CUMPLE** | DCB-08 | HW-03, EM-D-03 | Doc. v0.2: ≥ 167 µF con 16,7 J |
 | POT-08 | Tensión de actuación del chopper por encima de Vbus_max con margen | 1. Potencia y bus DC | 550 | 446 | V | CUMPLE | HW-03 | HW-03 | Para no actuar en servicio |
 | POT-09 | Tensión de actuación del chopper por debajo de V_cont | 1. Potencia y bus DC | 550 | 650 | V | CUMPLE | HW-03 | HW-03 |  |
-| POT-10 | Corriente media de bus a Ipk frente al fusible con factor de utilización | 1. Potencia y bus DC | 9,80 | 11,25 | A | CUMPLE | DCB-06 | EM-C-01, ME-I-03 | El pico dura t_pk: revisar con la curva tiempo-corriente del fusible |
-| POT-11 | Corriente de entrada de la primera placa frente al fusible (si está en el camino encadenado) | 1. Potencia y bus DC | 9,80 | 11,25 | A | CUMPLE | DCB-05 · DCB-06 | ME-I-03 |  |
+| POT-10 | Corriente media de bus a Ipk frente al fusible con factor de utilización | 1. Potencia y bus DC | 9,90 | 11,25 | A | CUMPLE | DCB-06 | EM-C-01, ME-I-03 | El pico dura t_pk: revisar con la curva tiempo-corriente del fusible |
+| POT-11 | Corriente de entrada de la primera placa frente al fusible (si está en el camino encadenado) | 1. Potencia y bus DC | 9,90 | 11,25 | A | CUMPLE | DCB-05 · DCB-06 | ME-I-03 |  |
 | POT-12 | Tensión nominal del fusible frente a V_cont | 1. Potencia y bus DC | 500 | 650 | V | **NO CUMPLE** | DCB-02 · DCB-06 | HW-02 | El 0ADKC9150-BE es de 500 VDC |
 | POT-13 | Tensión nominal del fusible frente a la tensión de fallo | 1. Potencia y bus DC | 500 | 694 | V | **NO CUMPLE** | DCB-08 | HW-02, HW-03 |  |
 | GDR-01 | Vgs_on dentro del rango recomendado del MOSFET | 8. Gate driving | 20 | 18 | V | **REVISAR** | GD-01 | HW-02 | El TFG usa +20 V |
@@ -686,7 +686,7 @@ Instantánea de todos los parámetros escalares en el momento del cálculo (fich
 | `N_MD` | Número de Magnet Driver conectados al bus | 10 |  | U | OK | DCB-03 · SYS-01 | 4 HEMS + 6 EMS |
 | `Bus_topo` | Distribución del bus: «Encadenado» o «Estrella» | Estrella |  | TFG | TBD | DCB-05 · ME-I-03 | Encadenado: la primera placa conduce la corriente de todas |
 | `dVdc_pct` | Rizado máximo de tensión en el DC-link (fracción de Vbus_min) | 1 | % | TFG | AC | DCB-07 · HW-02 | 1 % de 400 V = 4 V |
-| `eta_pwr` | Rendimiento de la etapa de potencia (para la corriente media de bus) | 97 | % | P | TBD | — | PROVISIONAL. Ajustar con las pérdidas del puente del informe cuando se elija componente |
+| `eta_pwr` | Rendimiento de la etapa de potencia (para la corriente media de bus) | 96 | % | P | TBD | — | PROVISIONAL. Ajustar con las pérdidas del puente del informe cuando se elija componente |
 
 **`parametros.md` · 2. Carga: electroimanes (prototipo H11)**
 
@@ -704,7 +704,7 @@ Instantánea de todos los parámetros escalares en el momento del cálculo (fich
 | `E_EMS` | Energía devuelta al desmagnetizar el EMS desde 55 A (mapa H11) | 15,6 | J | C | AC | 6.1.3 · EM-D-03 | Mapa hasta ±55 A |
 | `E_HEMS` | Energía devuelta al desmagnetizar el HEMS desde −55 A, 6 mm (mapa H11) | 16,7 | J | C | AC | 6.1.3 · EM-D-03 | Peor caso del H11 |
 | `I_map` | Corriente máxima cubierta por los mapas de inductancia | 55 | A | R7 | OK | EM-D-03 |  |
-| `dI_pp_max` | Rizado de corriente pico a pico máximo admisible | 2 | A | — | TBD | LOAD-07 · EM-C-03 | PROVISIONAL. |
+| `dI_pp_max` | Rizado de corriente pico a pico máximo admisible | 1,5 | A | — | TBD | LOAD-07 · EM-C-03 | PROVISIONAL. |
 | `T_coil_max` | Temperatura máxima de la bobina (umbral de protección) | 110 | °C | — | TBD | SAF-01 · sin pendiente | PROVISIONAL. No hay cuestión abierta que lo resuelva: proponer a EM-D |
 
 **`parametros.md` · 3. Conmutación y MOSFET**
@@ -897,10 +897,10 @@ Parámetros en estado TBD (valor provisional) y AC (a confirmar), con la cuesti�
 | Estado | Nombre | Descripción | Valor provisional | Requisito / pendiente |
 |---|---|---|---|---|
 | TBD | `Bus_topo` | Distribución del bus: «Encadenado» o «Estrella» | Estrella | DCB-05 · ME-I-03 |
-| TBD | `eta_pwr` | Rendimiento de la etapa de potencia (para la corriente media de bus) | 97 % | — |
+| TBD | `eta_pwr` | Rendimiento de la etapa de potencia (para la corriente media de bus) | 96 % | — |
 | TBD | `t_pk` | Duración del pico de corriente | 2 s | LOAD-03 · EM-C-01 |
 | TBD | `Irms_cont` | Corriente eficaz en régimen permanente (dimensionado térmico) | 10 A | LOAD-05 · EM-C-01 |
-| TBD | `dI_pp_max` | Rizado de corriente pico a pico máximo admisible | 2 A | LOAD-07 · EM-C-03 |
+| TBD | `dI_pp_max` | Rizado de corriente pico a pico máximo admisible | 1,5 A | LOAD-07 · EM-C-03 |
 | TBD | `T_coil_max` | Temperatura máxima de la bobina (umbral de protección) | 110 °C | SAF-01 · sin pendiente |
 | TBD | `fsw` | Frecuencia de conmutación | 30 kHz | PWR-03 · FW-08 |
 | TBD | `Modulacion` | Modulación: «Unipolar» o «Bipolar» | Bipolar | PWR-03 · FW-08 |
