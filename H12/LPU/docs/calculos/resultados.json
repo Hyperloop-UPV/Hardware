@@ -1,5 +1,5 @@
 {
- "commit": "9dcc3738387b1ce5e3f0cf763d41485ade78808b",
+ "commit": "8a62941a8fde2c6453ff07b3facbc108e011a78a",
  "comprobaciones": {
   "AIS-F-ADUM4146": {
    "estado": "CUMPLE",
@@ -36,7 +36,7 @@
   "AIS-HVHV_bare": {
    "estado": "CUMPLE",
    "etiqueta": "Distancia prevista: HV–HV, terminales sin recubrir",
-   "limite": "3,04",
+   "limite": "3,29",
    "seccion": "5. Aislamiento",
    "unidad": "mm",
    "valor": "3,50"
@@ -68,7 +68,7 @@
   "AIS-V-ADUM4146": {
    "estado": "CUMPLE",
    "etiqueta": "Tensión de trabajo de la barrera: ADuM4146 (gate driver)",
-   "limite": "600",
+   "limite": "650",
    "seccion": "5. Aislamiento",
    "unidad": "V",
    "valor": "2150"
@@ -76,7 +76,7 @@
   "AIS-V-AMC1302": {
    "estado": "CUMPLE",
    "etiqueta": "Tensión de trabajo de la barrera: AMC1302 (amplificador aislado)",
-   "limite": "600",
+   "limite": "650",
    "seccion": "5. Aislamiento",
    "unidad": "V",
    "valor": "2121"
@@ -84,7 +84,7 @@
   "AIS-V-AMC1306": {
    "estado": "CUMPLE",
    "etiqueta": "Tensión de trabajo de la barrera: AMC1306 (modulador ΔΣ aislado)",
-   "limite": "600",
+   "limite": "650",
    "seccion": "5. Aislamiento",
    "unidad": "V",
    "valor": "2120"
@@ -92,7 +92,7 @@
   "AIS-V-MGJ2": {
    "estado": "CUMPLE",
    "etiqueta": "Tensión de trabajo de la barrera: MGJ2D052005BSC (fuente aislada de puerta)",
-   "limite": "600",
+   "limite": "650",
    "seccion": "5. Aislamiento",
    "unidad": "V",
    "valor": "2400"
@@ -111,7 +111,7 @@
    "limite": "15,00",
    "seccion": "9. Alimentación auxiliar (BT)",
    "unidad": "W",
-   "valor": "3,78"
+   "valor": "4,09"
   },
   "BT-02": {
    "estado": "CUMPLE",
@@ -119,7 +119,7 @@
    "limite": "3,00",
    "seccion": "9. Alimentación auxiliar (BT)",
    "unidad": "A",
-   "valor": "1,57"
+   "valor": "1,70"
   },
   "GDR-01": {
    "estado": "REVISAR",
@@ -151,7 +151,7 @@
    "limite": "2,000",
    "seccion": "8. Gate driving",
    "unidad": "W",
-   "valor": "0,232"
+   "valor": "0,266"
   },
   "GDR-05": {
    "estado": "CUMPLE",
@@ -159,7 +159,7 @@
    "limite": "80,0",
    "seccion": "8. Gate driving",
    "unidad": "mA",
-   "valor": "9,3"
+   "valor": "10,6"
   },
   "GDR-06": {
    "estado": "CUMPLE",
@@ -167,7 +167,7 @@
    "limite": "40,0",
    "seccion": "8. Gate driving",
    "unidad": "mA",
-   "valor": "9,3"
+   "valor": "10,6"
   },
   "GDR-07": {
    "estado": "CUMPLE",
@@ -175,7 +175,7 @@
    "limite": "11,00",
    "seccion": "8. Gate driving",
    "unidad": "A",
-   "valor": "3,22"
+   "valor": "2,32"
   },
   "GDR-08": {
    "estado": "CUMPLE",
@@ -183,7 +183,7 @@
    "limite": "9,00",
    "seccion": "8. Gate driving",
    "unidad": "A",
-   "valor": "3,29"
+   "valor": "2,36"
   },
   "GDR-09": {
    "estado": "CUMPLE",
@@ -191,7 +191,7 @@
    "limite": "100,0",
    "seccion": "8. Gate driving",
    "unidad": "kV/µs",
-   "valor": "8,5"
+   "valor": "8,6"
   },
   "GDR-10": {
    "estado": "CUMPLE",
@@ -199,7 +199,7 @@
    "limite": "100,0",
    "seccion": "8. Gate driving",
    "unidad": "kV/µs",
-   "valor": "8,5"
+   "valor": "8,6"
   },
   "GDR-11": {
    "estado": "CUMPLE",
@@ -207,7 +207,7 @@
    "limite": "200,0",
    "seccion": "8. Gate driving",
    "unidad": "kV/µs",
-   "valor": "8,5"
+   "valor": "8,6"
   },
   "GDR-12": {
    "estado": "CUMPLE",
@@ -215,7 +215,7 @@
    "limite": "1,80",
    "seccion": "8. Gate driving",
    "unidad": "V",
-   "valor": "−4,23"
+   "valor": "−4,22"
   },
   "GDR-13": {
    "estado": "REVISAR",
@@ -252,7 +252,7 @@
   "PIS-bobina_cont": {
    "estado": "CUMPLE",
    "etiqueta": "Ancho de pista: Puente → bobina, continuo",
-   "limite": "0,3",
+   "limite": "0,7",
    "seccion": "4. Pistas y vías de potencia",
    "unidad": "mm",
    "valor": "5,0"
@@ -260,7 +260,7 @@
   "PIS-bobina_pk": {
    "estado": "CUMPLE",
    "etiqueta": "Ancho de pista: Puente → bobina, Ipk",
-   "limite": "10,7",
+   "limite": "7,5",
    "seccion": "4. Pistas y vías de potencia",
    "unidad": "mm",
    "valor": "15,0"
@@ -276,7 +276,7 @@
   "PIS-entrada_pk": {
    "estado": "CUMPLE",
    "etiqueta": "Ancho de pista: Entrada HV (1.ª placa), Ipk",
-   "limite": "34,3",
+   "limite": "0,7",
    "seccion": "4. Pistas y vías de potencia",
    "unidad": "mm",
    "valor": "35,0"
@@ -284,50 +284,50 @@
   "PIS-puente_rms": {
    "estado": "CUMPLE",
    "etiqueta": "Ancho de pista: DC-link ↔ puente, eficaz a Ipk",
-   "limite": "3,8",
+   "limite": "2,2",
    "seccion": "4. Pistas y vías de potencia",
    "unidad": "mm",
    "valor": "15,0"
   },
   "POT-01": {
-   "estado": "CUMPLE",
+   "estado": "NO CUMPLE",
    "etiqueta": "Rizado en el peor caso (L mínima, Vbus_max)",
    "limite": "2,00",
    "seccion": "1. Potencia y bus DC",
    "unidad": "A",
-   "valor": "1,30"
+   "valor": "3,52"
   },
   "POT-02": {
    "estado": "CUMPLE",
    "etiqueta": "Corriente máxima alcanzable con Vbus_min (sin pérdidas)",
-   "limite": "60,0",
+   "limite": "55,0",
    "seccion": "1. Potencia y bus DC",
    "unidad": "A",
-   "valor": "266,7"
+   "valor": "318,2"
   },
   "POT-03": {
    "estado": "CUMPLE",
    "etiqueta": "Rizado de tensión en el DC-link, peor caso (m = 0,5)",
-   "limite": "6,40",
+   "limite": "3,50",
    "seccion": "1. Potencia y bus DC",
    "unidad": "V",
-   "valor": "3,69"
+   "valor": "2,29"
   },
   "POT-04": {
    "estado": "NO CUMPLE",
    "etiqueta": "Tensión de fallo (extrapolada) frente a la tensión continua admisible",
-   "limite": "600",
+   "limite": "650",
    "seccion": "1. Potencia y bus DC",
    "unidad": "V",
-   "valor": "734"
+   "valor": "694"
   },
   "POT-05": {
    "estado": "NO CUMPLE",
    "etiqueta": "Tensión de fallo frente a la tensión nominal del DC-link",
-   "limite": "500",
+   "limite": "650",
    "seccion": "1. Potencia y bus DC",
    "unidad": "V",
-   "valor": "734"
+   "valor": "694"
   },
   "POT-06": {
    "estado": "CUMPLE",
@@ -335,12 +335,12 @@
    "limite": "900",
    "seccion": "1. Potencia y bus DC",
    "unidad": "V",
-   "valor": "734"
+   "valor": "694"
   },
   "POT-07": {
    "estado": "NO CUMPLE",
    "etiqueta": "Capacidad instalada frente a la necesaria para no superar V_cont desde Vbus_max",
-   "limite": "199",
+   "limite": "129",
    "seccion": "1. Potencia y bus DC",
    "unidad": "µF",
    "valor": "105"
@@ -348,7 +348,7 @@
   "POT-08": {
    "estado": "CUMPLE",
    "etiqueta": "Tensión de actuación del chopper por encima de Vbus_max con margen",
-   "limite": "440",
+   "limite": "446",
    "seccion": "1. Potencia y bus DC",
    "unidad": "V",
    "valor": "550"
@@ -356,31 +356,31 @@
   "POT-09": {
    "estado": "CUMPLE",
    "etiqueta": "Tensión de actuación del chopper por debajo de V_cont",
-   "limite": "600",
+   "limite": "650",
    "seccion": "1. Potencia y bus DC",
    "unidad": "V",
    "valor": "550"
   },
   "POT-10": {
-   "estado": "REVISAR",
+   "estado": "CUMPLE",
    "etiqueta": "Corriente media de bus a Ipk frente al fusible con factor de utilización",
    "limite": "11,25",
    "seccion": "1. Potencia y bus DC",
    "unidad": "A",
-   "valor": "13,92"
+   "valor": "9,80"
   },
   "POT-11": {
-   "estado": "REVISAR",
+   "estado": "CUMPLE",
    "etiqueta": "Corriente de entrada de la primera placa frente al fusible (si está en el camino encadenado)",
    "limite": "11,25",
    "seccion": "1. Potencia y bus DC",
    "unidad": "A",
-   "valor": "139,18"
+   "valor": "9,80"
   },
   "POT-12": {
    "estado": "NO CUMPLE",
    "etiqueta": "Tensión nominal del fusible frente a V_cont",
-   "limite": "600",
+   "limite": "650",
    "seccion": "1. Potencia y bus DC",
    "unidad": "V",
    "valor": "500"
@@ -388,7 +388,7 @@
   "POT-13": {
    "estado": "NO CUMPLE",
    "etiqueta": "Tensión nominal del fusible frente a la tensión de fallo",
-   "limite": "734",
+   "limite": "694",
    "seccion": "1. Potencia y bus DC",
    "unidad": "V",
    "valor": "500"
@@ -396,7 +396,7 @@
   "SEN-01": {
    "estado": "CUMPLE",
    "etiqueta": "Fondo de escala frente a Ipk con margen",
-   "limite": "72,0",
+   "limite": "66,0",
    "seccion": "7. Sensado y adquisición",
    "unidad": "A",
    "valor": "100,0"
@@ -404,10 +404,10 @@
   "SEN-02": {
    "estado": "CUMPLE",
    "etiqueta": "Umbral de sobrecorriente por encima de Ipk",
-   "limite": "60",
+   "limite": "55",
    "seccion": "7. Sensado y adquisición",
    "unidad": "A",
-   "valor": "80"
+   "valor": "90"
   },
   "SEN-03": {
    "estado": "CUMPLE",
@@ -415,7 +415,7 @@
    "limite": "100",
    "seccion": "7. Sensado y adquisición",
    "unidad": "A",
-   "valor": "80"
+   "valor": "90"
   },
   "SEN-04": {
    "estado": "CUMPLE",
@@ -426,9 +426,9 @@
    "valor": "20,0"
   },
   "SEN-05": {
-   "estado": "CUMPLE",
+   "estado": "REVISAR",
    "etiqueta": "Tiempo de establecimiento del filtro frente al semiperiodo de PWM",
-   "limite": "25,0",
+   "limite": "16,7",
    "seccion": "7. Sensado y adquisición",
    "unidad": "µs",
    "valor": "19,2"
@@ -439,7 +439,7 @@
    "limite": "125,0",
    "seccion": "7. Sensado y adquisición",
    "unidad": "mW",
-   "valor": "33,6"
+   "valor": "39,4"
   },
   "SEN-07": {
    "estado": "CUMPLE",
@@ -447,12 +447,12 @@
    "limite": "200",
    "seccion": "7. Sensado y adquisición",
    "unidad": "V",
-   "valor": "183"
+   "valor": "174"
   },
   "SEN-08": {
-   "estado": "NO CUMPLE",
+   "estado": "CUMPLE",
    "etiqueta": "Fondo de escala de Vbus frente a la tensión de fallo",
-   "limite": "734",
+   "limite": "694",
    "seccion": "7. Sensado y adquisición",
    "unidad": "V",
    "valor": "700"
@@ -460,18 +460,18 @@
   "SEN-09": {
    "estado": "CUMPLE",
    "etiqueta": "Umbral de sobretensión por encima de Vbus_max",
-   "limite": "400",
+   "limite": "405",
    "seccion": "7. Sensado y adquisición",
    "unidad": "V",
-   "valor": "450"
+   "valor": "420"
   },
   "SEN-10": {
    "estado": "CUMPLE",
    "etiqueta": "Umbral de sobretensión por debajo de V_cont",
-   "limite": "600",
+   "limite": "650",
    "seccion": "7. Sensado y adquisición",
    "unidad": "V",
-   "valor": "450"
+   "valor": "420"
   },
   "SI-HOLD": {
    "estado": "CUMPLE",
@@ -487,7 +487,7 @@
    "limite": "0,00",
    "seccion": "6. Integridad de señal",
    "unidad": "ns",
-   "valor": "5,02"
+   "valor": "5,00"
   },
   "SI-datos_ds": {
    "estado": "CUMPLE",
@@ -495,7 +495,7 @@
    "limite": "50 ± 10 %",
    "seccion": "6. Integridad de señal",
    "unidad": "Ω",
-   "valor": "50,5"
+   "valor": "49,3"
   },
   "SI-datos_phy": {
    "estado": "CUMPLE",
@@ -503,7 +503,7 @@
    "limite": "50 ± 10 %",
    "seccion": "6. Integridad de señal",
    "unidad": "Ω",
-   "valor": "50,5"
+   "valor": "49,3"
   },
   "SI-jtag_tck": {
    "estado": "CUMPLE",
@@ -511,7 +511,7 @@
    "limite": "50 ± 10 %",
    "seccion": "6. Integridad de señal",
    "unidad": "Ω",
-   "valor": "50,1"
+   "valor": "49,3"
   },
   "SI-mdi_in": {
    "estado": "CUMPLE",
@@ -519,7 +519,7 @@
    "limite": "100 ± 10 %",
    "seccion": "6. Integridad de señal",
    "unidad": "Ω",
-   "valor": "98,0"
+   "valor": "96,3"
   },
   "SI-mdi_out": {
    "estado": "CUMPLE",
@@ -527,7 +527,7 @@
    "limite": "100 ± 10 %",
    "seccion": "6. Integridad de señal",
    "unidad": "Ω",
-   "valor": "98,0"
+   "valor": "96,3"
   },
   "SI-pwm": {
    "estado": "CUMPLE",
@@ -535,7 +535,7 @@
    "limite": "50 ± 10 %",
    "seccion": "6. Integridad de señal",
    "unidad": "Ω",
-   "valor": "50,1"
+   "valor": "49,3"
   },
   "SI-reloj_ds": {
    "estado": "CUMPLE",
@@ -543,7 +543,7 @@
    "limite": "50 ± 10 %",
    "seccion": "6. Integridad de señal",
    "unidad": "Ω",
-   "valor": "50,5"
+   "valor": "49,3"
   },
   "SI-reloj_phy": {
    "estado": "CUMPLE",
@@ -551,7 +551,7 @@
    "limite": "50 ± 10 %",
    "seccion": "6. Integridad de señal",
    "unidad": "Ω",
-   "valor": "50,5"
+   "valor": "49,3"
   },
   "TER-01": {
    "estado": "CUMPLE",
@@ -559,12 +559,12 @@
    "limite": "0,0",
    "seccion": "3. Térmico",
    "unidad": "mm²",
-   "valor": "77,2"
+   "valor": "79,3"
   },
   "TER-02": {
    "estado": "CUMPLE",
    "etiqueta": "Rigidez dieléctrica del material de interfaz",
-   "limite": "600",
+   "limite": "650",
    "seccion": "3. Térmico",
    "unidad": "V",
    "valor": "4000"
@@ -575,7 +575,7 @@
    "limite": "3,00",
    "seccion": "3. Térmico",
    "unidad": "W",
-   "valor": "1,80"
+   "valor": "1,51"
   },
   "TER-04": {
    "estado": "NO CUMPLE",
@@ -583,15 +583,15 @@
    "limite": "150,0",
    "seccion": "3. Térmico",
    "unidad": "°C",
-   "valor": "648,1"
+   "valor": "1635,7"
   },
   "TER-05": {
-   "estado": "CUMPLE",
+   "estado": "NO CUMPLE",
    "etiqueta": "Tj en continuo (Irms_cont)",
    "limite": "150,0",
    "seccion": "3. Térmico",
    "unidad": "°C",
-   "valor": "55,9"
+   "valor": "179,1"
   },
   "TER-06": {
    "estado": "REVISAR",
@@ -599,7 +599,7 @@
    "limite": "125,0",
    "seccion": "3. Térmico",
    "unidad": "°C",
-   "valor": "648,1"
+   "valor": "1635,7"
   }
  },
  "entradas": {
@@ -1798,7 +1798,7 @@
    "estado": "TBD",
    "etiqueta": "Distribución del bus: «Encadenado» o «Estrella»",
    "fuente": "TFG",
-   "texto": "Encadenado"
+   "texto": "Estrella"
   },
   "param.C_blank": {
    "estado": "TBD",
@@ -1960,7 +1960,7 @@
    "estado": "TBD",
    "etiqueta": "Umbral de sobrecorriente por hardware",
    "fuente": "—",
-   "texto": "80 A"
+   "texto": "90 A"
   },
   "param.I_fuse": {
    "estado": "AC",
@@ -1990,13 +1990,13 @@
    "estado": "OK",
    "etiqueta": "Corriente de pico (primeros segundos de la levitación)",
    "fuente": "U",
-   "texto": "60 A"
+   "texto": "55 A"
   },
   "param.Irms_cont": {
    "estado": "TBD",
    "etiqueta": "Corriente eficaz en régimen permanente (dimensionado térmico)",
    "fuente": "TFG",
-   "texto": "5 A"
+   "texto": "10 A"
   },
   "param.L_EMS_0": {
    "estado": "AC",
@@ -2038,7 +2038,7 @@
    "estado": "TBD",
    "etiqueta": "Modulación: «Unipolar» o «Bipolar»",
    "fuente": "TFG",
-   "texto": "Unipolar"
+   "texto": "Bipolar"
   },
   "param.NTC_R25": {
    "estado": "AC",
@@ -2050,7 +2050,7 @@
    "estado": "AC",
    "etiqueta": "Constante β(25/85) de la NTC",
    "fuente": "TE",
-   "texto": "3694 K"
+   "texto": "3598 K"
   },
   "param.N_MD": {
    "estado": "OK",
@@ -2092,7 +2092,7 @@
    "estado": "TBD",
    "etiqueta": "Número de vías térmicas bajo cada MOSFET",
    "fuente": "—",
-   "texto": "40"
+   "texto": "10"
   },
   "param.OSR": {
    "estado": "TBD",
@@ -2176,19 +2176,19 @@
    "estado": "OK",
    "etiqueta": "Resistencia de la bobina",
    "fuente": "U",
-   "texto": "1,2 Ω"
+   "texto": "1,1 Ω"
   },
   "param.Rg_off": {
    "estado": "TBD",
    "etiqueta": "Resistencia de puerta externa de apagado",
    "fuente": "—",
-   "texto": "5 Ω"
+   "texto": "8 Ω"
   },
   "param.Rg_on": {
    "estado": "TBD",
    "etiqueta": "Resistencia de puerta externa de encendido",
    "fuente": "—",
-   "texto": "5 Ω"
+   "texto": "8 Ω"
   },
   "param.Rth_wb": {
    "estado": "TBD",
@@ -2278,19 +2278,19 @@
    "estado": "TBD",
    "etiqueta": "Temperatura ambiente máxima",
    "fuente": "—",
-   "texto": "40 °C"
+   "texto": "50 °C"
   },
   "param.T_coil_max": {
    "estado": "TBD",
    "etiqueta": "Temperatura máxima de la bobina (umbral de protección)",
    "fuente": "—",
-   "texto": "120 °C"
+   "texto": "110 °C"
   },
   "param.T_cool": {
    "estado": "TBD",
    "etiqueta": "Temperatura del refrigerante a la entrada",
    "fuente": "—",
-   "texto": "40 °C"
+   "texto": "50 °C"
   },
   "param.Tj_assumed": {
    "estado": "AC",
@@ -2320,7 +2320,7 @@
    "estado": "TBD",
    "etiqueta": "Umbral de sobretensión de bus por hardware",
    "fuente": "—",
-   "texto": "450 V"
+   "texto": "420 V"
   },
   "param.V_TIM_bd": {
    "estado": "TBD",
@@ -2338,13 +2338,13 @@
    "estado": "OK",
    "etiqueta": "Tensión continua que deben soportar componentes y aislamiento",
    "fuente": "U",
-   "texto": "600 V"
+   "texto": "650 V"
   },
   "param.V_film": {
    "estado": "AC",
    "etiqueta": "Tensión nominal de los condensadores del DC-link",
    "fuente": "TFG",
-   "texto": "500 V"
+   "texto": "650 V"
   },
   "param.V_fuse": {
    "estado": "AC",
@@ -2380,13 +2380,13 @@
    "estado": "OK",
    "etiqueta": "Tensión máxima del bus de HV",
    "fuente": "U",
-   "texto": "400 V"
+   "texto": "405 V"
   },
   "param.Vbus_min": {
    "estado": "OK",
    "etiqueta": "Tensión mínima del bus de HV",
    "fuente": "U",
-   "texto": "320 V"
+   "texto": "350 V"
   },
   "param.Vf_desat": {
    "estado": "TBD",
@@ -2428,13 +2428,13 @@
    "estado": "AC",
    "etiqueta": "Incremento de temperatura admisible en pistas (criterio)",
    "fuente": "P",
-   "texto": "20 °C"
+   "texto": "30 °C"
   },
   "param.dVdc_pct": {
    "estado": "AC",
    "etiqueta": "Rizado máximo de tensión en el DC-link (fracción de Vbus_min)",
    "fuente": "TFG",
-   "texto": "2 %"
+   "texto": "1 %"
   },
   "param.d_HV_HV": {
    "estado": "AC",
@@ -2464,7 +2464,7 @@
    "estado": "TBD",
    "etiqueta": "Permitividad relativa del dieléctrico",
    "fuente": "—",
-   "texto": "4,3"
+   "texto": "4,5"
   },
   "param.eta_BT": {
    "estado": "TBD",
@@ -2494,7 +2494,7 @@
    "estado": "TBD",
    "etiqueta": "Frecuencia de conmutación",
    "fuente": "TFG",
-   "texto": "20 kHz"
+   "texto": "30 kHz"
   },
   "param.h_ms": {
    "estado": "TBD",
@@ -2853,8 +2853,8 @@
    "texto": "DC-link ↔ puente, eficaz a Ipk"
   }
  },
- "fecha_texto": "18/09/2026 10:47 (hora de Madrid)",
- "generado": "2026-09-18T10:47:11+02:00",
+ "fecha_texto": "18/09/2026 11:49 (hora de Madrid)",
+ "generado": "2026-09-18T11:49:39+02:00",
  "resultados": {
   "A_barrel": {
    "etiqueta": "Sección de cobre de una vía",
@@ -2873,44 +2873,44 @@
   "C_min_rizado": {
    "etiqueta": "Capacidad mínima para el rizado (sin ESR)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "58,6",
+   "texto": "65,5",
    "unidad": "µF",
-   "valor": 5.859375e-05
+   "valor": 6.547619047619048e-05
   },
   "C_need_map": {
    "etiqueta": "Capacidad necesaria con la energía de los mapas (sin extrapolar)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "167",
+   "texto": "129",
    "unidad": "µF",
-   "valor": 0.000167
+   "valor": 0.00012921946029596673
   },
   "E_acc": {
    "etiqueta": "Energía de todas las placas al acumulador durante el pico",
    "seccion": "3. Térmico",
-   "texto": "4,1",
+   "texto": "4,0",
    "unidad": "kJ",
-   "valor": 4122.929502789988
+   "valor": 3967.1155984964203
   },
   "E_chop": {
    "etiqueta": "Energía por evento en la resistencia (cota)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "19,9",
+   "texto": "16,7",
    "unidad": "J",
-   "valor": 19.874380165289253
+   "valor": 16.7
   },
   "E_const": {
    "etiqueta": "Cota pesimista con L constante",
    "seccion": "1. Potencia y bus DC",
-   "texto": "48,1",
+   "texto": "40,4",
    "unidad": "J",
-   "valor": 48.06
+   "valor": 40.38375
   },
   "E_ext": {
    "etiqueta": "Energía extrapolada a Ipk",
    "seccion": "1. Potencia y bus DC",
-   "texto": "19,9",
+   "texto": "16,7",
    "unidad": "J",
-   "valor": 19.874380165289253
+   "valor": 16.7
   },
   "E_map": {
    "etiqueta": "Energía peor caso según los mapas H11 (55 A)",
@@ -2922,23 +2922,23 @@
   "E_sh_pk": {
    "etiqueta": "Energía en el shunt durante el pico",
    "seccion": "3. Térmico",
-   "texto": "3,6",
+   "texto": "3,0",
    "unidad": "J",
-   "valor": 3.6
+   "valor": 3.025
   },
   "I_BT_max": {
    "etiqueta": "Corriente de entrada a V_BT_max",
    "seccion": "9. Alimentación auxiliar (BT)",
-   "texto": "0,157",
+   "texto": "0,170",
    "unidad": "A",
-   "valor": 0.15732535303469558
+   "valor": 0.1702309922379127
   },
   "I_BT_min": {
    "etiqueta": "Corriente de entrada a V_BT_min",
    "seccion": "9. Alimentación auxiliar (BT)",
-   "texto": "0,210",
+   "texto": "0,227",
    "unidad": "A",
-   "valor": 0.2097671373795941
+   "valor": 0.22697465631721692
   },
   "I_FS": {
    "etiqueta": "Fondo de escala de corriente",
@@ -2950,44 +2950,44 @@
   "I_bridge_rms": {
    "etiqueta": "Corriente eficaz de entrada al puente a Ipk",
    "seccion": "1. Potencia y bus DC",
-   "texto": "28,5",
+   "texto": "22,9",
    "unidad": "A",
-   "valor": 28.460498941515414
+   "valor": 22.86685061705825
   },
   "I_bus_cont": {
    "etiqueta": "Corriente media de bus en continuo, Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,097",
+   "texto": "0,324",
    "unidad": "A",
-   "valor": 0.09664948453608248
+   "valor": 0.3240058910162003
   },
   "I_bus_pk": {
    "etiqueta": "Corriente media de bus a Ipk, Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "13,92",
+   "texto": "9,80",
    "unidad": "A",
-   "valor": 13.917525773195877
+   "valor": 9.80117820324006
   },
   "I_bus_pk_Vmax": {
    "etiqueta": "Corriente media de bus a Ipk, Vbus_max",
    "seccion": "1. Potencia y bus DC",
-   "texto": "11,13",
+   "texto": "8,47",
    "unidad": "A",
-   "valor": 11.1340206185567
+   "valor": 8.470154002800053
   },
   "I_cap_rms_pk": {
    "etiqueta": "Corriente eficaz en el DC-link en el punto Ipk, Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "25,1",
+   "texto": "20,8",
    "unidad": "A",
-   "valor": 25.0549396327351
+   "valor": 20.796804846820454
   },
   "I_cap_rms_wc": {
    "etiqueta": "Corriente eficaz en el DC-link, peor caso (m = 0,5)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "30,0",
+   "texto": "27,5",
    "unidad": "A",
-   "valor": 30.0
+   "valor": 27.5
   },
   "I_clip": {
    "etiqueta": "Corriente de recorte (AMC1302)",
@@ -2999,37 +2999,37 @@
   "I_div": {
    "etiqueta": "Corriente del divisor a V_cont",
    "seccion": "7. Sensado y adquisición",
-   "texto": "224",
+   "texto": "243",
    "unidad": "µA",
-   "valor": 0.00022402597402597404
+   "valor": 0.0002426948051948052
   },
   "I_in_first": {
    "etiqueta": "Corriente de entrada de la primera placa, todas a Ipk",
    "seccion": "1. Potencia y bus DC",
-   "texto": "139,2",
+   "texto": "9,8",
    "unidad": "A",
-   "valor": 139.17525773195877
+   "valor": 9.80117820324006
   },
   "I_in_first_cont": {
    "etiqueta": "Corriente de entrada de la primera placa, en continuo",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,97",
+   "texto": "0,32",
    "unidad": "A",
-   "valor": 0.9664948453608248
+   "valor": 0.3240058910162003
   },
   "I_iso_in": {
    "etiqueta": "Corriente de entrada de cada fuente aislada",
    "seccion": "8. Gate driving",
-   "texto": "62,6",
+   "texto": "71,9",
    "unidad": "mA",
-   "valor": 0.06256756756756757
+   "valor": 0.07189189189189191
   },
   "I_miller": {
    "etiqueta": "Corriente de Miller",
    "seccion": "8. Gate driving",
-   "texto": "0,170",
+   "texto": "0,172",
    "unidad": "A",
-   "valor": 0.17021276595744678
+   "valor": 0.17234042553191486
   },
   "I_trip_hot": {
    "etiqueta": "Corriente de disparo en caliente",
@@ -3041,9 +3041,9 @@
   "I_via": {
    "etiqueta": "Corriente admisible por vía",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "2,29",
+   "texto": "2,73",
    "unidad": "A",
-   "valor": 2.2863457851579967
+   "valor": 2.7328894705709894
   },
   "LSB_A1": {
    "etiqueta": "Resolución (LSB) con el ADC",
@@ -3069,9 +3069,9 @@
   "N_chain": {
    "etiqueta": "Placas cuya corriente atraviesa la entrada de la primera",
    "seccion": "1. Potencia y bus DC",
-   "texto": "10",
+   "texto": "1",
    "unidad": "–",
-   "valor": 10.0
+   "valor": 1.0
   },
   "N_res": {
    "etiqueta": "Resistencias en serie necesarias en la rama superior",
@@ -3083,114 +3083,114 @@
   "N_via_Ipk": {
    "etiqueta": "Vías necesarias para Ipk (cambio de capa de la salida)",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "27",
+   "texto": "21",
    "unidad": "–",
-   "valor": 27.0
+   "valor": 21.0
   },
   "N_via_in": {
    "etiqueta": "Vías necesarias para la entrada de la primera placa",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "61",
+   "texto": "4",
    "unidad": "–",
-   "valor": 61.0
+   "valor": 4.0
   },
   "P_BT_sub": {
    "etiqueta": "Subtotal desde BT",
    "seccion": "9. Alimentación auxiliar (BT)",
-   "texto": "3,15",
+   "texto": "3,40",
    "unidad": "W",
-   "valor": 3.146507060693912
+   "valor": 3.4046198447582534
   },
   "P_BT_todas": {
    "etiqueta": "Consumo de las N_MD placas",
    "seccion": "9. Alimentación auxiliar (BT)",
-   "texto": "37,8",
+   "texto": "40,9",
    "unidad": "W",
-   "valor": 37.75808472832694
+   "valor": 40.85543813709904
   },
   "P_BT_total": {
    "etiqueta": "Total por placa con margen",
    "seccion": "9. Alimentación auxiliar (BT)",
-   "texto": "3,78",
+   "texto": "4,09",
    "unidad": "W",
-   "valor": 3.775808472832694
+   "valor": 4.085543813709904
   },
   "P_aux": {
    "etiqueta": "Consumo de la alimentación auxiliar (acaba en calor)",
    "seccion": "3. Térmico",
-   "texto": "3,8",
+   "texto": "4,1",
    "unidad": "W",
-   "valor": 3.775808472832694
+   "valor": 4.085543813709904
   },
   "P_board_c": {
    "etiqueta": "Pérdidas totales de la placa en continuo",
    "seccion": "3. Térmico",
-   "texto": "8,5",
+   "texto": "19,6",
    "unidad": "W",
-   "valor": 8.53697513949936
+   "valor": 19.602404924821016
   },
   "P_board_pk": {
    "etiqueta": "Pérdidas totales de la placa a Ipk",
    "seccion": "3. Térmico",
-   "texto": "206",
+   "texto": "198",
    "unidad": "W",
-   "valor": 206.1464751394994
+   "valor": 198.355779924821
   },
   "P_br_c_m": {
    "etiqueta": "Pérdidas del puente en continuo (MOSFET seleccionado)",
    "seccion": "3. Térmico",
-   "texto": "4,7",
+   "texto": "15,4",
    "unidad": "W",
-   "valor": 4.736166666666666
+   "valor": 15.416861111111109
   },
   "P_br_pk_m": {
    "etiqueta": "Pérdidas del puente a Ipk (MOSFET seleccionado)",
    "seccion": "3. Térmico",
-   "texto": "199",
+   "texto": "191",
    "unidad": "W",
-   "valor": 198.77066666666667
+   "valor": 191.24523611111113
   },
   "P_chop_pk": {
    "etiqueta": "Potencia de pico en la resistencia",
    "seccion": "1. Potencia y bus DC",
-   "texto": "33,0",
+   "texto": "30,2",
    "unidad": "kW",
-   "valor": 33000.0
+   "valor": 30250.0
   },
   "P_coil_pk": {
    "etiqueta": "Potencia en la bobina a Ipk",
    "seccion": "1. Potencia y bus DC",
-   "texto": "4320",
+   "texto": "3328",
    "unidad": "W",
-   "valor": 4320.0
+   "valor": 3327.5000000000005
   },
   "P_esr": {
    "etiqueta": "Pérdidas por ESR en el DC-link (peor caso)",
    "seccion": "3. Térmico",
-   "texto": "1,80",
+   "texto": "1,51",
    "unidad": "W",
-   "valor": 1.8
+   "valor": 1.5125
   },
   "P_gate": {
    "etiqueta": "Potencia de puerta",
    "seccion": "8. Gate driving",
-   "texto": "0,069",
+   "texto": "0,104",
    "unidad": "W",
-   "valor": 0.069
+   "valor": 0.10350000000000001
   },
   "P_iso_in": {
    "etiqueta": "Potencia de entrada de cada fuente aislada",
    "seccion": "8. Gate driving",
-   "texto": "0,313",
+   "texto": "0,359",
    "unidad": "W",
-   "valor": 0.31283783783783786
+   "valor": 0.3594594594594595
   },
   "P_iso_out": {
    "etiqueta": "Potencia en la salida de la fuente aislada",
    "seccion": "8. Gate driving",
-   "texto": "0,232",
+   "texto": "0,266",
    "unidad": "W",
-   "valor": 0.2315
+   "valor": 0.266
   },
   "P_ntc_25": {
    "etiqueta": "Autocalentamiento: potencia en la NTC a 25 °C",
@@ -3202,16 +3202,16 @@
   "P_sh_c": {
    "etiqueta": "Potencia en el shunt en continuo",
    "seccion": "3. Térmico",
-   "texto": "0,013",
+   "texto": "0,050",
    "unidad": "W",
-   "valor": 0.0125
+   "valor": 0.05
   },
   "P_sh_pk": {
    "etiqueta": "Potencia en el shunt a Ipk",
    "seccion": "3. Térmico",
-   "texto": "1,80",
+   "texto": "1,51",
    "unidad": "W",
-   "valor": 1.8
+   "valor": 1.5125
   },
   "R_TIM": {
    "etiqueta": "Resistencia del material de interfaz",
@@ -3230,9 +3230,9 @@
   "R_chop_max": {
    "etiqueta": "Resistencia máxima del chopper",
    "seccion": "1. Potencia y bus DC",
-   "texto": "9,17",
+   "texto": "10,00",
    "unidad": "Ω",
-   "valor": 9.166666666666666
+   "valor": 10.0
   },
   "R_each": {
    "etiqueta": "Valor de cada resistencia superior",
@@ -3244,23 +3244,23 @@
   "R_fr4": {
    "etiqueta": "Resistencia del FR-4 bajo el pad",
    "seccion": "3. Térmico",
-   "texto": "69,1",
+   "texto": "67,3",
    "unidad": "K/W",
-   "valor": 69.10918694934237
+   "valor": 67.26096636045486
   },
   "R_ntc_max": {
    "etiqueta": "R de la NTC a T_coil_max",
    "seccion": "7. Sensado y adquisición",
-   "texto": "501",
+   "texto": "688",
    "unidad": "Ω",
-   "valor": 500.95112086457596
+   "valor": 687.5725440322741
   },
   "R_pcb": {
    "etiqueta": "Resistencia de la PCB (vías ∥ FR-4)",
    "seccion": "3. Térmico",
-   "texto": "4,497",
+   "texto": "14,961",
    "unidad": "K/W",
-   "valor": 4.497314218507147
+   "valor": 14.961384706432789
   },
   "R_solder": {
    "etiqueta": "Resistencia de la soldadura",
@@ -3286,23 +3286,23 @@
   "R_vias": {
    "etiqueta": "Resistencia del conjunto de vías",
    "seccion": "3. Térmico",
-   "texto": "4,810",
+   "texto": "19,241",
    "unidad": "K/W",
-   "valor": 4.810350109979366
+   "valor": 19.241400439917463
   },
   "Rth_c2w": {
    "etiqueta": "Rth cápsula → agua",
    "seccion": "3. Térmico",
-   "texto": "5,864",
+   "texto": "16,328",
    "unidad": "K/W",
-   "valor": 5.863980885173814
+   "valor": 16.328051373099456
   },
   "S_ntc_max": {
    "etiqueta": "Sensibilidad a T_coil_max",
    "seccion": "7. Sensado y adquisición",
-   "texto": "−5,43",
+   "texto": "−7,38",
    "unidad": "mV/°C",
-   "valor": -0.0054286071477159924
+   "valor": -0.0073765599883440025
   },
   "T_bus_clk": {
    "etiqueta": "Periodo de reloj",
@@ -3314,16 +3314,16 @@
   "T_cool_out": {
    "etiqueta": "Temperatura del agua en la última placa en serie",
    "seccion": "3. Térmico",
-   "texto": "41,5",
+   "texto": "51,4",
    "unidad": "°C",
-   "valor": 41.48397207272175
+   "valor": 51.427889745251214
   },
   "V_coil_pk": {
    "etiqueta": "Tensión en la bobina a Ipk",
    "seccion": "1. Potencia y bus DC",
-   "texto": "72,0",
+   "texto": "60,5",
    "unidad": "V",
-   "valor": 72.0
+   "valor": 60.50000000000001
   },
   "V_ds_trip": {
    "etiqueta": "VDS de disparo",
@@ -3335,72 +3335,72 @@
   "V_fault_const": {
    "etiqueta": "Tensión final desde Vbus_max (cota pesimista)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "1037",
+   "texto": "966",
    "unidad": "V",
-   "valor": 1037.0287225668205
+   "valor": 966.0431075859326
   },
   "V_fault_map": {
    "etiqueta": "Tensión final desde Vbus_max (energía de los mapas)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "691",
+   "texto": "694",
    "unidad": "V",
-   "valor": 691.444313083301
+   "valor": 694.3487870625527
   },
   "V_fault_max": {
    "etiqueta": "Tensión final desde Vbus_max (energía extrapolada a Ipk)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "734",
+   "texto": "694",
    "unidad": "V",
-   "valor": 733.866215461637
+   "valor": 694.3487870625527
   },
   "V_fault_min_map": {
    "etiqueta": "Tensión final desde Vbus_min (energía de los mapas)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "648",
+   "texto": "664",
    "unidad": "V",
-   "valor": 648.4560417601475
+   "valor": 663.7734840254152
   },
   "V_ntc_max": {
    "etiqueta": "Tensión del divisor a T_coil_max (umbral del comparador)",
    "seccion": "7. Sensado y adquisición",
-   "texto": "0,239",
+   "texto": "0,322",
    "unidad": "V",
-   "valor": 0.23852654635694134
+   "valor": 0.32166918222052243
   },
   "V_out_pk": {
    "etiqueta": "Tensión diferencial de salida a Ipk",
    "seccion": "7. Sensado y adquisición",
-   "texto": "1,230",
+   "texto": "1,127",
    "unidad": "V",
-   "valor": 1.23
+   "valor": 1.1275
   },
   "V_sens_OV": {
    "etiqueta": "Tensión en el sensor en el umbral de sobretensión",
    "seccion": "7. Sensado y adquisición",
-   "texto": "160,7",
+   "texto": "150,0",
    "unidad": "mV",
-   "valor": 0.1607142857142857
+   "valor": 0.15
   },
   "V_sens_Vmax": {
    "etiqueta": "Tensión en el sensor a Vbus_max",
    "seccion": "7. Sensado y adquisición",
-   "texto": "142,9",
+   "texto": "144,6",
    "unidad": "mV",
-   "valor": 0.14285714285714285
+   "valor": 0.14464285714285713
   },
   "V_sh_pk": {
    "etiqueta": "Tensión en el shunt a Ipk",
    "seccion": "7. Sensado y adquisición",
-   "texto": "30,0",
+   "texto": "27,5",
    "unidad": "mV",
-   "valor": 0.03
+   "valor": 0.0275
   },
   "aisl.HVHV_bare.requerido": {
    "etiqueta": "Distancia requerida: HV–HV, terminales sin recubrir",
    "seccion": "5. Aislamiento",
-   "texto": "3,04",
+   "texto": "3,29",
    "unidad": "mm",
-   "valor": 0.0030384615384615385
+   "valor": 0.0032941176470588237
   },
   "aisl.HVHV_coat.requerido": {
    "etiqueta": "Distancia requerida: HV–HV, superficie con coating",
@@ -3482,9 +3482,9 @@
   "bt.iso_gd": {
    "etiqueta": "Consumo desde BT: Fuentes aisladas de puerta (entrada a 5 V)",
    "seccion": "9. Alimentación auxiliar (BT)",
-   "texto": "1,732",
+   "texto": "1,990",
    "unidad": "W",
-   "valor": 1.7319741887215936
+   "valor": 1.9900869727859354
   },
   "bt.leds": {
    "etiqueta": "Consumo desde BT: LEDs",
@@ -3517,37 +3517,37 @@
   "dL_pair_max": {
    "etiqueta": "Diferencia de longitud máxima dentro del par",
    "seccion": "6. Integridad de señal",
-   "texto": "0,91",
+   "texto": "0,89",
    "unidad": "mm",
-   "valor": 0.0009100370814132439
+   "valor": 0.0008945076928723827
   },
   "dT_cool": {
    "etiqueta": "Incremento de temperatura del agua por placa a Ipk",
    "seccion": "3. Térmico",
-   "texto": "1,48",
+   "texto": "1,43",
    "unidad": "K",
-   "valor": 1.4839720727217494
+   "valor": 1.4278897452512154
   },
   "dV_dc_pk": {
    "etiqueta": "Rizado de tensión en el DC-link en el punto Ipk",
    "seccion": "1. Potencia y bus DC",
-   "texto": "2,61",
+   "texto": "1,36",
    "unidad": "V",
-   "valor": 2.6110714285714294
+   "valor": 1.358216715257532
   },
   "dV_dead": {
    "etiqueta": "Error de tensión media por el tiempo muerto",
    "seccion": "8. Gate driving",
-   "texto": "1,60",
+   "texto": "2,43",
    "unidad": "V",
-   "valor": 1.6
+   "valor": 2.43
   },
   "dV_dead_rel": {
    "etiqueta": "Error relativo a la tensión de bobina a Ipk",
    "seccion": "8. Gate driving",
-   "texto": "2,2",
+   "texto": "4,0",
    "unidad": "%",
-   "valor": 0.022222222222222223
+   "valor": 0.04016528925619835
   },
   "dVg": {
    "etiqueta": "Excursión de tensión de puerta",
@@ -3559,65 +3559,65 @@
   "didt.L_EMS_max.Vmax": {
    "etiqueta": "di/dt EMS, L máxima, Vbus_max",
    "seccion": "1. Potencia y bus DC",
-   "texto": "3,4",
+   "texto": "3,5",
    "unidad": "A/ms",
-   "valor": 3.4188034188034186
+   "valor": 3.4615384615384612
   },
   "didt.L_EMS_max.Vmin": {
    "etiqueta": "di/dt EMS, L máxima, Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "2,7",
+   "texto": "3,0",
    "unidad": "A/ms",
-   "valor": 2.735042735042735
+   "valor": 2.991452991452991
   },
   "didt.L_EMS_min.Vmax": {
    "etiqueta": "di/dt EMS, L mínima, Vbus_max",
    "seccion": "1. Potencia y bus DC",
-   "texto": "208,3",
+   "texto": "210,9",
    "unidad": "A/ms",
-   "valor": 208.33333333333331
+   "valor": 210.9375
   },
   "didt.L_EMS_min.Vmin": {
    "etiqueta": "di/dt EMS, L mínima, Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "166,7",
+   "texto": "182,3",
    "unidad": "A/ms",
-   "valor": 166.66666666666666
+   "valor": 182.29166666666666
   },
   "didt.L_HEMS_max.Vmax": {
    "etiqueta": "di/dt HEMS, L máxima, Vbus_max",
    "seccion": "1. Potencia y bus DC",
-   "texto": "35,7",
+   "texto": "36,2",
    "unidad": "A/ms",
-   "valor": 35.714285714285715
+   "valor": 36.160714285714285
   },
   "didt.L_HEMS_max.Vmin": {
    "etiqueta": "di/dt HEMS, L máxima, Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "28,6",
+   "texto": "31,2",
    "unidad": "A/ms",
-   "valor": 28.571428571428573
+   "valor": 31.25
   },
   "didt.L_HEMS_min.Vmax": {
    "etiqueta": "di/dt HEMS, L mínima, Vbus_max",
    "seccion": "1. Potencia y bus DC",
-   "texto": "64,5",
+   "texto": "65,3",
    "unidad": "A/ms",
-   "valor": 64.51612903225806
+   "valor": 65.32258064516128
   },
   "didt.L_HEMS_min.Vmin": {
    "etiqueta": "di/dt HEMS, L mínima, Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "51,6",
+   "texto": "56,5",
    "unidad": "A/ms",
-   "valor": 51.61290322580645
+   "valor": 56.4516129032258
   },
   "dvdt": {
    "etiqueta": "dv/dt estimada",
    "seccion": "8. Gate driving",
-   "texto": "8,5",
+   "texto": "8,6",
    "unidad": "kV/µs",
-   "valor": 8510638297.872339
+   "valor": 8617021276.595743
   },
   "f_data_ds": {
    "etiqueta": "Frecuencia de datos a la salida del filtro",
@@ -3629,142 +3629,142 @@
   "f_dc_link": {
    "etiqueta": "Frecuencia fundamental de la corriente en el DC-link",
    "seccion": "1. Potencia y bus DC",
-   "texto": "40,0",
+   "texto": "30,0",
    "unidad": "kHz",
-   "valor": 40000.0
+   "valor": 30000.0
   },
   "fsw_min_rizado": {
    "etiqueta": "fsw mínima para cumplir el rizado con L mínima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "13,0",
+   "texto": "52,7",
    "unidad": "kHz",
-   "valor": 13020.833333333332
+   "valor": 52734.375
   },
   "iec.V_cont.PD1": {
    "etiqueta": "IEC 60664-1 PD1 a V_cont",
    "seccion": "5. Aislamiento",
-   "texto": "1,68",
+   "texto": "1,87",
    "unidad": "mm",
-   "valor": 1.6846153846153846
+   "valor": 1.8705882352941177
   },
   "iec.V_cont.PD2": {
    "etiqueta": "IEC 60664-1 PD2 a V_cont",
    "seccion": "5. Aislamiento",
-   "texto": "3,04",
+   "texto": "3,29",
    "unidad": "mm",
-   "valor": 3.0384615384615383
+   "valor": 3.294117647058824
   },
   "iec.V_fault_max.PD1": {
    "etiqueta": "IEC 60664-1 PD1 a V_fault_max",
    "seccion": "5. Aislamiento",
-   "texto": "2,17",
+   "texto": "2,03",
    "unidad": "mm",
-   "valor": 2.1665866428057776
+   "valor": 2.0271133661031273
   },
   "iec.V_fault_max.PD2": {
    "etiqueta": "IEC 60664-1 PD2 a V_fault_max",
    "seccion": "5. Aislamiento",
-   "texto": "3,69",
+   "texto": "3,50",
    "unidad": "mm",
-   "valor": 3.6887821904077036
+   "valor": 3.502817821470836
   },
   "ipc.V_cont.A5": {
    "etiqueta": "IPC-2221B A5 a V_cont",
    "seccion": "5. Aislamiento",
-   "texto": "1,10",
+   "texto": "1,26",
    "unidad": "mm",
-   "valor": 1.105
+   "valor": 1.2575
   },
   "ipc.V_cont.A6": {
    "etiqueta": "IPC-2221B A6 a V_cont",
    "seccion": "5. Aislamiento",
-   "texto": "1,80",
+   "texto": "1,96",
    "unidad": "mm",
-   "valor": 1.805
+   "valor": 1.9575
   },
   "ipc.V_cont.A7": {
    "etiqueta": "IPC-2221B A7 a V_cont",
    "seccion": "5. Aislamiento",
-   "texto": "1,10",
+   "texto": "1,26",
    "unidad": "mm",
-   "valor": 1.105
+   "valor": 1.2575
   },
   "ipc.V_cont.B1": {
    "etiqueta": "IPC-2221B B1 a V_cont",
    "seccion": "5. Aislamiento",
-   "texto": "0,50",
+   "texto": "0,62",
    "unidad": "mm",
-   "valor": 0.5
+   "valor": 0.625
   },
   "ipc.V_cont.B2": {
    "etiqueta": "IPC-2221B B2 a V_cont",
    "seccion": "5. Aislamiento",
-   "texto": "3,00",
+   "texto": "3,25",
    "unidad": "mm",
-   "valor": 3.0
+   "valor": 3.25
   },
   "ipc.V_cont.B3": {
    "etiqueta": "IPC-2221B B3 a V_cont",
    "seccion": "5. Aislamiento",
-   "texto": "15,00",
+   "texto": "16,25",
    "unidad": "mm",
-   "valor": 15.0
+   "valor": 16.25
   },
   "ipc.V_cont.B4": {
    "etiqueta": "IPC-2221B B4 a V_cont",
    "seccion": "5. Aislamiento",
-   "texto": "1,10",
+   "texto": "1,26",
    "unidad": "mm",
-   "valor": 1.105
+   "valor": 1.2575
   },
   "ipc.V_fault_max.A5": {
    "etiqueta": "IPC-2221B A5 a V_fault_max",
    "seccion": "5. Aislamiento",
-   "texto": "1,51",
+   "texto": "1,39",
    "unidad": "mm",
-   "valor": 1.513291957157993
+   "valor": 1.3927638005407856
   },
   "ipc.V_fault_max.A6": {
    "etiqueta": "IPC-2221B A6 a V_fault_max",
    "seccion": "5. Aislamiento",
-   "texto": "2,21",
+   "texto": "2,09",
    "unidad": "mm",
-   "valor": 2.2132919571579928
+   "valor": 2.092763800540786
   },
   "ipc.V_fault_max.A7": {
    "etiqueta": "IPC-2221B A7 a V_fault_max",
    "seccion": "5. Aislamiento",
-   "texto": "1,51",
+   "texto": "1,39",
    "unidad": "mm",
-   "valor": 1.513291957157993
+   "valor": 1.3927638005407856
   },
   "ipc.V_fault_max.B1": {
    "etiqueta": "IPC-2221B B1 a V_fault_max",
    "seccion": "5. Aislamiento",
-   "texto": "0,83",
+   "texto": "0,74",
    "unidad": "mm",
-   "valor": 0.8346655386540925
+   "valor": 0.7358719676563816
   },
   "ipc.V_fault_max.B2": {
    "etiqueta": "IPC-2221B B2 a V_fault_max",
    "seccion": "5. Aislamiento",
-   "texto": "3,67",
+   "texto": "3,47",
    "unidad": "mm",
-   "valor": 3.6693310773081853
+   "valor": 3.4717439353127633
   },
   "ipc.V_fault_max.B3": {
    "etiqueta": "IPC-2221B B3 a V_fault_max",
    "seccion": "5. Aislamiento",
-   "texto": "18,35",
+   "texto": "17,36",
    "unidad": "mm",
-   "valor": 18.346655386540924
+   "valor": 17.358719676563815
   },
   "ipc.V_fault_max.B4": {
    "etiqueta": "IPC-2221B B4 a V_fault_max",
    "seccion": "5. Aislamiento",
-   "texto": "1,51",
+   "texto": "1,39",
    "unidad": "mm",
-   "valor": 1.513291957157993
+   "valor": 1.3927638005407856
   },
   "m_dot": {
    "etiqueta": "Gasto másico de agua",
@@ -3776,23 +3776,23 @@
   "m_pk": {
    "etiqueta": "Índice de modulación a Ipk con Vbus_min",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,225",
+   "texto": "0,173",
    "unidad": "–",
-   "valor": 0.225
+   "valor": 0.17285714285714288
   },
   "mosfet.SCT012H90G3AG.Esw_c": {
    "etiqueta": "SCT012H90G3AG: Energía de conmutación escalada",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "89",
+   "texto": "180",
    "unidad": "µJ",
-   "valor": 8.87222222222222e-05
+   "valor": 0.00017966249999999998
   },
   "mosfet.SCT012H90G3AG.Esw_pk": {
    "etiqueta": "SCT012H90G3AG: Energía de conmutación escalada",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "1065",
+   "texto": "988",
    "unidad": "µJ",
-   "valor": 0.0010646666666666665
+   "valor": 0.00098814375
   },
   "mosfet.SCT012H90G3AG.FOM": {
    "etiqueta": "SCT012H90G3AG: Figura de mérito RDS(on)·Qg (25 °C)",
@@ -3804,72 +3804,72 @@
   "mosfet.SCT012H90G3AG.Pbr_c": {
    "etiqueta": "SCT012H90G3AG: Pérdidas del puente completo (4 MOSFET)",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "4,7",
+   "texto": "15,4",
    "unidad": "W",
-   "valor": 4.736166666666666
+   "valor": 15.416861111111109
   },
   "mosfet.SCT012H90G3AG.Pbr_pk": {
    "etiqueta": "SCT012H90G3AG: Pérdidas del puente completo (4 MOSFET)",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "198,8",
+   "texto": "191,2",
    "unidad": "W",
-   "valor": 198.77066666666667
+   "valor": 191.24523611111113
   },
   "mosfet.SCT012H90G3AG.Pc_c": {
    "etiqueta": "SCT012H90G3AG: Conducción del MOSFET más cargado",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "0,54",
+   "texto": "2,15",
    "unidad": "W",
-   "valor": 0.5376388888888889
+   "valor": 2.1505555555555556
   },
   "mosfet.SCT012H90G3AG.Pc_pk": {
    "etiqueta": "SCT012H90G3AG: Conducción del MOSFET más cargado",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "77,42",
+   "texto": "65,05",
    "unidad": "W",
-   "valor": 77.42
+   "valor": 65.05430555555556
   },
   "mosfet.SCT012H90G3AG.Pdev_c": {
    "etiqueta": "SCT012H90G3AG: Pérdidas totales del MOSFET más cargado",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "2,4",
+   "texto": "7,7",
    "unidad": "W",
-   "valor": 2.368083333333333
+   "valor": 7.708430555555554
   },
   "mosfet.SCT012H90G3AG.Pdev_pk": {
    "etiqueta": "SCT012H90G3AG: Pérdidas totales del MOSFET más cargado",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "99,4",
+   "texto": "95,6",
    "unidad": "W",
-   "valor": 99.38533333333334
+   "valor": 95.62261805555556
   },
   "mosfet.SCT012H90G3AG.Pdt_c": {
    "etiqueta": "SCT012H90G3AG: Diodo en los tiempos muertos",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "0,056",
+   "texto": "0,168",
    "unidad": "W",
-   "valor": 0.056
+   "valor": 0.16799999999999998
   },
   "mosfet.SCT012H90G3AG.Pdt_pk": {
    "etiqueta": "SCT012H90G3AG: Diodo en los tiempos muertos",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "0,672",
+   "texto": "0,924",
    "unidad": "W",
-   "valor": 0.672
+   "valor": 0.9239999999999999
   },
   "mosfet.SCT012H90G3AG.Psw_c": {
    "etiqueta": "SCT012H90G3AG: Conmutación (toda la de la rama en un MOSFET)",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "1,77",
+   "texto": "5,39",
    "unidad": "W",
-   "valor": 1.774444444444444
+   "valor": 5.389874999999999
   },
   "mosfet.SCT012H90G3AG.Psw_pk": {
    "etiqueta": "SCT012H90G3AG: Conmutación (toda la de la rama en un MOSFET)",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "21,29",
+   "texto": "29,64",
    "unidad": "W",
-   "valor": 21.29333333333333
+   "valor": 29.644312499999998
   },
   "mosfet.SCT012H90G3AG.Rmax_as": {
    "etiqueta": "SCT012H90G3AG: RDS(on) máxima a Tj_assumed",
@@ -3888,338 +3888,338 @@
   "mosfet.SCT012H90G3AG.Tj_c": {
    "etiqueta": "SCT012H90G3AG: Temperatura de unión",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "55,9",
+   "texto": "179,1",
    "unidad": "°C",
-   "valor": 55.938707473887106
+   "valor": 179.1415631956652
   },
   "mosfet.SCT012H90G3AG.Tj_pk": {
    "etiqueta": "SCT012H90G3AG: Temperatura de unión",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "648,1",
+   "texto": "1635,7",
    "unidad": "°C",
-   "valor": 648.1301470060163
+   "valor": 1635.7083381199632
   },
   "mosfet.SCT012H90G3AG.VDS_rel": {
    "etiqueta": "SCT012H90G3AG: VDS / V_cont",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "1,50",
+   "texto": "1,38",
    "unidad": "–",
-   "valor": 1.5
+   "valor": 1.3846153846153846
   },
   "n_pwm_ds": {
    "etiqueta": "Muestras por periodo de PWM",
    "seccion": "7. Sensado y adquisición",
-   "texto": "7,81",
+   "texto": "5,21",
    "unidad": "–",
-   "valor": 7.8125
+   "valor": 5.208333333333333
   },
   "pista.bobina_cont.P": {
    "etiqueta": "Pérdidas: Puente → bobina, continuo",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "0,05",
+   "texto": "0,22",
    "unidad": "W",
-   "valor": 0.053176935627262716
+   "valor": 0.22118955792227038
   },
   "pista.bobina_cont.dT": {
    "etiqueta": "ΔT estimado: Puente → bobina, continuo",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "0,2",
+   "texto": "1,2",
    "unidad": "°C",
-   "valor": 0.248895543560287
+   "valor": 1.2027523157379603
   },
   "pista.bobina_cont.w_req": {
    "etiqueta": "Ancho necesario: Puente → bobina, continuo",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "0,35",
+   "texto": "0,71",
    "unidad": "mm",
-   "valor": 0.0003489990618511684
+   "valor": 0.0007098537300321914
   },
   "pista.bobina_pk.P": {
    "etiqueta": "Pérdidas: Puente → bobina, Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "2,66",
+   "texto": "2,29",
    "unidad": "W",
-   "valor": 2.6574899282385838
+   "valor": 2.2949282465638268
   },
   "pista.bobina_pk.dT": {
    "etiqueta": "ΔT estimado: Puente → bobina, Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "11,5",
+   "texto": "9,5",
    "unidad": "°C",
-   "valor": 11.5487789025414
+   "valor": 9.47660925850535
   },
   "pista.bobina_pk.w_req": {
    "etiqueta": "Ancho necesario: Puente → bobina, Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "10,75",
+   "texto": "7,45",
    "unidad": "mm",
-   "valor": 0.01074855581861601
+   "valor": 0.007453474762577101
   },
   "pista.entrada_cont.P": {
    "etiqueta": "Pérdidas: Entrada HV (1.ª placa), continuo",
    "seccion": "4. Pistas y vías de potencia",
    "texto": "0,00",
    "unidad": "W",
-   "valor": 0.0007444284740514739
+   "valor": 8.671006002835996e-05
   },
   "pista.entrada_cont.dT": {
    "etiqueta": "ΔT estimado: Entrada HV (1.ª placa), continuo",
    "seccion": "4. Pistas y vías de potencia",
    "texto": "0,0",
    "unidad": "°C",
-   "valor": 0.001895816029606697
+   "valor": 0.00015814440711399907
   },
   "pista.entrada_cont.w_req": {
    "etiqueta": "Ancho necesario: Entrada HV (1.ª placa), continuo",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "0,04",
+   "texto": "0,01",
    "unidad": "mm",
-   "valor": 3.616706587425037e-05
+   "valor": 6.262663607674678e-06
   },
   "pista.entrada_pk.P": {
    "etiqueta": "Pérdidas: Entrada HV (1.ª placa), Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "4,72",
+   "texto": "0,02",
    "unidad": "W",
-   "valor": 4.721345092379365
+   "valor": 0.022673732319867617
   },
   "pista.entrada_pk.dT": {
    "etiqueta": "ΔT estimado: Entrada HV (1.ª placa), Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "19,4",
+   "texto": "0,0",
    "unidad": "°C",
-   "valor": 19.350390617080137
+   "valor": 0.046543928285992305
   },
   "pista.entrada_pk.w_req": {
    "etiqueta": "Ancho necesario: Entrada HV (1.ª placa), Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "34,31",
+   "texto": "0,69",
    "unidad": "mm",
-   "valor": 0.03430559770434707
+   "valor": 0.000690460626117948
   },
   "pista.puente_rms.P": {
    "etiqueta": "Pérdidas: DC-link ↔ puente, eficaz a Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "0,14",
+   "texto": "0,10",
    "unidad": "W",
-   "valor": 0.14455580396963144
+   "valor": 0.09641126964940754
   },
   "pista.puente_rms.dT": {
    "etiqueta": "ΔT estimado: DC-link ↔ puente, eficaz a Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "2,1",
+   "texto": "1,3",
    "unidad": "°C",
-   "valor": 2.1202146820616936
+   "valor": 1.2894027041727871
   },
   "pista.puente_rms.w_req": {
    "etiqueta": "Ancho necesario: DC-link ↔ puente, eficaz a Ipk",
    "seccion": "4. Pistas y vías de potencia",
-   "texto": "3,84",
+   "texto": "2,22",
    "unidad": "mm",
-   "valor": 0.003842195322725168
+   "valor": 0.0022213956118772313
   },
   "ret_A1": {
    "etiqueta": "Retardo de la cadena / semiperiodo de PWM",
    "seccion": "7. Sensado y adquisición",
-   "texto": "12,0",
+   "texto": "18,0",
    "unidad": "%",
-   "valor": 0.12000000000000001
+   "valor": 0.18
   },
   "rizado.L_EMS_max.bip_Vmax": {
    "etiqueta": "Rizado EMS, L máxima (bip_Vmax)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,09",
+   "texto": "0,06",
    "unidad": "A",
-   "valor": 0.08547008547008547
+   "valor": 0.057692307692307696
   },
   "rizado.L_EMS_max.unip_Vmax": {
    "etiqueta": "Rizado EMS, L máxima (unip_Vmax)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,02",
+   "texto": "0,01",
    "unidad": "A",
-   "valor": 0.021367521367521368
+   "valor": 0.014423076923076924
   },
   "rizado.L_EMS_max.unip_Vmin": {
    "etiqueta": "Rizado EMS, L máxima (unip_Vmin)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,02",
+   "texto": "0,01",
    "unidad": "A",
-   "valor": 0.017094017094017096
+   "valor": 0.012464387464387465
   },
   "rizado.L_EMS_min.bip_Vmax": {
    "etiqueta": "Rizado EMS, L mínima (bip_Vmax)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "5,21",
+   "texto": "3,52",
    "unidad": "A",
-   "valor": 5.208333333333334
+   "valor": 3.515625
   },
   "rizado.L_EMS_min.unip_Vmax": {
    "etiqueta": "Rizado EMS, L mínima (unip_Vmax)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "1,30",
+   "texto": "0,88",
    "unidad": "A",
-   "valor": 1.3020833333333335
+   "valor": 0.87890625
   },
   "rizado.L_EMS_min.unip_Vmin": {
    "etiqueta": "Rizado EMS, L mínima (unip_Vmin)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "1,04",
+   "texto": "0,76",
    "unidad": "A",
-   "valor": 1.0416666666666667
+   "valor": 0.759548611111111
   },
   "rizado.L_HEMS_max.bip_Vmax": {
    "etiqueta": "Rizado HEMS, L máxima (bip_Vmax)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,89",
+   "texto": "0,60",
    "unidad": "A",
-   "valor": 0.8928571428571429
+   "valor": 0.6026785714285714
   },
   "rizado.L_HEMS_max.unip_Vmax": {
    "etiqueta": "Rizado HEMS, L máxima (unip_Vmax)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,22",
+   "texto": "0,15",
    "unidad": "A",
-   "valor": 0.22321428571428573
+   "valor": 0.15066964285714285
   },
   "rizado.L_HEMS_max.unip_Vmin": {
    "etiqueta": "Rizado HEMS, L máxima (unip_Vmin)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,18",
+   "texto": "0,13",
    "unidad": "A",
-   "valor": 0.17857142857142858
+   "valor": 0.13020833333333334
   },
   "rizado.L_HEMS_min.bip_Vmax": {
    "etiqueta": "Rizado HEMS, L mínima (bip_Vmax)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "1,61",
+   "texto": "1,09",
    "unidad": "A",
-   "valor": 1.6129032258064515
+   "valor": 1.0887096774193548
   },
   "rizado.L_HEMS_min.unip_Vmax": {
    "etiqueta": "Rizado HEMS, L mínima (unip_Vmax)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,40",
+   "texto": "0,27",
    "unidad": "A",
-   "valor": 0.4032258064516129
+   "valor": 0.2721774193548387
   },
   "rizado.L_HEMS_min.unip_Vmin": {
    "etiqueta": "Rizado HEMS, L mínima (unip_Vmin)",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,32",
+   "texto": "0,24",
    "unidad": "A",
-   "valor": 0.32258064516129026
+   "valor": 0.23521505376344082
   },
   "si.datos_ds.Lcrit": {
    "etiqueta": "Longitud crítica: Datos de los moduladores ΔΣ",
    "seccion": "6. Integridad de señal",
-   "texto": "48",
+   "texto": "47",
    "unidad": "mm",
-   "valor": 48.18573363013711
+   "valor": 47.102769863212615
   },
   "si.datos_ds.Z": {
    "etiqueta": "Impedancia: Datos de los moduladores ΔΣ",
    "seccion": "6. Integridad de señal",
-   "texto": "50,5",
+   "texto": "49,3",
    "unidad": "Ω",
-   "valor": 50.481053779845965
+   "valor": 49.34650319731528
   },
   "si.datos_phy.Lcrit": {
    "etiqueta": "Longitud crítica: Datos FPGA–PHY",
    "seccion": "6. Integridad de señal",
    "texto": "24",
    "unidad": "mm",
-   "valor": 24.092866815068554
+   "valor": 23.551384931606307
   },
   "si.datos_phy.Z": {
    "etiqueta": "Impedancia: Datos FPGA–PHY",
    "seccion": "6. Integridad de señal",
-   "texto": "50,5",
+   "texto": "49,3",
    "unidad": "Ω",
-   "valor": 50.481053779845965
+   "valor": 49.34650319731528
   },
   "si.jtag_tck.Lcrit": {
    "etiqueta": "Longitud crítica: JTAG TCK",
    "seccion": "6. Integridad de señal",
-   "texto": "61",
+   "texto": "60",
    "unidad": "mm",
-   "valor": 60.66913876088294
+   "valor": 59.6338461914922
   },
   "si.jtag_tck.Z": {
    "etiqueta": "Impedancia: JTAG TCK",
    "seccion": "6. Integridad de señal",
-   "texto": "50,1",
+   "texto": "49,3",
    "unidad": "Ω",
-   "valor": 50.10923277448832
+   "valor": 49.254063614477126
   },
   "si.mdi_in.Lcrit": {
    "etiqueta": "Longitud crítica: EtherCAT IN (MDI)",
    "seccion": "6. Integridad de señal",
-   "texto": "91",
+   "texto": "89",
    "unidad": "mm",
-   "valor": 91.00370814132441
+   "valor": 89.4507692872383
   },
   "si.mdi_in.Z": {
    "etiqueta": "Impedancia: EtherCAT IN (MDI)",
    "seccion": "6. Integridad de señal",
-   "texto": "98,0",
+   "texto": "96,3",
    "unidad": "Ω",
-   "valor": 97.98612819130618
+   "valor": 96.31388716308653
   },
   "si.mdi_out.Lcrit": {
    "etiqueta": "Longitud crítica: EtherCAT OUT (MDI)",
    "seccion": "6. Integridad de señal",
-   "texto": "91",
+   "texto": "89",
    "unidad": "mm",
-   "valor": 91.00370814132441
+   "valor": 89.4507692872383
   },
   "si.mdi_out.Z": {
    "etiqueta": "Impedancia: EtherCAT OUT (MDI)",
    "seccion": "6. Integridad de señal",
-   "texto": "98,0",
+   "texto": "96,3",
    "unidad": "Ω",
-   "valor": 97.98612819130618
+   "valor": 96.31388716308653
   },
   "si.pwm.Lcrit": {
    "etiqueta": "Longitud crítica: PWM a los drivers",
    "seccion": "6. Integridad de señal",
-   "texto": "61",
+   "texto": "60",
    "unidad": "mm",
-   "valor": 60.66913876088294
+   "valor": 59.6338461914922
   },
   "si.pwm.Z": {
    "etiqueta": "Impedancia: PWM a los drivers",
    "seccion": "6. Integridad de señal",
-   "texto": "50,1",
+   "texto": "49,3",
    "unidad": "Ω",
-   "valor": 50.10923277448832
+   "valor": 49.254063614477126
   },
   "si.reloj_ds.Lcrit": {
    "etiqueta": "Longitud crítica: Reloj de los moduladores ΔΣ",
    "seccion": "6. Integridad de señal",
    "texto": "24",
    "unidad": "mm",
-   "valor": 24.092866815068554
+   "valor": 23.551384931606307
   },
   "si.reloj_ds.Z": {
    "etiqueta": "Impedancia: Reloj de los moduladores ΔΣ",
    "seccion": "6. Integridad de señal",
-   "texto": "50,5",
+   "texto": "49,3",
    "unidad": "Ω",
-   "valor": 50.481053779845965
+   "valor": 49.34650319731528
   },
   "si.reloj_phy.Lcrit": {
    "etiqueta": "Longitud crítica: Reloj FPGA–PHY",
    "seccion": "6. Integridad de señal",
    "texto": "24",
    "unidad": "mm",
-   "valor": 24.092866815068554
+   "valor": 23.551384931606307
   },
   "si.reloj_phy.Z": {
    "etiqueta": "Impedancia: Reloj FPGA–PHY",
    "seccion": "6. Integridad de señal",
-   "texto": "50,5",
+   "texto": "49,3",
    "unidad": "Ω",
-   "valor": 50.481053779845965
+   "valor": 49.34650319731528
   },
   "t_blank": {
    "etiqueta": "Tiempo de blanking externo",
@@ -4238,9 +4238,9 @@
   "t_fl_data": {
    "etiqueta": "Tiempo de vuelo de los datos",
    "seccion": "6. Integridad de señal",
-   "texto": "0,415",
+   "texto": "0,425",
    "unidad": "ns",
-   "valor": 4.150606101282076e-10
+   "valor": 4.2460347996689794e-10
   },
   "t_grupo_ds": {
    "etiqueta": "Retardo de grupo del filtro",
@@ -4252,86 +4252,86 @@
   "t_skew_clk": {
    "etiqueta": "Desfase del reloj por diferencia de longitud",
    "seccion": "6. Integridad de señal",
-   "texto": "0,069",
+   "texto": "0,071",
    "unidad": "ns",
-   "valor": 6.917676835470126e-11
+   "valor": 7.076724666114967e-11
   },
   "t_subida.L_EMS_max": {
    "etiqueta": "Tiempo de 0 a Ipk, EMS, L máxima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "24,85",
+   "texto": "20,19",
    "unidad": "ms",
-   "valor": 24.851994338807028
+   "valor": 20.18546302185263
   },
   "t_subida.L_EMS_min": {
    "etiqueta": "Tiempo de 0 a Ipk, EMS, L mínima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "0,41",
+   "texto": "0,33",
    "unidad": "ms",
-   "valor": 0.4078275994060641
+   "valor": 0.33124862394835086
   },
   "t_subida.L_HEMS_max": {
    "etiqueta": "Tiempo de 0 a Ipk, HEMS, L máxima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "2,38",
+   "texto": "1,93",
    "unidad": "ms",
-   "valor": 2.378994329868707
+   "valor": 1.9322836396987133
   },
   "t_subida.L_HEMS_min": {
    "etiqueta": "Tiempo de 0 a Ipk, HEMS, L mínima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "1,32",
+   "texto": "1,07",
    "unidad": "ms",
-   "valor": 1.3169432897487487
+   "valor": 1.0696570148332163
   },
   "tau.L_EMS_max": {
    "etiqueta": "L/R, EMS, L máxima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "97,5",
+   "texto": "106,4",
    "unidad": "ms",
-   "valor": 97.5
+   "valor": 106.36363636363636
   },
   "tau.L_EMS_min": {
    "etiqueta": "L/R, EMS, L mínima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "1,6",
+   "texto": "1,7",
    "unidad": "ms",
-   "valor": 1.6
+   "valor": 1.7454545454545454
   },
   "tau.L_HEMS_max": {
    "etiqueta": "L/R, HEMS, L máxima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "9,3",
+   "texto": "10,2",
    "unidad": "ms",
-   "valor": 9.333333333333334
+   "valor": 10.18181818181818
   },
   "tau.L_HEMS_min": {
    "etiqueta": "L/R, HEMS, L mínima",
    "seccion": "1. Potencia y bus DC",
-   "texto": "5,2",
+   "texto": "5,6",
    "unidad": "ms",
-   "valor": 5.166666666666668
+   "valor": 5.636363636363637
   },
   "tau_on": {
    "etiqueta": "Constante de tiempo de encendido",
    "seccion": "8. Gate driving",
-   "texto": "26,4",
+   "texto": "38,0",
    "unidad": "ns",
-   "valor": 2.6383999999999997e-08
+   "valor": 3.8024000000000004e-08
   },
   "w_50_ms": {
    "etiqueta": "Ancho para 50 Ω en microstrip",
    "seccion": "6. Integridad de señal",
-   "texto": "0,291",
+   "texto": "0,282",
    "unidad": "mm",
-   "valor": 0.0002911342802562057
+   "valor": 0.0002822129147318072
   },
   "w_50_sl": {
    "etiqueta": "Ancho para 50 Ω en stripline",
    "seccion": "6. Integridad de señal",
-   "texto": "0,123",
+   "texto": "0,115",
    "unidad": "mm",
-   "valor": 0.0001234786433832092
+   "valor": 0.00011526075528919919
   }
  },
  "version_motor": "1.0"
