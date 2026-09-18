@@ -1,0 +1,23 @@
+{
+  "_comentario": "Tareas equivalentes a las de H12/LPU/.vscode/tasks.json, pero con las rutas desde la raíz del repositorio. Si abres el repositorio entero en VS Code, copia estas dos tareas dentro del array \"tasks\" de .vscode/tasks.json de la raíz (si ese fichero ya existe, añade solo las tareas, sin duplicar \"version\").",
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "LPU · Cálculos: vista previa",
+      "detail": "Recalcula y deja el informe general y el de cambios en H12/LPU/salida/ (no modifica docs/)",
+      "type": "shell",
+      "command": "python H12/LPU/calculos/calcular.py",
+      "windows": { "command": "py H12\\LPU\\calculos\\calcular.py" },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "LPU · Cálculos: pruebas del motor",
+      "detail": "Comprueba que las fórmulas siguen dando los resultados de referencia",
+      "type": "shell",
+      "command": "python -m pytest -q -p no:cacheprovider H12/LPU/tests",
+      "windows": { "command": "py -m pytest -q -p no:cacheprovider H12\\LPU\\tests" },
+      "problemMatcher": []
+    }
+  ]
+}

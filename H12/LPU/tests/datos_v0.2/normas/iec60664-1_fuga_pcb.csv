@@ -1,0 +1,8 @@
+tension_V,PD1_mm,PD2_mm,verificacion
+250,0.56,1.25,sin verificar
+320,0.75,1.6,sin verificar
+400,1.0,2.0,parcial (PD2: TI SLUAAR5)
+500,1.3,2.5,sin verificar
+630,1.8,3.2,sin verificar
+800,2.4,4.0,sin verificar
+1000,3.2,5.0,verificado (Vishay)

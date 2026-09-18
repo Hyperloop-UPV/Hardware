@@ -1,0 +1,11 @@
+# Vista previa local de los informes
+salida/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# El repositorio del equipo ignora los .csv; en esta carpeta sí hacen falta
+!*.csv
