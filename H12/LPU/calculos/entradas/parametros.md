@@ -20,7 +20,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | N_MD | Número de Magnet Driver conectados al bus | 10 | – | U | OK | DCB-03 · SYS-01 | 4 HEMS + 6 EMS |
 | Bus_topo | Distribución del bus: «Encadenado» o «Estrella» | Estrella | – | TFG | TBD | DCB-05 · ME-I-03 | Encadenado: la primera placa conduce la corriente de todas |
 | dVdc_pct | Rizado máximo de tensión en el DC-link (fracción de Vbus_min) | 1 | % | TFG | AC | DCB-07 · HW-02 | 1 % de 400 V = 4 V  |
-| eta_pwr | Rendimiento de la etapa de potencia (para la corriente media de bus) | 97 | % | P | TBD | — | PROVISIONAL. Ajustar con las pérdidas del puente del informe cuando se elija componente |
+| eta_pwr | Rendimiento de la etapa de potencia (para la corriente media de bus) | 96 | % | P | TBD | — | PROVISIONAL. Ajustar con las pérdidas del puente del informe cuando se elija componente |
 
 ## 2. Carga: electroimanes (prototipo H11)
 
@@ -38,7 +38,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | E_EMS | Energía devuelta al desmagnetizar el EMS desde 55 A (mapa H11) | 15,6 | J | C | AC | 6.1.3 · EM-D-03 | Mapa hasta ±55 A |
 | E_HEMS | Energía devuelta al desmagnetizar el HEMS desde −55 A, 6 mm (mapa H11) | 16,7 | J | C | AC | 6.1.3 · EM-D-03 | Peor caso del H11 |
 | I_map | Corriente máxima cubierta por los mapas de inductancia | 55 | A | R7 | OK | EM-D-03 |  |
-| dI_pp_max | Rizado de corriente pico a pico máximo admisible | 2 | A | — | TBD | LOAD-07 · EM-C-03 | PROVISIONAL. |
+| dI_pp_max | Rizado de corriente pico a pico máximo admisible | 1,5 | A | — | TBD | LOAD-07 · EM-C-03 | PROVISIONAL. |
 | T_coil_max | Temperatura máxima de la bobina (umbral de protección) | 110 | °C | — | TBD | SAF-01 · sin pendiente | PROVISIONAL. No hay cuestión abierta que lo resuelva: proponer a EM-D |
 
 ## 3. Conmutación y MOSFET
