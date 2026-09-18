@@ -3,3 +3,8 @@
 *.kicad_pro text eol=lf
 *.kicad_dru text eol=lf
 *.step filter=lfs diff=lfs merge=lfs -text
+
+# KiCad 9+ built-in semantic merge drivers. Configured per clone by KiCad's
+# built-in version control (`merge.kicad-schematic.driver` etc. in .git/config).
+*.kicad_sch merge=kicad-schematic
+*.kicad_pcb merge=kicad-pcb

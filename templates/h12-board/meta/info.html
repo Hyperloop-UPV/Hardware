@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>H12 Board Template</title>
+</head>
+<body>
+<h1>HL UPV H12 Board Template</h1>
+<p>Standard project scaffold for Hyperloop UPV H12 PCBs.</p>
+<p>Includes project-local library tables pointing at
+<code>../../libraries/</code> (shared symbols and footprints at the repo
+root) and KiCad 10 defaults for design rules, ERC/DRC severities and BOM
+export.</p>
+<h2>Layout assumption</h2>
+<p>The template expects the project to live <strong>two directory levels
+deep</strong> relative to the repo root &mdash; e.g. <code>H12/MyBoard/</code>
+&mdash; so that the library paths <code>../../libraries/...</code> resolve
+to the repo's shared libraries. Adjust the library table URIs if you
+place the project elsewhere.</p>
+<h2>How to use</h2>
+<ol>
+  <li>Install the template once: <em>Preferences &rarr; Configure Paths
+      &rarr; User Templates</em>, point at the <code>templates/h12-board/</code>
+      folder of this repo.</li>
+  <li>Create a new project: <em>File &rarr; New Project from Template
+      &rarr; h12-board</em>. KiCad copies the template and renames the
+      files to your chosen project name; <code>${PROJECTNAME}</code>
+      inside the files is replaced automatically.</li>
+  <li>Commit the new project folder under
+      <code>H12/&lt;your-board&gt;/</code> so library paths stay
+      correct.</li>
+</ol>
+</body>
+</html>
