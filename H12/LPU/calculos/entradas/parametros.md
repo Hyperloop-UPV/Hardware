@@ -14,7 +14,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
-| Vbus_min | Tensión mínima del bus de HV | 335 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
+| Vbus_min | Tensión mínima del bus de HV | 350 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
 | Vbus_max | Tensión máxima del bus de HV | 405 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
 | V_cont | Tensión continua que deben soportar componentes y aislamiento | 650 | V | U | OK | DCB-02 · ISO-06 |  |
 | N_MD | Número de Magnet Driver conectados al bus | 10 | – | U | OK | DCB-03 · SYS-01 | 4 HEMS + 6 EMS |
@@ -29,7 +29,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | Rcoil | Resistencia de la bobina | 1,1 | Ω | U | OK | LOAD-01 | Medida en la bobina construida. Nuevas bobinas: EM-D-04 |
 | Ipk | Corriente de pico (primeros segundos de la levitación) | 55 | A | U | OK | LOAD-03 |  |
 | t_pk | Duración del pico de corriente | 2 | s | — | TBD | LOAD-03 · EM-C-01 | PROVISIONAL. «Primeros segundos» |
-| Irms_cont | Corriente eficaz en régimen permanente (dimensionado térmico) | 5 | A | TFG | TBD | LOAD-05 · EM-C-01 | Valor mencionado en el TFG, sin revalidar |
+| Irms_cont | Corriente eficaz en régimen permanente (dimensionado térmico) | 10 | A | TFG | TBD | LOAD-05 · EM-C-01 | Valor mencionado en el TFG, sin revalidar |
 | L_EMS_min | Inductancia incremental mínima del EMS | 1,92 | mH | R5 | AC | LOAD-01 · EM-D-01/02 | Sección 6.1.1 |
 | L_EMS_max | Inductancia incremental máxima del EMS | 117 | mH | R5 | AC | LOAD-01 · EM-D-01/02 | Sección 6.1.1 |
 | L_HEMS_min | Inductancia incremental mínima del HEMS (dψ/di derivada) | 6,2 | mH | C | OK | LOAD-01 | Sección 6.1.2 (derivado del Excel R7) |
@@ -39,7 +39,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | E_HEMS | Energía devuelta al desmagnetizar el HEMS desde −55 A, 6 mm (mapa H11) | 16,7 | J | C | AC | 6.1.3 · EM-D-03 | Peor caso del H11 |
 | I_map | Corriente máxima cubierta por los mapas de inductancia | 55 | A | R7 | OK | EM-D-03 |  |
 | dI_pp_max | Rizado de corriente pico a pico máximo admisible | 2 | A | — | TBD | LOAD-07 · EM-C-03 | PROVISIONAL. |
-| T_coil_max | Temperatura máxima de la bobina (umbral de protección) | 120 | °C | — | TBD | SAF-01 · sin pendiente | PROVISIONAL. No hay cuestión abierta que lo resuelva: proponer a EM-D |
+| T_coil_max | Temperatura máxima de la bobina (umbral de protección) | 110 | °C | — | TBD | SAF-01 · sin pendiente | PROVISIONAL. No hay cuestión abierta que lo resuelva: proponer a EM-D |
 
 ## 3. Conmutación y MOSFET
 
