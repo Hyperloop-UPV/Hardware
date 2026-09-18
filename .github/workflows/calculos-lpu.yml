@@ -1,0 +1,95 @@
+name: Cálculos LPU (Magnet Driver Abejorro)
+
+# Recalcula los cálculos de diseño del Magnet Driver Abejorro (carpeta H12/LPU) cuando cambian
+# sus entradas o su motor de cálculo. No se ejecuta con los cambios de otras carpetas del repositorio.
+#
+# - push a la rama principal: guarda el informe general y el de cambios en H12/LPU/docs/calculos
+#   y los deja descargables en la ejecución;
+# - pull request: solo calcula y deja los informes descargables (no escribe en el repositorio);
+# - ejecución manual (Actions > Cálculos LPU > Run workflow): igual que un push.
+#
+# Si la carpeta del proyecto cambia de sitio, hay que actualizar PROY, los filtros «paths» y la ruta
+# del paso «Dejar los informes descargables».
+# Si la rama principal no es «main», hay que cambiarla en «branches».
+# Si la rama principal está protegida y la Action no puede escribir, ponga PUBLICAR: "no":
+# entonces solo genera las descargas y los informes se guardan a mano desde la vista previa local.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "H12/LPU/calculos/**"
+      - "H12/LPU/tests/**"
+      - ".github/workflows/calculos-lpu.yml"
+  pull_request:
+    paths:
+      - "H12/LPU/calculos/**"
+      - "H12/LPU/tests/**"
+  workflow_dispatch:
+
+env:
+  PROY: H12/LPU
+  PUBLICAR: "si"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: calculos-lpu-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  calcular:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Preparar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r "$PROY/requirements.txt"
+
+      - name: Pruebas del motor de cálculo
+        run: python -m pytest -q -p no:cacheprovider "$PROY/tests"
+
+      - name: Calcular y generar los informes
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ] || [ "$PUBLICAR" != "si" ]; then
+            python "$PROY/calculos/calcular.py" --commit "${{ github.event.pull_request.head.sha || github.sha }}"
+          else
+            python "$PROY/calculos/calcular.py" --publicar --commit "${{ github.sha }}"
+          fi
+
+      - name: Fecha para el nombre de la descarga
+        id: fecha
+        run: echo "valor=$(TZ=Europe/Madrid date +%Y-%m-%d_%H%M)" >> "$GITHUB_OUTPUT"
+
+      - name: Dejar los informes descargables
+        uses: actions/upload-artifact@v6
+        with:
+          name: informes-lpu-${{ steps.fecha.outputs.valor }}
+          path: H12/LPU/salida/
+          retention-days: 90
+
+      - name: Guardar los informes en el repositorio
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ "$PUBLICAR" != "si" ]; then
+            echo "PUBLICAR = $PUBLICAR: los informes solo quedan como descarga."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$PROY/docs/calculos"
+          if git diff --cached --quiet; then
+            echo "Los informes del repositorio no cambian."
+            exit 0
+          fi
+          git commit -m "LPU: informes de cálculo actualizados (${GITHUB_SHA::7}) [skip ci]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

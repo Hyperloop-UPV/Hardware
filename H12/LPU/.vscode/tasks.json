@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Cálculos: vista previa",
+      "detail": "Recalcula y deja el informe general y el de cambios en salida/ (no modifica docs/)",
+      "type": "shell",
+      "command": "python calculos/calcular.py",
+      "windows": { "command": "py calculos\\calcular.py" },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Cálculos: pruebas del motor",
+      "detail": "Comprueba que las fórmulas siguen dando los resultados de referencia",
+      "type": "shell",
+      "command": "python -m pytest -q -p no:cacheprovider tests",
+      "windows": { "command": "py -m pytest -q -p no:cacheprovider tests" },
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}

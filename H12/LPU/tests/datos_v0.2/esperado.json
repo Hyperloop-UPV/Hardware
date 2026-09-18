@@ -1,0 +1,380 @@
+{
+ "_nota": "Resultados de referencia con las entradas de tests/datos_v0.2. Verificados frente a la hoja Excel v0.1 (75 comprobaciones, mismos valores y resultados).",
+ "comprobaciones": {
+  "POT-01": {
+   "estado": "CUMPLE",
+   "valor": 1.3020833333333335,
+   "limite": 2.0
+  },
+  "POT-02": {
+   "estado": "CUMPLE",
+   "valor": 266.6666666666667,
+   "limite": 60.0
+  },
+  "POT-03": {
+   "estado": "CUMPLE",
+   "valor": 3.691428571428572,
+   "limite": 6.4
+  },
+  "POT-04": {
+   "estado": "NO CUMPLE",
+   "valor": 733.866215461637,
+   "limite": 600.0
+  },
+  "POT-05": {
+   "estado": "NO CUMPLE",
+   "valor": 733.866215461637,
+   "limite": 500.0
+  },
+  "POT-06": {
+   "estado": "CUMPLE",
+   "valor": 733.866215461637,
+   "limite": 900.0
+  },
+  "POT-07": {
+   "estado": "NO CUMPLE",
+   "valor": 0.00010499999999999999,
+   "limite": 0.00019874380165289254
+  },
+  "POT-08": {
+   "estado": "CUMPLE",
+   "valor": 550.0,
+   "limite": 440.00000000000006
+  },
+  "POT-09": {
+   "estado": "CUMPLE",
+   "valor": 550.0,
+   "limite": 600.0
+  },
+  "POT-10": {
+   "estado": "REVISAR",
+   "valor": 13.917525773195877,
+   "limite": 11.25
+  },
+  "POT-11": {
+   "estado": "REVISAR",
+   "valor": 139.17525773195877,
+   "limite": 11.25
+  },
+  "POT-12": {
+   "estado": "NO CUMPLE",
+   "valor": 500.0,
+   "limite": 600.0
+  },
+  "POT-13": {
+   "estado": "NO CUMPLE",
+   "valor": 500.0,
+   "limite": 733.866215461637
+  },
+  "GDR-01": {
+   "estado": "REVISAR",
+   "valor": 20.0,
+   "limite": 18.0
+  },
+  "GDR-02": {
+   "estado": "CUMPLE",
+   "valor": 20.0,
+   "limite": 22.0
+  },
+  "GDR-03": {
+   "estado": "CUMPLE",
+   "valor": -5.0,
+   "limite": -5.0
+  },
+  "GDR-04": {
+   "estado": "CUMPLE",
+   "valor": 0.2315,
+   "limite": 2.0
+  },
+  "GDR-05": {
+   "estado": "CUMPLE",
+   "valor": 0.009260000000000001,
+   "limite": 0.08
+  },
+  "GDR-06": {
+   "estado": "CUMPLE",
+   "valor": 0.009260000000000001,
+   "limite": 0.04
+  },
+  "GDR-07": {
+   "estado": "CUMPLE",
+   "valor": 3.2154340836012865,
+   "limite": 11.0
+  },
+  "GDR-08": {
+   "estado": "CUMPLE",
+   "valor": 3.286446693834626,
+   "limite": 9.0
+  },
+  "GDR-09": {
+   "estado": "CUMPLE",
+   "valor": 8510638297.872339,
+   "limite": 100000000000.0
+  },
+  "GDR-10": {
+   "estado": "CUMPLE",
+   "valor": 8510638297.872339,
+   "limite": 100000000000.0
+  },
+  "GDR-11": {
+   "estado": "CUMPLE",
+   "valor": 8510638297.872339,
+   "limite": 200000000000.0
+  },
+  "GDR-12": {
+   "estado": "CUMPLE",
+   "valor": -4.225531914893617,
+   "limite": 1.8
+  },
+  "GDR-13": {
+   "estado": "REVISAR",
+   "valor": 1.0000000000000001e-07,
+   "limite": 1.2000000000000002e-07
+  },
+  "GDR-14": {
+   "estado": "REVISAR",
+   "valor": 664.4166666666666,
+   "limite": 454.0
+  },
+  "GDR-15": {
+   "estado": "CUMPLE",
+   "valor": 1.160493358633776e-06,
+   "limite": 2e-06
+  },
+  "GDR-16": {
+   "estado": "CUMPLE",
+   "valor": 20.0,
+   "limite": 11.5
+  },
+  "BT-01": {
+   "estado": "CUMPLE",
+   "valor": 3.775808472832694,
+   "limite": 15.0
+  },
+  "BT-02": {
+   "estado": "CUMPLE",
+   "valor": 1.573253530346956,
+   "limite": 3.0
+  },
+  "TER-01": {
+   "estado": "CUMPLE",
+   "valor": 7.717256661176918e-05,
+   "limite": 0.0
+  },
+  "TER-02": {
+   "estado": "CUMPLE",
+   "valor": 4000.0,
+   "limite": 600.0
+  },
+  "TER-03": {
+   "estado": "CUMPLE",
+   "valor": 1.8,
+   "limite": 3.0
+  },
+  "TER-04": {
+   "estado": "NO CUMPLE",
+   "valor": 648.1301470060163,
+   "limite": 150.0
+  },
+  "TER-05": {
+   "estado": "CUMPLE",
+   "valor": 55.938707473887106,
+   "limite": 150.0
+  },
+  "TER-06": {
+   "estado": "REVISAR",
+   "valor": 648.1301470060163,
+   "limite": 125.0
+  },
+  "PIS-entrada_pk": {
+   "estado": "CUMPLE",
+   "valor": 0.035,
+   "limite": 0.03430559770434707
+  },
+  "PIS-entrada_cont": {
+   "estado": "CUMPLE",
+   "valor": 0.01,
+   "limite": 3.616706587425037e-05
+  },
+  "PIS-puente_rms": {
+   "estado": "CUMPLE",
+   "valor": 0.015,
+   "limite": 0.003842195322725168
+  },
+  "PIS-bobina_pk": {
+   "estado": "CUMPLE",
+   "valor": 0.015,
+   "limite": 0.01074855581861601
+  },
+  "PIS-bobina_cont": {
+   "estado": "CUMPLE",
+   "valor": 0.005,
+   "limite": 0.0003489990618511684
+  },
+  "AIS-HVLV_coat": {
+   "estado": "CUMPLE",
+   "valor": 0.0045000000000000005,
+   "limite": 0.004
+  },
+  "AIS-HVHV_coat": {
+   "estado": "CUMPLE",
+   "valor": 0.0025,
+   "limite": 0.002
+  },
+  "AIS-HVHV_int": {
+   "estado": "CUMPLE",
+   "valor": 0.0025,
+   "limite": 0.002
+  },
+  "AIS-HVHV_bare": {
+   "estado": "CUMPLE",
+   "valor": 0.0035,
+   "limite": 0.0030384615384615385
+  },
+  "AIS-WB": {
+   "estado": "CUMPLE",
+   "valor": 0.0045000000000000005,
+   "limite": 0.004
+  },
+  "AIS-F-ADUM4146": {
+   "estado": "CUMPLE",
+   "valor": 0.0083,
+   "limite": 0.004
+  },
+  "AIS-V-ADUM4146": {
+   "estado": "CUMPLE",
+   "valor": 2150.0,
+   "limite": 600.0
+  },
+  "AIS-F-AMC1302": {
+   "estado": "CUMPLE",
+   "valor": 0.0085,
+   "limite": 0.004
+  },
+  "AIS-V-AMC1302": {
+   "estado": "CUMPLE",
+   "valor": 2121.0,
+   "limite": 600.0
+  },
+  "AIS-F-AMC1306": {
+   "estado": "CUMPLE",
+   "valor": 0.0085,
+   "limite": 0.004
+  },
+  "AIS-V-AMC1306": {
+   "estado": "CUMPLE",
+   "valor": 2120.0,
+   "limite": 600.0
+  },
+  "AIS-F-MGJ2": {
+   "estado": "REVISAR",
+   "valor": 0.002,
+   "limite": 0.004
+  },
+  "AIS-V-MGJ2": {
+   "estado": "CUMPLE",
+   "valor": 2400.0,
+   "limite": 600.0
+  },
+  "SI-mdi_in": {
+   "estado": "CUMPLE",
+   "valor": 97.98612819130618,
+   "limite": 100.0
+  },
+  "SI-mdi_out": {
+   "estado": "CUMPLE",
+   "valor": 97.98612819130618,
+   "limite": 100.0
+  },
+  "SI-reloj_phy": {
+   "estado": "CUMPLE",
+   "valor": 50.481053779845965,
+   "limite": 50.0
+  },
+  "SI-datos_phy": {
+   "estado": "CUMPLE",
+   "valor": 50.481053779845965,
+   "limite": 50.0
+  },
+  "SI-reloj_ds": {
+   "estado": "CUMPLE",
+   "valor": 50.481053779845965,
+   "limite": 50.0
+  },
+  "SI-datos_ds": {
+   "estado": "CUMPLE",
+   "valor": 50.481053779845965,
+   "limite": 50.0
+  },
+  "SI-pwm": {
+   "estado": "CUMPLE",
+   "valor": 50.10923277448832,
+   "limite": 50.0
+  },
+  "SI-jtag_tck": {
+   "estado": "CUMPLE",
+   "valor": 50.10923277448832,
+   "limite": 50.0
+  },
+  "SI-SETUP": {
+   "estado": "CUMPLE",
+   "valor": 5.015762621517089e-09,
+   "limite": 0.0
+  },
+  "SI-HOLD": {
+   "estado": "CUMPLE",
+   "valor": 3.4588384177350645e-10,
+   "limite": 0.0
+  },
+  "SEN-01": {
+   "estado": "CUMPLE",
+   "valor": 100.0,
+   "limite": 72.0
+  },
+  "SEN-02": {
+   "estado": "CUMPLE",
+   "valor": 80.0,
+   "limite": 60.0
+  },
+  "SEN-03": {
+   "estado": "CUMPLE",
+   "valor": 80.0,
+   "limite": 100.0
+  },
+  "SEN-04": {
+   "estado": "CUMPLE",
+   "valor": null,
+   "limite": null
+  },
+  "SEN-05": {
+   "estado": "CUMPLE",
+   "valor": 1.92e-05,
+   "limite": 2.5e-05
+  },
+  "SEN-06": {
+   "estado": "CUMPLE",
+   "valor": 0.03359189471243043,
+   "limite": 0.125
+  },
+  "SEN-07": {
+   "estado": "CUMPLE",
+   "valor": 183.4010300961716,
+   "limite": 200.0
+  },
+  "SEN-08": {
+   "estado": "NO CUMPLE",
+   "valor": 700.0,
+   "limite": 733.866215461637
+  },
+  "SEN-09": {
+   "estado": "CUMPLE",
+   "valor": 450.0,
+   "limite": 400.0
+  },
+  "SEN-10": {
+   "estado": "CUMPLE",
+   "valor": 450.0,
+   "limite": 600.0
+  }
+ }
+}
