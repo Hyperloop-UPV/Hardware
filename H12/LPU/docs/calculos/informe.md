@@ -2,8 +2,8 @@
 
 | Dato | Valor |
 |---|---|
-| Fecha | 18/09/2026 11:49 (hora de Madrid) |
-| Versión de las entradas | commit `8a62941` |
+| Fecha | 18/09/2026 11:53 (hora de Madrid) |
+| Versión de las entradas | commit `6940202` |
 | Motor de cálculo | 1.0 |
 | Documento base | Requisitos y arquitectura, borrador v0.2 (`docs/requisitos`) |
 | MOSFET seleccionado | SCT012H90G3AG |
@@ -33,9 +33,9 @@ El cálculo incluye 75 comprobaciones. «REVISAR» indica un criterio blando o u
 
 | Resultado | Número |
 |---|---|
-| CUMPLE | 61 |
+| CUMPLE | 62 |
 | NO CUMPLE | 8 |
-| REVISAR | 6 |
+| REVISAR | 5 |
 
 Comprobaciones que no cumplen o que hay que revisar:
 
@@ -48,11 +48,10 @@ Comprobaciones que no cumplen o que hay que revisar:
 | POT-12 | Tensión nominal del fusible frente a V_cont | 500 | 650 | V | **NO CUMPLE** | DCB-02 · DCB-06 | HW-02 |
 | POT-13 | Tensión nominal del fusible frente a la tensión de fallo | 500 | 694 | V | **NO CUMPLE** | DCB-08 | HW-02, HW-03 |
 | GDR-01 | Vgs_on dentro del rango recomendado del MOSFET | 20 | 18 | V | **REVISAR** | GD-01 | HW-02 |
-| GDR-13 | Tiempo muerto configurado frente al mínimo | 100 | 120 | ns | **REVISAR** | PWR-04 | FW-08, HW-02 |
 | GDR-14 | Corriente de disparo a 25 °C (peor caso) frente a la ID pulsada | 664 | 454 | A | **REVISAR** | GD-01 · SAF-04 | HW-01, HW-02 |
-| TER-04 | Tj a Ipk (régimen permanente) | 1635,7 | 150,0 | °C | **NO CUMPLE** | PWR-05 | EM-C-01, ME-C-01, ME-C-02, HW-02 |
-| TER-05 | Tj en continuo (Irms_cont) | 179,1 | 150,0 | °C | **NO CUMPLE** | PWR-05 | EM-C-01, ME-C-01, ME-C-02 |
-| TER-06 | Coherencia: Tj a Ipk ≤ Tj_assumed usada para la RDS(on) | 1635,7 | 125,0 | °C | **REVISAR** | — |  |
+| TER-04 | Tj a Ipk (régimen permanente) | 1638,8 | 150,0 | °C | **NO CUMPLE** | PWR-05 | EM-C-01, ME-C-01, ME-C-02, HW-02 |
+| TER-05 | Tj en continuo (Irms_cont) | 179,7 | 150,0 | °C | **NO CUMPLE** | PWR-05 | EM-C-01, ME-C-01, ME-C-02 |
+| TER-06 | Coherencia: Tj a Ipk ≤ Tj_assumed usada para la RDS(on) | 1638,8 | 125,0 | °C | **REVISAR** | — |  |
 | AIS-F-MGJ2 | Línea de fuga del encapsulado: MGJ2D052005BSC (fuente aislada de puerta) | 2,0 | 4,0 | mm | **REVISAR** | ISO-01 · ISO-02 | HW-04, HW-05 |
 | SEN-05 | Tiempo de establecimiento del filtro frente al semiperiodo de PWM | 19,2 | 16,7 | µs | **REVISAR** | SNS-05 · SNS-06 | FW-01 |
 
@@ -178,21 +177,21 @@ Comparación de los candidatos completos de `componentes.md`. Las temperaturas u
 | Energía de conmutación escalada | µJ | 988 |
 | Conducción del MOSFET más cargado | W | 65,05 |
 | Conmutación (toda la de la rama en un MOSFET) | W | 29,64 |
-| Diodo en los tiempos muertos | W | 0,924 |
-| Pérdidas totales del MOSFET más cargado | W | 95,6 |
-| Temperatura de unión | °C | 1635,7 |
+| Diodo en los tiempos muertos | W | 1,109 |
+| Pérdidas totales del MOSFET más cargado | W | 95,8 |
+| Temperatura de unión | °C | 1638,8 |
 | Tj ≤ Tj_lim | – | **NO CUMPLE** |
 | Tj ≤ Tj_assumed (coherencia de la RDS(on)) | – | **REVISAR** |
-| Pérdidas del puente completo (4 MOSFET) | W | 191,2 |
+| Pérdidas del puente completo (4 MOSFET) | W | 191,6 |
 | **Caso B: Irms_cont** |  |  |
 | Energía de conmutación escalada | µJ | 180 |
 | Conducción del MOSFET más cargado | W | 2,15 |
 | Conmutación (toda la de la rama en un MOSFET) | W | 5,39 |
-| Diodo en los tiempos muertos | W | 0,168 |
+| Diodo en los tiempos muertos | W | 0,202 |
 | Pérdidas totales del MOSFET más cargado | W | 7,7 |
-| Temperatura de unión | °C | 179,1 |
+| Temperatura de unión | °C | 179,7 |
 | Tj ≤ Tj_lim | – | **NO CUMPLE** |
-| Pérdidas del puente completo (4 MOSFET) | W | 15,4 |
+| Pérdidas del puente completo (4 MOSFET) | W | 15,5 |
 | **Márgenes** |  |  |
 | VDS / V_cont | – | 1,38 |
 | VDS ≥ tensión del caso de fallo | – | CUMPLE |
@@ -239,12 +238,12 @@ Vías en paralelo con el FR-4: R_vía = t_pcb/(k_Cu·A_barril), A_barril = π/4�
 
 | Magnitud | Valor | Unidad | Expresión | Nota |
 |---|---|---|---|---|
-| Pérdidas del puente a Ipk (MOSFET seleccionado) | 191 | W | `apartado 2` |  |
-| Pérdidas del puente en continuo (MOSFET seleccionado) | 15,4 | W | `apartado 2` |  |
+| Pérdidas del puente a Ipk (MOSFET seleccionado) | 192 | W | `apartado 2` |  |
+| Pérdidas del puente en continuo (MOSFET seleccionado) | 15,5 | W | `apartado 2` |  |
 | Pérdidas por ESR en el DC-link (peor caso) | 1,51 | W | `I_cap_rms_wc²·ESR_dc` |  |
 | Consumo de la alimentación auxiliar (acaba en calor) | 4,1 | W | `P_BT_total` |  |
-| Pérdidas totales de la placa a Ipk | 198 | W | `P_br_pk + P_sh_pk + P_esr + P_BT_total` |  |
-| Pérdidas totales de la placa en continuo | 19,6 | W | `P_br_c + P_sh_c + P_esr·(Irms_cont/Ipk)² + P_BT_total` |  |
+| Pérdidas totales de la placa a Ipk | 199 | W | `P_br_pk + P_sh_pk + P_esr + P_BT_total` |  |
+| Pérdidas totales de la placa en continuo | 19,7 | W | `P_br_c + P_sh_c + P_esr·(Irms_cont/Ipk)² + P_BT_total` |  |
 | Gasto másico de agua | 0,0332 | kg/s | `Q_cool·997 kg/m³` |  |
 | Incremento de temperatura del agua por placa a Ipk | 1,43 | K | `P_board_pk/(m_dot·4180)` | Toda la pérdida al agua (conservador) |
 | Temperatura del agua en la última placa en serie | 51,4 | °C | `T_cool + N_cool_ser·dT_cool` |  |
@@ -256,9 +255,9 @@ MOSFET seleccionado: **SCT012H90G3AG**.
 
 | Magnitud | Valor | Unidad | Límite | Resultado | Expresión | Nota |
 |---|---|---|---|---|---|---|
-| Tj a Ipk (régimen permanente) (TER-04) | 1635,7 | °C | 150,0 | **NO CUMPLE** | `Tj_pk ≤ Tj_lim` | Conservador si t_pk es corto frente a las constantes térmicas |
-| Tj en continuo (Irms_cont) (TER-05) | 179,1 | °C | 150,0 | **NO CUMPLE** | `Tj_c ≤ Tj_lim` |  |
-| Coherencia: Tj a Ipk ≤ Tj_assumed usada para la RDS(on) (TER-06) | 1635,7 | °C | 125,0 | **REVISAR** | `Tj_pk ≤ Tj_assumed` | Si falla, suba Tj_assumed y recalcule |
+| Tj a Ipk (régimen permanente) (TER-04) | 1638,8 | °C | 150,0 | **NO CUMPLE** | `Tj_pk ≤ Tj_lim` | Conservador si t_pk es corto frente a las constantes térmicas |
+| Tj en continuo (Irms_cont) (TER-05) | 179,7 | °C | 150,0 | **NO CUMPLE** | `Tj_c ≤ Tj_lim` |  |
+| Coherencia: Tj a Ipk ≤ Tj_assumed usada para la RDS(on) (TER-06) | 1638,8 | °C | 125,0 | **REVISAR** | `Tj_pk ≤ Tj_assumed` | Si falla, suba Tj_assumed y recalcule |
 
 
 ## 4. Pistas y vías de potencia
@@ -326,11 +325,11 @@ Distancias requeridas a V_cont = 650 V: el máximo entre la regla del proyecto y
 
 | Magnitud | Valor | Unidad | Límite | Resultado | Expresión | Nota |
 |---|---|---|---|---|---|---|
-| Distancia prevista: HV–BT, superficie con coating (AIS-HVLV_coat) | 4,50 | mm | 4,00 | CUMPLE |  | Valor previsto en `diseno.md` (estado TBD) |
+| Distancia prevista: HV–BT, superficie con coating (AIS-HVLV_coat) | 5,00 | mm | 4,00 | CUMPLE |  | Valor previsto en `diseno.md` (estado TBD) |
 | Distancia prevista: HV–HV, superficie con coating (AIS-HVHV_coat) | 2,50 | mm | 2,00 | CUMPLE |  | Valor previsto en `diseno.md` (estado TBD) |
 | Distancia prevista: HV–HV, capas internas (AIS-HVHV_int) | 2,50 | mm | 2,00 | CUMPLE |  | Valor previsto en `diseno.md` (estado TBD) |
 | Distancia prevista: HV–HV, terminales sin recubrir (AIS-HVHV_bare) | 3,50 | mm | 3,29 | CUMPLE |  | Valor previsto en `diseno.md` (estado TBD) |
-| Distancia prevista: Taladros del waterblock – conductores (AIS-WB) | 4,50 | mm | 4,00 | CUMPLE |  | Valor previsto en `diseno.md` (estado TBD) |
+| Distancia prevista: Taladros del waterblock – conductores (AIS-WB) | 4,00 | mm | 4,00 | CUMPLE |  | Valor previsto en `diseno.md` (estado TBD) |
 
 ### 5.1 Componentes que cruzan la barrera HV–BT
 
@@ -365,14 +364,14 @@ Interfaces de `diseno.md`, tabla 2. Validez: microstrip 0,1 ≤ w/h ≤ 2; strip
 
 | Interfaz | Tipo/capa | Z obj. (Ω) | w (mm) | Z0 (Ω) | Zdif (Ω) | Desv. (%) | Fórmula válida | tpd (ps/mm) | L crítica (mm) | L prevista (mm) | ¿Línea de transmisión? | Estado |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| EtherCAT IN (MDI) | Dif/MS | 100 | 0,200 | 59,0 | 96,3 | −3,7 | Sí | 5,59 | 89 | 30 | Sí | TBD |
-| EtherCAT OUT (MDI) | Dif/MS | 100 | 0,200 | 59,0 | 96,3 | −3,7 | Sí | 5,59 | 89 | 30 | Sí | TBD |
-| Reloj FPGA–PHY | SE/SL | 50 | 0,120 | 49,3 | — | −1,3 | Sí | 7,08 | 24 | 60 | Sí | TBD |
-| Datos FPGA–PHY | SE/SL | 50 | 0,120 | 49,3 | — | −1,3 | Sí | 7,08 | 24 | 60 | Sí | TBD |
-| Reloj de los moduladores ΔΣ | SE/SL | 50 | 0,120 | 49,3 | — | −1,3 | Sí | 7,08 | 24 | 80 | Sí | TBD |
-| Datos de los moduladores ΔΣ | SE/SL | 50 | 0,120 | 49,3 | — | −1,3 | Sí | 7,08 | 47 | 80 | Sí | TBD |
-| PWM a los drivers | SE/MS | 50 | 0,290 | 49,3 | — | −1,5 | Sí | 5,59 | 60 | 100 | Sí | TBD |
-| JTAG TCK | SE/MS | 50 | 0,290 | 49,3 | — | −1,5 | Sí | 5,59 | 60 | 100 | Sí | TBD |
+| EtherCAT IN (MDI) | Dif/MS | 100 | 0,200 | 59,0 | 96,3 | −3,7 | Sí | 5,59 | 149 | 30 | Sí | TBD |
+| EtherCAT OUT (MDI) | Dif/MS | 100 | 0,200 | 59,0 | 96,3 | −3,7 | Sí | 5,59 | 149 | 30 | Sí | TBD |
+| Reloj FPGA–PHY | SE/SL | 50 | 0,120 | 49,3 | — | −1,3 | Sí | 7,08 | 118 | 60 | No | TBD |
+| Datos FPGA–PHY | SE/SL | 50 | 0,120 | 49,3 | — | −1,3 | Sí | 7,08 | 118 | 60 | No | TBD |
+| Reloj de los moduladores ΔΣ | SE/SL | 50 | 0,120 | 49,3 | — | −1,3 | Sí | 7,08 | 118 | 80 | No | TBD |
+| Datos de los moduladores ΔΣ | SE/SL | 50 | 0,120 | 49,3 | — | −1,3 | Sí | 7,08 | 118 | 80 | No | TBD |
+| PWM a los drivers | SE/MS | 50 | 0,290 | 49,3 | — | −1,5 | Sí | 5,59 | 149 | 100 | No | TBD |
+| JTAG TCK | SE/MS | 50 | 0,290 | 49,3 | — | −1,5 | Sí | 5,59 | 149 | 100 | No | TBD |
 
 | Magnitud | Valor | Unidad | Límite | Resultado | Expresión | Nota |
 |---|---|---|---|---|---|---|
@@ -537,9 +536,9 @@ Driver ADuM4146 y fuente aislada MGJ2 (datos en `componentes.md`). MOSFET selecc
 | Magnitud | Valor | Unidad | Límite | Resultado | Expresión | Nota |
 |---|---|---|---|---|---|---|
 | Tiempo muerto mínimo | 120 | ns |  |  | `(tdoff + tf − tdon) + D_skew + t_dead_mrg` | Tiempos del MOSFET con su RG de ensayo |
-| Tiempo muerto configurado frente al mínimo (GDR-13) | 100 | ns | 120 | **REVISAR** | `t_dead ≥ t_dead_min` |  |
-| Error de tensión media por el tiempo muerto | 2,43 | V |  |  | `2·t_dead·fsw·Vbus_max` |  |
-| Error relativo a la tensión de bobina a Ipk | 4,0 | % |  |  | `dV_dead/V_coil_pk` | Lo compensa el lazo de corriente |
+| Tiempo muerto configurado frente al mínimo (GDR-13) | 120 | ns | 120 | CUMPLE | `t_dead ≥ t_dead_min` |  |
+| Error de tensión media por el tiempo muerto | 2,92 | V |  |  | `2·t_dead·fsw·Vbus_max` |  |
+| Error relativo a la tensión de bobina a Ipk | 4,8 | % |  |  | `dV_dead/V_coil_pk` | Lo compensa el lazo de corriente |
 
 ### 8.5 Protección DESAT
 
@@ -622,7 +621,7 @@ PoE es un enlace punto a punto y no encaja directamente con EtherCAT en línea (
 | GDR-10 | dv/dt frente a la CMTI de los sensores aislados | 8. Gate driving | 8,6 | 100,0 | kV/µs | CUMPLE | SNS-01 | HW-02, FW-01 |  |
 | GDR-11 | dv/dt frente a la CMTI de la fuente aislada | 8. Gate driving | 8,6 | 200,0 | kV/µs | CUMPLE | AUX-02 | HW-02 |  |
 | GDR-12 | Pico de VGS en OFF por efecto Miller | 8. Gate driving | −4,22 | 1,80 | V | CUMPLE | GD-01 | HW-02 | Con el Miller clamp activo |
-| GDR-13 | Tiempo muerto configurado frente al mínimo | 8. Gate driving | 100 | 120 | ns | **REVISAR** | PWR-04 | FW-08, HW-02 |  |
+| GDR-13 | Tiempo muerto configurado frente al mínimo | 8. Gate driving | 120 | 120 | ns | CUMPLE | PWR-04 | FW-08, HW-02 |  |
 | GDR-14 | Corriente de disparo a 25 °C (peor caso) frente a la ID pulsada | 8. Gate driving | 664 | 454 | A | **REVISAR** | GD-01 · SAF-04 | HW-01, HW-02 | En frío la RDS(on) es menor y el disparo llega más tarde |
 | GDR-15 | Tiempo de respuesta DESAT (enmascaramiento + blanking) | 8. Gate driving | 1,16 | 2,00 | µs | CUMPLE | GD-01 | HW-01 | No incluye la propagación interna ni el soft shutdown |
 | GDR-16 | Tensión de VDD2 por encima del UVLO del driver | 8. Gate driving | 20,0 | 11,5 | V | CUMPLE | GD-02 | HW-02 |  |
@@ -631,19 +630,19 @@ PoE es un enlace punto a punto y no encaja directamente con EtherCAT en línea (
 | TER-01 | Área de FR-4 restante bajo el pad | 3. Térmico | 79,3 | 0,0 | mm² | CUMPLE | PWR-06 | HW-02, PT-01 | Si es negativa, las vías no caben en el pad |
 | TER-02 | Rigidez dieléctrica del material de interfaz | 3. Térmico | 4000 | 650 | V | CUMPLE | ISO-04 · ISO-06 | ME-C-01, HW-04 | Margen exigido por definir con el tipo de aislamiento (HW-04) |
 | TER-03 | Potencia de pico en el shunt frente a su potencia nominal | 3. Térmico | 1,51 | 3,00 | W | CUMPLE | SNS-01 | HW-02, EM-C-01 | Si el pico es corto, usar la curva de sobrecarga del shunt |
-| TER-04 | Tj a Ipk (régimen permanente) | 3. Térmico | 1635,7 | 150,0 | °C | **NO CUMPLE** | PWR-05 | EM-C-01, ME-C-01, ME-C-02, HW-02 | Conservador si t_pk es corto frente a las constantes térmicas |
-| TER-05 | Tj en continuo (Irms_cont) | 3. Térmico | 179,1 | 150,0 | °C | **NO CUMPLE** | PWR-05 | EM-C-01, ME-C-01, ME-C-02 |  |
-| TER-06 | Coherencia: Tj a Ipk ≤ Tj_assumed usada para la RDS(on) | 3. Térmico | 1635,7 | 125,0 | °C | **REVISAR** | — |  | Si falla, suba Tj_assumed y recalcule |
+| TER-04 | Tj a Ipk (régimen permanente) | 3. Térmico | 1638,8 | 150,0 | °C | **NO CUMPLE** | PWR-05 | EM-C-01, ME-C-01, ME-C-02, HW-02 | Conservador si t_pk es corto frente a las constantes térmicas |
+| TER-05 | Tj en continuo (Irms_cont) | 3. Térmico | 179,7 | 150,0 | °C | **NO CUMPLE** | PWR-05 | EM-C-01, ME-C-01, ME-C-02 |  |
+| TER-06 | Coherencia: Tj a Ipk ≤ Tj_assumed usada para la RDS(on) | 3. Térmico | 1638,8 | 125,0 | °C | **REVISAR** | — |  | Si falla, suba Tj_assumed y recalcule |
 | PIS-entrada_pk | Ancho de pista: Entrada HV (1.ª placa), Ipk | 4. Pistas y vías de potencia | 35,0 | 0,7 | mm | CUMPLE | DCB-03 · LOAD-03 | MEC-03, PT-01, ME-I-03 |  |
 | PIS-entrada_cont | Ancho de pista: Entrada HV (1.ª placa), continuo | 4. Pistas y vías de potencia | 10,0 | 0,0 | mm | CUMPLE | DCB-03 · LOAD-03 | MEC-03, PT-01, ME-I-03 |  |
 | PIS-puente_rms | Ancho de pista: DC-link ↔ puente, eficaz a Ipk | 4. Pistas y vías de potencia | 15,0 | 2,2 | mm | CUMPLE | DCB-03 · LOAD-03 | MEC-03, PT-01, ME-I-03 |  |
 | PIS-bobina_pk | Ancho de pista: Puente → bobina, Ipk | 4. Pistas y vías de potencia | 15,0 | 7,5 | mm | CUMPLE | DCB-03 · LOAD-03 | MEC-03, PT-01, ME-I-03 |  |
 | PIS-bobina_cont | Ancho de pista: Puente → bobina, continuo | 4. Pistas y vías de potencia | 5,0 | 0,7 | mm | CUMPLE | DCB-03 · LOAD-03 | MEC-03, PT-01, ME-I-03 |  |
-| AIS-HVLV_coat | Distancia prevista: HV–BT, superficie con coating | 5. Aislamiento | 4,50 | 4,00 | mm | CUMPLE | ISO-02 · ISO-05 | HW-04, PT-01 (layout pendiente) | Valor previsto en `diseno.md` (estado TBD) |
+| AIS-HVLV_coat | Distancia prevista: HV–BT, superficie con coating | 5. Aislamiento | 5,00 | 4,00 | mm | CUMPLE | ISO-02 · ISO-05 | HW-04, PT-01 (layout pendiente) | Valor previsto en `diseno.md` (estado TBD) |
 | AIS-HVHV_coat | Distancia prevista: HV–HV, superficie con coating | 5. Aislamiento | 2,50 | 2,00 | mm | CUMPLE | ISO-03 | HW-04, PT-01 (layout pendiente) | Valor previsto en `diseno.md` (estado TBD) |
 | AIS-HVHV_int | Distancia prevista: HV–HV, capas internas | 5. Aislamiento | 2,50 | 2,00 | mm | CUMPLE | ISO-03 | HW-04, PT-01 (layout pendiente) | Valor previsto en `diseno.md` (estado TBD) |
 | AIS-HVHV_bare | Distancia prevista: HV–HV, terminales sin recubrir | 5. Aislamiento | 3,50 | 3,29 | mm | CUMPLE | ISO-03 | HW-04, PT-01 (layout pendiente) | Valor previsto en `diseno.md` (estado TBD) |
-| AIS-WB | Distancia prevista: Taladros del waterblock – conductores | 5. Aislamiento | 4,50 | 4,00 | mm | CUMPLE | ISO-04 | HW-04, PT-01 (layout pendiente) | Valor previsto en `diseno.md` (estado TBD) |
+| AIS-WB | Distancia prevista: Taladros del waterblock – conductores | 5. Aislamiento | 4,00 | 4,00 | mm | CUMPLE | ISO-04 | HW-04, PT-01 (layout pendiente) | Valor previsto en `diseno.md` (estado TBD) |
 | AIS-F-ADUM4146 | Línea de fuga del encapsulado: ADuM4146 (gate driver) | 5. Aislamiento | 8,3 | 4,0 | mm | CUMPLE | ISO-01 · ISO-02 | HW-04, HW-05 | ADI: 8,3 mm mín.; VIORM 2150 V pico |
 | AIS-V-ADUM4146 | Tensión de trabajo de la barrera: ADuM4146 (gate driver) | 5. Aislamiento | 2150 | 650 | V | CUMPLE | ISO-06 |  |  |
 | AIS-F-AMC1302 | Línea de fuga del encapsulado: AMC1302 (amplificador aislado) | 5. Aislamiento | 8,5 | 4,0 | mm | CUMPLE | ISO-01 · ISO-02 | HW-04, HW-05 | TI: ≥ 8,5 mm; VIORM 2121 V pico |
@@ -714,7 +713,7 @@ Instantánea de todos los parámetros escalares en el momento del cálculo (fich
 |---|---|---|---|---|---|---|---|
 | `fsw` | Frecuencia de conmutación | 30 | kHz | TFG | TBD | PWR-03 · FW-08 |  |
 | `Modulacion` | Modulación: «Unipolar» o «Bipolar» | Bipolar |  | TFG | TBD | PWR-03 · FW-08 |  |
-| `t_dead` | Tiempo muerto | 100 | ns | TFG | AC | PWR-04 · FW-08 | Red RC del TFG; pasa a ser configurable en la FPGA |
+| `t_dead` | Tiempo muerto | 120 | ns | TFG | AC | PWR-04 · FW-08 | Red RC del TFG; pasa a ser configurable en la FPGA |
 | `MOSFET_sel` | Referencia del MOSFET usado en el resto de cálculos (una de las columnas de componentes.md) | SCT012H90G3AG |  | P | AC | PWR-02 · HW-02 |  |
 | `D_worst` | Fracción del periodo que conduce el MOSFET más cargado | 1 |  | P | OK | SAF-05 | 1 = rueda libre permanente por los low-side (conservador). Con PWM en régimen, el más cargado conduce (1 + m)/2 |
 | `Tj_assumed` | Tj supuesta para evaluar RDS(on) | 125 | °C | P | AC | — | Debe ser ≥ Tj calculada (comprobación en el apartado MOSFET) |
@@ -972,7 +971,7 @@ Parámetros en estado TBD (valor provisional) y AC (a confirmar), con la cuesti�
 | AC | `L_EMS_0` | Inductancia del EMS a I = 0 (valor citado, columnas 5–6) | 26,7 mH | 6.1.1 |
 | AC | `E_EMS` | Energía devuelta al desmagnetizar el EMS desde 55 A (mapa H11) | 15,6 J | 6.1.3 · EM-D-03 |
 | AC | `E_HEMS` | Energía devuelta al desmagnetizar el HEMS desde −55 A, 6 mm (mapa H11) | 16,7 J | 6.1.3 · EM-D-03 |
-| AC | `t_dead` | Tiempo muerto | 100 ns | PWR-04 · FW-08 |
+| AC | `t_dead` | Tiempo muerto | 120 ns | PWR-04 · FW-08 |
 | AC | `MOSFET_sel` | Referencia del MOSFET usado en el resto de cálculos (una de las columnas de componentes.md) | SCT012H90G3AG | PWR-02 · HW-02 |
 | AC | `Tj_assumed` | Tj supuesta para evaluar RDS(on) | 125 °C | — |
 | AC | `Tj_lim` | Tj máxima de diseño (criterio) | 150 °C | — |

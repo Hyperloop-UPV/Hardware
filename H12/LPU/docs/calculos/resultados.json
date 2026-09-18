@@ -1,5 +1,5 @@
 {
- "commit": "8a62941a8fde2c6453ff07b3facbc108e011a78a",
+ "commit": "694020239588f2b06334246f56779e5c75a15533",
  "comprobaciones": {
   "AIS-F-ADUM4146": {
    "estado": "CUMPLE",
@@ -63,7 +63,7 @@
    "limite": "4,00",
    "seccion": "5. Aislamiento",
    "unidad": "mm",
-   "valor": "4,50"
+   "valor": "5,00"
   },
   "AIS-V-ADUM4146": {
    "estado": "CUMPLE",
@@ -103,7 +103,7 @@
    "limite": "4,00",
    "seccion": "5. Aislamiento",
    "unidad": "mm",
-   "valor": "4,50"
+   "valor": "4,00"
   },
   "BT-01": {
    "estado": "CUMPLE",
@@ -218,12 +218,12 @@
    "valor": "−4,22"
   },
   "GDR-13": {
-   "estado": "REVISAR",
+   "estado": "CUMPLE",
    "etiqueta": "Tiempo muerto configurado frente al mínimo",
    "limite": "120",
    "seccion": "8. Gate driving",
    "unidad": "ns",
-   "valor": "100"
+   "valor": "120"
   },
   "GDR-14": {
    "estado": "REVISAR",
@@ -583,7 +583,7 @@
    "limite": "150,0",
    "seccion": "3. Térmico",
    "unidad": "°C",
-   "valor": "1635,7"
+   "valor": "1638,8"
   },
   "TER-05": {
    "estado": "NO CUMPLE",
@@ -591,7 +591,7 @@
    "limite": "150,0",
    "seccion": "3. Térmico",
    "unidad": "°C",
-   "valor": "179,1"
+   "valor": "179,7"
   },
   "TER-06": {
    "estado": "REVISAR",
@@ -599,7 +599,7 @@
    "limite": "125,0",
    "seccion": "3. Térmico",
    "unidad": "°C",
-   "valor": "1635,7"
+   "valor": "1638,8"
   }
  },
  "entradas": {
@@ -1201,7 +1201,7 @@
   "distancias.HVLV_coat.Previsto (mm)": {
    "estado": "TBD",
    "etiqueta": "distancias HVLV_coat: Previsto (mm)",
-   "texto": "4,5"
+   "texto": "5"
   },
   "distancias.WB.Caso": {
    "estado": "TBD",
@@ -1221,7 +1221,7 @@
   "distancias.WB.Previsto (mm)": {
    "estado": "TBD",
    "etiqueta": "distancias WB: Previsto (mm)",
-   "texto": "4,5"
+   "texto": "4"
   },
   "interfaces.datos_ds.Ancho (mm)": {
    "estado": "TBD",
@@ -1271,7 +1271,7 @@
   "interfaces.datos_ds.tr (ns)": {
    "estado": "TBD",
    "etiqueta": "interfaces datos_ds: tr (ns)",
-   "texto": "2"
+   "texto": "5"
   },
   "interfaces.datos_phy.Ancho (mm)": {
    "estado": "TBD",
@@ -1321,7 +1321,7 @@
   "interfaces.datos_phy.tr (ns)": {
    "estado": "TBD",
    "etiqueta": "interfaces datos_phy: tr (ns)",
-   "texto": "1"
+   "texto": "5"
   },
   "interfaces.jtag_tck.Ancho (mm)": {
    "estado": "TBD",
@@ -1371,7 +1371,7 @@
   "interfaces.jtag_tck.tr (ns)": {
    "estado": "TBD",
    "etiqueta": "interfaces jtag_tck: tr (ns)",
-   "texto": "2"
+   "texto": "5"
   },
   "interfaces.mdi_in.Ancho (mm)": {
    "estado": "TBD",
@@ -1421,7 +1421,7 @@
   "interfaces.mdi_in.tr (ns)": {
    "estado": "TBD",
    "etiqueta": "interfaces mdi_in: tr (ns)",
-   "texto": "3"
+   "texto": "5"
   },
   "interfaces.mdi_out.Ancho (mm)": {
    "estado": "TBD",
@@ -1471,7 +1471,7 @@
   "interfaces.mdi_out.tr (ns)": {
    "estado": "TBD",
    "etiqueta": "interfaces mdi_out: tr (ns)",
-   "texto": "3"
+   "texto": "5"
   },
   "interfaces.pwm.Ancho (mm)": {
    "estado": "TBD",
@@ -1521,7 +1521,7 @@
   "interfaces.pwm.tr (ns)": {
    "estado": "TBD",
    "etiqueta": "interfaces pwm: tr (ns)",
-   "texto": "2"
+   "texto": "5"
   },
   "interfaces.reloj_ds.Ancho (mm)": {
    "estado": "TBD",
@@ -1571,7 +1571,7 @@
   "interfaces.reloj_ds.tr (ns)": {
    "estado": "TBD",
    "etiqueta": "interfaces reloj_ds: tr (ns)",
-   "texto": "1"
+   "texto": "5"
   },
   "interfaces.reloj_phy.Ancho (mm)": {
    "estado": "TBD",
@@ -1621,7 +1621,7 @@
   "interfaces.reloj_phy.tr (ns)": {
    "estado": "TBD",
    "etiqueta": "interfaces reloj_phy: tr (ns)",
-   "texto": "1"
+   "texto": "5"
   },
   "mosfet.SCT012H90G3AG.Ciss": {
    "estado": "",
@@ -2578,7 +2578,7 @@
    "estado": "AC",
    "etiqueta": "Tiempo muerto",
    "fuente": "TFG",
-   "texto": "100 ns"
+   "texto": "120 ns"
   },
   "param.t_dead_mrg": {
    "estado": "TBD",
@@ -2853,8 +2853,8 @@
    "texto": "DC-link ↔ puente, eficaz a Ipk"
   }
  },
- "fecha_texto": "18/09/2026 11:49 (hora de Madrid)",
- "generado": "2026-09-18T11:49:39+02:00",
+ "fecha_texto": "18/09/2026 11:53 (hora de Madrid)",
+ "generado": "2026-09-18T11:53:57+02:00",
  "resultados": {
   "A_barrel": {
    "etiqueta": "Sección de cobre de una vía",
@@ -2889,7 +2889,7 @@
    "seccion": "3. Térmico",
    "texto": "4,0",
    "unidad": "kJ",
-   "valor": 3967.1155984964203
+   "valor": 3974.50759849642
   },
   "E_chop": {
    "etiqueta": "Energía por evento en la resistencia (cota)",
@@ -3125,30 +3125,30 @@
   "P_board_c": {
    "etiqueta": "Pérdidas totales de la placa en continuo",
    "seccion": "3. Térmico",
-   "texto": "19,6",
+   "texto": "19,7",
    "unidad": "W",
-   "valor": 19.602404924821016
+   "valor": 19.669604924821016
   },
   "P_board_pk": {
    "etiqueta": "Pérdidas totales de la placa a Ipk",
    "seccion": "3. Térmico",
-   "texto": "198",
+   "texto": "199",
    "unidad": "W",
-   "valor": 198.355779924821
+   "valor": 198.725379924821
   },
   "P_br_c_m": {
    "etiqueta": "Pérdidas del puente en continuo (MOSFET seleccionado)",
    "seccion": "3. Térmico",
-   "texto": "15,4",
+   "texto": "15,5",
    "unidad": "W",
-   "valor": 15.416861111111109
+   "valor": 15.484061111111108
   },
   "P_br_pk_m": {
    "etiqueta": "Pérdidas del puente a Ipk (MOSFET seleccionado)",
    "seccion": "3. Térmico",
-   "texto": "191",
+   "texto": "192",
    "unidad": "W",
-   "valor": 191.24523611111113
+   "valor": 191.61483611111112
   },
   "P_chop_pk": {
    "etiqueta": "Potencia de pico en la resistencia",
@@ -3316,7 +3316,7 @@
    "seccion": "3. Térmico",
    "texto": "51,4",
    "unidad": "°C",
-   "valor": 51.427889745251214
+   "valor": 51.43055035867042
   },
   "V_coil_pk": {
    "etiqueta": "Tensión en la bobina a Ipk",
@@ -3526,7 +3526,7 @@
    "seccion": "3. Térmico",
    "texto": "1,43",
    "unidad": "K",
-   "valor": 1.4278897452512154
+   "valor": 1.4305503586704202
   },
   "dV_dc_pk": {
    "etiqueta": "Rizado de tensión en el DC-link en el punto Ipk",
@@ -3538,16 +3538,16 @@
   "dV_dead": {
    "etiqueta": "Error de tensión media por el tiempo muerto",
    "seccion": "8. Gate driving",
-   "texto": "2,43",
+   "texto": "2,92",
    "unidad": "V",
-   "valor": 2.43
+   "valor": 2.9160000000000004
   },
   "dV_dead_rel": {
    "etiqueta": "Error relativo a la tensión de bobina a Ipk",
    "seccion": "8. Gate driving",
-   "texto": "4,0",
+   "texto": "4,8",
    "unidad": "%",
-   "valor": 0.04016528925619835
+   "valor": 0.04819834710743802
   },
   "dVg": {
    "etiqueta": "Excursión de tensión de puerta",
@@ -3804,16 +3804,16 @@
   "mosfet.SCT012H90G3AG.Pbr_c": {
    "etiqueta": "SCT012H90G3AG: Pérdidas del puente completo (4 MOSFET)",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "15,4",
+   "texto": "15,5",
    "unidad": "W",
-   "valor": 15.416861111111109
+   "valor": 15.484061111111108
   },
   "mosfet.SCT012H90G3AG.Pbr_pk": {
    "etiqueta": "SCT012H90G3AG: Pérdidas del puente completo (4 MOSFET)",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "191,2",
+   "texto": "191,6",
    "unidad": "W",
-   "valor": 191.24523611111113
+   "valor": 191.61483611111112
   },
   "mosfet.SCT012H90G3AG.Pc_c": {
    "etiqueta": "SCT012H90G3AG: Conducción del MOSFET más cargado",
@@ -3834,28 +3834,28 @@
    "seccion": "2. MOSFET: comparador de candidatos",
    "texto": "7,7",
    "unidad": "W",
-   "valor": 7.708430555555554
+   "valor": 7.742030555555554
   },
   "mosfet.SCT012H90G3AG.Pdev_pk": {
    "etiqueta": "SCT012H90G3AG: Pérdidas totales del MOSFET más cargado",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "95,6",
+   "texto": "95,8",
    "unidad": "W",
-   "valor": 95.62261805555556
+   "valor": 95.80741805555556
   },
   "mosfet.SCT012H90G3AG.Pdt_c": {
    "etiqueta": "SCT012H90G3AG: Diodo en los tiempos muertos",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "0,168",
+   "texto": "0,202",
    "unidad": "W",
-   "valor": 0.16799999999999998
+   "valor": 0.2016
   },
   "mosfet.SCT012H90G3AG.Pdt_pk": {
    "etiqueta": "SCT012H90G3AG: Diodo en los tiempos muertos",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "0,924",
+   "texto": "1,109",
    "unidad": "W",
-   "valor": 0.9239999999999999
+   "valor": 1.1088
   },
   "mosfet.SCT012H90G3AG.Psw_c": {
    "etiqueta": "SCT012H90G3AG: Conmutación (toda la de la rama en un MOSFET)",
@@ -3888,16 +3888,16 @@
   "mosfet.SCT012H90G3AG.Tj_c": {
    "etiqueta": "SCT012H90G3AG: Temperatura de unión",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "179,1",
+   "texto": "179,7",
    "unidad": "°C",
-   "valor": 179.1415631956652
+   "valor": 179.70091033522056
   },
   "mosfet.SCT012H90G3AG.Tj_pk": {
    "etiqueta": "SCT012H90G3AG: Temperatura de unión",
    "seccion": "2. MOSFET: comparador de candidatos",
-   "texto": "1635,7",
+   "texto": "1638,8",
    "unidad": "°C",
-   "valor": 1635.7083381199632
+   "valor": 1638.7727746271312
   },
   "mosfet.SCT012H90G3AG.VDS_rel": {
    "etiqueta": "SCT012H90G3AG: VDS / V_cont",
@@ -4112,9 +4112,9 @@
   "si.datos_ds.Lcrit": {
    "etiqueta": "Longitud crítica: Datos de los moduladores ΔΣ",
    "seccion": "6. Integridad de señal",
-   "texto": "47",
+   "texto": "118",
    "unidad": "mm",
-   "valor": 47.102769863212615
+   "valor": 117.75692465803152
   },
   "si.datos_ds.Z": {
    "etiqueta": "Impedancia: Datos de los moduladores ΔΣ",
@@ -4126,9 +4126,9 @@
   "si.datos_phy.Lcrit": {
    "etiqueta": "Longitud crítica: Datos FPGA–PHY",
    "seccion": "6. Integridad de señal",
-   "texto": "24",
+   "texto": "118",
    "unidad": "mm",
-   "valor": 23.551384931606307
+   "valor": 117.75692465803152
   },
   "si.datos_phy.Z": {
    "etiqueta": "Impedancia: Datos FPGA–PHY",
@@ -4140,9 +4140,9 @@
   "si.jtag_tck.Lcrit": {
    "etiqueta": "Longitud crítica: JTAG TCK",
    "seccion": "6. Integridad de señal",
-   "texto": "60",
+   "texto": "149",
    "unidad": "mm",
-   "valor": 59.6338461914922
+   "valor": 149.08461547873048
   },
   "si.jtag_tck.Z": {
    "etiqueta": "Impedancia: JTAG TCK",
@@ -4154,9 +4154,9 @@
   "si.mdi_in.Lcrit": {
    "etiqueta": "Longitud crítica: EtherCAT IN (MDI)",
    "seccion": "6. Integridad de señal",
-   "texto": "89",
+   "texto": "149",
    "unidad": "mm",
-   "valor": 89.4507692872383
+   "valor": 149.08461547873048
   },
   "si.mdi_in.Z": {
    "etiqueta": "Impedancia: EtherCAT IN (MDI)",
@@ -4168,9 +4168,9 @@
   "si.mdi_out.Lcrit": {
    "etiqueta": "Longitud crítica: EtherCAT OUT (MDI)",
    "seccion": "6. Integridad de señal",
-   "texto": "89",
+   "texto": "149",
    "unidad": "mm",
-   "valor": 89.4507692872383
+   "valor": 149.08461547873048
   },
   "si.mdi_out.Z": {
    "etiqueta": "Impedancia: EtherCAT OUT (MDI)",
@@ -4182,9 +4182,9 @@
   "si.pwm.Lcrit": {
    "etiqueta": "Longitud crítica: PWM a los drivers",
    "seccion": "6. Integridad de señal",
-   "texto": "60",
+   "texto": "149",
    "unidad": "mm",
-   "valor": 59.6338461914922
+   "valor": 149.08461547873048
   },
   "si.pwm.Z": {
    "etiqueta": "Impedancia: PWM a los drivers",
@@ -4196,9 +4196,9 @@
   "si.reloj_ds.Lcrit": {
    "etiqueta": "Longitud crítica: Reloj de los moduladores ΔΣ",
    "seccion": "6. Integridad de señal",
-   "texto": "24",
+   "texto": "118",
    "unidad": "mm",
-   "valor": 23.551384931606307
+   "valor": 117.75692465803152
   },
   "si.reloj_ds.Z": {
    "etiqueta": "Impedancia: Reloj de los moduladores ΔΣ",
@@ -4210,9 +4210,9 @@
   "si.reloj_phy.Lcrit": {
    "etiqueta": "Longitud crítica: Reloj FPGA–PHY",
    "seccion": "6. Integridad de señal",
-   "texto": "24",
+   "texto": "118",
    "unidad": "mm",
-   "valor": 23.551384931606307
+   "valor": 117.75692465803152
   },
   "si.reloj_phy.Z": {
    "etiqueta": "Impedancia: Reloj FPGA–PHY",
