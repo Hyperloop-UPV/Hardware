@@ -16,10 +16,10 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 |---|---|--:|---|---|---|---|---|
 | Vbus_min | Tensión mínima del bus de HV | 335 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
 | Vbus_max | Tensión máxima del bus de HV | 405 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
-| V_cont | Tensión continua que deben soportar componentes y aislamiento | 600 | V | U | OK | DCB-02 · ISO-06 |  |
+| V_cont | Tensión continua que deben soportar componentes y aislamiento | 650 | V | U | OK | DCB-02 · ISO-06 |  |
 | N_MD | Número de Magnet Driver conectados al bus | 10 | – | U | OK | DCB-03 · SYS-01 | 4 HEMS + 6 EMS |
-| Bus_topo | Distribución del bus: «Encadenado» o «Estrella» | Encadenado | – | TFG | TBD | DCB-05 · ME-I-03 | Encadenado: la primera placa conduce la corriente de todas |
-| dVdc_pct | Rizado máximo de tensión en el DC-link (fracción de Vbus_min) | 2 | % | TFG | AC | DCB-07 · HW-02 | 2 % de 400 V = 8 V según el TFG |
+| Bus_topo | Distribución del bus: «Encadenado» o «Estrella» | Estrella | – | TFG | TBD | DCB-05 · ME-I-03 | Encadenado: la primera placa conduce la corriente de todas |
+| dVdc_pct | Rizado máximo de tensión en el DC-link (fracción de Vbus_min) | 1 | % | TFG | AC | DCB-07 · HW-02 | 1 % de 400 V = 4 V  |
 | eta_pwr | Rendimiento de la etapa de potencia (para la corriente media de bus) | 97 | % | P | TBD | — | PROVISIONAL. Ajustar con las pérdidas del puente del informe cuando se elija componente |
 
 ## 2. Carga: electroimanes (prototipo H11)
@@ -101,9 +101,9 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | V_res_rat | Tensión máxima de trabajo de cada resistencia del divisor | 200 | V | — | TBD | HW-02 | PROVISIONAL. Depende del encapsulado elegido |
 | P_res_rat | Potencia nominal de cada resistencia del divisor | 0,25 | W | — | TBD | HW-02 | PROVISIONAL. |
 | k_res | Factor de utilización de potencia de las resistencias (criterio) | 0,5 | – | P | TBD | — | PROVISIONAL. |
-| V_OV | Umbral de sobretensión de bus por hardware | 450 | V | — | TBD | SAF-01 · HW-01 | PROVISIONAL. |
+| V_OV | Umbral de sobretensión de bus por hardware | 420 | V | — | TBD | SAF-01 · HW-01 | PROVISIONAL. |
 | NTC_R25 | Resistencia de la NTC a 25 °C | 10 | kΩ | TFG | AC | LOAD-08 · HW-02 | GA10K4A1IA (TE) |
-| NTC_beta | Constante β(25/85) de la NTC | 3694 | K | TE | AC | LOAD-08 | Página de producto TE; contrastar con la tabla R-T |
+| NTC_beta | Constante β(25/85) de la NTC | 3598 | K | TE | AC | LOAD-08 | Página de producto TE; contrastar con la tabla R-T |
 | R_ntc_pu | Resistencia de polarización de la NTC | 10 | kΩ | — | TBD | SNS-03 | PROVISIONAL. |
 | V_ntc_ref | Tensión de referencia del divisor de la NTC | 5 | V | — | TBD | SNS-03 | PROVISIONAL. |
 
@@ -111,8 +111,8 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
-| T_amb | Temperatura ambiente máxima | 40 | °C | — | TBD | MEC-06 · ME-C-02 | PROVISIONAL. El TFG asumía ≥ 25 °C |
-| T_cool | Temperatura del refrigerante a la entrada | 40 | °C | — | TBD | ME-C-02 | PROVISIONAL. |
+| T_amb | Temperatura ambiente máxima | 50 | °C | — | TBD | MEC-06 · ME-C-02 | PROVISIONAL. El TFG asumía ≥ 25 °C |
+| T_cool | Temperatura del refrigerante a la entrada | 50 | °C | — | TBD | ME-C-02 | PROVISIONAL. |
 | Q_cool | Caudal de refrigerante | 2 | L/min | — | TBD | ME-C-02 | PROVISIONAL. |
 | N_cool_ser | Placas en serie en el circuito de agua (la última es la peor) | 1 | – | — | TBD | ME-C-01 · ME-C-02 | PROVISIONAL. |
 | Rth_wb | Resistencia térmica cara inferior de la PCB → agua, por MOSFET | 0,3 | K/W | — | TBD | PWR-06 · ME-C-01 | PROVISIONAL. |
