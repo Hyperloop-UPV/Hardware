@@ -14,22 +14,22 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
-| Vbus_min | Tensión mínima del bus de HV | 320 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
-| Vbus_max | Tensión máxima del bus de HV | 400 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
-| V_cont | Tensión continua que deben soportar componentes y aislamiento | 600 | V | U | OK | DCB-02 · ISO-06 |  |
+| Vbus_min | Tensión mínima del bus de HV | 350 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
+| Vbus_max | Tensión máxima del bus de HV | 405 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
+| V_cont | Tensión continua que deben soportar componentes y aislamiento | 650 | V | U | OK | DCB-02 · ISO-06 |  |
 | N_MD | Número de Magnet Driver conectados al bus | 10 | – | U | OK | DCB-03 · SYS-01 | 4 HEMS + 6 EMS |
-| Bus_topo | Distribución del bus: «Encadenado» o «Estrella» | Encadenado | – | TFG | TBD | DCB-05 · ME-I-03 | Encadenado: la primera placa conduce la corriente de todas |
-| dVdc_pct | Rizado máximo de tensión en el DC-link (fracción de Vbus_min) | 2 | % | TFG | AC | DCB-07 · HW-02 | 2 % de 400 V = 8 V según el TFG |
+| Bus_topo | Distribución del bus: «Encadenado» o «Estrella» | Estrella | – | TFG | TBD | DCB-05 · ME-I-03 | Encadenado: la primera placa conduce la corriente de todas |
+| dVdc_pct | Rizado máximo de tensión en el DC-link (fracción de Vbus_min) | 1 | % | TFG | AC | DCB-07 · HW-02 | 1 % de 400 V = 4 V  |
 | eta_pwr | Rendimiento de la etapa de potencia (para la corriente media de bus) | 97 | % | P | TBD | — | PROVISIONAL. Ajustar con las pérdidas del puente del informe cuando se elija componente |
 
 ## 2. Carga: electroimanes (prototipo H11)
 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
-| Rcoil | Resistencia de la bobina | 1,2 | Ω | U | OK | LOAD-01 | Medida en la bobina construida. Nuevas bobinas: EM-D-04 |
-| Ipk | Corriente de pico (primeros segundos de la levitación) | 60 | A | U | OK | LOAD-03 |  |
+| Rcoil | Resistencia de la bobina | 1,1 | Ω | U | OK | LOAD-01 | Medida en la bobina construida. Nuevas bobinas: EM-D-04 |
+| Ipk | Corriente de pico (primeros segundos de la levitación) | 55 | A | U | OK | LOAD-03 |  |
 | t_pk | Duración del pico de corriente | 2 | s | — | TBD | LOAD-03 · EM-C-01 | PROVISIONAL. «Primeros segundos» |
-| Irms_cont | Corriente eficaz en régimen permanente (dimensionado térmico) | 5 | A | TFG | TBD | LOAD-05 · EM-C-01 | Valor mencionado en el TFG, sin revalidar |
+| Irms_cont | Corriente eficaz en régimen permanente (dimensionado térmico) | 10 | A | TFG | TBD | LOAD-05 · EM-C-01 | Valor mencionado en el TFG, sin revalidar |
 | L_EMS_min | Inductancia incremental mínima del EMS | 1,92 | mH | R5 | AC | LOAD-01 · EM-D-01/02 | Sección 6.1.1 |
 | L_EMS_max | Inductancia incremental máxima del EMS | 117 | mH | R5 | AC | LOAD-01 · EM-D-01/02 | Sección 6.1.1 |
 | L_HEMS_min | Inductancia incremental mínima del HEMS (dψ/di derivada) | 6,2 | mH | C | OK | LOAD-01 | Sección 6.1.2 (derivado del Excel R7) |
@@ -39,14 +39,14 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | E_HEMS | Energía devuelta al desmagnetizar el HEMS desde −55 A, 6 mm (mapa H11) | 16,7 | J | C | AC | 6.1.3 · EM-D-03 | Peor caso del H11 |
 | I_map | Corriente máxima cubierta por los mapas de inductancia | 55 | A | R7 | OK | EM-D-03 |  |
 | dI_pp_max | Rizado de corriente pico a pico máximo admisible | 2 | A | — | TBD | LOAD-07 · EM-C-03 | PROVISIONAL. |
-| T_coil_max | Temperatura máxima de la bobina (umbral de protección) | 120 | °C | — | TBD | SAF-01 · sin pendiente | PROVISIONAL. No hay cuestión abierta que lo resuelva: proponer a EM-D |
+| T_coil_max | Temperatura máxima de la bobina (umbral de protección) | 110 | °C | — | TBD | SAF-01 · sin pendiente | PROVISIONAL. No hay cuestión abierta que lo resuelva: proponer a EM-D |
 
 ## 3. Conmutación y MOSFET
 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
-| fsw | Frecuencia de conmutación | 20 | kHz | TFG | TBD | PWR-03 · FW-08 |  |
-| Modulacion | Modulación: «Unipolar» o «Bipolar» | Unipolar | – | TFG | TBD | PWR-03 · FW-08 |  |
+| fsw | Frecuencia de conmutación | 30 | kHz | TFG | TBD | PWR-03 · FW-08 |  |
+| Modulacion | Modulación: «Unipolar» o «Bipolar» | Bipolar | – | TFG | TBD | PWR-03 · FW-08 |  |
 | t_dead | Tiempo muerto | 100 | ns | TFG | AC | PWR-04 · FW-08 | Red RC del TFG; pasa a ser configurable en la FPGA |
 | MOSFET_sel | Referencia del MOSFET usado en el resto de cálculos (una de las columnas de componentes.md) | SCT012H90G3AG | – | P | AC | PWR-02 · HW-02 |  |
 | D_worst | Fracción del periodo que conduce el MOSFET más cargado | 1 | – | P | OK | SAF-05 | 1 = rueda libre permanente por los low-side (conservador). Con PWM en régimen, el más cargado conduce (1 + m)/2 |
@@ -59,7 +59,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
 | Cdc | Capacidad del DC-link en placa | 105 | µF | TFG | AC | DCB-07 · HW-02 · HW-03 |  |
-| V_film | Tensión nominal de los condensadores del DC-link | 500 | V | TFG | AC | DCB-02 · HW-02 | No cubre los 600 V de DCB-02 |
+| V_film | Tensión nominal de los condensadores del DC-link | 650 | V | TFG | AC | DCB-02 · HW-02 | No cubre los 600 V de DCB-02 |
 | ESR_dc | ESR equivalente del DC-link a 2·fsw | 2 | mΩ | — | TBD | HW-02 | PROVISIONAL. |
 | N_dc_abs | Número de DC-link que absorben la energía en el caso de fallo | 1 | – | P | AC | DCB-08 · HW-03 | 1 = solo la propia placa (conservador) |
 | V_chop_on | Tensión de actuación del clamp o chopper (si se usa) | 550 | V | P | TBD | HW-03 | PROVISIONAL. |
@@ -74,8 +74,8 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 |---|---|--:|---|---|---|---|---|
 | Vgs_on | Tensión de puerta en ON | 20 | V | TFG | AC | GD-01 · HW-02 |  |
 | Vgs_off | Tensión de puerta en OFF | -5 | V | TFG | AC | GD-01 · HW-02 |  |
-| Rg_on | Resistencia de puerta externa de encendido | 5 | Ω | — | TBD | HW-02 | PROVISIONAL. |
-| Rg_off | Resistencia de puerta externa de apagado | 5 | Ω | — | TBD | HW-02 | PROVISIONAL. |
+| Rg_on | Resistencia de puerta externa de encendido | 8 | Ω | — | TBD | HW-02 | PROVISIONAL. |
+| Rg_off | Resistencia de puerta externa de apagado | 8 | Ω | — | TBD | HW-02 | PROVISIONAL. |
 | N_d_desat | Número de diodos en serie en el circuito DESAT | 1 | – | — | TBD | HW-01 | PROVISIONAL. |
 | Vf_desat | Caída de tensión de cada diodo DESAT | 0,7 | V | — | TBD | HW-01 | PROVISIONAL. |
 | R_desat | Resistencia serie del circuito DESAT | 1 | kΩ | — | TBD | HW-01 | PROVISIONAL. |
@@ -89,7 +89,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | R_shunt | Resistencia del shunt de corriente | 500 | µΩ | TFG | AC | SNS-01 · HW-02 |  |
 | P_sh_rat | Potencia nominal del shunt | 3 | W | — | TBD | HW-02 | PROVISIONAL. Referencia del shunt del TFG no documentada aquí |
 | I_margin | Margen mínimo fondo de escala / Ipk (criterio) | 1,2 | – | P | AC | SNS-01 |  |
-| I_OC | Umbral de sobrecorriente por hardware | 80 | A | — | TBD | SAF-04 · HW-01 | PROVISIONAL. |
+| I_OC | Umbral de sobrecorriente por hardware | 90 | A | — | TBD | SAF-04 · HW-01 | PROVISIONAL. |
 | f_clk_ds | Frecuencia de reloj de los moduladores ΔΣ | 20 | MHz | P | TBD | SNS-05 · FW-01 | PROVISIONAL. |
 | OSR | Relación de sobremuestreo del filtro sinc | 128 | – | P | TBD | SNS-05 · FW-01 | PROVISIONAL. |
 | N_sinc | Orden del filtro sinc | 3 | – | P | TBD | FW-01 | sinc3 es el habitual con moduladores de 2.º orden |
@@ -101,9 +101,9 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | V_res_rat | Tensión máxima de trabajo de cada resistencia del divisor | 200 | V | — | TBD | HW-02 | PROVISIONAL. Depende del encapsulado elegido |
 | P_res_rat | Potencia nominal de cada resistencia del divisor | 0,25 | W | — | TBD | HW-02 | PROVISIONAL. |
 | k_res | Factor de utilización de potencia de las resistencias (criterio) | 0,5 | – | P | TBD | — | PROVISIONAL. |
-| V_OV | Umbral de sobretensión de bus por hardware | 450 | V | — | TBD | SAF-01 · HW-01 | PROVISIONAL. |
+| V_OV | Umbral de sobretensión de bus por hardware | 420 | V | — | TBD | SAF-01 · HW-01 | PROVISIONAL. |
 | NTC_R25 | Resistencia de la NTC a 25 °C | 10 | kΩ | TFG | AC | LOAD-08 · HW-02 | GA10K4A1IA (TE) |
-| NTC_beta | Constante β(25/85) de la NTC | 3694 | K | TE | AC | LOAD-08 | Página de producto TE; contrastar con la tabla R-T |
+| NTC_beta | Constante β(25/85) de la NTC | 3598 | K | TE | AC | LOAD-08 | Página de producto TE; contrastar con la tabla R-T |
 | R_ntc_pu | Resistencia de polarización de la NTC | 10 | kΩ | — | TBD | SNS-03 | PROVISIONAL. |
 | V_ntc_ref | Tensión de referencia del divisor de la NTC | 5 | V | — | TBD | SNS-03 | PROVISIONAL. |
 
@@ -111,8 +111,8 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
-| T_amb | Temperatura ambiente máxima | 40 | °C | — | TBD | MEC-06 · ME-C-02 | PROVISIONAL. El TFG asumía ≥ 25 °C |
-| T_cool | Temperatura del refrigerante a la entrada | 40 | °C | — | TBD | ME-C-02 | PROVISIONAL. |
+| T_amb | Temperatura ambiente máxima | 50 | °C | — | TBD | MEC-06 · ME-C-02 | PROVISIONAL. El TFG asumía ≥ 25 °C |
+| T_cool | Temperatura del refrigerante a la entrada | 50 | °C | — | TBD | ME-C-02 | PROVISIONAL. |
 | Q_cool | Caudal de refrigerante | 2 | L/min | — | TBD | ME-C-02 | PROVISIONAL. |
 | N_cool_ser | Placas en serie en el circuito de agua (la última es la peor) | 1 | – | — | TBD | ME-C-01 · ME-C-02 | PROVISIONAL. |
 | Rth_wb | Resistencia térmica cara inferior de la PCB → agua, por MOSFET | 0,3 | K/W | — | TBD | PWR-06 · ME-C-01 | PROVISIONAL. |
@@ -123,7 +123,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | A_pad | Área del pad de drenador del MOSFET | 80 | mm² | — | TBD | HW-02 | PROVISIONAL. Comprobar con el footprint H2PAK-7 |
 | d_via | Diámetro de taladro de las vías térmicas | 0,3 | mm | — | TBD | PT-01 | PROVISIONAL. |
 | t_plat | Espesor del metalizado de las vías | 25 | µm | — | TBD | PT-01 | PROVISIONAL. |
-| N_via | Número de vías térmicas bajo cada MOSFET | 40 | – | — | TBD | — | PROVISIONAL. |
+| N_via | Número de vías térmicas bajo cada MOSFET | 10 | – | — | TBD | — | PROVISIONAL. |
 | t_solder | Espesor de la soldadura bajo el pad | 0,1 | mm | — | TBD | PT-02 | PROVISIONAL. |
 | k_solder | Conductividad de la soldadura | 50 | W/(m·K) | — | AC | — | Orden de magnitud de aleaciones SAC |
 | k_Cu | Conductividad del cobre | 385 | W/(m·K) | — | OK | — | Valor físico |
@@ -136,8 +136,8 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | t_pcb | Espesor total de la PCB | 1,6 | mm | — | TBD | MEC-03 · PT-01 | PROVISIONAL. |
 | oz_ext | Cobre en capas externas | 2 | oz | TFG | AC | MEC-03 · PT-01 | 1 oz ≈ 35 µm |
 | oz_int | Cobre en capas internas | 2 | oz | TFG | AC | MEC-03 · PT-01 | El documento indica 2 oz sin distinguir capas |
-| dT_trace | Incremento de temperatura admisible en pistas (criterio) | 20 | °C | P | AC | — |  |
-| er_pcb | Permitividad relativa del dieléctrico | 4,3 | – | — | TBD | PT-01 | PROVISIONAL. |
+| dT_trace | Incremento de temperatura admisible en pistas (criterio) | 30 | °C | P | AC | — |  |
+| er_pcb | Permitividad relativa del dieléctrico | 4,5 | – | — | TBD | PT-01 | PROVISIONAL. |
 | h_ms | Dieléctrico entre capa externa y su plano de referencia (microstrip) | 0,2 | mm | — | TBD | PT-01 | PROVISIONAL |
 | b_sl | Distancia entre planos de referencia de la stripline | 0,5 | mm | — | TBD | PT-01 | PROVISIONAL |
 | tol_Z | Tolerancia admisible de impedancia (criterio) | 10 | % | P | AC | PT-01 | Tolerancia habitual de fabricación; confirmar con el fabricante |
