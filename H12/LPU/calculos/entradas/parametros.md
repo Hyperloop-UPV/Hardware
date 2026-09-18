@@ -14,8 +14,8 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
-| Vbus_min | Tensión mínima del bus de HV | 320 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
-| Vbus_max | Tensión máxima del bus de HV | 400 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
+| Vbus_min | Tensión mínima del bus de HV | 335 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
+| Vbus_max | Tensión máxima del bus de HV | 405 | V | U | OK | DCB-01 | Revisar con la nueva batería (ME-I-07) |
 | V_cont | Tensión continua que deben soportar componentes y aislamiento | 600 | V | U | OK | DCB-02 · ISO-06 |  |
 | N_MD | Número de Magnet Driver conectados al bus | 10 | – | U | OK | DCB-03 · SYS-01 | 4 HEMS + 6 EMS |
 | Bus_topo | Distribución del bus: «Encadenado» o «Estrella» | Encadenado | – | TFG | TBD | DCB-05 · ME-I-03 | Encadenado: la primera placa conduce la corriente de todas |
@@ -26,8 +26,8 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
-| Rcoil | Resistencia de la bobina | 1,2 | Ω | U | OK | LOAD-01 | Medida en la bobina construida. Nuevas bobinas: EM-D-04 |
-| Ipk | Corriente de pico (primeros segundos de la levitación) | 60 | A | U | OK | LOAD-03 |  |
+| Rcoil | Resistencia de la bobina | 1,1 | Ω | U | OK | LOAD-01 | Medida en la bobina construida. Nuevas bobinas: EM-D-04 |
+| Ipk | Corriente de pico (primeros segundos de la levitación) | 55 | A | U | OK | LOAD-03 |  |
 | t_pk | Duración del pico de corriente | 2 | s | — | TBD | LOAD-03 · EM-C-01 | PROVISIONAL. «Primeros segundos» |
 | Irms_cont | Corriente eficaz en régimen permanente (dimensionado térmico) | 5 | A | TFG | TBD | LOAD-05 · EM-C-01 | Valor mencionado en el TFG, sin revalidar |
 | L_EMS_min | Inductancia incremental mínima del EMS | 1,92 | mH | R5 | AC | LOAD-01 · EM-D-01/02 | Sección 6.1.1 |
@@ -45,8 +45,8 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
-| fsw | Frecuencia de conmutación | 20 | kHz | TFG | TBD | PWR-03 · FW-08 |  |
-| Modulacion | Modulación: «Unipolar» o «Bipolar» | Unipolar | – | TFG | TBD | PWR-03 · FW-08 |  |
+| fsw | Frecuencia de conmutación | 30 | kHz | TFG | TBD | PWR-03 · FW-08 |  |
+| Modulacion | Modulación: «Unipolar» o «Bipolar» | Bipolar | – | TFG | TBD | PWR-03 · FW-08 |  |
 | t_dead | Tiempo muerto | 100 | ns | TFG | AC | PWR-04 · FW-08 | Red RC del TFG; pasa a ser configurable en la FPGA |
 | MOSFET_sel | Referencia del MOSFET usado en el resto de cálculos (una de las columnas de componentes.md) | SCT012H90G3AG | – | P | AC | PWR-02 · HW-02 |  |
 | D_worst | Fracción del periodo que conduce el MOSFET más cargado | 1 | – | P | OK | SAF-05 | 1 = rueda libre permanente por los low-side (conservador). Con PWM en régimen, el más cargado conduce (1 + m)/2 |
@@ -59,7 +59,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | Nombre | Descripción | Valor | Unidad | Fuente | Estado | Requisito / pendiente | Nota |
 |---|---|--:|---|---|---|---|---|
 | Cdc | Capacidad del DC-link en placa | 105 | µF | TFG | AC | DCB-07 · HW-02 · HW-03 |  |
-| V_film | Tensión nominal de los condensadores del DC-link | 500 | V | TFG | AC | DCB-02 · HW-02 | No cubre los 600 V de DCB-02 |
+| V_film | Tensión nominal de los condensadores del DC-link | 650 | V | TFG | AC | DCB-02 · HW-02 | No cubre los 600 V de DCB-02 |
 | ESR_dc | ESR equivalente del DC-link a 2·fsw | 2 | mΩ | — | TBD | HW-02 | PROVISIONAL. |
 | N_dc_abs | Número de DC-link que absorben la energía en el caso de fallo | 1 | – | P | AC | DCB-08 · HW-03 | 1 = solo la propia placa (conservador) |
 | V_chop_on | Tensión de actuación del clamp o chopper (si se usa) | 550 | V | P | TBD | HW-03 | PROVISIONAL. |
@@ -74,8 +74,8 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 |---|---|--:|---|---|---|---|---|
 | Vgs_on | Tensión de puerta en ON | 20 | V | TFG | AC | GD-01 · HW-02 |  |
 | Vgs_off | Tensión de puerta en OFF | -5 | V | TFG | AC | GD-01 · HW-02 |  |
-| Rg_on | Resistencia de puerta externa de encendido | 5 | Ω | — | TBD | HW-02 | PROVISIONAL. |
-| Rg_off | Resistencia de puerta externa de apagado | 5 | Ω | — | TBD | HW-02 | PROVISIONAL. |
+| Rg_on | Resistencia de puerta externa de encendido | 8 | Ω | — | TBD | HW-02 | PROVISIONAL. |
+| Rg_off | Resistencia de puerta externa de apagado | 8 | Ω | — | TBD | HW-02 | PROVISIONAL. |
 | N_d_desat | Número de diodos en serie en el circuito DESAT | 1 | – | — | TBD | HW-01 | PROVISIONAL. |
 | Vf_desat | Caída de tensión de cada diodo DESAT | 0,7 | V | — | TBD | HW-01 | PROVISIONAL. |
 | R_desat | Resistencia serie del circuito DESAT | 1 | kΩ | — | TBD | HW-01 | PROVISIONAL. |
@@ -89,7 +89,7 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | R_shunt | Resistencia del shunt de corriente | 500 | µΩ | TFG | AC | SNS-01 · HW-02 |  |
 | P_sh_rat | Potencia nominal del shunt | 3 | W | — | TBD | HW-02 | PROVISIONAL. Referencia del shunt del TFG no documentada aquí |
 | I_margin | Margen mínimo fondo de escala / Ipk (criterio) | 1,2 | – | P | AC | SNS-01 |  |
-| I_OC | Umbral de sobrecorriente por hardware | 80 | A | — | TBD | SAF-04 · HW-01 | PROVISIONAL. |
+| I_OC | Umbral de sobrecorriente por hardware | 90 | A | — | TBD | SAF-04 · HW-01 | PROVISIONAL. |
 | f_clk_ds | Frecuencia de reloj de los moduladores ΔΣ | 20 | MHz | P | TBD | SNS-05 · FW-01 | PROVISIONAL. |
 | OSR | Relación de sobremuestreo del filtro sinc | 128 | – | P | TBD | SNS-05 · FW-01 | PROVISIONAL. |
 | N_sinc | Orden del filtro sinc | 3 | – | P | TBD | FW-01 | sinc3 es el habitual con moduladores de 2.º orden |
