@@ -136,8 +136,8 @@ Parámetros escalares de los cálculos del Magnet Driver Abejorro. **Este es el 
 | t_pcb | Espesor total de la PCB | 1,6 | mm | — | TBD | MEC-03 · PT-01 | PROVISIONAL. |
 | oz_ext | Cobre en capas externas | 2 | oz | TFG | AC | MEC-03 · PT-01 | 1 oz ≈ 35 µm |
 | oz_int | Cobre en capas internas | 2 | oz | TFG | AC | MEC-03 · PT-01 | El documento indica 2 oz sin distinguir capas |
-| dT_trace | Incremento de temperatura admisible en pistas (criterio) | 20 | °C | P | AC | — |  |
-| er_pcb | Permitividad relativa del dieléctrico | 4,3 | – | — | TBD | PT-01 | PROVISIONAL. |
+| dT_trace | Incremento de temperatura admisible en pistas (criterio) | 30 | °C | P | AC | — |  |
+| er_pcb | Permitividad relativa del dieléctrico | 4,5 | – | — | TBD | PT-01 | PROVISIONAL. |
 | h_ms | Dieléctrico entre capa externa y su plano de referencia (microstrip) | 0,2 | mm | — | TBD | PT-01 | PROVISIONAL |
 | b_sl | Distancia entre planos de referencia de la stripline | 0,5 | mm | — | TBD | PT-01 | PROVISIONAL |
 | tol_Z | Tolerancia admisible de impedancia (criterio) | 10 | % | P | AC | PT-01 | Tolerancia habitual de fabricación; confirmar con el fabricante |
