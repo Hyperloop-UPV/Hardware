@@ -67,6 +67,13 @@ def test_regresion_frente_a_la_hoja_excel():
                 assert o[k] == pytest.approx(e[k], rel=1e-9), f"{cid} {k}"
 
 
+def test_entradas_actuales_con_tablas_de_candidatos():
+    ctx = ejecuta(os.path.join(RAIZ, "calculos", "entradas"), os.path.join(RAIZ, "calculos", "normas"))
+    assert ctx.v["D_Isrc"] == pytest.approx(11)
+    assert ctx.v["G_Vin"] == pytest.approx(5)
+    assert ctx.v["ECP_V"] == pytest.approx(24)
+
+
 def test_valores_del_documento_de_requisitos():
     ctx = calcula()
     assert ctx.v["V_coil_pk"] == pytest.approx(72)

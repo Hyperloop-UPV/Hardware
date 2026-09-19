@@ -92,6 +92,8 @@ class Entradas:
         for seccion, linea, cab, filas in tablas_markdown(ruta):
             if cab[:4] == ["Nombre", "Descripción", "Valor", "Unidad"]:
                 self._tabla_escalar(nombre, seccion, cab, filas)
+            elif cab[:3] == ["Nombre", "Descripción", "Unidad"] and any(c.startswith("Candidato") for c in cab):
+                self._tabla_candidatos(nombre, seccion, cab, filas)
             elif "Clave" in cab and "Parámetro" in cab and any(c.startswith("Candidato") for c in cab):
                 self._tabla_mosfet(nombre, cab, filas)
             elif cab and cab[0] == "Clave":
@@ -125,6 +127,46 @@ class Entradas:
             unidad = normaliza_unidad(g("Unidad"))
             p = Param(nombre, g("Descripción"), g("Valor"), unidad, g("Fuente"), g("Estado"),
                       g("Requisito / pendiente"), g("Nota"), origen)
+            p.seccion = seccion
+            if p.estado not in ("OK", "AC", "TBD"):
+                self._err(origen, f"{nombre}: estado «{p.estado}» no válido (OK, AC o TBD)")
+            num = parse_numero(p.texto)
+            if num is None:
+                if unidad in UNIDADES_TEXTO and p.texto:
+                    p.valor = p.texto
+                else:
+                    self._err(origen, f"{nombre}: valor «{p.texto}» no es un número")
+                    continue
+            else:
+                try:
+                    p.valor = num * factor(unidad)
+                except KeyError:
+                    self._err(origen, f"{nombre}: unidad «{unidad}» no reconocida")
+                    continue
+            self.params[nombre] = p
+
+    def _tabla_candidatos(self, fichero, seccion, cab, filas):
+        idx = {c: i for i, c in enumerate(cab)}
+        candidatos = [i for i, c in enumerate(cab) if c.startswith("Candidato")]
+        for ln, c in filas:
+            origen = f"{fichero}:{ln}"
+            if len(c) != len(cab):
+                self._err(origen, f"la fila tiene {len(c)} columnas y la tabla {len(cab)}")
+                continue
+            nombre = c[idx["Nombre"]]
+            if not re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", nombre):
+                self._err(origen, f"nombre de parámetro no válido: «{nombre}»")
+                continue
+            if nombre in self.params:
+                self._err(origen, f"el parámetro {nombre} está repetido (ya en {self.params[nombre].origen})")
+                continue
+            valor = next((c[i] for i in candidatos if c[i]), "")
+            unidad = normaliza_unidad(c[idx["Unidad"]])
+            p = Param(nombre, c[idx["Descripción"]], valor, unidad,
+                      c[idx["Fuente"]] if "Fuente" in idx else "",
+                      c[idx["Estado"]] if "Estado" in idx else "",
+                      c[idx["Requisito / pendiente"]] if "Requisito / pendiente" in idx else "",
+                      c[idx["Nota"]] if "Nota" in idx else "", origen)
             p.seccion = seccion
             if p.estado not in ("OK", "AC", "TBD"):
                 self._err(origen, f"{nombre}: estado «{p.estado}» no válido (OK, AC o TBD)")
