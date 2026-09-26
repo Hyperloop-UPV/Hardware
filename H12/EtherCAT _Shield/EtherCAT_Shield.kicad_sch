@@ -7513,7 +7513,7 @@
 		)
 	)
 	(junction
-		(at 293.37 140.97)
+		(at 294.64 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0156077f-3d80-47c7-b106-80f7e44aad0e")
@@ -7561,6 +7561,12 @@
 		(uuid "311a973e-6be3-4e3a-8116-79a2538f1e60")
 	)
 	(junction
+		(at 292.1 125.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "31b33b93-a0d7-43c3-bf58-96bc19308267")
+	)
+	(junction
 		(at 110.49 198.12)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7571,6 +7577,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4bc09210-81bd-4efe-aee3-032b92332ef8")
+	)
+	(junction
+		(at 292.1 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "632c2577-3080-4139-b398-7acddb1846cf")
 	)
 	(junction
 		(at 307.34 99.06)
@@ -7585,7 +7597,7 @@
 		(uuid "86c57413-2c5a-4e76-8c14-df302c211667")
 	)
 	(junction
-		(at 295.91 123.19)
+		(at 292.1 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c7e7bbe-df80-41d2-9e97-3d0b1f95f884")
@@ -7603,7 +7615,7 @@
 		(uuid "a54bb812-0a35-4d89-b153-3d41b27aa0f2")
 	)
 	(junction
-		(at 300.99 140.97)
+		(at 302.26 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ae3c6b09-4d7d-4566-b03a-6c844b315ec7")
@@ -7633,6 +7645,12 @@
 		(uuid "ce8fd162-70b7-4bf5-a7e1-58a11bd33daa")
 	)
 	(junction
+		(at 292.1 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cf910f01-2c4d-4deb-b2d6-4ba0fc004fee")
+	)
+	(junction
 		(at 237.49 22.86)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7651,12 +7669,6 @@
 		(uuid "d236a1b6-2d99-4b31-9ed9-16f5a9c0c1c9")
 	)
 	(junction
-		(at 295.91 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d23ac51e-344e-46e2-979f-946d8fe44113")
-	)
-	(junction
 		(at 29.21 156.21)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7673,12 +7685,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dcfa9d63-7400-4e9e-85db-08b8bab89168")
-	)
-	(junction
-		(at 295.91 125.73)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e58df913-b3f9-402f-a969-13ccc5bd7272")
 	)
 	(junction
 		(at 29.21 167.64)
@@ -7703,12 +7709,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f53ead8c-cc0e-41d8-ba57-b2e2fb462f16")
-	)
-	(junction
-		(at 295.91 130.81)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ff28cb0c-837f-450a-b511-22c210710373")
 	)
 	(no_connect
 		(at 63.5 95.25)
@@ -7844,7 +7844,7 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 140.97) (xy 300.99 143.51)
+			(xy 302.26 140.97) (xy 302.26 143.51)
 		)
 		(stroke
 			(width 0)
@@ -7874,7 +7874,7 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 123.19) (xy 292.1 123.19)
+			(xy 292.1 123.19) (xy 309.88 123.19)
 		)
 		(stroke
 			(width 0)
@@ -7974,16 +7974,6 @@
 	)
 	(wire
 		(pts
-			(xy 292.1 135.89) (xy 295.91 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3be09c16-326c-46f7-ba38-ba5c5aef8ff8")
-	)
-	(wire
-		(pts
 			(xy 46.99 166.37) (xy 46.99 168.91)
 		)
 		(stroke
@@ -8034,16 +8024,6 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 125.73) (xy 295.91 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4a3971f1-44f0-4cd4-b58d-10851f340427")
-	)
-	(wire
-		(pts
 			(xy 187.96 198.12) (xy 187.96 193.04)
 		)
 		(stroke
@@ -8084,23 +8064,13 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 120.65) (xy 295.91 123.19)
+			(xy 292.1 120.65) (xy 292.1 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5e5e69b7-2203-43e1-8b40-c51032905d17")
-	)
-	(wire
-		(pts
-			(xy 309.88 123.19) (xy 295.91 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5ec68b5d-28c2-4343-a356-2c128c9edf66")
 	)
 	(wire
 		(pts
@@ -8174,26 +8144,6 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 133.35) (xy 295.91 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7976150b-0444-4978-be5b-4c9626df902f")
-	)
-	(wire
-		(pts
-			(xy 295.91 133.35) (xy 292.1 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82e8907f-3fbe-4101-b372-48d686c6695f")
-	)
-	(wire
-		(pts
 			(xy 29.21 152.4) (xy 29.21 156.21)
 		)
 		(stroke
@@ -8201,16 +8151,6 @@
 			(type default)
 		)
 		(uuid "897bca74-91c2-48ad-b082-3988b12007ae")
-	)
-	(wire
-		(pts
-			(xy 292.1 120.65) (xy 295.91 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ed46a93-6a40-4871-97f5-891b765df771")
 	)
 	(wire
 		(pts
@@ -8224,7 +8164,7 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 138.43) (xy 300.99 140.97)
+			(xy 302.26 138.43) (xy 302.26 140.97)
 		)
 		(stroke
 			(width 0)
@@ -8334,6 +8274,16 @@
 	)
 	(wire
 		(pts
+			(xy 302.26 140.97) (xy 300.99 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8f0b19f-f5bb-4c39-88f5-6c46ea74c7aa")
+	)
+	(wire
+		(pts
 			(xy 227.33 30.48) (xy 237.49 30.48)
 		)
 		(stroke
@@ -8414,26 +8364,6 @@
 	)
 	(wire
 		(pts
-			(xy 292.1 125.73) (xy 295.91 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c287fa20-1d6e-4d66-9c76-5884f9bbdfa7")
-	)
-	(wire
-		(pts
-			(xy 292.1 130.81) (xy 295.91 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2d2ee66-0c5f-409c-8f61-01f0443416db")
-	)
-	(wire
-		(pts
 			(xy 62.23 156.21) (xy 63.5 156.21)
 		)
 		(stroke
@@ -8454,13 +8384,23 @@
 	)
 	(wire
 		(pts
-			(xy 293.37 140.97) (xy 293.37 143.51)
+			(xy 294.64 140.97) (xy 294.64 143.51)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c8397827-4754-46e6-9e03-59d787c57cec")
+	)
+	(wire
+		(pts
+			(xy 292.1 133.35) (xy 292.1 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d03a61ec-2c92-4790-9226-abfe1c860938")
 	)
 	(wire
 		(pts
@@ -8474,6 +8414,16 @@
 	)
 	(wire
 		(pts
+			(xy 292.1 125.73) (xy 292.1 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2baaa93-94e6-45e8-845b-7cdd02a21be7")
+	)
+	(wire
+		(pts
 			(xy 292.1 156.21) (xy 292.1 158.75)
 		)
 		(stroke
@@ -8484,7 +8434,7 @@
 	)
 	(wire
 		(pts
-			(xy 292.1 140.97) (xy 293.37 140.97)
+			(xy 292.1 140.97) (xy 294.64 140.97)
 		)
 		(stroke
 			(width 0)
@@ -8504,7 +8454,17 @@
 	)
 	(wire
 		(pts
-			(xy 293.37 138.43) (xy 293.37 140.97)
+			(xy 292.1 130.81) (xy 292.1 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e024f887-1341-4c64-9c8b-2c20e4f6f3bd")
+	)
+	(wire
+		(pts
+			(xy 294.64 138.43) (xy 294.64 140.97)
 		)
 		(stroke
 			(width 0)
@@ -8634,16 +8594,6 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 130.81) (xy 295.91 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fedb463a-93d1-46d3-99cd-e820e72852cc")
-	)
-	(wire
-		(pts
 			(xy 63.5 153.67) (xy 39.37 153.67)
 		)
 		(stroke
@@ -8692,7 +8642,7 @@
 		)
 		(uuid "23bad208-e014-4f7d-8413-7214c1657698")
 	)
-	(label "SQI_CLK"
+	(label "SQI_SCK"
 		(at 276.86 254 180)
 		(effects
 			(font
@@ -9023,7 +8973,7 @@
 			(uuid "4ed37807-7db3-4615-896c-08dc91848b54")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR013")
 					(unit 1)
@@ -9102,7 +9052,7 @@
 			(uuid "81285eaa-0186-4109-9107-52dc863b1520")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR028")
 					(unit 1)
@@ -9181,7 +9131,7 @@
 			(uuid "621c0681-9d2b-47af-a4ea-9e23a5506894")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR09")
 					(unit 1)
@@ -9260,7 +9210,7 @@
 			(uuid "d4a5f414-636a-4780-9333-7529509cbe01")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR018")
 					(unit 1)
@@ -9339,7 +9289,7 @@
 			(uuid "aaf9a633-3395-4063-8d0d-1b33109ecdef")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R2")
 					(unit 1)
@@ -9515,7 +9465,7 @@
 			(uuid "c8b229f2-12ff-4e05-a51e-ac94bae126ee")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "J4")
 					(unit 1)
@@ -9595,7 +9545,7 @@
 			(uuid "f2005252-b402-4442-8fb9-443b056b4e01")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "SW1")
 					(unit 1)
@@ -9674,7 +9624,7 @@
 			(uuid "de0421b8-e596-474a-8ed7-53956ca0bc80")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR038")
 					(unit 1)
@@ -9765,7 +9715,7 @@
 			(uuid "8943d722-a623-4f52-a8bf-af4c94430ec5")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "D1")
 					(unit 1)
@@ -9844,7 +9794,7 @@
 			(uuid "132d9d72-3eee-4f5c-942d-64e0482d6918")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR039")
 					(unit 1)
@@ -9923,7 +9873,7 @@
 			(uuid "d427d038-bf31-4cc3-9604-17cb8fa076a9")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR016")
 					(unit 1)
@@ -10002,7 +9952,7 @@
 			(uuid "275474ff-c967-42dc-86ec-2b6e610754f6")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR020")
 					(unit 1)
@@ -10080,7 +10030,7 @@
 			(uuid "e3c50757-afff-4099-9bea-22f0ef80d7c7")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR041")
 					(unit 1)
@@ -10159,7 +10109,7 @@
 			(uuid "a8563869-ef45-4e34-a402-4a580a5e23b2")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR033")
 					(unit 1)
@@ -10238,7 +10188,7 @@
 			(uuid "dd460ff6-35bc-40cc-a270-c06c37d0377e")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR032")
 					(unit 1)
@@ -10509,7 +10459,7 @@
 			(uuid "6c4fbcfa-c405-49b2-bf20-21b1ed43f119")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "U1")
 					(unit 1)
@@ -10588,7 +10538,7 @@
 			(uuid "954e8c8a-5fbe-40ec-8505-38f7b329e7a6")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR014")
 					(unit 1)
@@ -10598,7 +10548,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 300.99 140.97 90)
+		(at 302.26 140.97 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10609,7 +10559,7 @@
 		(fields_autoplaced yes)
 		(uuid "495029b8-401f-4db7-91ce-38d522a345ad")
 		(property "Reference" "#PWR011"
-			(at 307.34 140.97 0)
+			(at 308.61 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10620,7 +10570,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 304.8 140.9699 90)
+			(at 306.07 140.9699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10631,7 +10581,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 300.99 140.97 0)
+			(at 302.26 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10642,7 +10592,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 300.99 140.97 0)
+			(at 302.26 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10653,7 +10603,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 300.99 140.97 0)
+			(at 302.26 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10667,7 +10617,7 @@
 			(uuid "15f3449b-3d54-4276-a140-51af7762b87f")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR011")
 					(unit 1)
@@ -10745,7 +10695,7 @@
 			(uuid "a309f1e7-01d2-4c52-be53-eb19268c83cb")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR01")
 					(unit 1)
@@ -10824,7 +10774,7 @@
 			(uuid "61e151f1-5b92-47c8-9f82-f30b40088267")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR04")
 					(unit 1)
@@ -10902,7 +10852,7 @@
 			(uuid "5ec8dc6e-e9fa-4d96-af13-5c207d58f513")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR040")
 					(unit 1)
@@ -10981,7 +10931,7 @@
 			(uuid "c03ee9cf-d5cb-4b5c-9775-546cf7f9e119")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR07")
 					(unit 1)
@@ -11072,7 +11022,7 @@
 			(uuid "33bdc0a5-2c33-49eb-93cf-5ea9b7a5fa1f")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "D2")
 					(unit 1)
@@ -11151,7 +11101,7 @@
 			(uuid "c37a82b3-abb3-44d3-a323-8259ba3233ac")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C9")
 					(unit 1)
@@ -11229,7 +11179,7 @@
 			(uuid "08b1f3d5-f072-421e-ad91-fd83fa1142d2")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR026")
 					(unit 1)
@@ -11308,7 +11258,7 @@
 			(uuid "0e186b15-bd3f-4f06-bb56-844e28dc9e66")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR022")
 					(unit 1)
@@ -11387,7 +11337,7 @@
 			(uuid "488b5ae4-9003-4bca-9751-5272be55fc1a")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R11")
 					(unit 1)
@@ -11521,7 +11471,7 @@
 			(uuid "993561de-f12c-402f-a737-bd2caf0e09b7")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "J2")
 					(unit 1)
@@ -11635,7 +11585,7 @@
 			(uuid "96a85b0f-3fda-4f6b-97ae-67ecaa51a77e")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "PORT_A1")
 					(unit 1)
@@ -11906,7 +11856,7 @@
 			(uuid "6c4fbcfa-c405-49b2-bf20-21b1ed43f11a")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "U1")
 					(unit 2)
@@ -11985,7 +11935,7 @@
 			(uuid "fd339792-dc0e-4da9-99e1-f525d149c668")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C8")
 					(unit 1)
@@ -12064,7 +12014,7 @@
 			(uuid "029d8852-c8e9-4e22-a4f5-e85966f5a000")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR021")
 					(unit 1)
@@ -12145,7 +12095,7 @@
 			(uuid "7673c53d-f653-4e52-92ae-ed22c0e14a89")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C6")
 					(unit 1)
@@ -12223,7 +12173,7 @@
 			(uuid "7df614c2-57cc-44a0-a8dd-53462dfaec8d")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR08")
 					(unit 1)
@@ -12300,7 +12250,7 @@
 			(uuid "2081094c-6b6f-4c96-b764-815ec0217a28")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR023")
 					(unit 1)
@@ -12379,7 +12329,7 @@
 			(uuid "fb3c61ab-4e8f-410f-b721-9195300d2eb5")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R6")
 					(unit 1)
@@ -12458,7 +12408,7 @@
 			(uuid "5f4ae567-8754-4d5f-83de-40ff8b1fe1b7")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR02")
 					(unit 1)
@@ -12537,7 +12487,7 @@
 			(uuid "5672ae52-3b62-42ab-9f01-795576f48f0b")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R5")
 					(unit 1)
@@ -12547,7 +12497,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 297.18 143.51 90)
+		(at 298.45 143.51 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12557,7 +12507,7 @@
 		(dnp no)
 		(uuid "7cb312a1-37d1-48df-9a92-249d811534ad")
 		(property "Reference" "C2"
-			(at 297.18 147.32 90)
+			(at 298.45 147.32 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12567,7 +12517,7 @@
 			)
 		)
 		(property "Value" "470pF"
-			(at 297.18 149.86 90)
+			(at 298.45 149.86 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12577,7 +12527,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 300.99 142.5448 0)
+			(at 302.26 142.5448 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12588,7 +12538,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 297.18 143.51 0)
+			(at 298.45 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12599,7 +12549,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 297.18 143.51 0)
+			(at 298.45 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12616,7 +12566,7 @@
 			(uuid "3d30a5ee-f76b-450d-9bbe-0ad6234ffe04")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C2")
 					(unit 1)
@@ -12695,7 +12645,7 @@
 			(uuid "e29ff258-1891-4a21-a227-7e7d96611603")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R10")
 					(unit 1)
@@ -12774,7 +12724,7 @@
 			(uuid "034ec523-8902-49fb-8ed4-cc63b8a7857e")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR029")
 					(unit 1)
@@ -12853,7 +12803,7 @@
 			(uuid "c9932c6e-6288-4dcc-9c5f-6401c0d81b7e")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C7")
 					(unit 1)
@@ -12932,7 +12882,7 @@
 			(uuid "daccebaf-26c9-4e6d-be52-63fafad00456")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R9")
 					(unit 1)
@@ -13011,7 +12961,7 @@
 			(uuid "e7c05dad-bfa2-496c-86d4-5535b1f086e6")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR034")
 					(unit 1)
@@ -13126,7 +13076,7 @@
 			(uuid "a33c852d-20c7-4928-904a-c7543fd56755")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "PORT_B1")
 					(unit 1)
@@ -13207,7 +13157,7 @@
 			(uuid "bca1ed6e-ab42-46f8-9793-e6369d4bf54f")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C5")
 					(unit 1)
@@ -13286,7 +13236,7 @@
 			(uuid "8d40db5a-e36a-42bd-8e0b-15ff121d1008")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C10")
 					(unit 1)
@@ -13365,7 +13315,7 @@
 			(uuid "b704f70e-ba0d-4ed2-9828-3912870ae620")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R3")
 					(unit 1)
@@ -13444,7 +13394,7 @@
 			(uuid "65e45071-c48d-4985-b955-28cb9083bf4b")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R7")
 					(unit 1)
@@ -13525,7 +13475,7 @@
 			(uuid "1bc82a91-8f4b-47e9-905d-ccf610b32de0")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C4")
 					(unit 1)
@@ -13603,7 +13553,7 @@
 			(uuid "9c1fbefe-2999-422d-aa7e-d7a6b7573d4d")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR025")
 					(unit 1)
@@ -13682,7 +13632,7 @@
 			(uuid "e6656d1c-e5df-4fa3-85d0-57f0e393d87c")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR017")
 					(unit 1)
@@ -13759,7 +13709,7 @@
 			(uuid "7d1b64e1-d6c3-4874-a792-94608020b0c3")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR024")
 					(unit 1)
@@ -13923,7 +13873,7 @@
 			(uuid "fb1ea561-846c-4640-ad2e-05a9df47b883")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "J1")
 					(unit 1)
@@ -14002,7 +13952,7 @@
 			(uuid "868560c4-65cb-4009-9d47-ef3968e0291f")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR015")
 					(unit 1)
@@ -14083,7 +14033,7 @@
 			(uuid "db3d93b1-7489-44a0-93cf-e9b8234f1b1d")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C3")
 					(unit 1)
@@ -14162,7 +14112,7 @@
 			(uuid "02c035c8-75b6-4e9a-a752-ffe45ce66477")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R8")
 					(unit 1)
@@ -14241,7 +14191,7 @@
 			(uuid "15570a30-bacc-4baf-959c-bc8251e37a7d")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR037")
 					(unit 1)
@@ -14363,7 +14313,7 @@
 			(uuid "73fafd53-eabe-4816-a0df-af1eef718fe2")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "J5")
 					(unit 1)
@@ -14373,7 +14323,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 297.18 138.43 90)
+		(at 298.45 138.43 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14383,7 +14333,7 @@
 		(dnp no)
 		(uuid "cac68d8b-0fde-48be-ad22-1e321f857c78")
 		(property "Reference" "C1"
-			(at 297.18 132.334 90)
+			(at 298.45 132.334 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14393,7 +14343,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 297.18 134.874 90)
+			(at 298.45 134.874 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14403,7 +14353,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 300.99 137.4648 0)
+			(at 302.26 137.4648 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14414,7 +14364,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 297.18 138.43 0)
+			(at 298.45 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14425,7 +14375,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 297.18 138.43 0)
+			(at 298.45 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14442,7 +14392,7 @@
 			(uuid "b12c156f-6f4d-4e64-8f5c-af7fd494f7e9")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "C1")
 					(unit 1)
@@ -14521,7 +14471,7 @@
 			(uuid "4af72113-745c-4fcf-8e6c-bcfa5e0b7ef3")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR010")
 					(unit 1)
@@ -14600,7 +14550,7 @@
 			(uuid "54f8a144-44c9-4d7b-8816-8f66ec4c5f3f")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR012")
 					(unit 1)
@@ -14679,7 +14629,7 @@
 			(uuid "980726e0-5fca-4b5a-bce0-494f3e78b5ed")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR06")
 					(unit 1)
@@ -14758,7 +14708,7 @@
 			(uuid "9374f94a-cb3c-4422-8684-306f1feb59ad")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR035")
 					(unit 1)
@@ -14837,7 +14787,7 @@
 			(uuid "e8110084-56d2-4282-9a5a-3600ef257860")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR031")
 					(unit 1)
@@ -14916,7 +14866,7 @@
 			(uuid "08213e1f-eada-4102-b2cc-4d90d1246b55")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R4")
 					(unit 1)
@@ -15009,7 +14959,7 @@
 			(uuid "2ca65798-a948-4b1d-bee0-dcc26956eb8d")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "U2")
 					(unit 1)
@@ -15088,7 +15038,7 @@
 			(uuid "9380c080-7bba-4090-914b-a1be6cbcc0e9")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "R1")
 					(unit 1)
@@ -15167,7 +15117,7 @@
 			(uuid "a6b4f9b7-7329-4309-83c0-69fbeff0668b")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR027")
 					(unit 1)
@@ -15246,7 +15196,7 @@
 			(uuid "8c03cc4d-8852-4ed4-a28b-ba4c186de032")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR036")
 					(unit 1)
@@ -15325,7 +15275,7 @@
 			(uuid "10a08c56-25fe-47c2-a72f-369da845048f")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR019")
 					(unit 1)
@@ -15403,7 +15353,7 @@
 			(uuid "330ccb45-12a7-438b-beb8-dc519116b7c9")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR05")
 					(unit 1)
@@ -15485,7 +15435,7 @@
 			(uuid "b51cfb31-0bef-4be6-a1ba-deb20ba8b4be")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "Y1")
 					(unit 1)
@@ -15495,7 +15445,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 295.91 125.73 270)
+		(at 292.1 125.73 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15506,7 +15456,7 @@
 		(fields_autoplaced yes)
 		(uuid "fd3b5d57-0207-4f9c-a360-c7993f2f783f")
 		(property "Reference" "#PWR03"
-			(at 292.1 125.73 0)
+			(at 288.29 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15517,7 +15467,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 299.72 125.7299 90)
+			(at 295.91 125.7299 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15528,7 +15478,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 295.91 125.73 0)
+			(at 292.1 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15539,7 +15489,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 295.91 125.73 0)
+			(at 292.1 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15550,7 +15500,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 295.91 125.73 0)
+			(at 292.1 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15564,7 +15514,7 @@
 			(uuid "c967be6c-2bd7-4c04-9dbe-d6db558a8981")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR03")
 					(unit 1)
@@ -15643,7 +15593,7 @@
 			(uuid "2cfdd792-b3ea-4fdc-9ede-dda8f07e60ad")
 		)
 		(instances
-			(project "HAT"
+			(project "EtherCAT_Shield"
 				(path "/9f364229-a79d-4da6-933b-d22d7d700161"
 					(reference "#PWR030")
 					(unit 1)
