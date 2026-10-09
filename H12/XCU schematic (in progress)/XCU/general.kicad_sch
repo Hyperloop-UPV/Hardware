@@ -1,0 +1,630 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "5300fd28-8b3f-4426-a3c3-cb82b0e5f725")
+	(paper "A4")
+	(lib_symbols)
+	(wire
+		(pts
+			(xy 104.14 46.99) (xy 129.54 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b41a586-965a-4fad-9bc8-816cf859b11e")
+	)
+	(wire
+		(pts
+			(xy 129.54 44.45) (xy 101.6 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35bebb0d-4342-42c4-aa55-e12900a14a3e")
+	)
+	(wire
+		(pts
+			(xy 83.82 55.88) (xy 104.14 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "719f93dc-4182-4614-af3d-4ca26a11adae")
+	)
+	(wire
+		(pts
+			(xy 101.6 44.45) (xy 101.6 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "822a4ae2-9d01-4170-843a-5cc3108ff64d")
+	)
+	(wire
+		(pts
+			(xy 101.6 53.34) (xy 83.82 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3a2e73f-87ce-4f7a-a841-d99efacb3ef1")
+	)
+	(wire
+		(pts
+			(xy 104.14 55.88) (xy 104.14 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7b3bd53-62e4-42b2-833e-40fecddd1a98")
+	)
+	(sheet
+		(at 35.56 22.86)
+		(size 48.26 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "07d6d657-c0e0-4544-abd6-96848603dd4b")
+		(property "Sheetname" "CONNECTOR"
+			(at 35.56 22.1484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "connector.kicad_sch"
+			(at 35.56 43.7646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 111.76 118.11)
+		(size 36.83 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "08051154-6040-4f6f-b80a-ab25fc98339d")
+		(property "Sheetname" "SD"
+			(at 111.76 117.3984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SD.kicad_sch"
+			(at 111.76 133.9346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 111.76 139.7)
+		(size 36.83 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "0e0fbaa5-4d71-498b-a387-7a5a2c610b26")
+		(property "Sheetname" "ETHERCAT"
+			(at 111.76 138.9884 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ethercat.kicad_sch"
+			(at 111.76 155.5246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 201.93 106.68)
+		(size 53.34 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "104cfbf0-0684-439c-bf57-32eedf0c1b99")
+		(property "Sheetname" "VOLTAGE_SENSOR"
+			(at 201.93 105.9684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "voltage_sensor.kicad_sch"
+			(at 201.93 128.8546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 201.93 134.62)
+		(size 53.34 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2091d824-c6c3-48f7-82ab-a312c2923622")
+		(property "Sheetname" "HALL_SENSOR"
+			(at 201.93 133.9084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "hall_sensor.kicad_sch"
+			(at 201.93 156.7946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 36.83 106.68)
+		(size 36.83 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "4674072c-e9c1-4b6f-833d-6f50c296180e")
+		(property "Sheetname" "INTERNAL_IMU"
+			(at 36.83 105.9684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "INTERNAL_IMU.kicad_sch"
+			(at 36.83 126.3146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 35.56 77.47)
+		(size 29.21 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "9eb62204-4b5f-4bec-8cce-7dcb2be4439e")
+		(property "Sheetname" "LEDS_INFO"
+			(at 35.56 76.7584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "leds_info.kicad_sch"
+			(at 35.56 90.7546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 36.83 132.08)
+		(size 36.83 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d709b49c-33e9-44ee-a3c3-c85dbab6cb87")
+		(property "Sheetname" "IMU_CONNECTOR"
+			(at 36.83 131.3684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "IMU_CONNECTOR.kicad_sch"
+			(at 36.83 152.9846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 35.56 50.8)
+		(size 48.26 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d95ba918-89d0-4b86-a1ab-5fdce6841d61")
+		(property "Sheetname" "BUCK_CONVERTER"
+			(at 35.56 50.0884 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "buckcomverter.kicad_sch"
+			(at 35.56 72.9746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "PGOOD_5V" output
+			(at 35.56 53.34 180)
+			(uuid "d79d8b00-bb6c-40b9-b127-cb63cbbc48a8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "+3V3" output
+			(at 83.82 53.34 0)
+			(uuid "40623f97-896e-4531-8818-ad3bd6d6cdf2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "+5V" output
+			(at 83.82 55.88 0)
+			(uuid "4ea7e3b2-c8ed-42ea-ad0a-f833e0ab89c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 129.54 41.91)
+		(size 34.29 53.34)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f1191cb5-4063-4344-bbea-fa9513c94faa")
+		(property "Sheetname" "MCU"
+			(at 129.54 41.1984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "untitled.kicad_sch"
+			(at 129.54 95.8346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "+3V3" input
+			(at 129.54 44.45 180)
+			(uuid "daa4ccd6-ee76-439e-a778-be0634bd8289")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "+5V" input
+			(at 129.54 46.99 180)
+			(uuid "e17bd23c-f730-4ac6-ab4a-6da0e80e931e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "1")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 36.83 158.75)
+		(size 36.83 16.51)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f4602d20-feab-4d44-87b9-6c96e35cb349")
+		(property "Sheetname" "DFSDM"
+			(at 36.83 158.0384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "dfsdm.kicad_sch"
+			(at 36.83 175.8446 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "XCU"
+				(path "/cc7e8a20-be12-4832-9a78-1a6fe60999e8"
+					(page "12")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "2")
+		)
+	)
+	(embedded_fonts no)
+)
