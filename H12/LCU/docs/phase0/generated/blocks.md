@@ -39,7 +39,7 @@ flowchart TB
     end
     subgraph G_Safety["Safety"]
         direction LR
-        lpu_rst_logic["<b>LPU reset / brake fault override</b><br/><i>open-drain wired-AND</i>"]
+        lpu_rst_logic["<b>brake fault -> buffer enable override</b><br/><i>hardware release of the 5 V bank</i>"]
         brake_conn[/"<b>brake_fault input connector</b> ×2<br/><i>daisy chain, in and out</i>"/]
     end
     subgraph G_Auxiliary["Auxiliary"]
@@ -67,9 +67,9 @@ flowchart TB
     lpu_conn -->|"TEMP"| tmp
     tmp -->|"0-3.3 V"| mcu_master
     lpu_conn -->|"READY / FAULT"| mcu_master
-    mcu_master -->|"RESET x10"| lpu_conn
+    mcu_master -->|"RESET x10 into the buffer"| lpu_conn
     brake_conn -->|"brake_fault"| lpu_rst_logic
-    lpu_rst_logic -->|"RESET, wired-AND"| lpu_conn
+    lpu_rst_logic -->|"RESET through the 5 V bank"| lpu_conn
     agp_conn -->|"4-20 mA"| agp_afe
     agp_afe -->|"0.64-3.2 V, 16 bit"| mcu_slave
     if_ntc -->|"NTC x4"| ntc_afe

@@ -241,12 +241,12 @@
     },
     {
       "id": "lpu_rst_logic",
-      "title": "LPU reset / brake fault override",
+      "title": "brake fault -> buffer enable override",
       "kind": "logic",
       "source": "C",
-      "note": "Open-drain wired-AND: 10 MCU GPIOs + 1 brake_fault driver share the reset nets, pull-up per net.",
+      "note": "The LPU RESET is a buffered 5 V output like the two PWM lines, so it cannot be open-drain wired-ANDed. The brake override therefore acts on the buffer 3-state enable: a brake fault forces the shared enable to the disabled state, the outputs go high-impedance, and a pull resistor per RESET line drops it to the asserted level.",
       "group": "Safety",
-      "sub": "open-drain wired-AND"
+      "sub": "hardware release of the 5 V bank"
     },
     {
       "id": "brake_conn",
@@ -390,7 +390,11 @@
           "name": "RESET",
           "dir": "out",
           "kind": "digital",
-          "source": "H11"
+          "source": "H11",
+          "level_v": 5.0,
+          "drive": "push_pull",
+          "note": "Active-low, 5 V, driven through the buffer bank like the two PWM lines. HIGH releases the reset and lets the LPU work; LOW asserts it. Because the release state is an actively driven HIGH, RESET cannot be open-drain: it needs a push-pull driver plus a pull-down that holds it asserted when the bank is released.",
+          "active": "low"
         },
         {
           "name": "TEMP",
@@ -727,7 +731,7 @@
             "PE9"
           ],
           "count": 10,
-          "note": "One per LPU, open-drain with pull-up, wired-AND with the brake_fault driver."
+          "note": "One per LPU. These drive buffer inputs, not the connector directly: each LPU has its own reset channel in the 5 V bank, so any single LPU can still be reset while the others run."
         },
         "lpu_presence": {
           "pins": [
@@ -1247,7 +1251,7 @@
     [
       "mcu_master",
       "lpu_conn",
-      "RESET x10"
+      "RESET x10 into the buffer"
     ],
     [
       "brake_conn",
@@ -1257,7 +1261,7 @@
     [
       "lpu_rst_logic",
       "lpu_conn",
-      "RESET, wired-AND"
+      "RESET through the 5 V bank"
     ],
     [
       "agp_conn",
@@ -1742,21 +1746,21 @@
       "text": "Keep one reset GPIO per LPU (10), not one shared reset.",
       "source": "C",
       "status": "OK",
-      "note": "Confirmed: ten independent resets. Costs 10 of the Master's 19 spare pins; in exchange a single faulty LPU can be isolated while the other nine keep the pod levitating."
+      "note": "Confirmed: ten independent resets, one buffer channel each. RESET is active-low, so the release state is driven HIGH through the 5 V bank and the asserted state is the pull-down state."
     },
     {
       "id": "RST-03",
-      "text": "LPU reset lines are open-drain with pull-ups, and the brake_fault override is wired-AND onto the same nets.",
+      "text": "The brake_fault override acts on the 3-state enable of the 5 V buffer bank, and every LPU RESET line has a pull resistor to its asserted level.",
       "source": "C",
       "status": "OK",
-      "note": "Gives independent per-LPU control AND a firmware-independent hardware override with one transistor and zero extra MCU pins."
+      "note": "RESET travels through the same buffer as the two PWM lines, so a wired-AND on the reset nets is not possible: a push-pull buffer output cannot be overridden by another driver. The bank enable is the only override point. It is active-low and pulled to disabled, so a dead MCU already releases the bank; the brake_fault signal forces the same state in hardware. When the bank is released the RESET lines fall to their asserted level through their pull resistors, and the PWM lines go high-impedance, which is why the LPU inputs need their own pull-downs. Per-LPU reset still works in normal operation because every RESET has its own buffer channel. RESET is active-low: HIGH releases it, LOW asserts it. A pull resistor can therefore hold the asserted state when the bank is released, but it cannot hold the release state, which is what forces the push-pull buffer in the first place. This is also why an open-drain MCU pin with a 5 V pull-up is not an option."
     },
     {
       "id": "RST-04",
-      "text": "Add a shared buffer enable, active-low, with a pull-up that disables the buffers when the MCU is not driving it.",
+      "text": "One shared buffer enable, active-low, pulled to disabled, and gated with brake_fault in hardware.",
       "source": "U,C",
       "status": "OK",
-      "note": "H10/H11 use 5 enable lines for 10 buffers; one is enough. But do not make it permanently active: with no enable, a dead MCU leaves the LPU PWM inputs undefined. One pin, one pull-up is the cheap insurance."
+      "note": "One pin drives the enable of every buffer package. The gating with brake_fault is what makes the override firmware-independent. Sequencing: firmware must drive the RESET buffer inputs LOW before it asserts the enable. Until the inputs are configured, they float at TTL threshold, and enabling the bank first would present indeterminate levels to the LPUs for a few microseconds."
     },
     {
       "id": "SAF-01",
@@ -1901,6 +1905,13 @@
       "source": "C",
       "status": "TBD",
       "note": "The corner NTC is the same part as the LPU_H11 one. Read it from the LPU_H11 schematic when Phase 1 starts. Not a blocker: it only fixes the pull-up value and the calibration constants, nothing structural. Two consequences if it later changes: the excitation resistor has to be re-matched so the divider still spans about half the ADC reference, and TMP-03's filter stays as is."
+    },
+    {
+      "id": "RST-05",
+      "text": "Every LPU RESET line carries a pull-down so that a released or unpowered buffer presents an asserted reset.",
+      "source": "C",
+      "status": "OK",
+      "note": "RESET is active-low, so asserted is LOW and a pull-down is the correct default: LCU dead, buffer disabled or connector unseated all give an unambiguous 'reset asserted'. 10 kOhm is adequate for a static signal and weak enough that the buffer drives HIGH without contention."
     }
   ],
   "open_questions": [

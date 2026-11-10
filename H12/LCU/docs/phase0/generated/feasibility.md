@@ -57,7 +57,7 @@
 | OK | `MEC-LONG-EDGE` 26-pin LPU headers vs the two long edges | 445 mm of 480 mm (93%). Stacking is allowed, so this is a planning figure: five per side is the natural arrangement. |
 | WARN | `MEC-SHORT-EDGE` The short edges are heavily loaded | 221 mm of 320 mm on the two short edges (69%) |
 | OK | `MEC-PERIMETER` Total connector body length | 31 connectors, 666 mm of 800 mm of perimeter (83%) |
-| OK | `REQ-OK` Requirements in state OK | 49 |
+| OK | `REQ-OK` Requirements in state OK | 50 |
 | OK | `REQ-AC` Requirements in state AC | 6 |
 | OK | `REQ-TBD` Requirements in state TBD | 1 |
 | WARN | `REQ-OPEN` Requirements still open | 6 AC + 1 TBD |
@@ -95,5 +95,5 @@ flowchart LR
 ## Requirement summary
 
 - **AC**: 6
-- **OK**: 49
+- **OK**: 50
 - **TBD**: 1

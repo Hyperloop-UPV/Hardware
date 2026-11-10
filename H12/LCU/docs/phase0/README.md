@@ -51,7 +51,8 @@ any firmware change — although several requirements assume firmware work.
 | PWM | 8 timers, LPU7 split across TIM16/TIM17, no dead-time | **6 timers, each LPU on a single timer, no dead-time** | LPU7 could not be edge-aligned. Dead-time belongs to the LPU. §3.2. |
 | ADC triggering | free-running | **timer-triggered, one scan per control period** | Free-running sampling beats against the 20 kHz PWM and injects ripple into the current measurement. |
 | Slave reset | 5 pulses on the fault line, decoded in software | **dedicated GPIO to Slave NRST** | Separates the fault line from the reset mechanism. |
-| LPU reset | 5 GPIO for 10 LPUs | **10 GPIO, one per LPU**, open-drain | Permits isolating one LPU without de-levitating the pod. §6.2. |
+| LPU reset | 5 GPIO for 10 LPUs, buffered | **10 GPIO, one per LPU**, through the 5 V buffer bank | RESET is 5 V, active-low, buffered like the PWM lines. Permits isolating one LPU without de-levitating the pod. §6.2. |
+| LPU output buffer | 6-channel part, 2 LPUs per package | **8-channel part, 5 packages, 2 LPUs each** | 3 signals leave per LPU (2 PWM + RESET), so 30 channels are needed. |
 | Buffer enable | 5 GPIO for 10 buffers | 1 GPIO, pulled to disabled | Same function, one pin, defined state on MCU failure. |
 | LPU status lines | 20 lines into `Pull::None` pins, no termination | **pull-down plus series R and TVS** | Removes the floating CMOS input condition. §6.1. |
 | brake_fault | none | **2× Micro-Fit+, daisy-chained**, straight passthrough with an optional normally-closed variant | Source: the VCU's 2-pin brake connector. §6.3. |
@@ -349,22 +350,47 @@ termination at every gate input. The lines remain point-to-point into the MCUs (
 ### 6.2 Reset granularity
 
 Each LPU has an independent reset line (10 GPIO), not a shared one. A shared reset means a
-single LPU failure de-levitates the pod; ten open-drain lines with pull-ups allow one LPU
-to be isolated and reset while the other nine continue levitating (`RST-02`).
+single LPU failure de-levitates the pod; ten separate buffer channels allow one LPU to be
+isolated and reset while the other nine continue levitating (`RST-02`).
+
+RESET is one of the three signals that leave the LCU per LPU — `PWM_1`, `PWM_2` and
+`RESET` — all at 5 V, all driven through the same buffer bank. That is why the bank carries
+30 channels and not 20.
+
+RESET is **active-low**: driving it HIGH releases it and lets the LPU work, LOW asserts it. The
+release state therefore has to be actively driven, which is what forces the push-pull buffer;
+the asserted state is held by a pull-down when the bank is released (`RST-05`).
 
 ### 6.3 brake_fault
 
 Hardware assertion is required; asserting the fault only in firmware defeats the purpose.
-The implementation uses a wired-AND:
 
-- every LPU reset net is open-drain with a pull-up;
-- the Master drives ten open-drain outputs, so any single LPU can be reset independently;
-- one further open-drain transistor, driven by the conditioned `brake_fault` signal, pulls
-  all ten nets low.
+Because RESET is a push-pull 5 V buffer output, the reset nets cannot be wired-ANDed with a
+second driver — the buffer would fight it. The override therefore acts on the buffer's
+3-state enable:
 
-Ten independent resets plus a firmware-independent override, with no additional MCU pins
-(`RST-03`). The source is the VCU's 2-pin brake connector, daisy-chained through the LCU,
-so the board carries two of them.
+- the enable is active-low and pulled to disabled, so a dead MCU already releases the bank;
+- the conditioned `brake_fault` signal forces the same state in hardware, through one gate
+  shared by all five packages;
+- each RESET line carries a pull resistor to its asserted level, so a released output means
+  "reset asserted" rather than a floating pin.
+
+This keeps ten independent resets in normal operation — every LPU has its own buffer
+channel — while the brake override takes them all down at once (`RST-03`).
+
+Two ordering rules follow from the enable being the override point. Firmware must drive the
+RESET buffer inputs LOW *before* it asserts the enable, because an unconfigured input floats at
+TTL threshold and an early enable would present indeterminate levels to the LPUs. And every
+RESET line carries a pull-down, so a released buffer, an unpowered board or an unseated
+connector all read as "reset asserted" (`RST-05`).
+
+Two consequences to design for. A released bank also releases the PWM lines, which is the
+intended behaviour (levitation off) but means the LPU PWM inputs need their own pull-downs
+or they float at the far end. And the override is per package in hardware, not per LPU, so it
+cannot be used to isolate a single magnet.
+
+The source is the VCU's 2-pin brake connector, daisy-chained through the LCU, so the board
+carries two of them.
 
 The passthrough has two population options on the same footprint (`SAF-05`):
 

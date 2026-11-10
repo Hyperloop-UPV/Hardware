@@ -1,0 +1,1011 @@
+{
+  "schema": "hl-bom/1.0",
+  "meta": {
+    "board": "LCU_H12",
+    "phase": "1 - component picking, datasheet parsing, BOM risk",
+    "date": "2026-11-10",
+    "baseline": "bom/h11_baseline.json, extracted from the Altium LiveBOM shipped in LCU_H11/LCU_H11.zip",
+    "scope": "Selection and risk assessment. No schematic capture, no footprints beyond what selection forces.",
+    "conventions": {
+      "line_status": {
+        "carry": "unchanged from LCU_H11",
+        "new": "does not exist in LCU_H11",
+        "changed": "exists in LCU_H11 but the part or its role changes",
+        "select": "part not chosen yet, candidates listed",
+        "proposed": "part chosen, pending sign-off"
+      },
+      "criticality": {
+        "safety": "its failure can drop the pod or defeat a safety function",
+        "functional": "its failure degrades or stops the mission",
+        "auxiliary": "its failure is a nuisance or a loss of visibility"
+      }
+    },
+    "findings": [
+      {
+        "id": "F-01",
+        "severity": "high",
+        "topic": "The airgap analog front end exists only in the LCU_H10 BOM",
+        "detail": "LCU_H11 replaced the 4-20 mA analog front end with a sigma-delta path: the Airgap Sensors sheet in LCU_H11 carries eight DFSDM clock/data pairs (DFSDM_CKOUT_0..7, DFSDM1_HF_DATIN1) and a 5 V filter block built around a DLW43SH110XK2L common-mode choke, not a current-loop front end. The corresponding modulator board is the A-ADC board in the H11 inventory. That path was never brought up, and LCU_H11 firmware reads the airgaps on ADC1, so hardware and firmware disagree in H11.",
+        "consequence": "H12 reinstates the LCU_H10 circuit: 160 ohm sense resistor, 5th-order Butterworth in the '4-20mA conditioning sub-block', MCP6022, into ADC1. Those parts are NOT in the LCU_H11 BOM, so they must be specified from the LCU_H10 schematic rather than inherited.",
+        "affects": [
+          "L-AGP-AFE",
+          "L-AGP-RSENSE",
+          "L-AGP-FILTER"
+        ]
+      },
+      {
+        "id": "F-02",
+        "severity": "medium",
+        "topic": "The SN74LVC541A in the H11 BOM is there for the wrong reason",
+        "detail": "Buffer_CK on LCU_H11 is the DFSDM clock buffer: SN74LVC541A with 33 ohm series resistors, driving DFSDM_CKOUT to the eight modulator channels.",
+        "consequence": "The part and the 33 ohm pattern are already qualified, but the block disappears with the sigma-delta path. It is still the right candidate for the LPU PWM buffers, so the part stays in the BOM with a different purpose.",
+        "affects": [
+          "L-LPU-BUF"
+        ]
+      }
+    ]
+  },
+  "risk_model": {
+    "note": "Additive score per part; impact adjusts the final priority. Every weight is a judgement, but the arithmetic is explicit and reproducible, which is the point.",
+    "weights": {
+      "lifecycle_eol": 8,
+      "lifecycle_nrnd": 5,
+      "lifecycle_migrating": 4,
+      "lifecycle_unknown": 3,
+      "single_source": 2,
+      "no_alternate": 1,
+      "stock_below_100": 4,
+      "stock_below_1000": 2,
+      "long_lead": 3,
+      "unverified": 2,
+      "new_to_design": 1,
+      "datasheet_missing": 1,
+      "manual_assembly": 2
+    },
+    "bands": {
+      "critical": 9,
+      "high": 6,
+      "medium": 3,
+      "low": 0
+    },
+    "impact_bump": {
+      "safety": 2,
+      "functional": 1,
+      "auxiliary": 0
+    },
+    "band_order": [
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ]
+  },
+  "parts": {
+    "STM32H723ZGT6": {
+      "manufacturer": "STMicroelectronics",
+      "description": "ARM Cortex-M7 550 MHz MCU, LQFP-144",
+      "package": "LQFP-144",
+      "lifecycle": "active",
+      "lifecycle_source": "ST product page; H723 remains in the ST long-term availability programme",
+      "verified_on": "2026-11-10",
+      "single_source": true,
+      "alternates": [
+        "STM32H723ZGT6 is effectively sole-source: no pin-compatible second source exists for the H7 family"
+      ],
+      "params": {
+        "core_mhz": 550,
+        "flash_kb": 1024,
+        "ram_kb": 564,
+        "adc": "2x16-bit + 1x12-bit",
+        "ethernet": "RMII",
+        "io_144": 114
+      },
+      "flags": [
+        "single_source",
+        "long_lead"
+      ],
+      "note": "Two per board. Supply, not lifecycle, is the risk: H7 parts have had multi-month lead times. Ordering both MCUs early is the single most effective de-risking action on this board."
+    },
+    "KSZ8041TLI": {
+      "manufacturer": "Microchip",
+      "description": "10/100BASE-TX PHY, RMII, LQFP-48",
+      "package": "LQFP-48",
+      "lifecycle": "migrating",
+      "lifecycle_source": "Microchip application note AN4212 'Migrating to KSZ8081/8091 Family PHY Transceivers' is written for customers using KSZ8041 devices",
+      "verified_on": "2026-11-10",
+      "single_source": true,
+      "alternates": [
+        "KSZ8081RNB (RMII, QFN-32, different pinout)",
+        "LAN8742A (RMII, QFN-24, different pinout)",
+        "ADIN1200 (ADI)"
+      ],
+      "params": {
+        "speed": "10/100",
+        "interface": "RMII",
+        "supply_v": 3.3,
+        "phy_address": "strap 00001"
+      },
+      "flags": [
+        "lifecycle_migrating",
+        "single_source"
+      ],
+      "note": "AN4212 names KSZ8041NL/RNL/MLL, not the TL variant, so this is a family-level signal rather than an EOL notice for the exact part. Carried over from LCU_H11 unchanged; if a respin is ever needed, budget for a pinout change, not a drop-in."
+    },
+    "7499011222A": {
+      "manufacturer": "Wurth Elektronik",
+      "description": "RJ45 jack with integrated magnetics and LEDs",
+      "package": "THT RJ45",
+      "lifecycle": "active",
+      "lifecycle_source": "Wurth product line, carried from LCU_H11 and VCU_H11",
+      "verified_on": "2026-11-10",
+      "single_source": true,
+      "alternates": [
+        "Halo/HanRun/Pulse equivalents exist but are footprint-incompatible"
+      ],
+      "params": {
+        "speed": "10/100",
+        "magnetics": "integrated",
+        "shield": "yes"
+      },
+      "flags": [
+        "single_source"
+      ],
+      "note": "Mechanical part: a substitute will almost certainly not fit the same footprint. Treat as a stock item to buy early."
+    },
+    "ASE-50.000MHZ-LR-T": {
+      "manufacturer": "Abracon",
+      "description": "50.000 MHz CMOS oscillator, RMII reference clock",
+      "package": "3.2x2.5 mm SMD",
+      "lifecycle": "active",
+      "lifecycle_source": "Abracon ASE series, carried from LCU_H11",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "Any 3.2x2.5 50 MHz CMOS XO (SiTime SiT8008, ECS, Kyocera)"
+      ],
+      "params": {
+        "frequency_mhz": 50,
+        "output": "CMOS",
+        "supply_v": 3.3
+      },
+      "flags": [],
+      "note": "Commodity. The RMII reference must come from here rather than from the MCU, which is why the PHY support circuit differs from a resistor-strap-only design."
+    },
+    "TJA1051T/3": {
+      "manufacturer": "NXP",
+      "description": "High-speed CAN transceiver, 3.3 V interface, SO-8",
+      "package": "SO-8",
+      "lifecycle": "active",
+      "lifecycle_source": "NXP TJA1051 family, in volume production",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "MCP2562FD (Microchip)",
+        "SN65HVD230 (TI)",
+        "TCAN334 (TI)"
+      ],
+      "params": {
+        "rate_mbit": 5,
+        "interface_v": 3.3,
+        "supply_v": 5,
+        "pins": 8
+      },
+      "flags": [],
+      "note": "Two per board, one per MCU, on the same bus. The /3 variant is the one with the 3.3 V logic interface; the plain TJA1051T has 5 V logic and must not be substituted."
+    },
+    "SN74AHCT367": {
+      "manufacturer": "Texas Instruments",
+      "description": "Hex buffer/line driver, 3-state, 5 V, TSSOP-16",
+      "package": "TSSOP-16",
+      "lifecycle": "nrnd",
+      "lifecycle_source": "TI datasheet: 'NRND: Not recommended for new designs. Device is in production to support existing customers, but TI does not recommend using this part in a new design.'",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "SN74LVC541A (3.3 V, 8 channel, already in the LCU_H11 BOM)",
+        "SN74AHCT541 (5 V, 8 channel)"
+      ],
+      "params": {
+        "supply_v": 5,
+        "channels": 6,
+        "output": "3-state",
+        "i_abs_max_ma": 50
+      },
+      "flags": [
+        "lifecycle_nrnd",
+        "no_alternate"
+      ],
+      "note": "Being replaced in H12. Vendor NRND is objective; the degradation reported in the field is consistent with an unterminated 5 V output driving a cable, which is a design fault independent of lifecycle.",
+      "library_only": true
+    },
+    "SN74LVC541APWR": {
+      "manufacturer": "Texas Instruments",
+      "description": "Octal buffer/line driver, 3-state, 1.65-3.6 V, TSSOP-20",
+      "package": "TSSOP-20",
+      "lifecycle": "active",
+      "lifecycle_source": "TI catalogue part, in volume production; already used on LCU_H11 Buffer_CK",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "74LVC541A (Nexperia)",
+        "SN74LVC244A (no 3-state grouping change)"
+      ],
+      "params": {
+        "supply_v": 3.3,
+        "channels": 8,
+        "output": "3-state",
+        "drive_ma": 24
+      },
+      "flags": [],
+      "note": "Considered and rejected for the LPU PWM path: it is a 3.3 V part, so its output would never reach the 5 V the LPU needs. It stays in the library only as the record of that comparison; the LCU_H11 Buffer_CK role it was bought for disappears with the sigma-delta airgap path (F-02).",
+      "library_only": true
+    },
+    "SN74AHCT541": {
+      "manufacturer": "Texas Instruments",
+      "description": "Octal buffer/line driver, 3-state, 5 V, TSSOP-20",
+      "package": "TSSOP-20",
+      "lifecycle": "active",
+      "lifecycle_source": "TI product page: '8-ch, 4.5-V to 5.5-V buffers with TTL-compatible CMOS inputs'. No NRND notice, unlike the AHCT367.",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "74AHCT541 (Nexperia)"
+      ],
+      "params": {
+        "supply_v": 5,
+        "channels": 8,
+        "output": "3-state",
+        "vin_vih_v": 2.0
+      },
+      "flags": [],
+      "note": "Selected for the LPU output bank. Three signals leave the LCU per LPU -- PWM_1, PWM_2 and RESET -- all at 5 V, so the bank carries 30 signals. The LPU needs 5 V and the MCU drives 3.3 V, which is exactly what an AHCT part is for: TTL-compatible inputs put VIH at 2.0 V, so a 3.3 V MCU output drives it directly with no level shifter, and the output is full 5 V CMOS. RESET is active-low, so releasing it requires an actively driven HIGH, which is why it cannot be open-drain. Eight channels per package: five packages, two LPUs each, six channels used and two spare."
+    },
+    "MCP6022-E/SN": {
+      "manufacturer": "Microchip",
+      "description": "Dual op-amp, rail-to-rail I/O, 10 MHz, SOIC-8",
+      "package": "SOIC-8",
+      "lifecycle": "active",
+      "lifecycle_source": "Microchip catalogue part, in volume production",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "OPA2320 (TI, lower Vos)",
+        "MCP6V02 (zero-drift)",
+        "ADA4522-2 (very low Vos, expensive)"
+      ],
+      "params": {
+        "supply_min_v": 2.5,
+        "supply_max_v": 5.5,
+        "gbw_mhz": 10,
+        "vos_max_uv": 2500,
+        "channels": 2
+      },
+      "flags": [
+        "unverified"
+      ],
+      "note": "One per airgap channel. The 2.5 mV maximum offset is 125 LSB at 16 bits over 3.3 V, so the amplifier -- not the ADC -- is the accuracy limit together with the sense resistor. Retained for H12 because the topology is retained; an upgrade to OPA2320 is a later decision, not a blocker."
+    },
+    "LT1963AEST-3.3": {
+      "manufacturer": "Analog Devices",
+      "description": "1.5 A low-noise LDO, fixed 3.3 V, SOT-223",
+      "package": "SOT-223",
+      "lifecycle": "active",
+      "lifecycle_source": "ADI product page states 'RECOMMENDED FOR NEW DESIGNS'",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "TPS7A4700 (TI, lower noise)",
+        "LT1963A adjustable variant"
+      ],
+      "params": {
+        "i_max_a": 1.5,
+        "vout_v": 3.3,
+        "dropout_mv": 340
+      },
+      "flags": [],
+      "note": "Carried over. SOT-223 dissipates poorly; confirm the thermal margin once the SD card load is added."
+    },
+    "LM5013-Q1": {
+      "manufacturer": "Texas Instruments",
+      "description": "100 V input, 3.5 A non-synchronous buck regulator",
+      "package": "HTSSOP",
+      "lifecycle": "active",
+      "lifecycle_source": "TI automotive catalogue part",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "LM5164 (TI)",
+        "other 100 V buck families"
+      ],
+      "params": {
+        "vin_max_v": 100,
+        "i_out_a": 3.5,
+        "sync": "non-synchronous"
+      },
+      "flags": [],
+      "note": "Carried over. A 100 V input rating implies VIN can be a high rail, which is why the LCU_H10 input voltage is still an open value (TMP/ARCH item). Non-synchronous means an external catch diode, already in the BOM."
+    },
+    "TE-5499922-6": {
+      "manufacturer": "TE Connectivity",
+      "description": "AMP-LATCH universal header, 26 positions, 2.54 mm, vertical with long latches",
+      "package": "THT 2.54 mm",
+      "lifecycle": "unknown",
+      "lifecycle_source": "Not stated on distributor listings; family is stocked and shipping, but no vendor lifecycle statement found",
+      "verified_on": "2026-11-10",
+      "single_source": true,
+      "alternates": [
+        "No drop-in alternative: the LPU harness and the LPU board both assume this footprint"
+      ],
+      "params": {
+        "positions": 26,
+        "pitch_mm": 2.54,
+        "rows": 2,
+        "body_mm": 44.5
+      },
+      "flags": [
+        "lifecycle_unknown",
+        "single_source",
+        "unverified"
+      ],
+      "note": "Ten per board and frozen by the LPU_H11 interface, so there is no design freedom here -- only a supply question. Verify the lifecycle directly with TE and confirm the 44.5 mm body, which the Phase 0 mechanical figure depends on."
+    },
+    "MOLEX-206832-0401": {
+      "manufacturer": "Molex",
+      "description": "Micro-Fit+ vertical header, 4 circuits, 3.00 mm, dual row",
+      "package": "THT 3.00 mm",
+      "lifecycle": "active",
+      "lifecycle_source": "Molex current catalogue; Micro-Fit+ is the H12 team standard",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "Micro-Fit 3.0 43045 series (not footprint compatible)"
+      ],
+      "params": {
+        "circuits": 4,
+        "pitch_mm": 3.0,
+        "current_a": 13.5
+      },
+      "flags": [],
+      "note": "Replaces every Nano-Fit on the board: 8 airgap, 2 bootloader, 2 brake chain, 4 corner NTC. Using one part number for all four functions simplifies both the BOM and the harness crimp tooling."
+    },
+    "TPS62130": {
+      "manufacturer": "Texas Instruments",
+      "description": "placeholder for any new rail needed by the SD card or the LED driver",
+      "package": "QFN-16",
+      "lifecycle": "unknown",
+      "lifecycle_source": "not selected",
+      "verified_on": "",
+      "single_source": false,
+      "alternates": [],
+      "params": {},
+      "flags": [
+        "unverified"
+      ],
+      "note": "PLACEHOLDER. There is no evidence a new rail is needed; LT1963A at 1.5 A has margin unless the SD card and the LED driver together add more than a few hundred mA. Delete this line once the power budget is closed.",
+      "library_only": true
+    },
+    "ICM-42688-P": {
+      "manufacturer": "TDK InvenSense",
+      "description": "6-axis IMU, SPI/I2C, LGA-14",
+      "package": "LGA-14 2.5x3 mm",
+      "lifecycle": "active",
+      "lifecycle_source": "TDK InvenSense current catalogue",
+      "verified_on": "2026-11-10",
+      "single_source": true,
+      "alternates": [
+        "LSM6DSO (ST)",
+        "BMI088 (Bosch)"
+      ],
+      "params": {
+        "gyro_dps": 2000,
+        "accel_g": 16,
+        "interface": "SPI",
+        "supply_v": 3.3
+      },
+      "flags": [
+        "new_to_design"
+      ],
+      "note": "Optional and unpopulated. Chosen over LSM6DSO only because its SPI timing is simpler; if the control team prefers a part they already have drivers for, that wins and this line changes."
+    },
+    "160R-0603-0.1pct": {
+      "manufacturer": "Vishay / TE Connectivity",
+      "description": "Chip resistor, 160 ohm, 0.1 %, 0603",
+      "package": "0603",
+      "lifecycle": "active",
+      "lifecycle_source": "Commodity thin-film resistor; several vendors in volume production",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "Any 0.1 % 160R 0603 thin film",
+        "Vishay TNPW0603160RBEEA",
+        "TE RQ73 series"
+      ],
+      "params": {
+        "resistance_ohm": 160,
+        "tolerance_pct": 0.1,
+        "tempco_ppm": 25
+      },
+      "flags": [],
+      "note": "Airgap 4-20 mA sense resistor. 0.1 % is already the accuracy limit at about 10 bits, matching the sensor's own +/-140 um linearity; upgrading to 0.01 %/5 ppm buys nothing until that is solved."
+    },
+    "82306050029": {
+      "manufacturer": "Wurth Elektronik",
+      "description": "WE-VE ULC bidirectional ESD suppressor array",
+      "package": "0603 array",
+      "lifecycle": "active",
+      "lifecycle_source": "Wurth WE-VE series, currently catalogued; already used on VCU_H11",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "Littelfuse SM712-02HTG (already in the BOM)",
+        "Bourns CDSOT23 series"
+      ],
+      "params": {
+        "v_working": 5,
+        "bidirectional": true,
+        "channels": 1
+      },
+      "flags": [],
+      "note": "Already qualified on the VCU_H11 SD and Ethernet sheets. Standardising on it avoids introducing a second protection part family."
+    },
+    "MOLEX-216571-2002": {
+      "manufacturer": "Molex",
+      "description": "microSD card connector, push-push, 9 way, with detect switch",
+      "package": "SMT",
+      "lifecycle": "active",
+      "lifecycle_source": "Molex memory-card connector family, currently catalogued",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "TE 1939115-1 (rejected: no package data, flagged unavailable in the VCU vault)"
+      ],
+      "params": {
+        "card": "microSD",
+        "bus": "4-bit",
+        "detect": "yes",
+        "ejection": "push-push"
+      },
+      "flags": [],
+      "note": "Chosen over the TE part because its footprint and 3D model are already proven in the VCU_H11 design: 216571-2002-Footprint-1 with 216571-2002.stp embedded. Carry the footprint across verbatim rather than re-creating it."
+    },
+    "SM712-02HTG": {
+      "manufacturer": "Littelfuse",
+      "description": "Bidirectional asymmetric TVS array for RS-485 / CAN",
+      "package": "SOT-23",
+      "lifecycle": "active",
+      "lifecycle_source": "Littelfuse catalogue; already in the LCU_H11 BOM in volume production",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "Nexperia PESD1CAN",
+        "Bourns CDSOT23-T24CAN"
+      ],
+      "params": {
+        "v_working": 24,
+        "channels": 2,
+        "bidirectional": true
+      },
+      "flags": [],
+      "note": "Intended for exactly this: two data lines of a differential bus. One per CAN node."
+    },
+    "VLMTG1300-GS08": {
+      "manufacturer": "Vishay",
+      "description": "Green LED, 0603, high brightness",
+      "package": "0603",
+      "lifecycle": "active",
+      "lifecycle_source": "In the LCU_H11 BOM at Volume Production, distributor stock above 79 000",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "VLMS1300-GS08 (red, same footprint)",
+        "any 0603 green LED"
+      ],
+      "params": {
+        "colour": "green",
+        "vf_v": 2.0,
+        "i_typ_ma": 1.3
+      },
+      "flags": [],
+      "note": "Per-LPU levitation indicator. Already in the LCU_H11 BOM."
+    },
+    "VLMS1300-GS08": {
+      "manufacturer": "Vishay",
+      "description": "Red LED, 0603, high brightness",
+      "package": "0603",
+      "lifecycle": "active",
+      "lifecycle_source": "In the LCU_H11 BOM at Volume Production, distributor stock above 32 000",
+      "verified_on": "2026-11-10",
+      "single_source": false,
+      "alternates": [
+        "any 0603 red LED"
+      ],
+      "params": {
+        "colour": "red",
+        "vf_v": 2.0,
+        "i_typ_ma": 1.3
+      },
+      "flags": [],
+      "note": "Board-level fault indicator. Already in the LCU_H11 BOM."
+    },
+    "BAT54S": {
+      "manufacturer": "Nexperia",
+      "description": "Dual Schottky diode, series, SOT-23, 30 V 200 mA",
+      "package": "SOT-23",
+      "lifecycle": "active",
+      "lifecycle_source": "Commodity part with several second sources; not verified vendor by vendor",
+      "verified_on": "",
+      "single_source": false,
+      "alternates": [
+        "Vishay BAT54S",
+        "ON Semiconductor BAT54S",
+        "Diodes Inc BAT54S"
+      ],
+      "params": {
+        "v_r": 30,
+        "i_f_ma": 200,
+        "configuration": "dual series"
+      },
+      "flags": [],
+      "note": "Five packages make the diode-OR of the ten FAULT lines. A commodity with four second sources, so availability is not a concern even if one vendor obsoletes it."
+    },
+    "BSS84": {
+      "manufacturer": "onsemi",
+      "description": "P-channel MOSFET, logic level, -50 V, SOT-23",
+      "package": "SOT-23",
+      "lifecycle": "active",
+      "lifecycle_source": "Commodity small-signal PMOS with several second sources",
+      "verified_on": "",
+      "single_source": false,
+      "alternates": [
+        "Nexperia BSS84",
+        "Diodes Inc BSS84",
+        "Vishay BSS84"
+      ],
+      "params": {
+        "vds": -50,
+        "vgs_th": [
+          -0.8,
+          -2.0
+        ],
+        "i_d_ma": 130
+      },
+      "flags": [],
+      "note": "Switches the board-level fault LED from the diode-OR node. Its purpose is to keep the LED current out of the FAULT lines: the gate draws no DC current, so the 10 kOhm pull-downs alone define the level of an unseated connector."
+    }
+  },
+  "lines": [
+    {
+      "id": "L-MCU",
+      "block": "mcu_master, mcu_slave",
+      "function": "Main MCU",
+      "qty": 2,
+      "part": "STM32H723ZGT6",
+      "status": "carry",
+      "criticality": "safety"
+    },
+    {
+      "id": "L-ETH-PHY",
+      "block": "eth",
+      "function": "Ethernet PHY",
+      "qty": 1,
+      "part": "KSZ8041TLI",
+      "status": "carry",
+      "criticality": "safety"
+    },
+    {
+      "id": "L-ETH-JACK",
+      "block": "eth",
+      "function": "RJ45 with integrated magnetics",
+      "qty": 1,
+      "part": "7499011222A",
+      "status": "carry",
+      "criticality": "safety"
+    },
+    {
+      "id": "L-ETH-XO",
+      "block": "eth",
+      "function": "50 MHz RMII reference oscillator",
+      "qty": 1,
+      "part": "ASE-50.000MHZ-LR-T",
+      "status": "carry",
+      "criticality": "safety"
+    },
+    {
+      "id": "L-CAN",
+      "block": "can",
+      "function": "CAN transceiver, one per MCU",
+      "qty": 2,
+      "part": "TJA1051T/3",
+      "status": "changed",
+      "criticality": "functional",
+      "note": "LCU_H11 has a CAN transceiver but the firmware never instantiates FDCAN. H12 wires both MCUs as nodes."
+    },
+    {
+      "id": "L-LPU-BUF",
+      "block": "lpu_buf",
+      "function": "LPU output buffer bank: 2 PWM + RESET per LPU, 5 V",
+      "qty": 5,
+      "part": "SN74AHCT541",
+      "status": "changed",
+      "criticality": "safety",
+      "candidates": [],
+      "note": "Five TSSOP-20 packages, two LPUs each: four PWM channels plus two RESET channels, 30 signals in total with ten channels spare. The 1:2 grouping is kept from LCU_H10 because it matches the enable partitioning and the harness order. Four packages would be the arithmetic minimum (32 channels); the fifth costs about EUR 0.40 and 30 mm2 and avoids splitting an LPU pair across packages. Package choice was reviewed in D-07 and confirmed: 16-bit parts reduce count but not area, and the pull-up/pull-down question is settled by RESET being active-low."
+    },
+    {
+      "id": "L-LPU-CONN",
+      "block": "lpu_conn",
+      "function": "LPU connector, 26 pin",
+      "qty": 10,
+      "part": "TE-5499922-6",
+      "status": "carry",
+      "criticality": "safety"
+    },
+    {
+      "id": "L-AGP-AFE",
+      "block": "agp_afe",
+      "function": "Airgap 4-20 mA front-end op-amp",
+      "qty": 8,
+      "part": "MCP6022-E/SN",
+      "status": "changed",
+      "criticality": "safety",
+      "note": "Reinstated from LCU_H10 (F-01): LCU_H11 has no analog airgap front end. One MCP6022 per channel. Amplifier supply moves from +5 V to +3.3 V, which is a net change, not a part change."
+    },
+    {
+      "id": "L-AGP-RSENSE",
+      "block": "agp_afe",
+      "function": "Airgap 4-20 mA sense resistor, 160 ohm",
+      "qty": 8,
+      "part": "160R-0603-0.1pct",
+      "status": "changed",
+      "criticality": "safety",
+      "note": "Reinstated from LCU_H10 (F-01); absent from the LCU_H11 BOM. 0.1 % is already the accuracy limit at about 10 bits, matching the sensor's own +/-140 um linearity."
+    },
+    {
+      "id": "L-AGP-FILTER",
+      "block": "agp_afe",
+      "function": "Airgap 5th-order Butterworth anti-alias passives",
+      "qty": 8,
+      "part": "",
+      "status": "select",
+      "criticality": "safety",
+      "candidates": [
+        "Transcribe values from the LCU_H10 '4-20mA conditioning sub-block' sheet and re-derive if the amplifier rail changes to 3.3 V"
+      ],
+      "note": "Roughly ten passives per channel, so around eighty parts that are NOT in the LCU_H11 BOM (F-01). The corner frequency is 5 kHz; if the amplifier moves to 3.3 V the filter must be re-checked for headroom, not re-tuned. This is the largest single selection task left in the phase."
+    },
+    {
+      "id": "L-AGP-CONN",
+      "block": "agp_conn",
+      "function": "Airgap sensor connector",
+      "qty": 8,
+      "part": "MOLEX-206832-0401",
+      "status": "changed",
+      "criticality": "safety",
+      "note": "Nano-Fit to Micro-Fit+."
+    },
+    {
+      "id": "L-NTC-CONN",
+      "block": "if_ntc",
+      "function": "Corner NTC connector",
+      "qty": 4,
+      "part": "MOLEX-206832-0401",
+      "status": "new",
+      "criticality": "functional"
+    },
+    {
+      "id": "L-NTC-EXC",
+      "block": "ntc_afe",
+      "function": "Corner NTC excitation and filter passives",
+      "qty": 4,
+      "part": "NTC-CONDITIONING-SET",
+      "status": "select",
+      "criticality": "functional",
+      "candidates": [
+        "10 kOhm 0.1 % pull-up to 3V3 + 220 ohm series + 10 nF (mirrors LCU_H11 Temp_conditioning)"
+      ],
+      "note": "Values depend on the NTC part, which is the same device as LPU_H11 (Q-15). The 220 ohm / 10 nF values are inherited and only need re-checking against the chosen pull-up."
+    },
+    {
+      "id": "L-BRAKE-CONN",
+      "block": "brake_conn",
+      "function": "brake_fault daisy-chain connector",
+      "qty": 2,
+      "part": "MOLEX-206832-0401",
+      "status": "new",
+      "criticality": "safety"
+    },
+    {
+      "id": "L-BOOT-CONN",
+      "block": "if_boot",
+      "function": "Bootloader connector",
+      "qty": 2,
+      "part": "MOLEX-206832-0401",
+      "status": "changed",
+      "criticality": "auxiliary",
+      "note": "Nano-Fit to Micro-Fit+. Inherited function."
+    },
+    {
+      "id": "L-SD-SOCKET",
+      "block": "sd",
+      "function": "microSD socket",
+      "qty": 1,
+      "part": "MOLEX-216571-2002",
+      "status": "new",
+      "criticality": "auxiliary",
+      "candidates": [],
+      "note": "Taken from the VCU_H11 design after checking both candidates. Molex 216571-2002 has a real footprint and an embedded 3D STEP model (216571-2002-Footprint-1 / 216571-2002.stp) in the VCU design; the TE 1939115-1 has no package data and is flagged Availability=Unavailable in the VCU vault. The verified footprint decides it."
+    },
+    {
+      "id": "L-SD-ESD",
+      "block": "sd",
+      "function": "SD interface ESD protection",
+      "qty": 1,
+      "part": "82306050029",
+      "status": "carry",
+      "criticality": "auxiliary",
+      "note": "Würth WE-VE ULC array, already in the LCU_H11 BOM and used on the VCU_H11 SD sheet."
+    },
+    {
+      "id": "L-PWR-BUCK",
+      "block": "pwr",
+      "function": "Input buck regulator",
+      "qty": 1,
+      "part": "LM5013-Q1",
+      "status": "carry",
+      "criticality": "safety"
+    },
+    {
+      "id": "L-PWR-LDO",
+      "block": "pwr",
+      "function": "3.3 V LDO",
+      "qty": 1,
+      "part": "LT1963AEST-3.3",
+      "status": "carry",
+      "criticality": "safety"
+    },
+    {
+      "id": "L-LED-LPU",
+      "block": "leds",
+      "function": "Per-LPU levitation indicator, driven from READY",
+      "qty": 10,
+      "part": "VLMTG1300-GS08",
+      "status": "proposed",
+      "criticality": "auxiliary",
+      "note": "Green 0603 LED plus a 1 kOhm series resistor from each READY line to ground. Lights when that magnet is ready. Optional: leave unpopulated and nothing else is affected. No loading problem in the released state, because an LED needs about 2 V to conduct and the pull-down holds READY at 0 V when the connector is out. Parts already in the LCU_H11 BOM."
+    },
+    {
+      "id": "L-LED-BOARD",
+      "block": "leds",
+      "function": "Board-level fault indicator, diode-OR of the ten FAULT lines",
+      "qty": 1,
+      "part": "VLMS1300-GS08",
+      "status": "proposed",
+      "criticality": "auxiliary",
+      "note": "Red 0603 LED lit when any of the ten FAULT lines is low. Five BAT54S dual Schottkys form the OR, a 10 kOhm pull-up defines the node, and a BSS84 P-MOSFET switches the LED so that no LED current flows through the FAULT lines themselves. That transistor is the part that makes the scheme safe, not decoration: see the Phase 1 document, section 3.6.",
+      "candidates": [
+        "BAT54S",
+        "BSS84"
+      ]
+    },
+    {
+      "id": "L-IMU",
+      "block": "imu",
+      "function": "Optional IMU",
+      "qty": 1,
+      "part": "ICM-42688-P",
+      "status": "new",
+      "criticality": "auxiliary",
+      "note": "Unpopulated by default."
+    },
+    {
+      "id": "L-ESD-ANALOG",
+      "block": "agp_afe, ntc_afe",
+      "function": "Protection on the analog inputs: 8 airgap loops and 4 corner NTC",
+      "qty": 20,
+      "part": "82306050029",
+      "status": "proposed",
+      "criticality": "functional",
+      "note": "Protection tier 2: two suppressors per airgap loop (a current loop is less exposed, but the cable runs beside the LPU power leads) and one per NTC line plus a series resistor. Tier 3 would be board-internal signals, which is not proposed."
+    },
+    {
+      "id": "L-ESD-LPU",
+      "block": "lpu_conn",
+      "function": "ESD and clamp protection on the LPU lines",
+      "qty": 50,
+      "part": "82306050029",
+      "status": "proposed",
+      "criticality": "safety",
+      "candidates": [
+        "WE-VE ULC 0603 single channel",
+        "Bourns CDSOT23-T24CAN for differential pairs"
+      ],
+      "note": "Protection tier 1: the 50 lines that leave the board on the LPU connectors -- 20 PWM, 10 RESET, 10 READY, 10 FAULT. One WE-VE ULC per line at the connector plus the series resistor already required on the status lines. Absent in LCU_H10 and LCU_H11, so this is an addition, not a swap."
+    },
+    {
+      "id": "L-RST-DRV",
+      "block": "lpu_rst_logic",
+      "function": "brake_fault -> buffer enable override gate",
+      "qty": 1,
+      "part": "",
+      "status": "select",
+      "criticality": "safety",
+      "candidates": [
+        "74AHC1G08 single AND gate",
+        "74AHC08 quad AND",
+        "discrete NPN/MOSFET pulling the enable high"
+      ],
+      "note": "One gate: brake_fault AND the MCU enable, into the five package enable pins. RESET is active-low and buffered, so the override cannot act on the reset net; it releases the bank and the pull-downs assert every reset. Firmware must drive the RESET buffer inputs LOW before asserting the enable, otherwise the first enabled instant drives indeterminate levels."
+    },
+    {
+      "id": "L-PASSIVES",
+      "block": "all",
+      "function": "Passive portfolio",
+      "qty": 0,
+      "part": "INHERITED",
+      "status": "carry",
+      "criticality": "functional",
+      "note": "The LCU_H11 BOM carries 49 passive and discrete lines, all in volume production with distributor stock above 5000 except a handful. They are not re-listed individually here; see bom/h11_baseline.json. Re-verify prices at order time, not now."
+    },
+    {
+      "id": "L-ESD-CAN",
+      "block": "can",
+      "function": "CAN bus protection",
+      "qty": 2,
+      "part": "SM712-02HTG",
+      "status": "proposed",
+      "criticality": "functional",
+      "note": "Already in the LCU_H11 BOM and designed for RS-485/CAN transients. One per transceiver node."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-01",
+      "topic": "LPU PWM buffer",
+      "status": "decided",
+      "blocks": [
+        "L-LPU-BUF"
+      ],
+      "question": "Does the LPU accept 3.3 V logic on PWM_1/PWM_2, or does it need 5 V?",
+      "recommendation": "The LPU needs 5 V. SN74AHCT541: TTL-compatible inputs accept the 3.3 V MCU drive (VIH = 2.0 V) and the output is 5 V CMOS. Three TSSOP-20 packages for 20 signals. Active lifecycle, unlike the AHCT367.",
+      "contingency": "Both candidates are pin-compatible TSSOP-20, so the footprint can be committed before the answer arrives. Populate whichever is needed.",
+      "answer": "LPU PWM input is 5 V; MCU output is 3.3 V. Resolved with SN74AHCT541."
+    },
+    {
+      "id": "D-02",
+      "topic": "microSD socket",
+      "status": "decided",
+      "blocks": [
+        "L-SD-SOCKET"
+      ],
+      "question": "TE 1939115-1 or Molex 216571-2002? Both appear in the VCU_H11 SD documentation.",
+      "recommendation": "Molex 216571-2002. Both parts appear in VCU_H11, but only the Molex one has a verified footprint and an embedded 3D model; the TE part has no package data in the VCU design and is marked unavailable in its vault.",
+      "answer": "Take the VCU part with the correct footprint: Molex 216571-2002."
+    },
+    {
+      "id": "D-03",
+      "topic": "ESD and clamp strategy",
+      "status": "proposed",
+      "blocks": [
+        "L-ESD-LPU",
+        "L-ESD-STATUS"
+      ],
+      "question": "What is the protection for, and what does it have to be paired with?",
+      "recommendation": "Three voltage classes, not one part number. The claim that a single WE-VE ULC covers everything was wrong: a 5 V standoff part on a 5 V logic line sits right at the rail and leaks, and the same part on the 24 V brake chain is useless. Use a 6 V class on the 5 V LPU signals, a 5 V class on the 3.3 V status and analog lines, and a 30 V class on the brake chain. CAN keeps SM712-02HTG, which is already the right asymmetric 24 V part.",
+      "note": "The clamp is the second half of the protection, not the first. What actually limits current into a pin is the series resistor: with a 9 V clamp into a 3.3 V pin, a 100 Ohm resistor still pushes 57 mA through the internal diode, and 1 kOhm brings it to 5.7 mA. So the order of priority is series resistor per line first, clamp second, and the clamp chosen so its standoff sits above the signal's maximum level. See the Phase 1 document, section 3.6."
+    },
+    {
+      "id": "D-05",
+      "topic": "Airgap amplifier",
+      "status": "deferred",
+      "blocks": [
+        "L-AGP-AFE"
+      ],
+      "question": "Keep the MCP6022 or move to a lower-offset part?",
+      "recommendation": "Keep for H12. The sensor's own linearity limits performance to ~10 bits, so a better amplifier changes nothing measurable until that is fixed. Revisit only if an accuracy requirement appears."
+    },
+    {
+      "id": "D-06",
+      "topic": "Reset buffering and the brake override",
+      "status": "decided",
+      "blocks": [
+        "L-LPU-BUF",
+        "L-RST-DRV"
+      ],
+      "question": "How can brake_fault assert the LPU resets if RESET is a push-pull 5 V buffer output?",
+      "recommendation": "Through the buffer enable, not through the output. RESET and the two PWM lines share the 5 V bank; the enable is active-low and pulled to disabled, and brake_fault forces it disabled in hardware. The RESET lines then fall to the asserted level through their pull resistors, and the PWM outputs go high-impedance.",
+      "note": "This supersedes the open-drain wired-AND described in Phase 0 section 6.3, which cannot work against a push-pull buffer. Consequence to design for: a released bank also releases the PWM lines, so the LPU PWM inputs need pull-downs of their own, otherwise they float at the far end."
+    },
+    {
+      "id": "D-07",
+      "topic": "Buffer bank: part choice and package count",
+      "status": "decided",
+      "blocks": [
+        "L-LPU-BUF"
+      ],
+      "question": "Is there a buffer arrangement that takes less space than 5 x SN74AHCT541?",
+      "note": "Channel count is fixed at 30 (2 PWM + RESET per LPU) unless RESET stops being buffered. Package footprints below are body sizes; total area is the package area multiplied by the count.\n\n| Option | Part | ch/pkg | Package | Body mm | mm2/pkg | Pkgs | Total mm2 | mm2/ch |\n|---|---|---|---|---|---|---|---|---|\n| A | SN74AHCT367 | 6 | TSSOP-16 | 5.0 x 4.4 | 22.0 | 5 | 110 | 3.7 |\n| B | SN74AHCT541 | 8 | TSSOP-20 | 6.5 x 4.4 | 28.6 | 4 | 114 | 3.6 |\n| C | SN74AHCT541 | 8 | TSSOP-20 | 6.5 x 4.4 | 28.6 | 5 | 143 | 3.6 |\n| D | SN74AHCT244 | 8 | TSSOP-20 | 6.5 x 4.4 | 28.6 | 5 | 143 | 3.6 |\n| E | SN74AHCT16244 | 16 | TSSOP-48 | 12.5 x 6.1 | 76.3 | 2 | 152 | 4.8 |\n| F | SN74AHCT16244 | 16 | TVSOP-48 | 9.7 x 4.4 | 42.7 | 2 | 85 | 2.7 |\n| G | unbuffered RESET, 3 x SN74AHCT541 | 8 | TSSOP-20 | 6.5 x 4.4 | 28.6 | 3 | 86 | 3.6 |\n\nThe arithmetic that matters: the 8-channel TSSOP-20 is the area sweet spot at 3.6 mm2 per channel. Going to a 16-bit part does NOT reduce area -- the TSSOP-48 variant is 4.8 mm2 per channel, worse than the octal -- it only reduces part count. The 16-bit part wins on area only in the 0.4 mm-pitch TVSOP package, which is hostile to hand assembly.",
+      "recommendation": "Keep option C: SN74AHCT541, five TSSOP-20 packages, two LPUs each. The octademal is the area optimum at 3.6 mm2 per channel; the 16-bit alternative saves part count but not area unless it is the 0.4 mm-pitch TVSOP, which only pays off in a reflowed build. Five packages keep each LPU pair on one package and leave ten spare channels.",
+      "note_2": "Option G is the largest saving of all -- 30 percent less area and two fewer packages -- but it is only available if the LPU RESET input is active-HIGH. An active-low reset has to be released by driving it high, which needs a push-pull driver, and a pull resistor cannot hold it in the asserted state when the driver is released. LCU_H10 firmware calls turn_on() on the reset lines to enable the LPUs, which suggests active-low, so option G is probably unavailable. Confirm the polarity before spending time on it.",
+      "decision_needed": "None. Revisit only if the board moves to a reflow process, which would make the TVSOP-48 option worth re-costing.",
+      "answer": "LPU RESET is active-low: driving it HIGH releases the reset and lets the LPU work. That makes the release state an actively driven HIGH, which a pull resistor cannot provide, so the buffer is mandatory. Option G is ruled out."
+    },
+    {
+      "id": "D-04",
+      "topic": "Status indication",
+      "status": "decided",
+      "blocks": [
+        "L-LED-LPU",
+        "L-LED-BOARD"
+      ],
+      "question": "Driver IC on the MCU, or indication built from the signals themselves?",
+      "answer": "Hardware, taken straight from the received signals: one green LED per LPU on READY, plus one board-level red LED for faults. No driver IC, no serial interface, no MCU pins, no firmware.",
+      "recommendation": "Two tiers. Per LPU: one green LED from READY to ground through a resistor, so it lights when that magnet is levitating. At board level: one red LED driven through a diode-OR of the ten FAULT lines, so it lights when any LPU faults. About 28 parts, all 0603 or SOT-23, and every LED can be left unpopulated without affecting anything else.",
+      "note": "Per-LPU red LEDs were considered and rejected on electrical grounds, not only on part count. FAULT is active-low, so a red LED would sit between 3.3 V and the FAULT line and light by sinking current into it. While the LPU is driving the line low that is fine. With the connector unseated there is no driver, only the 10 kOhm pull-down, and the LED current has to return through it: the line settles around 0.9 V, against a VIL of about 1.0 V. The presence detector would then be marginal in exactly the state it exists to detect. Doing it properly needs a transistor per LPU, about 40 extra parts.\n\nThe board-level OR with one BSS84 gets the same information without touching the logic levels: the MOSFET gate draws no DC current, so the pull-downs alone hold an unseated connector at the fault level. The information lost is only which LPU faulted, and the Ethernet telemetry already provides that."
+    }
+  ],
+  "datasheet_index": {
+    "note": "Drop PDFs into H12/LCU/datasheets/ named by MPN and rerun bom/build.py. The parser reads them with pdftotext and looks for the parameters listed per part.",
+    "STM32H723ZGT6": {
+      "file": null,
+      "params": [
+        "Core",
+        "Flash",
+        "RAM",
+        "ADC",
+        "Ethernet",
+        "I/O"
+      ]
+    },
+    "KSZ8041TLI": {
+      "file": null,
+      "params": [
+        "Supply Voltage",
+        "RMII",
+        "PHY address",
+        "Package"
+      ]
+    },
+    "MCP6022-E/SN": {
+      "file": null,
+      "params": [
+        "Input Offset",
+        "Gain Bandwidth",
+        "Supply Voltage",
+        "Rail-to-Rail"
+      ]
+    },
+    "SN74LVC541APWR": {
+      "file": null,
+      "params": [
+        "Supply Voltage",
+        "Output Drive",
+        "Propagation Delay"
+      ]
+    },
+    "SN74AHCT367": {
+      "file": null,
+      "params": [
+        "Supply Voltage",
+        "Output Drive"
+      ]
+    },
+    "TJA1051T/3": {
+      "file": null,
+      "params": [
+        "Data Rate",
+        "Supply Voltage",
+        "VIO"
+      ]
+    },
+    "OD2000-1301T15": {
+      "file": "datasheets/dataSheet_OD2000-1301T15_6074382_en.pdf",
+      "params": [
+        "Measuring range",
+        "Analog output",
+        "Resolution",
+        "IO-Link",
+        "Linearity"
+      ]
+    }
+  }
+}
