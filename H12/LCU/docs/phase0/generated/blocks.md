@@ -17,19 +17,19 @@ flowchart TB
     subgraph G_Communications["Communications"]
         direction LR
         eth["<b>Ethernet PHY</b><br/><i>KSZ8041TLI, RMII</i>"]
+        if_eth[/"<b>Ethernet connector</b><br/><i>RJ45 with magnetics</i>"/]
         sd["<b>microSD</b><br/><i>SDMMC1 4-bit</i>"]
         can["<b>CAN transceiver</b> ×2<br/><i>TJA1051T/3, one per MCU</i>"]
-        if_eth[/"<b>Ethernet connector</b><br/><i>RJ45 with magnetics</i>"/]
     end
     subgraph G_LPU_interface["LPU interface"]
         direction LR
-        lpu_buf["<b>PWM buffer bank</b> ×10<br/><i>SN74AHCT367, 5 V</i>"]
+        lpu_buf["<b>LPU output buffer bank</b> ×5<br/><i>SN74AHCT541, 30 channels</i>"]
         lpu_conn[/"<b>LPU connector</b> ×10<br/><i>TE 5499922-6, 26 pins</i>"/]
     end
     subgraph G_Airgap_sensing["Airgap sensing"]
         direction LR
-        agp_afe{{"<b>Airgap analog front end</b> ×8<br/><i>4-20 mA into MCP6022</i>"}}
         agp_conn[/"<b>Airgap connector</b> ×8<br/><i>Micro-Fit+, 4 pins</i>"/]
+        agp_afe{{"<b>Airgap analog front end</b> ×8<br/><i>4-20 mA, MCP6022 + MAX7424</i>"}}
     end
     subgraph G_Temperature["Temperature"]
         direction LR
@@ -44,7 +44,7 @@ flowchart TB
     end
     subgraph G_Auxiliary["Auxiliary"]
         direction LR
-        leds["<b>Status LEDs</b><br/><i>board and per-LPU</i>"]
+        leds["<b>Status LEDs</b><br/><i>two per LPU, hardware</i>"]
         imu{{"<b>IMU (optional)</b><br/><i>optional, unpopulated</i>"}}
         dbg["<b>Debug</b> ×2<br/><i>SWD</i>"]
     end
@@ -60,8 +60,8 @@ flowchart TB
     mcu_master -->|"SDMMC1"| sd
     mcu_master -->|"FDCAN1"| can
     mcu_slave -->|"FDCAN1"| can
-    mcu_slave -->|"20 PWM @ 20 kHz"| lpu_buf
-    lpu_buf -->|"PWM x2 + buffer enable"| lpu_conn
+    mcu_slave -->|"30 signals"| lpu_buf
+    lpu_buf -->|"2 PWM + RESET"| lpu_conn
     lpu_conn -->|"SHUNT"| mcu_slave
     lpu_conn -->|"VBAT"| mcu_master
     lpu_conn -->|"TEMP"| tmp
@@ -69,12 +69,12 @@ flowchart TB
     lpu_conn -->|"READY / FAULT"| mcu_master
     mcu_master -->|"RESET x10 into the buffer"| lpu_conn
     brake_conn -->|"brake_fault"| lpu_rst_logic
-    lpu_rst_logic -->|"RESET through the 5 V bank"| lpu_conn
+    lpu_rst_logic -->|"disable the bank"| lpu_buf
     agp_conn -->|"4-20 mA"| agp_afe
     agp_afe -->|"0.64-3.2 V, 16 bit"| mcu_slave
     if_ntc -->|"NTC x4"| ntc_afe
     ntc_afe -->|"0-3.3 V"| mcu_slave
-    mcu_master -->|"GPIO"| leds
+    mcu_master -->|"GPIO (board LEDs)"| leds
     mcu_master -.->|"SPI, optional"| imu
     mcu_master -->|"SWD"| dbg
     mcu_slave -->|"SWD"| dbg
@@ -90,21 +90,21 @@ flowchart TB
     class mcu_master mcu
     class mcu_slave mcu
     class eth comms
+    class if_eth conn
     class sd comms
     class can comms
     class lpu_buf driver
     class lpu_conn conn
-    class agp_afe analog
     class agp_conn conn
+    class agp_afe analog
     class tmp analog
+    class if_ntc conn
+    class ntc_afe analog
     class lpu_rst_logic logic
     class brake_conn conn
     class leds aux
     class imu analog
     class dbg aux
-    class if_eth conn
-    class if_ntc conn
-    class ntc_afe analog
 ```
 
 ### Reading the diagram

@@ -63,9 +63,21 @@ class Report:
         return "\n".join(lines)
 
 
-def load(path):
+def load(path, schema, what):
+    """Load and check the schema tag.
+
+    This guard exists because a patch script once wrote the BOM model over the architecture
+    model: both are JSON, both live in the same project, and the mismatch was only noticed
+    when key lookups started failing. A wrong file should fail on the first line, not on the
+    fortieth.
+    """
     with open(path, encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+    found = data.get("schema")
+    if found != schema:
+        sys.exit("%s: expected schema %r but found %r -- wrong file?\n  %s"
+                 % (what, schema, found, path))
+    return data
 
 
 # --------------------------------------------------------------------------
@@ -658,7 +670,7 @@ def main():
     parser.add_argument("--check", action="store_true", help="validate without writing documents")
     args = parser.parse_args()
 
-    arch = load(os.path.join(HERE, "lcu_h12.json"))
+    arch = load(os.path.join(HERE, "lcu_h12.json"), "hl-lcu-arch/1.0", "architecture model")
     report = Report()
     adc_results, pwm_results, results = {}, {}, {}
 

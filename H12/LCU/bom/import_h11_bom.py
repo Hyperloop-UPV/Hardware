@@ -131,6 +131,7 @@ def main():
 
     unresolved = [r for r in rows if r["unresolved"]]
     payload = {
+        "schema": "hl-bom-baseline/1.0",
         "source": source,
         "extracted_by": "bom/import_h11_bom.py",
         "note": ("Lifecycle and stock figures are a snapshot shipped inside the Altium "

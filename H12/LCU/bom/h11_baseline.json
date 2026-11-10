@@ -1432,5 +1432,6 @@
       "datasheet": "",
       "unresolved": true
     }
-  ]
+  ],
+  "schema": "hl-bom-baseline/1.0"
 }

@@ -9,7 +9,7 @@ Risk is a per-part additive score; `Priority` additionally reflects the impact o
 | ID | Function | Qty | Part | Status | Lifecycle | Risk |
 |---|---|---|---|---|---|---|
 | `L-AGP-AFE` | Airgap 4-20 mA front-end op-amp | 8 | `MCP6022-E/SN` | changed | active | medium |
-| `L-AGP-FILTER` | Airgap 5th-order Butterworth anti-alias passives | 8 | `_(to select)_` | select | n/a | n/a |
+| `L-AGP-FILTER` | Airgap 5th-order Butterworth filter | 8 | `_(to select)_` | deferred | n/a | n/a |
 | `L-AGP-RSENSE` | Airgap 4-20 mA sense resistor, 160 ohm | 8 | `160R-0603-0.1pct` | changed | active | low |
 | `L-ESD-ANALOG` | Protection on the analog inputs: 8 airgap loops and 4 corner NTC | 20 | `82306050029` | proposed | active | low |
 
@@ -68,8 +68,8 @@ Risk is a per-part additive score; `Priority` additionally reflects the impact o
 
 | ID | Function | Qty | Part | Status | Lifecycle | Risk |
 |---|---|---|---|---|---|---|
-| `L-LED-BOARD` | Board-level fault indicator, diode-OR of the ten FAULT lines | 1 | `VLMS1300-GS08` | proposed | active | low |
-| `L-LED-LPU` | Per-LPU levitation indicator, driven from READY | 10 | `VLMTG1300-GS08` | proposed | active | low |
+| `L-LED-HEALTH` | Per-LPU health indicator, driven from FAULT (lit means no fault) | 10 | `VLMTG1300-GS08` | proposed | active | low |
+| `L-LED-LPU` | Per-LPU levitation indicator, driven from READY (lit means levitating) | 10 | `VLMTG1300-GS08` | proposed | active | low |
 
 ## `lpu_buf`
 
@@ -122,14 +122,18 @@ Risk is a per-part additive score; `Priority` additionally reflects the impact o
 - **`L-LPU-BUF`** — Five TSSOP-20 packages, two LPUs each: four PWM channels plus two RESET channels, 30 signals in total with ten channels spare. The 1:2 grouping is kept from LCU_H10 because it matches the enable partitioning and the harness order. Four packages would be the arithmetic minimum (32 channels); the fifth costs about EUR 0.40 and 30 mm2 and avoids splitting an LPU pair across packages. Package choice was reviewed in D-07 and confirmed: 16-bit parts reduce count but not area, and the pull-up/pull-down question is settled by RESET being active-low.
 - **`L-AGP-AFE`** — Reinstated from LCU_H10 (F-01): LCU_H11 has no analog airgap front end. One MCP6022 per channel. Amplifier supply moves from +5 V to +3.3 V, which is a net change, not a part change.
 - **`L-AGP-RSENSE`** — Reinstated from LCU_H10 (F-01); absent from the LCU_H11 BOM. 0.1 % is already the accuracy limit at about 10 bits, matching the sensor's own +/-140 um linearity.
-- **`L-AGP-FILTER`** — Roughly ten passives per channel, so around eighty parts that are NOT in the LCU_H11 BOM (F-01). The corner frequency is 5 kHz; if the amplifier moves to 3.3 V the filter must be re-checked for headroom, not re-tuned. This is the largest single selection task left in the phase.
+- **`L-AGP-FILTER`** — DEFERRED: a different filter design may be adopted, so this is not being specified now.
+
+Corrected scope: LCU_H10 does not build a discrete filter. The Airgap Sensors sheet uses one switched-capacitor filter IC per channel (MAX7420, 5 V, 5th-order Butterworth), with its corner frequency set by the internal oscillator from a 220 pF capacitor. So the block is eight ICs and a handful of passives, not the eighty discrete parts this line originally assumed.
+
+Knock-on that has to be carried with the deferral: because the analog rail moves to 3.3 V, the 5 V MAX7420 is no longer usable and the equivalent part becomes the MAX7424. That is a forced change of part number, not a preference.
 - **`L-AGP-CONN`** — Nano-Fit to Micro-Fit+.
 - **`L-NTC-EXC`** — Values depend on the NTC part, which is the same device as LPU_H11 (Q-15). The 220 ohm / 10 nF values are inherited and only need re-checking against the chosen pull-up.
 - **`L-BOOT-CONN`** — Nano-Fit to Micro-Fit+. Inherited function.
 - **`L-SD-SOCKET`** — Taken from the VCU_H11 design after checking both candidates. Molex 216571-2002 has a real footprint and an embedded 3D STEP model (216571-2002-Footprint-1 / 216571-2002.stp) in the VCU design; the TE 1939115-1 has no package data and is flagged Availability=Unavailable in the VCU vault. The verified footprint decides it.
 - **`L-SD-ESD`** — Würth WE-VE ULC array, already in the LCU_H11 BOM and used on the VCU_H11 SD sheet.
-- **`L-LED-LPU`** — Green 0603 LED plus a 1 kOhm series resistor from each READY line to ground. Lights when that magnet is ready. Optional: leave unpopulated and nothing else is affected. No loading problem in the released state, because an LED needs about 2 V to conduct and the pull-down holds READY at 0 V when the connector is out. Parts already in the LCU_H11 BOM.
-- **`L-LED-BOARD`** — Red 0603 LED lit when any of the ten FAULT lines is low. Five BAT54S dual Schottkys form the OR, a 10 kOhm pull-up defines the node, and a BSS84 P-MOSFET switches the LED so that no LED current flows through the FAULT lines themselves. That transistor is the part that makes the scheme safe, not decoration: see the Phase 1 document, section 3.6.
+- **`L-LED-LPU`** — Green 0603 LED plus a 1 kOhm series resistor from each READY line to ground. Lit when that magnet is ready. Together with L-LED-HEALTH this gives two bits per LPU with no logic at all: both lit means levitating, READY dark with FAULT lit means healthy but idle, both dark means faulted or unplugged. Optional and DNP-able. Parts already in the LCU_H11 BOM.
+- **`L-LED-HEALTH`** — LED with a 1 kOhm series resistor from each FAULT line to ground. FAULT is active-low, so the LED is lit when the line is HIGH, which is the healthy state: a dark LED means that LPU is faulted or unplugged. Same topology as the READY LED, one resistor each, no inversion, no gate, no transistor.
 - **`L-IMU`** — Unpopulated by default.
 - **`L-ESD-ANALOG`** — Protection tier 2: two suppressors per airgap loop (a current loop is less exposed, but the cable runs beside the LPU power leads) and one per NTC line plus a series resistor. Tier 3 would be board-internal signals, which is not proposed.
 - **`L-ESD-LPU`** — Protection tier 1: the 50 lines that leave the board on the LPU connectors -- 20 PWM, 10 RESET, 10 READY, 10 FAULT. One WE-VE ULC per line at the connector plus the series resistor already required on the status lines. Absent in LCU_H10 and LCU_H11, so this is an addition, not a swap.

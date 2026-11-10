@@ -7,45 +7,34 @@
     "baseline": "LCU_H10 (system topology, LPU interface) + LCU_H11 (differential LPU link, buffers) + VCU_H11 (PHY, Micro-Fit+, SD card)",
     "scope": "Phase 0: architecture, requirements decomposition, feasibility. No schematic, no PCB.",
     "conventions": {
-      "status": [
-        "OK",
-        "AC",
-        "TBD",
-        "REJ"
-      ],
+      "language": "en",
+      "language_note": "Confirmed: English for all LCU_H12 documents and scripts.",
+      "status": ["OK", "AC", "TBD", "REJ"],
       "status_help": {
         "OK": "decided and accepted",
         "AC": "to be confirmed, needs a decision or a measurement",
         "TBD": "value/answer not known yet",
         "REJ": "considered and rejected, see rationale"
       },
-      "source": [
-        "U",
-        "H10",
-        "H11",
-        "VCU",
-        "DS",
-        "C"
-      ],
+      "source": ["U", "H10", "H11", "VCU", "DS", "C"],
       "source_help": {
         "U": "stated by the team",
         "H10": "inherited from the LCU_H10 design",
         "H11": "inherited from the LCU_H11 design",
         "VCU": "inherited from VCU_H11",
         "DS": "taken from a manufacturer datasheet",
-        "C": "derived from a calculation in tools/build.py"
-      },
-      "language": "en",
-      "language_note": "Confirmed: English for all LCU_H12 documents and scripts."
+        "C": "derived from a calculation in arch/build.py"
+      }
     }
   },
+
   "constraints": {
     "board_outline": {
       "w_mm": 240.0,
       "h_mm": 160.0,
       "status": "OK",
       "source": "U",
-      "note": "Horizontal 240 mm x vertical 160 mm. Same as LCU_H10 and inside the H12 board range (80x120 .. 180x300)."
+      "note": "Horizontal 240 mm x vertical 160 mm. Same as LCU_H10 and inside the H12 board range (80x120 .. 180x300). Connectors need not sit on the edge: partial stacking is accepted."
     },
     "max_component_height_mm": null,
     "lpu_count": 10,
@@ -57,392 +46,75 @@
       "source": "vault/hyperloopupv/estado-avionics-h11-h12.md (H12 avionics baseline, kept from H11)",
       "layers": 6,
       "material": "FR-4 Tg170",
-      "thickness_mm": [
-        1.6,
-        1.8
-      ],
-      "copper_um": {
-        "control": 35,
-        "power": 70
-      },
+      "thickness_mm": [1.6, 1.8],
+      "copper_um": { "control": 35, "power": 70 },
       "finish": "ENIG",
-      "board_size_mm": {
-        "min": [
-          80,
-          120
-        ],
-        "max": [
-          180,
-          300
-        ]
-      },
-      "impedance": {
-        "single_ended_ohm": 50,
-        "differential_ohm": 100
-      },
+      "board_size_mm": { "min": [80, 120], "max": [180, 300] },
+      "impedance": { "single_ended_ohm": 50, "differential_ohm": 100 },
       "connectors": "Molex Micro-Fit+",
       "mcu": "STM32H723ZGT6",
-      "peripherals": [
-        "ETH RMII",
-        "SDMMC1 4-bit",
-        "FDCAN1 1 Mbit/s",
-        "ADC1/2/3",
-        "DAC1",
-        "USART2",
-        "JTAG"
-      ],
-      "note": "The H12 avionics baseline already lists SDMMC1, FDCAN1 and Micro-Fit+ for every control board. That is why CAN is not proposed for removal (AUX-04) even though LCU firmware never instantiates it."
+      "peripherals": ["ETH RMII", "SDMMC1 4-bit", "FDCAN1 1 Mbit/s", "ADC1/2/3", "DAC1", "USART2", "JTAG"],
+      "note": "The H12 avionics baseline lists SDMMC1, FDCAN1 and Micro-Fit+ for every control board. That is why CAN is not proposed for removal even though LCU firmware never instantiates it."
     }
   },
+
   "rails": [
-    {
-      "id": "VIN",
-      "volts": null,
-      "source": "H10",
-      "status": "TBD",
-      "note": "LCU input rail per LCU_H10 Power Supply sheet. H10 has no 24 V rail, so airgap sensors are externally powered and only the 4-20 mA loop comes to the LCU."
-    },
-    {
-      "id": "+5V_LCU",
-      "volts": 5.0,
-      "source": "H10",
-      "status": "OK",
-      "note": "Feeds the PWM buffers (SN74AHCT367) and the airgap 4-20 mA front end (MCP6022)."
-    },
-    {
-      "id": "+3V3M",
-      "volts": 3.3,
-      "source": "H10",
-      "status": "OK",
-      "note": "MCUs and digital."
-    },
-    {
-      "id": "+3V3S",
-      "volts": 3.3,
-      "source": "H10",
-      "status": "OK",
-      "note": "Separate 3V3 for sensitive analog reference (verify usage in H10)."
-    },
-    {
-      "id": "+5V_LPU",
-      "volts": 5.0,
-      "source": "H11",
-      "status": "AC",
-      "note": "LPU logic supply carried on the LPU connector. Confirm it is still required and what current it must deliver."
-    }
+    { "id": "VIN", "volts": null, "source": "H10", "status": "TBD", "note": "LCU input rail per LCU_H10 Power Supply sheet. H10 has no 24 V rail, so airgap sensors are externally powered and only the 4-20 mA loop comes to the LCU." },
+    { "id": "+5V_LCU", "volts": 5.0, "source": "H10", "status": "OK", "note": "Feeds the LPU output buffer bank. Load-bearing for PWM levels: AHCT thresholds are 2.0 V but the output is 5 V CMOS." },
+    { "id": "+3V3M", "volts": 3.3, "source": "H10", "status": "OK", "note": "MCUs and digital." },
+    { "id": "+3V3 analog", "volts": 3.3, "source": "C", "status": "OK", "note": "Airgap front end, moved from +5V_LCU so the amplifier cannot overdrive the 3.3 V ADC input." },
+    { "id": "+5V_LPU", "volts": 5.0, "source": "H11", "status": "AC", "note": "LPU logic supply carried on the LPU connector. Confirm it is still required and what current it must deliver." }
   ],
+
   "blocks": [
-    {
-      "id": "pwr",
-      "title": "Power supply",
-      "kind": "power",
-      "source": "H10",
-      "note": "VIN -> +5V_LCU, +3V3M, +3V3S. No 24 V rail.",
-      "group": "Power",
-      "sub": "VIN to the LCU rails"
-    },
-    {
-      "id": "mcu_master",
-      "title": "Master MCU",
-      "kind": "mcu",
-      "part": "STM32H723ZGT6",
-      "source": "H10",
-      "note": "Ethernet, SD card, LPU supervision (READY/FAULT/RESET), LPU temperature. No PWM, no hard real-time.",
-      "group": "Compute",
-      "sub": "Ethernet, SD, LPU supervision"
-    },
-    {
-      "id": "mcu_slave",
-      "title": "Slave MCU",
-      "kind": "mcu",
-      "part": "STM32H723ZGT6",
-      "source": "H10",
-      "note": "PWM generation, airgap + shunt acquisition, buffer enable, 500 us control loop.",
-      "group": "Compute",
-      "sub": "500 us loop, ADC, PWM"
-    },
-    {
-      "id": "eth",
-      "title": "Ethernet PHY",
-      "kind": "comms",
-      "source": "VCU",
-      "note": "KSZ8041TLI replaces the obsolete LAN8700IC-AEZ. 50 MHz XO, RJ45 with integrated magnetics 7499011222A.",
-      "group": "Communications",
-      "sub": "KSZ8041TLI, RMII"
-    },
-    {
-      "id": "sd",
-      "title": "microSD",
-      "kind": "storage",
-      "source": "VCU",
-      "note": "SDMMC1 4-bit on the Master. Same card socket as VCU_H11.",
-      "group": "Communications",
-      "sub": "SDMMC1 4-bit"
-    },
-    {
-      "id": "can",
-      "title": "CAN transceiver",
-      "kind": "comms",
-      "source": "H10",
-      "note": "TJA1051T/3 x2, one per MCU, both nodes on the same bus. Never instantiated in H10/H11 firmware, but FDCAN1 is in the H12 baseline.",
-      "group": "Communications",
-      "sub": "TJA1051T/3, one per MCU",
-      "qty": 2
-    },
-    {
-      "id": "lpu_buf",
-      "title": "PWM buffer bank",
-      "kind": "driver",
-      "source": "H10",
-      "note": "SN74AHCT367 (5 V, tri-state). One buffer per LPU pair. Under review.",
-      "group": "LPU interface",
-      "sub": "SN74AHCT367, 5 V",
-      "qty": 10
-    },
-    {
-      "id": "lpu_conn",
-      "title": "LPU connector",
-      "kind": "connector",
-      "source": "H10",
-      "note": "26-pin TE 5499922-6 header.",
-      "group": "LPU interface",
-      "sub": "TE 5499922-6, 26 pins",
-      "qty": 10
-    },
-    {
-      "id": "agp_afe",
-      "title": "Airgap analog front end",
-      "kind": "analog",
-      "source": "H10",
-      "note": "4-20 mA into 160 ohm, then 5th-order Butterworth LPF (5 kHz), MCP6022, 0.64-3.2 V to ADC.",
-      "group": "Airgap sensing",
-      "sub": "4-20 mA into MCP6022",
-      "qty": 8
-    },
-    {
-      "id": "agp_conn",
-      "title": "Airgap connector",
-      "kind": "connector",
-      "source": "H10",
-      "note": "Nano-Fit 105310-1204 12-ckt drawn with 4 pins used. Proposed change: Micro-Fit+ 206832-0401 as in VCU_H11.",
-      "group": "Airgap sensing",
-      "sub": "Micro-Fit+, 4 pins",
-      "qty": 8
-    },
-    {
-      "id": "tmp",
-      "title": "LPU temperature front end",
-      "kind": "analog",
-      "source": "H11",
-      "note": "Series 220 ohm + 10 nF to GND per channel, read by the Master. 4 channels in H11, 10 proposed.",
-      "group": "Temperature",
-      "sub": "NTC, 220 ohm + 10 nF",
-      "qty": 10
-    },
-    {
-      "id": "lpu_rst_logic",
-      "title": "brake fault -> buffer enable override",
-      "kind": "logic",
-      "source": "C",
-      "note": "The LPU RESET is a buffered 5 V output like the two PWM lines, so it cannot be open-drain wired-ANDed. The brake override therefore acts on the buffer 3-state enable: a brake fault forces the shared enable to the disabled state, the outputs go high-impedance, and a pull resistor per RESET line drops it to the asserted level.",
-      "group": "Safety",
-      "sub": "hardware release of the 5 V bank"
-    },
-    {
-      "id": "brake_conn",
-      "title": "brake_fault input connector",
-      "kind": "connector",
-      "source": "U",
-      "note": "Conditioned input that asserts all LPU resets in hardware.",
-      "group": "Safety",
-      "sub": "daisy chain, in and out",
-      "qty": 2
-    },
-    {
-      "id": "leds",
-      "title": "Status LEDs",
-      "kind": "indicator",
-      "source": "H10",
-      "note": "Board-level LEDs on MCU GPIO, plus per-LPU status indication (driver TBD).",
-      "group": "Auxiliary",
-      "sub": "board and per-LPU"
-    },
-    {
-      "id": "imu",
-      "title": "IMU (optional)",
-      "kind": "sensor",
-      "source": "U",
-      "status": "AC",
-      "note": "SPI IMU on the Master. Justification not established yet.",
-      "group": "Auxiliary",
-      "sub": "optional, unpopulated"
-    },
-    {
-      "id": "dbg",
-      "title": "Debug",
-      "kind": "debug",
-      "source": "H10",
-      "note": "SWD for both MCUs.",
-      "group": "Auxiliary",
-      "sub": "SWD",
-      "qty": 2
-    },
-    {
-      "id": "if_eth",
-      "title": "Ethernet connector",
-      "kind": "connector",
-      "group": "Communications",
-      "sub": "RJ45 with magnetics",
-      "source": "VCU",
-      "note": "7499011222A, integrated magnetics."
-    },
-    {
-      "id": "if_ntc",
-      "title": "Corner NTC connectors",
-      "kind": "connector",
-      "group": "Temperature",
-      "qty": 4,
-      "sub": "direct to the pod corners",
-      "source": "U",
-      "note": "One per corner. The LCU supplies the NTC excitation."
-    },
-    {
-      "id": "ntc_afe",
-      "title": "Corner NTC front end",
-      "kind": "analog",
-      "group": "Temperature",
-      "qty": 4,
-      "sub": "excitation + RC + TVS",
-      "source": "C",
-      "note": "Unlike the LPU path, the LCU supplies the NTC excitation here: pull-up to the 3V3 ADC reference so the reading is ratiometric, plus series R and a TVS at the connector."
-    }
+    { "id": "pwr", "title": "Power supply", "kind": "power", "group": "Power", "sub": "VIN to the LCU rails", "source": "H10", "note": "VIN -> +5V_LCU, +3V3M, +3V3 analog. No 24 V rail." },
+    { "id": "mcu_master", "title": "Master MCU", "kind": "mcu", "part": "STM32H723ZGT6", "group": "Compute", "sub": "Ethernet, SD, LPU supervision", "source": "H10", "note": "Ethernet, SD card, LPU supervision (READY/FAULT/RESET), LPU temperature. No PWM, no hard real-time." },
+    { "id": "mcu_slave", "title": "Slave MCU", "kind": "mcu", "part": "STM32H723ZGT6", "group": "Compute", "sub": "500 us loop, ADC, PWM", "source": "H10", "note": "PWM generation, airgap + shunt acquisition, buffer enable, 500 us control loop." },
+    { "id": "eth", "title": "Ethernet PHY", "kind": "comms", "group": "Communications", "sub": "KSZ8041TLI, RMII", "source": "H11", "note": "Already in the LCU_H11 BOM: KSZ8041TLI plus 50 MHz XO and RJ45 with integrated magnetics. Replaced the EOL LAN8700 at H11, not at H12." },
+    { "id": "if_eth", "title": "Ethernet connector", "kind": "connector", "group": "Communications", "sub": "RJ45 with magnetics", "source": "VCU", "note": "7499011222A, integrated magnetics." },
+    { "id": "sd", "title": "microSD", "kind": "comms", "group": "Communications", "sub": "SDMMC1 4-bit", "source": "VCU", "note": "SDMMC1 4-bit on the Master. Molex 216571-2002, footprint taken verbatim from VCU_H11." },
+    { "id": "can", "title": "CAN transceiver", "kind": "comms", "group": "Communications", "qty": 2, "sub": "TJA1051T/3, one per MCU", "source": "H10", "note": "Two TJA1051T/3, one per MCU, both nodes on the same bus. Master PD0/PD1, Slave PB8/PB9." },
+    { "id": "lpu_buf", "title": "LPU output buffer bank", "kind": "driver", "group": "LPU interface", "qty": 5, "sub": "SN74AHCT541, 30 channels", "source": "C", "note": "Three signals leave the LCU per LPU (PWM_1, PWM_2, RESET), all 5 V: 30 channels. Five TSSOP-20 packages, two LPUs each, six of eight channels used." },
+    { "id": "lpu_conn", "title": "LPU connector", "kind": "connector", "group": "LPU interface", "qty": 10, "sub": "TE 5499922-6, 26 pins", "source": "H10", "note": "26-pin TE header, contract frozen to LPU_H11. All 26 contacts assigned, no spares." },
+    { "id": "agp_conn", "title": "Airgap connector", "kind": "connector", "group": "Airgap sensing", "qty": 8, "sub": "Micro-Fit+, 4 pins", "source": "H10", "note": "Nano-Fit 105310-1204 replaced by Micro-Fit+ 206832-0401." },
+    { "id": "agp_afe", "title": "Airgap analog front end", "kind": "analog", "group": "Airgap sensing", "qty": 8, "sub": "4-20 mA, MCP6022 + MAX7424", "source": "H10", "note": "4-20 mA into 160 ohm, buffered by an MCP6022, then a 5th-order Butterworth switched-capacitor filter (MAX7420 in LCU_H10, MAX7424 for a 3.3 V rail) and into the ADC. Filter design deferred." },
+    { "id": "tmp", "title": "LPU temperature front end", "kind": "analog", "group": "Temperature", "qty": 10, "sub": "NTC, 220 ohm + 10 nF", "source": "H11", "note": "Series 220 ohm + 10 nF per channel, read by the Master's ADC3." },
+    { "id": "if_ntc", "title": "Corner NTC connectors", "kind": "connector", "group": "Temperature", "qty": 4, "sub": "direct to the pod corners", "source": "U", "note": "One per corner. The LCU supplies the NTC excitation." },
+    { "id": "ntc_afe", "title": "Corner NTC front end", "kind": "analog", "group": "Temperature", "qty": 4, "sub": "excitation + RC + TVS", "source": "C", "note": "Unlike the LPU path, the LCU supplies the NTC excitation: pull-up to the 3V3 ADC reference so the reading is ratiometric, plus series R and a TVS." },
+    { "id": "lpu_rst_logic", "title": "brake fault -> buffer enable override", "kind": "logic", "group": "Safety", "sub": "hardware release of the 5 V bank", "source": "C", "note": "RESET is a buffered 5 V output like the PWM lines, so it cannot be open-drain wired-ANDed. The brake override acts on the buffer 3-state enable." },
+    { "id": "brake_conn", "title": "brake_fault input connector", "kind": "connector", "group": "Safety", "qty": 2, "sub": "daisy chain, in and out", "source": "U", "note": "The VCU's 2-pin brake connector, daisy-chained through the LCU." },
+    { "id": "leds", "title": "Status LEDs", "kind": "indicator", "group": "Auxiliary", "sub": "two per LPU, hardware", "source": "U", "note": "Green on READY (lit = levitating) and a second LED on FAULT (lit = no fault). No driver IC, no firmware." },
+    { "id": "imu", "title": "IMU (optional)", "kind": "sensor", "group": "Auxiliary", "sub": "optional, unpopulated", "source": "U", "note": "Third position measurement to fuse against the airgaps. Unpopulated by default." },
+    { "id": "dbg", "title": "Debug", "kind": "debug", "group": "Auxiliary", "qty": 2, "sub": "SWD", "source": "H10", "note": "SWD for both MCUs." }
   ],
+
   "interfaces": [
     {
       "id": "IF-LPU",
       "title": "LCU <-> LPU",
       "count": 10,
-      "connector": {
-        "part": "TE 5499922-6",
-        "pins": 26,
-        "pitch_mm": 1.27,
-        "rows": 2
-      },
-      "status": "AC",
-      "note": "Electrical contract frozen to LPU_H11 and there are no spare contacts, so H12 redefines nothing. Note there is no dedicated presence contact: presence is inferred from READY and FAULT via their pull resistors (see LPU-03).",
+      "connector": { "part": "TE 5499922-6", "pins": 26, "pitch_mm": 2.54, "rows": 2 },
+      "status": "OK",
+      "note": "Electrical contract frozen to LPU_H11 and there are no spare contacts, so H12 redefines nothing. Presence is inferred from READY and FAULT via their pull resistors (see LPU-03).",
       "signals": [
-        {
-          "name": "PWM_1",
-          "dir": "out",
-          "kind": "digital_pwm",
-          "level_v": 5.0,
-          "source": "H11",
-          "note": "Through SN74AHCT367."
-        },
-        {
-          "name": "PWM_2",
-          "dir": "out",
-          "kind": "digital_pwm",
-          "level_v": 5.0,
-          "source": "H11",
-          "note": "Through SN74AHCT367."
-        },
-        {
-          "name": "SHUNT",
-          "dir": "in",
-          "kind": "analog_diff",
-          "source": "H11",
-          "note": "Differential pair in H11, single-ended in H10. Verify which."
-        },
-        {
-          "name": "VBAT",
-          "dir": "in",
-          "kind": "analog",
-          "source": "H11"
-        },
-        {
-          "name": "READY",
-          "dir": "in",
-          "kind": "digital",
-          "source": "H11",
-          "note": "HIGH = all 4 drivers in the LPU are ready. LOW = not ready or fault. Active-high, 3.3 V push-pull, so no level shifting on the LCU.",
-          "level_v": 3.3,
-          "drive": "push_pull",
-          "active": "high",
-          "healthy_level": "HIGH",
-          "fault_level": "LOW",
-          "idle_pull": "down"
-        },
-        {
-          "name": "FAULT",
-          "dir": "in",
-          "kind": "digital",
-          "source": "H11",
-          "note": "HIGH = no fault. LOW = at least one driver has faulted. Active-low, 3.3 V push-pull.",
-          "level_v": 3.3,
-          "drive": "push_pull",
-          "active": "low",
-          "healthy_level": "HIGH",
-          "fault_level": "LOW",
-          "idle_pull": "down"
-        },
-        {
-          "name": "RESET",
-          "dir": "out",
-          "kind": "digital",
-          "source": "H11",
-          "level_v": 5.0,
-          "drive": "push_pull",
-          "note": "Active-low, 5 V, driven through the buffer bank like the two PWM lines. HIGH releases the reset and lets the LPU work; LOW asserts it. Because the release state is an actively driven HIGH, RESET cannot be open-drain: it needs a push-pull driver plus a pull-down that holds it asserted when the bank is released.",
-          "active": "low"
-        },
-        {
-          "name": "TEMP",
-          "dir": "in",
-          "kind": "analog",
-          "source": "H11",
-          "note": "TEMP_IN in H11, 4 channels only. Proposed: all 10."
-        },
-        {
-          "name": "VLPU",
-          "dir": "out",
-          "kind": "power",
-          "source": "H11"
-        },
-        {
-          "name": "GND",
-          "dir": "out",
-          "kind": "power",
-          "source": "H11"
-        }
+        { "name": "PWM_1", "dir": "out", "kind": "digital_pwm", "level_v": 5.0, "source": "H11", "note": "Through the SN74AHCT541 bank." },
+        { "name": "PWM_2", "dir": "out", "kind": "digital_pwm", "level_v": 5.0, "source": "H11", "note": "Through the SN74AHCT541 bank." },
+        { "name": "RESET", "dir": "out", "kind": "digital", "level_v": 5.0, "active": "low", "drive": "push_pull", "source": "H11", "note": "Active-low, 5 V, through the buffer bank. HIGH releases the reset and lets the LPU work; LOW asserts it. The release state is actively driven, so RESET cannot be open-drain: push-pull driver plus a pull-down that holds it asserted when the bank is released." },
+        { "name": "SHUNT", "dir": "in", "kind": "analog_diff", "source": "H11", "note": "Differential pair in H11, single-ended in H10." },
+        { "name": "VBAT", "dir": "in", "kind": "analog", "source": "H11" },
+        { "name": "TEMP", "dir": "in", "kind": "analog", "source": "H11", "note": "TEMP_IN in H11, 4 channels only. H12 uses all 10." },
+        { "name": "READY", "dir": "in", "kind": "digital", "level_v": 3.3, "drive": "push_pull", "active": "high", "healthy_level": "HIGH", "fault_level": "LOW", "idle_pull": "down", "source": "U", "note": "HIGH = all 4 drivers in the LPU are ready. 3.3 V push-pull, so no level shifting on the LCU." },
+        { "name": "FAULT", "dir": "in", "kind": "digital", "level_v": 3.3, "drive": "push_pull", "active": "low", "healthy_level": "HIGH", "fault_level": "LOW", "idle_pull": "down", "source": "U", "note": "HIGH = no fault. Active-low, 3.3 V push-pull." },
+        { "name": "VLPU", "dir": "out", "kind": "power", "source": "H11" },
+        { "name": "GND", "dir": "out", "kind": "power", "source": "H11" }
       ],
       "state_table": {
         "note": "All four combinations of the READY/FAULT pair, with both lines pulled DOWN on the LCU side.",
         "rows": [
-          {
-            "ready": "HIGH",
-            "fault": "HIGH",
-            "meaning": "healthy and ready to levitate",
-            "action": "none"
-          },
-          {
-            "ready": "LOW",
-            "fault": "HIGH",
-            "meaning": "healthy but not ready (startup, disabled, or before the drivers come up)",
-            "action": "none, wait"
-          },
-          {
-            "ready": "LOW",
-            "fault": "LOW",
-            "meaning": "faulted, OR the connector is absent/unpowered -- the two cannot be told apart because a powered LPU in fault also drives both LOW",
-            "action": "exclude that LPU, then determine which of the two it is"
-          },
-          {
-            "ready": "HIGH",
-            "fault": "LOW",
-            "meaning": "physically impossible: ready while faulted",
-            "action": "treat as a fault; indicates a stuck or shorted line"
-          }
+          { "ready": "HIGH", "fault": "HIGH", "meaning": "healthy and ready to levitate", "action": "none" },
+          { "ready": "LOW", "fault": "HIGH", "meaning": "healthy but not ready (startup, disabled, or before the drivers come up)", "action": "none, wait" },
+          { "ready": "LOW", "fault": "LOW", "meaning": "faulted, OR the connector is absent/unpowered -- indistinguishable, because a powered LPU in fault also drives both LOW", "action": "exclude that LPU, then determine which of the two it is" },
+          { "ready": "HIGH", "fault": "LOW", "meaning": "physically impossible: ready while faulted", "action": "treat as a fault; indicates a stuck or shorted line" }
         ]
       }
     },
@@ -450,79 +122,33 @@
       "id": "IF-AGP",
       "title": "LCU <-> airgap sensor",
       "count": 8,
-      "connector": {
-        "part": "Molex 206832-0401",
-        "pins": 4,
-        "pitch_mm": 3.0,
-        "rows": 2
-      },
-      "status": "AC",
-      "note": "Sensor: SICK OD2000-1301T15, laser triangulation, 60-200 mm, 4-20 mA analogue output (16-bit DAC), IO-Link V1.1, 2 digital outputs with alarm function. Sensor is externally powered (18-30 V); the LCU sees only the current loop -- which is why the loop is 4-20 mA and not a voltage. Exactly 8 connectors: LCU_H10's ten Nano-Fit (105310-1204) instances are 8 airgap connectors (J10..J17 on the Airgap Sensors sheet) plus 2 bootloader connectors, one per MCU. There are no spare footprints.",
+      "connector": { "part": "Molex 206832-0401", "pins": 4, "pitch_mm": 3.0, "rows": 2 },
+      "status": "OK",
+      "note": "Sensor: SICK OD2000-1301T15, laser triangulation, 60-200 mm, 4-20 mA analogue output (16-bit DAC), IO-Link V1.1, 2 digital outputs with alarm function. Sensor is externally powered (18-30 V); the LCU sees only the current loop, which is why the loop is 4-20 mA and not a voltage. Exactly 8 connectors: LCU_H10's ten Nano-Fit instances are 8 airgap connectors (J10..J17) plus 2 bootloader connectors. No spare footprints.",
       "signals": [
-        {
-          "name": "I_LOOP_P",
-          "dir": "in",
-          "kind": "analog_current",
-          "source": "H10"
-        },
-        {
-          "name": "I_LOOP_N",
-          "dir": "in",
-          "kind": "analog_current",
-          "source": "H10"
-        },
-        {
-          "name": "SHIELD",
-          "dir": "in",
-          "kind": "power",
-          "source": "H10",
-          "status": "AC"
-        }
+        { "name": "I_LOOP_P", "dir": "in", "kind": "analog_current", "source": "H10" },
+        { "name": "I_LOOP_N", "dir": "in", "kind": "analog_current", "source": "H10" },
+        { "name": "SHIELD", "dir": "in", "kind": "power", "source": "H10", "status": "AC" }
       ]
     },
     {
       "id": "IF-NTC",
       "title": "LCU <-> corner NTC",
       "count": 4,
-      "connector": {
-        "part": "Molex 206832-0401",
-        "pins": 4,
-        "pitch_mm": 3.0
-      },
+      "connector": { "part": "Molex 206832-0401", "pins": 4, "pitch_mm": 3.0 },
       "status": "OK",
-      "source": "U",
-      "note": "Direct connection from the LCU to the NTC at each corner of the pod. The LCU owns excitation, filtering, protection and conversion; nothing on the LPU is involved. Cable runs alongside the LPU power leads, so this is treated as a noisy off-board analog input.",
+      "note": "Direct connection from the LCU to the NTC at each corner of the pod. The LCU owns excitation, filtering, protection and conversion; nothing on the LPU is involved. The cable runs alongside the LPU power leads, so this is treated as a noisy off-board analog input.",
       "signals": [
-        {
-          "name": "NTC_A",
-          "dir": "in",
-          "kind": "analog",
-          "source": "U"
-        },
-        {
-          "name": "NTC_RTN",
-          "dir": "in",
-          "kind": "analog",
-          "source": "U"
-        },
-        {
-          "name": "SHIELD",
-          "dir": "in",
-          "kind": "power",
-          "source": "C",
-          "status": "AC"
-        }
+        { "name": "NTC_A", "dir": "in", "kind": "analog", "source": "U" },
+        { "name": "NTC_RTN", "dir": "in", "kind": "analog", "source": "U" },
+        { "name": "SHIELD", "dir": "in", "kind": "power", "source": "C", "status": "AC" }
       ]
     },
     {
       "id": "IF-ETH",
       "title": "LCU <-> VCU / backend",
       "count": 1,
-      "connector": {
-        "part": "RJ45 7499011222A",
-        "pins": 8,
-        "magnetics": "integrated"
-      },
+      "connector": { "part": "RJ45 7499011222A", "pins": 8, "magnetics": "integrated" },
       "status": "OK",
       "source": "VCU",
       "note": "100BASE-TX, RMII to the PHY. TCP orders on :50500, UDP telemetry at 2 kHz."
@@ -531,112 +157,47 @@
       "id": "IF-LINK-CTRL",
       "title": "Master -> Slave control link",
       "count": 1,
-      "connector": {
-        "part": "board-to-board",
-        "note": "same PCB, no connector"
-      },
+      "connector": { "part": "board-to-board", "note": "same PCB, no connector" },
       "status": "OK",
       "source": "H10",
-      "note": "SPI3 point-to-point, Master is the clock source and the Slave raises a handshake line. H12 keeps this link small and deterministic: setpoints and commands down, heartbeat up. The diagnostic record and all bulk logging move to IF-LINK-TEL so a telemetry burst can never threaten the 500 us deadline.",
+      "note": "SPI3 point-to-point, Master is the clock source and the Slave raises a handshake line. H12 keeps this link small and deterministic: setpoints down, heartbeat up. The diagnostic record and all bulk logging move to IF-LINK-TEL.",
       "signals": [
-        {
-          "name": "CTRL_SCK",
-          "dir": "out",
-          "kind": "spi",
-          "source": "H10"
-        },
-        {
-          "name": "CTRL_MISO",
-          "dir": "in",
-          "kind": "spi",
-          "source": "H10"
-        },
-        {
-          "name": "CTRL_MOSI",
-          "dir": "out",
-          "kind": "spi",
-          "source": "H10"
-        },
-        {
-          "name": "CTRL_READY",
-          "dir": "in",
-          "kind": "digital",
-          "source": "H10"
-        }
+        { "name": "CTRL_SCK", "dir": "out", "kind": "spi", "source": "H10" },
+        { "name": "CTRL_MISO", "dir": "in", "kind": "spi", "source": "H10" },
+        { "name": "CTRL_MOSI", "dir": "out", "kind": "spi", "source": "H10" },
+        { "name": "CTRL_READY", "dir": "in", "kind": "digital", "source": "H10" }
       ]
     },
     {
       "id": "IF-LINK-TEL",
       "title": "Slave -> Master telemetry link",
       "count": 1,
-      "connector": {
-        "part": "board-to-board",
-        "note": "same PCB, no connector"
-      },
+      "connector": { "part": "board-to-board", "note": "same PCB, no connector" },
       "status": "OK",
       "source": "U",
-      "note": "NEW in H12. The roles are reversed: the Slave is the SPI master, the Master is the SPI slave. Purpose is to keep bulk telemetry, diagnostics, configuration download and SD logging traffic off the control link. The Slave owns the transfer timing, which is what you want because it is the side that knows when a control period has data ready.",
+      "note": "NEW in H12. Roles reversed: the Slave is the SPI master, the Master is the SPI slave. Keeps bulk telemetry, diagnostics, configuration download and SD logging traffic off the control link. The Slave owns the transfer timing, which is right because it is the side that knows when a control period has data ready.",
       "signals": [
-        {
-          "name": "TEL_SCK",
-          "dir": "out",
-          "kind": "spi",
-          "source": "U",
-          "note": "Driven by the Slave."
-        },
-        {
-          "name": "TEL_MOSI",
-          "dir": "out",
-          "kind": "spi",
-          "source": "U",
-          "note": "Master -> Slave."
-        },
-        {
-          "name": "TEL_MISO",
-          "dir": "in",
-          "kind": "spi",
-          "source": "U",
-          "note": "Slave -> Master."
-        },
-        {
-          "name": "TEL_CREDIT",
-          "dir": "in",
-          "kind": "digital",
-          "source": "C",
-          "note": "Master says it has buffer space. An SPI slave cannot stall an SPI master, so this line is what prevents overrun when the Master is busy with an SD write."
-        }
+        { "name": "TEL_SCK", "dir": "out", "kind": "spi", "source": "U", "note": "Driven by the Slave." },
+        { "name": "TEL_MOSI", "dir": "out", "kind": "spi", "source": "U", "note": "Master -> Slave." },
+        { "name": "TEL_MISO", "dir": "in", "kind": "spi", "source": "U", "note": "Slave -> Master." },
+        { "name": "TEL_CREDIT", "dir": "in", "kind": "digital", "source": "C", "note": "Master says it has buffer space. An SPI slave cannot stall an SPI master, so this is what prevents overrun when the Master is busy with an SD write." }
       ]
     },
     {
       "id": "IF-BRAKE",
       "title": "brake fault daisy chain",
       "count": 2,
-      "connector": {
-        "part": "Molex 206832-0401",
-        "pins": 2,
-        "pitch_mm": 3.0
-      },
+      "connector": { "part": "Molex 206832-0401", "pins": 2, "pitch_mm": 3.0 },
       "status": "OK",
       "source": "U",
-      "note": "The VCU exposes a 2-pin brake connector. The LCU gets the same connector twice so the chain can be daisy-chained through it: in from the upstream board, out to the next one. The conditioned signal drives an open-drain stage that pulls all ten LPU reset nets low (hardware path, firmware-independent) and is also read by the Master so the event can be latched and reported.",
+      "note": "The VCU exposes a 2-pin brake connector. The LCU gets the same connector twice so the chain can be daisy-chained through it. The conditioned signal forces the buffer bank disabled, which asserts every LPU reset in hardware.",
       "signals": [
-        {
-          "name": "BRAKE_FAULT",
-          "dir": "in",
-          "kind": "digital",
-          "source": "U"
-        },
-        {
-          "name": "BRAKE_FAULT_RTN",
-          "dir": "in",
-          "kind": "power",
-          "source": "U",
-          "status": "AC",
-          "note": "Confirm whether the 2 pins are signal+return or two differential contacts."
-        }
+        { "name": "BRAKE_FAULT", "dir": "in", "kind": "digital", "source": "U" },
+        { "name": "BRAKE_FAULT_RTN", "dir": "in", "kind": "power", "source": "U", "status": "AC", "note": "Confirm whether the 2 pins are signal+return or two differential contacts." }
       ]
     }
   ],
+
   "mcu": {
     "master": {
       "part": "STM32H723ZGT6",
@@ -645,172 +206,17 @@
       "clock_mhz": 550,
       "source": "H10",
       "pin_groups": {
-        "eth_rmii": {
-          "pins": [
-            "PC1",
-            "PA1",
-            "PA2",
-            "PA7",
-            "PC4",
-            "PC5",
-            "PB13",
-            "PB11",
-            "PB12",
-            "PF14"
-          ],
-          "source": "VCU",
-          "note": "PINSET_H11 from ST-LIB NewEthernet.hpp - identical to H10 except TX_EN PB11, TXD0 PB12, PHY_RST PF14 and no RXER."
-        },
-        "sdmmc1": {
-          "pins": [
-            "PD2",
-            "PC12",
-            "PC8",
-            "PC9",
-            "PC10",
-            "PC11",
-            "PG4",
-            "PG3"
-          ],
-          "source": "VCU",
-          "note": "CMD PD2, CK PC12, D0-D3 PC8-PC11, card detect PG4, write protect PG3. Exactly VCU_H11's choice."
-        },
-        "ctrl": {
-          "pins": [
-            "PD3",
-            "PE0",
-            "PE1",
-            "PE2",
-            "PE11"
-          ],
-          "role": [
-            "ctrl_ready_in",
-            "slave_nrst_out",
-            "slave_fault_in",
-            "brake_fault_in",
-            "tel_credit_out"
-          ]
-        },
-        "lpu_status": {
-          "pins": [
-            "PF0",
-            "PF1",
-            "PF2",
-            "PF15",
-            "PG5",
-            "PG6",
-            "PG7",
-            "PG8",
-            "PG9",
-            "PG10",
-            "PG11",
-            "PG12",
-            "PG13",
-            "PG0",
-            "PG2",
-            "PB6",
-            "PB7",
-            "PB8",
-            "PB9",
-            "PB10"
-          ],
-          "count": 20,
-          "note": "10 READY + 10 FAULT, one pin each, deliberately not shared. These are also the connector-presence detector: their pull resistors make an unplugged connector read as a fault."
-        },
-        "lpu_reset": {
-          "pins": [
-            "PD4",
-            "PD5",
-            "PD7",
-            "PE3",
-            "PE4",
-            "PE5",
-            "PE6",
-            "PE7",
-            "PE8",
-            "PE9"
-          ],
-          "count": 10,
-          "note": "One per LPU. These drive buffer inputs, not the connector directly: each LPU has its own reset channel in the 5 V bank, so any single LPU can still be reset while the others run."
-        },
-        "lpu_presence": {
-          "pins": [
-            "PD8",
-            "PD9",
-            "PD10",
-            "PD11",
-            "PD12",
-            "PD13",
-            "PE10",
-            "PD14",
-            "PD15",
-            "PC6"
-          ],
-          "count": 10
-        },
-        "leds": {
-          "pins": [
-            "PC7",
-            "PB2",
-            "PA8",
-            "PA10",
-            "PA15",
-            "PB14",
-            "PB15",
-            "PE15"
-          ],
-          "count": 8
-        },
-        "debug": {
-          "pins": [
-            "PA13",
-            "PA14"
-          ],
-          "role": [
-            "SWDIO",
-            "SWCLK"
-          ]
-        },
-        "spi_ctrl": {
-          "pins": [
-            "PB3",
-            "PB4",
-            "PB5"
-          ],
-          "role": [
-            "SCK",
-            "MISO",
-            "MOSI"
-          ],
-          "source": "C",
-          "note": "MOVED from PC10/PC11/PC12, which SDMMC1 needs. PB3/PB4/PB5 are SPI3 AF6. Costs SWO trace."
-        },
-        "spi_tel": {
-          "pins": [
-            "PE12",
-            "PE13",
-            "PE14"
-          ],
-          "role": [
-            "SCK",
-            "MISO",
-            "MOSI"
-          ],
-          "source": "C",
-          "note": "SPI4 used as a SLAVE here: the Slave drives SCK. AF5."
-        },
-        "fdcan1": {
-          "pins": [
-            "PD0",
-            "PD1"
-          ],
-          "role": [
-            "RX",
-            "TX"
-          ],
-          "source": "H12",
-          "note": "The H12 avionics baseline lists FDCAN1 1 Mbit/s for every control board."
-        }
+        "eth_rmii": { "pins": ["PC1", "PA1", "PA2", "PA7", "PC4", "PC5", "PB13", "PB11", "PB12", "PF14"], "source": "VCU", "note": "PINSET_H11 from ST-LIB NewEthernet.hpp - identical to H10 except TX_EN PB11, TXD0 PB12, PHY_RST PF14 and no RXER." },
+        "sdmmc1": { "pins": ["PD2", "PC12", "PC8", "PC9", "PC10", "PC11", "PG4", "PG3"], "source": "VCU", "note": "CMD PD2, CK PC12, D0-D3 PC8-PC11, card detect PG4, write protect PG3. Exactly VCU_H11's choice." },
+        "ctrl": { "pins": ["PD3", "PE0", "PE1", "PE2", "PE11"], "role": ["ctrl_ready_in", "slave_nrst_out", "slave_fault_in", "brake_fault_in", "tel_credit_out"] },
+        "lpu_status": { "pins": ["PF0", "PF1", "PF2", "PF15", "PG5", "PG6", "PG7", "PG8", "PG9", "PG10", "PG11", "PG12", "PG13", "PG0", "PG2", "PB6", "PB7", "PB8", "PB9", "PB10"], "count": 20, "note": "10 READY + 10 FAULT, one pin each, deliberately not shared. These are also the connector-presence detector: their pull resistors make an unplugged connector read as a fault." },
+        "lpu_reset": { "pins": ["PD4", "PD5", "PD7", "PE3", "PE4", "PE5", "PE6", "PE7", "PE8", "PE9"], "count": 10, "note": "One per LPU. These drive buffer inputs, not the connector directly: each LPU has its own reset channel in the 5 V bank, so any single LPU can still be reset while the others run." },
+        "lpu_presence": { "pins": ["PD8", "PD9", "PD10", "PD11", "PD12", "PD13", "PE10", "PD14", "PD15", "PC6"], "count": 10 },
+        "leds": { "pins": ["PC7", "PB2", "PA8", "PA10", "PA15", "PB14", "PB15", "PE15"], "count": 8, "note": "Board-level firmware LEDs inherited from LCU_H11. The per-LPU indication is hardware-driven and uses no MCU pins." },
+        "debug": { "pins": ["PA13", "PA14"], "role": ["SWDIO", "SWCLK"] },
+        "spi_ctrl": { "pins": ["PB3", "PB4", "PB5"], "role": ["SCK", "MISO", "MOSI"], "source": "C", "note": "MOVED from PC10/PC11/PC12, which SDMMC1 needs. PB3/PB4/PB5 are SPI3 AF6. Costs SWO trace." },
+        "spi_tel": { "pins": ["PE12", "PE13", "PE14"], "role": ["SCK", "MISO", "MOSI"], "source": "C", "note": "SPI4 used as a SLAVE here: the Slave drives SCK. AF5." },
+        "fdcan1": { "pins": ["PD0", "PD1"], "role": ["RX", "TX"], "source": "H12", "note": "The H12 avionics baseline lists FDCAN1 1 Mbit/s for every control board." }
       },
       "adc_plan": {
         "ADC1": {
@@ -818,23 +224,7 @@
           "fadc_mhz": 36,
           "sample_time_cycles": 8.5,
           "groups": [
-            {
-              "name": "lpu_vbat",
-              "count": 10,
-              "pins": [
-                "PA0",
-                "PA3",
-                "PA4",
-                "PA5",
-                "PA6",
-                "PB0",
-                "PB1",
-                "PC0",
-                "PF11",
-                "PF12"
-              ],
-              "note": "Fast channels, but slow signals: VBAT is a battery rail, not a control variable."
-            }
+            { "name": "lpu_vbat", "count": 10, "pins": ["PA0", "PA3", "PA4", "PA5", "PA6", "PB0", "PB1", "PC0", "PF11", "PF12"], "note": "Fast channels, slow signals: VBAT is a battery rail, not a control variable." }
           ]
         },
         "ADC3": {
@@ -842,23 +232,7 @@
           "fadc_mhz": 36,
           "sample_time_cycles": 8.5,
           "groups": [
-            {
-              "name": "lpu_ntc",
-              "count": 10,
-              "pins": [
-                "PC2",
-                "PC3",
-                "PF3",
-                "PF4",
-                "PF5",
-                "PF6",
-                "PF7",
-                "PF8",
-                "PF9",
-                "PF10"
-              ],
-              "note": "Temperature. 12 bits is more than an NTC needs."
-            }
+            { "name": "lpu_ntc", "count": 10, "pins": ["PC2", "PC3", "PF3", "PF4", "PF5", "PF6", "PF7", "PF8", "PF9", "PF10"], "note": "Temperature. 12 bits is more than an NTC needs." }
           ]
         }
       },
@@ -871,80 +245,12 @@
       "clock_mhz": 550,
       "source": "H10",
       "pin_groups": {
-        "ctrl": {
-          "pins": [
-            "PD3",
-            "PE15",
-            "PE0",
-            "PD6"
-          ],
-          "role": [
-            "ctrl_ready_out",
-            "buffer_enable_n",
-            "master_fault_in",
-            "tel_credit_in"
-          ]
-        },
-        "leds": {
-          "pins": [
-            "PF15",
-            "PE8",
-            "PE7",
-            "PG1",
-            "PG0"
-          ],
-          "count": 5,
-          "source": "H11"
-        },
-        "debug": {
-          "pins": [
-            "PA13",
-            "PA14"
-          ],
-          "role": [
-            "SWDIO",
-            "SWCLK"
-          ]
-        },
-        "spi_ctrl": {
-          "pins": [
-            "PC10",
-            "PC11",
-            "PC12"
-          ],
-          "role": [
-            "SCK",
-            "MISO",
-            "MOSI"
-          ],
-          "source": "H11"
-        },
-        "spi_tel": {
-          "pins": [
-            "PB3",
-            "PG9",
-            "PD7"
-          ],
-          "role": [
-            "SCK",
-            "MISO",
-            "MOSI"
-          ],
-          "source": "C",
-          "note": "SPI1 used as a MASTER: SCK PB3, MISO PG9, MOSI PD7, all AF5. Free on the Slave now that LPU7 no longer needs PIN16/PIN17."
-        },
-        "fdcan1": {
-          "pins": [
-            "PB8",
-            "PB9"
-          ],
-          "role": [
-            "RX",
-            "TX"
-          ],
-          "source": "U",
-          "note": "FDCAN1 on the Slave, so both MCUs are CAN nodes on the same bus."
-        }
+        "ctrl": { "pins": ["PD3", "PE15", "PE0", "PD6"], "role": ["ctrl_ready_out", "buffer_enable_n", "master_fault_in", "tel_credit_in"] },
+        "leds": { "pins": ["PF15", "PE8", "PE7", "PG1", "PG0"], "count": 5, "source": "H11" },
+        "debug": { "pins": ["PA13", "PA14"], "role": ["SWDIO", "SWCLK"] },
+        "spi_ctrl": { "pins": ["PC10", "PC11", "PC12"], "role": ["SCK", "MISO", "MOSI"], "source": "H11" },
+        "spi_tel": { "pins": ["PB3", "PG9", "PD7"], "role": ["SCK", "MISO", "MOSI"], "source": "C", "note": "SPI1 used as a MASTER: SCK PB3, MISO PG9, MOSI PD7, all AF5. Free on the Slave now that LPU7 no longer needs PIN16/PIN17." },
+        "fdcan1": { "pins": ["PB8", "PB9"], "role": ["RX", "TX"], "source": "U", "note": "FDCAN1 on the Slave, so both MCUs are CAN nodes on the same bus." }
       },
       "adc_plan": {
         "ADC1": {
@@ -953,34 +259,8 @@
           "sample_time_cycles": 8.5,
           "trigger": "TIM2 TRGO, one scan per control period (500 us)",
           "groups": [
-            {
-              "name": "airgap",
-              "count": 8,
-              "pins": [
-                "PA7",
-                "PA6",
-                "PA5",
-                "PA4",
-                "PC2",
-                "PC3",
-                "PC5",
-                "PC4"
-              ]
-            },
-            {
-              "name": "lpu_shunt",
-              "count": 8,
-              "pins": [
-                "PC1",
-                "PC0",
-                "PA0",
-                "PA1",
-                "PA2",
-                "PA3",
-                "PF12",
-                "PF11"
-              ]
-            }
+            { "name": "airgap", "count": 8, "pins": ["PA7", "PA6", "PA5", "PA4", "PC2", "PC3", "PC5", "PC4"] },
+            { "name": "lpu_shunt", "count": 8, "pins": ["PC1", "PC0", "PA0", "PA1", "PA2", "PA3", "PF12", "PF11"] }
           ]
         },
         "ADC2": {
@@ -989,14 +269,7 @@
           "sample_time_cycles": 8.5,
           "trigger": "same as ADC1, dual mode",
           "groups": [
-            {
-              "name": "lpu_shunt",
-              "count": 2,
-              "pins": [
-                "PF13",
-                "PF14"
-              ]
-            }
+            { "name": "lpu_shunt", "count": 2, "pins": ["PF13", "PF14"] }
           ]
         },
         "ADC3": {
@@ -1005,416 +278,25 @@
           "sample_time_cycles": 8.5,
           "trigger": "software or slow timer; not part of the control scan",
           "groups": [
-            {
-              "name": "local_ntc",
-              "count": 4,
-              "pins": [
-                "PF3",
-                "PF4",
-                "PF5",
-                "PF6"
-              ]
-            }
+            { "name": "local_ntc", "count": 4, "pins": ["PF3", "PF4", "PF5", "PF6"] }
           ]
         }
       },
       "pwm_plan": [
-        {
-          "timer": "TIM1",
-          "lpu": 9,
-          "pins": [
-            "PE13",
-            "PE14"
-          ],
-          "channels": [
-            "CH3",
-            "CH4"
-          ],
-          "advanced": true
-        },
-        {
-          "timer": "TIM1",
-          "lpu": 10,
-          "pins": [
-            "PE9",
-            "PE11"
-          ],
-          "channels": [
-            "CH1",
-            "CH2"
-          ],
-          "advanced": true
-        },
-        {
-          "timer": "TIM3",
-          "lpu": 2,
-          "pins": [
-            "PB4",
-            "PB5"
-          ],
-          "channels": [
-            "CH1",
-            "CH2"
-          ],
-          "advanced": false
-        },
-        {
-          "timer": "TIM3",
-          "lpu": 3,
-          "pins": [
-            "PB0",
-            "PB1"
-          ],
-          "channels": [
-            "CH3",
-            "CH4"
-          ],
-          "advanced": false
-        },
-        {
-          "timer": "TIM4",
-          "lpu": 6,
-          "pins": [
-            "PD12",
-            "PD13"
-          ],
-          "channels": [
-            "CH1",
-            "CH2"
-          ],
-          "advanced": false
-        },
-        {
-          "timer": "TIM4",
-          "lpu": 5,
-          "pins": [
-            "PD14",
-            "PD15"
-          ],
-          "channels": [
-            "CH3",
-            "CH4"
-          ],
-          "advanced": false
-        },
-        {
-          "timer": "TIM8",
-          "lpu": 4,
-          "pins": [
-            "PC6",
-            "PC7"
-          ],
-          "channels": [
-            "CH1",
-            "CH2"
-          ],
-          "advanced": true
-        },
-        {
-          "timer": "TIM8",
-          "lpu": 7,
-          "pins": [
-            "PC8",
-            "PC9"
-          ],
-          "channels": [
-            "CH3",
-            "CH4"
-          ],
-          "advanced": true
-        },
-        {
-          "timer": "TIM15",
-          "lpu": 1,
-          "pins": [
-            "PE5",
-            "PE6"
-          ],
-          "channels": [
-            "CH1",
-            "CH2"
-          ],
-          "advanced": false
-        },
-        {
-          "timer": "TIM12",
-          "lpu": 8,
-          "pins": [
-            "PB14",
-            "PB15"
-          ],
-          "channels": [
-            "CH1",
-            "CH2"
-          ],
-          "advanced": false
-        }
+        { "timer": "TIM1", "lpu": 9, "pins": ["PE13", "PE14"], "channels": ["CH3", "CH4"], "advanced": true },
+        { "timer": "TIM1", "lpu": 10, "pins": ["PE9", "PE11"], "channels": ["CH1", "CH2"], "advanced": true },
+        { "timer": "TIM3", "lpu": 2, "pins": ["PB4", "PB5"], "channels": ["CH1", "CH2"], "advanced": false },
+        { "timer": "TIM3", "lpu": 3, "pins": ["PB0", "PB1"], "channels": ["CH3", "CH4"], "advanced": false },
+        { "timer": "TIM4", "lpu": 6, "pins": ["PD12", "PD13"], "channels": ["CH1", "CH2"], "advanced": false },
+        { "timer": "TIM4", "lpu": 5, "pins": ["PD14", "PD15"], "channels": ["CH3", "CH4"], "advanced": false },
+        { "timer": "TIM8", "lpu": 4, "pins": ["PC6", "PC7"], "channels": ["CH1", "CH2"], "advanced": true },
+        { "timer": "TIM8", "lpu": 7, "pins": ["PC8", "PC9"], "channels": ["CH3", "CH4"], "advanced": true },
+        { "timer": "TIM15", "lpu": 1, "pins": ["PE5", "PE6"], "channels": ["CH1", "CH2"], "advanced": false },
+        { "timer": "TIM12", "lpu": 8, "pins": ["PB14", "PB15"], "channels": ["CH1", "CH2"], "advanced": false }
       ]
     }
   },
-  "graph": [
-    [
-      "pwr",
-      "mcu_master",
-      "+3V3M"
-    ],
-    [
-      "pwr",
-      "mcu_slave",
-      "+3V3M"
-    ],
-    [
-      "pwr",
-      "lpu_buf",
-      "+5V_LCU"
-    ],
-    [
-      "pwr",
-      "agp_afe",
-      "+3V3 analog"
-    ],
-    [
-      "mcu_master",
-      "mcu_slave",
-      "SPI3 control, M to S"
-    ],
-    [
-      "mcu_slave",
-      "mcu_master",
-      "SPI1 telemetry, S to M"
-    ],
-    [
-      "mcu_master",
-      "mcu_slave",
-      "NRST + FAULT"
-    ],
-    [
-      "mcu_master",
-      "eth",
-      "RMII"
-    ],
-    [
-      "eth",
-      "if_eth",
-      "MDI"
-    ],
-    [
-      "mcu_master",
-      "sd",
-      "SDMMC1"
-    ],
-    [
-      "mcu_master",
-      "can",
-      "FDCAN1"
-    ],
-    [
-      "mcu_slave",
-      "can",
-      "FDCAN1"
-    ],
-    [
-      "mcu_slave",
-      "lpu_buf",
-      "20 PWM @ 20 kHz"
-    ],
-    [
-      "lpu_buf",
-      "lpu_conn",
-      "PWM x2 + buffer enable"
-    ],
-    [
-      "lpu_conn",
-      "mcu_slave",
-      "SHUNT"
-    ],
-    [
-      "lpu_conn",
-      "mcu_master",
-      "VBAT"
-    ],
-    [
-      "lpu_conn",
-      "tmp",
-      "TEMP"
-    ],
-    [
-      "tmp",
-      "mcu_master",
-      "0-3.3 V"
-    ],
-    [
-      "lpu_conn",
-      "mcu_master",
-      "READY / FAULT"
-    ],
-    [
-      "mcu_master",
-      "lpu_conn",
-      "RESET x10 into the buffer"
-    ],
-    [
-      "brake_conn",
-      "lpu_rst_logic",
-      "brake_fault"
-    ],
-    [
-      "lpu_rst_logic",
-      "lpu_conn",
-      "RESET through the 5 V bank"
-    ],
-    [
-      "agp_conn",
-      "agp_afe",
-      "4-20 mA"
-    ],
-    [
-      "agp_afe",
-      "mcu_slave",
-      "0.64-3.2 V, 16 bit"
-    ],
-    [
-      "if_ntc",
-      "ntc_afe",
-      "NTC x4"
-    ],
-    [
-      "ntc_afe",
-      "mcu_slave",
-      "0-3.3 V"
-    ],
-    [
-      "mcu_master",
-      "leds",
-      "GPIO"
-    ],
-    [
-      "mcu_master",
-      "imu",
-      "SPI, optional"
-    ],
-    [
-      "mcu_master",
-      "dbg",
-      "SWD"
-    ],
-    [
-      "mcu_slave",
-      "dbg",
-      "SWD"
-    ]
-  ],
-  "mechanics": {
-    "note": "Body dimensions are typical values taken from the family datasheets and MUST be replaced with the real drawing before the connector reorder is frozen.",
-    "connectors": [
-      {
-        "part": "TE 5499922-6 (LPU)",
-        "qty": 10,
-        "body_mm": [
-          44.5,
-          12.7
-        ],
-        "pitch_mm": 2.54,
-        "edge": "long",
-        "note": "AMP-LATCH universal header, 26 positions. Unchanged from H10. Verify the 2.54 mm pitch and the body length against the drawing."
-      },
-      {
-        "part": "Molex 206832-0401 (airgap)",
-        "qty": 8,
-        "body_mm": [
-          10.2,
-          8.5
-        ],
-        "pitch_mm": 3.0,
-        "edge": "any",
-        "note": "Nano-Fit 105310-1204 -> Micro-Fit+."
-      },
-      {
-        "part": "Molex 206832-0401 (bootloader)",
-        "qty": 2,
-        "body_mm": [
-          10.2,
-          8.5
-        ],
-        "pitch_mm": 3.0,
-        "edge": "any",
-        "note": "One per MCU (J5 and its slave twin in LCU_H10). Nano-Fit -> Micro-Fit+."
-      },
-      {
-        "part": "Molex 206832-0401 (brake_fault in)",
-        "qty": 1,
-        "body_mm": [
-          10.2,
-          8.5
-        ],
-        "pitch_mm": 3.0,
-        "edge": "any"
-      },
-      {
-        "part": "Molex 206832-0401 (brake_fault out)",
-        "qty": 1,
-        "body_mm": [
-          10.2,
-          8.5
-        ],
-        "pitch_mm": 3.0,
-        "edge": "any",
-        "note": "Daisy-chain passthrough to the next board in the chain."
-      },
-      {
-        "part": "Molex 206832-0401 (corner NTC)",
-        "qty": 4,
-        "body_mm": [
-          10.2,
-          8.5
-        ],
-        "pitch_mm": 3.0,
-        "edge": "any",
-        "note": "One per pod corner, direct to the NTC. Reuses the same 4-pin Micro-Fit+ as the airgaps and the brake chain."
-      },
-      {
-        "part": "Molex 206832-0401 (CAN)",
-        "qty": 1,
-        "body_mm": [
-          10.2,
-          8.5
-        ],
-        "pitch_mm": 3.0,
-        "edge": "any"
-      },
-      {
-        "part": "RJ45 7499011222A",
-        "qty": 1,
-        "body_mm": [
-          16.0,
-          21.5
-        ],
-        "pitch_mm": 0,
-        "edge": "any"
-      },
-      {
-        "part": "Power input",
-        "qty": 1,
-        "body_mm": [
-          12.0,
-          10.0
-        ],
-        "pitch_mm": 0,
-        "edge": "any",
-        "note": "TBD, from LCU_H10."
-      },
-      {
-        "part": "SWD 2x5 1.27 mm",
-        "qty": 2,
-        "body_mm": [
-          10.0,
-          6.0
-        ],
-        "pitch_mm": 1.27,
-        "edge": "any"
-      }
-    ]
-  },
+
   "links": {
     "spi_control": {
       "owner": "Master is SPI master",
@@ -1426,28 +308,10 @@
       "h11_frame_bytes": 899,
       "note": "H11 reference: everything, including the diagnostic record, travelled in one 899 B frame at 84 percent of the period. H12 keeps this link for setpoints only.",
       "proposed_payload": [
-        {
-          "name": "setpoint_per_lpu",
-          "count": 10,
-          "bytes": 5,
-          "note": "flags + fixed_vbat + fixed_duty"
-        },
-        {
-          "name": "desired_state",
-          "count": 1,
-          "bytes": 3
-        },
-        {
-          "name": "control_input",
-          "count": 1,
-          "bytes": 14
-        },
-        {
-          "name": "heartbeat_up",
-          "count": 1,
-          "bytes": 8,
-          "note": "state + error counters + sequence"
-        }
+        { "name": "setpoint_per_lpu", "count": 10, "bytes": 5, "note": "flags + fixed_vbat + fixed_duty" },
+        { "name": "desired_state", "count": 1, "bytes": 3 },
+        { "name": "control_input", "count": 1, "bytes": 14 },
+        { "name": "heartbeat_up", "count": 1, "bytes": 8, "note": "state + error counters + sequence" }
       ]
     },
     "spi_telemetry": {
@@ -1460,44 +324,17 @@
       "h11_frame_bytes": 0,
       "note": "Out-of-band channel. Slave initiates; Master must be a non-blocking SPI slave with DMA and a ring buffer, never a spin-wait, or an SD write stall will overrun the bus. TEL_CREDIT is the flow control.",
       "proposed_payload": [
-        {
-          "name": "lpu_vbat",
-          "count": 10,
-          "bytes": 2
-        },
-        {
-          "name": "lpu_shunt",
-          "count": 10,
-          "bytes": 2
-        },
-        {
-          "name": "lpu_duty",
-          "count": 10,
-          "bytes": 2
-        },
-        {
-          "name": "airgap",
-          "count": 8,
-          "bytes": 2
-        },
-        {
-          "name": "control_output",
-          "count": 1,
-          "bytes": 56
-        },
-        {
-          "name": "diagnostics",
-          "count": 1,
-          "bytes": 64
-        },
-        {
-          "name": "state",
-          "count": 1,
-          "bytes": 8
-        }
+        { "name": "lpu_vbat", "count": 10, "bytes": 2 },
+        { "name": "lpu_shunt", "count": 10, "bytes": 2 },
+        { "name": "lpu_duty", "count": 10, "bytes": 2 },
+        { "name": "airgap", "count": 8, "bytes": 2 },
+        { "name": "control_output", "count": 1, "bytes": 56 },
+        { "name": "diagnostics", "count": 1, "bytes": 64 },
+        { "name": "state", "count": 1, "bytes": 8 }
       ]
     }
   },
+
   "analog": {
     "airgap_front_end": {
       "i_min_ma": 4.0,
@@ -1510,10 +347,10 @@
       "sensor_linearity_um": 140,
       "sensor_range_mm": 140,
       "live_zero_threshold_ma": 3.6,
-      "note": "The 4-20 mA loop is read across 160 ohm into a 5th-order Butterworth at 5 kHz and buffered by an MCP6022 powered from +5V_LCU. The ADC is on a 3.3 V MCU and nothing between them limits the voltage, so the amplifier can drive ~5 V into a 3.3 V ADC pin. In normal operation the loop never exceeds 20 mA = 3.2 V so nothing happens, but on an overcurrent or a coupled transient the ADC's protection diode conducts and dumps current into VDDA. Fix: power the AFE from +3.3 V (the MCP6022 is rail-to-rail and rated 2.5-5.5 V), so it physically cannot exceed the ADC rail. Zero extra parts. Fallback if 5 V is ever needed: 1 kOhm series + BAT54S clamp per channel.",
-      "afe_supply_v": 5.0,
       "opamp": "MCP6022",
-      "afe_supply_v_h12": 3.3
+      "afe_supply_v": 5.0,
+      "afe_supply_v_h12": 3.3,
+      "note": "The 4-20 mA loop is read across 160 ohm into an MCP6022 and then a 5th-order Butterworth switched-capacitor filter. LCU_H10 runs the amplifier from +5V_LCU, which lets it drive close to 5 V into a 3.3 V ADC pin; H12 moves it to +3.3 V so that physically cannot happen. The filter is an IC (MAX7420 at 5 V, MAX7424 at 3 V), not a passive network. Filter design deferred."
     },
     "lpu_ntc_front_end": {
       "series_r_ohm": 220,
@@ -1522,541 +359,141 @@
       "note": "Same topology as LCU_H11 Temp_conditioning. 10 channels arrive over the LPU connectors (LPU_H11), 4 more are local to the LCU as a fallback for LPU_H10. NTC type TBD, match the one on the LPU."
     }
   },
-  "requirements": [
-    {
-      "id": "ARCH-01",
-      "text": "Keep the two-MCU topology: Master for comms/storage/supervision, Slave for the 500 us hard real-time loop.",
-      "source": "U,H10",
-      "status": "OK",
-      "note": "The split is what makes the 2 kHz current loop immune to Ethernet/SD latency. Do not merge them. In H12 the Master-Slave link itself is also split in two (ARCH-05)."
-    },
-    {
-      "id": "ARCH-02",
-      "text": "Both MCUs stay STM32H723ZGT6 (LQFP144) so the BOM, the linker scripts and the ST-LIB board support stay identical.",
-      "source": "U,H10",
-      "status": "OK"
-    },
-    {
-      "id": "ARCH-03",
-      "text": "Board outline identical to LCU_H10: 240 mm x 160 mm.",
-      "source": "U",
-      "status": "OK",
-      "note": "Confirmed. Perimeter 800 mm, two long edges of 240 mm and two short edges of 160 mm."
-    },
-    {
-      "id": "ARCH-04",
-      "text": "Only the airgap needs 16 bits. VBAT and temperature may use any ADC at any resolution, so their allocation is driven purely by pin availability.",
-      "source": "C",
-      "status": "OK",
-      "note": "Confirmed by the team. The practical consequences: the Master's ADCs both run 12-bit, so the 36 MHz 16-bit constraint only binds on the Slave's ADC1 (8 airgap channels). What limits the Master analog side is pin count, not resolution: 21 usable analog pins after Ethernet and PHY_RST, of which 20 are taken by 10 VBAT + 10 NTC, leaving one spare. That is why the 4 local NTC fallback channels sit on the Slave's empty ADC3 rather than on the Master."
-    },
-    {
-      "id": "ETH-01",
-      "text": "Replace the LAN8700IC-AEZ with the KSZ8041TLI used on VCU_H11.",
-      "source": "U,VCU,DS",
-      "status": "OK",
-      "note": "The LAN8700 is end-of-life at Microchip; that alone justifies the change."
-    },
-    {
-      "id": "ETH-02",
-      "text": "Adopt the VCU_H11 PHY support circuit: 50 MHz oscillator, PHYAD straps = 00001, full-duplex strap, RJ45 7499011222A with integrated magnetics.",
-      "source": "VCU",
-      "status": "OK"
-    },
-    {
-      "id": "ETH-03",
-      "text": "MCU-side RMII pinout = PINSET_H11 from ST-LIB (TX_EN PB11, TXD0 PB12, PHY_RST PF14, no RXER).",
-      "source": "VCU",
-      "status": "OK",
-      "note": "Already supported by ST-LIB, so no new pinout code is needed. Note this frees PG0/PG2/PG11/PG13 on the Master."
-    },
-    {
-      "id": "SD-01",
-      "text": "microSD socket on the Master, SDMMC1 4-bit, same socket as VCU_H11.",
-      "source": "U,VCU",
-      "status": "OK",
-      "note": "Confirmed proven. SDMMC1 4-bit, same socket as VCU_H11, so it is a straight port."
-    },
-    {
-      "id": "SD-02",
-      "text": "Master SPI3 moves to PB3/PB4/PB5 because SDMMC1 owns PC10/PC11/PC12.",
-      "source": "C",
-      "status": "OK",
-      "note": "Direct pin conflict found between SDMMC1 and H11's SPI3 pinout."
-    },
-    {
-      "id": "SD-03",
-      "text": "Card detect and write protect wired (PG4/PG3) plus ESD protection as in VCU_H11.",
-      "source": "VCU",
-      "status": "OK"
-    },
-    {
-      "id": "SD-04",
-      "text": "SD is a port, not bring-up: the SD path has been proven.",
-      "source": "C",
-      "status": "OK",
-      "note": "Corrected by the team: the SD path is proven, so H12 inherits a working design rather than reopening it. I had flagged it as unproven because the LCU_H11 firmware tree declares the SDMMC pins but never instantiates an Sd device, and ST-LIB ships a block-level driver with no filesystem on top -- that reading of the repo was wrong about the state of the art, not about the repo. What remains for H12 is only the pin move (SD-02), and confirming which upper layer is used so the telemetry buffer sizing in ARCH-08 matches how writes actually behave."
-    },
-    {
-      "id": "LPU-01",
-      "text": "Ten LPU connectors, TE 5499922-6 26-pin, electrical interface unchanged from the LPU H10/H11 harness.",
-      "source": "U,H10",
-      "status": "OK",
-      "note": "Confirmed: frozen to the LPU_H11 pinout, and there are no spare contacts -- all 26 are assigned. H12 adds, removes and moves nothing."
-    },
-    {
-      "id": "LPU-02",
-      "text": "Replace every Nano-Fit connector with Molex Micro-Fit+ 206832-0401: the 8 airgap sensor connectors and the 2 bootloader connectors. Everything else keeps its current connector.",
-      "source": "U,VCU",
-      "status": "OK",
-      "note": "Confirmed by the team. LCU_H10 has exactly 10 Nano-Fit 105310-1204 instances: 8 airgap connector footprints on the Airgap Sensors sheet and one bootloader connector per MCU on the Master and Slave sheets."
-    },
-    {
-      "id": "LPU-03",
-      "text": "Pull READY_n and FAULT_n DOWN on the LCU side, so an un-driven line always reads as not-ready plus fault.",
-      "source": "U",
-      "status": "OK",
-      "note": "Truth table confirmed: the LPU drives both lines 3.3 V push-pull, HIGH = healthy on both, and the fault/not-ready state is LOW on both. So the safe idle level is LOW on both, and both lines get a pull-DOWN. That makes an absent connector physically incapable of reading as healthy: the only healthy combination is HIGH+HIGH, which requires an active push-pull driver, i.e. a connected and powered LPU. What is NOT achievable is telling 'faulted' from 'absent': a powered LPU in fault also drives both lines LOW. Both cases mean the same thing operationally, exclude that LPU, so this is acceptable. The same pull also fixes the floating-input defect: with HIGH+HIGH being the only healthy state, a floating CMOS node could have drifted there by luck, which is exactly the failure mode the pull-downs remove."
-    },
-    {
-      "id": "LPU-04",
-      "text": "Every READY_n/FAULT_n line gets a pull-down plus a series resistor and ESD protection at the connector.",
-      "source": "C",
-      "status": "OK",
-      "note": "Baseline is the STM32 internal pull-down (roughly 40 kOhm), which costs nothing and immediately fixes the floating-input defect on the twenty lines. External pull-down is added only if the harness proves too noisy for 40 kOhm: the LPU can sink about 0.33 mA through a 10 kOhm pull while driving HIGH, which is trivial. Series R + TVS at the connector in both cases -- H11 has neither."
-    },
-    {
-      "id": "LPU-05",
-      "text": "Signal conditioning at every off-board digital line: series resistor and TVS/ESD diode.",
-      "source": "C",
-      "status": "OK"
-    },
-    {
-      "id": "AGP-01",
-      "text": "Eight airgap channels: 4-20 mA into 160 ohm, 5th-order Butterworth anti-alias at 5 kHz, 0.64-3.2 V into the ADC.",
-      "source": "H10",
-      "status": "OK"
-    },
-    {
-      "id": "AGP-02",
-      "text": "Airgap channels are converted at 16-bit.",
-      "source": "U",
-      "status": "OK",
-      "note": "Requires fADC <= 36 MHz (16-bit limit), so PLL3 must change from 96 MHz to 36 MHz. Consequence: the ADC1 scan of 16 ranks goes from ~3.5 us to ~7.6 us, still 1.5% of the 500 us period."
-    },
-    {
-      "id": "AGP-03",
-      "text": "Airgap faults are detected from the 4-20 mA live zero: below 3.6 mA means open loop or dead sensor.",
-      "source": "U,DS,C",
-      "status": "OK",
-      "note": "No extra hardware. Do NOT spend connector pins and ADC pins on the sensor's digital alarm output or on IO-Link."
-    },
-    {
-      "id": "AGP-06",
-      "text": "Firmware must also flag the opposite failure: input at or above ADC full scale.",
-      "source": "C",
-      "status": "OK",
-      "note": "Measured on the pod on 2026-11-09: airgap_4 jumped to 83.3 mm for 1 sample to 150 ms. 83.3 mm is exactly what the current calibration (0.0579 m + 0.00772 m/V) returns at 3.3 V, so that reading is the ADC pinned at the rail, not a sensor value. An open loop reads 57.9 mm (0 V), a rail reads 83.3 mm. The two failure modes are distinguishable, but only if both thresholds exist. This is also why the clamp is not needed for diagnosis: the threshold is the diagnosis."
-    },
-    {
-      "id": "AGP-07",
-      "text": "Keep the existing 4-20 mA + MCP6022 analog front end, and power it from +3.3 V instead of +5 V so it cannot overdrive the ADC input.",
-      "source": "U",
-      "status": "OK",
-      "note": "Confirmed: the sigma-delta A-ADC never worked, so it is not a candidate. On the clamp question: a clamp is the wrong lever here. Clamping does not improve diagnosis -- firmware already distinguishes an open loop (0 V) from a saturated input (rail) -- it only limits damage. The damage path is that an MCP6022 on +5V_LCU can drive close to 5 V into an ADC pin on a 3.3 V MCU, with nothing in between. Powering the AFE from +3.3 V removes the path entirely and costs nothing, since the required output span is 0.64-3.2 V -- about 50-75 mV of margin below the rail at light load for a rail-to-rail output. What still matters is the coupling fix: the 2026-11-09 glitch correlates with coil current and moved channels with the cable, so ground reference and shielding are the real work."
-    },
-    {
-      "id": "AGP-04",
-      "text": "16-bit conversion must not be sold as 16-bit accuracy.",
-      "source": "C,DS",
-      "status": "OK",
-      "note": "STM32H7 16-bit ADC is specified at ~13.2 ENOB; the sensor's own linearity is +/-140 um over 140 mm (~0.1% FS, about 10 bits); the 0.1% sense resistor and the MCP6022 offset add more. Expect 10-12 effective bits. 16-bit buys oversampling headroom, not absolute accuracy. If absolute accuracy matters, tighten the sense resistor to 0.01%/5 ppm and calibrate per channel."
-    },
-    {
-      "id": "TMP-01",
-      "text": "Ten LPU temperature channels arriving over the 26-pin connector, conditioned on the LCU (series 220 ohm + 10 nF), read by the Master.",
-      "source": "U,H11",
-      "status": "OK",
-      "note": "Same topology as LCU_H11 Temp_conditioning, one per LPU instead of four. Requires the LPU_H11 design, which is the one that carries temperature sensing."
-    },
-    {
-      "id": "TMP-02",
-      "text": "Add 4 NTC connectors on the LCU that run directly to the NTCs at the corners of the pod, independent of the LPU connectors.",
-      "source": "U",
-      "status": "OK",
-      "note": "Confirmed. Unlike the LPU connectors, where the LPU does the heavy lifting, here the LCU owns the whole chain: excitation, filtering, protection and conversion. They sit on the SLAVE's ADC3 (PF3..PF6, 12-bit) because the Master's 21 analog pins are already 20/21 used by 10 VBAT + 10 NTC. An NTC does not care which MCU reads it and it arrives over the telemetry link."
-    },
-    {
-      "id": "PWM-01",
-      "text": "Twenty PWM channels at 20 kHz, two per LPU with independent duty.",
-      "source": "U,H11",
-      "status": "OK"
-    },
-    {
-      "id": "PWM-02",
-      "text": "The two PWM signals of one LPU must come from the same timer.",
-      "source": "C",
-      "status": "OK",
-      "note": "H11 violated this: LPU7 is driven by TIM17_CH1 and TIM16_CH1, two different timers, so its two half-bridge signals can never be edge-aligned. That is a bug, not a simplification."
-    },
-    {
-      "id": "PWM-03",
-      "text": "Six timers instead of eight: TIM1/TIM3/TIM4/TIM8 with four channels each, TIM12/TIM15 with two.",
-      "source": "C",
-      "status": "OK",
-      "note": "Requires freeing PB0/PB1 (currently airgap ADC) and using PC2/PC3 for two airgap channels; PC2/PC3 need the SYSCFG analog switch, which ST-LIB already handles for ADC3."
-    },
-    {
-      "id": "PWM-04",
-      "text": "All PWM timers are phase-locked to one master timer (TIM1 TRGO -> slave-mode trigger).",
-      "source": "U,C",
-      "status": "AC",
-      "note": "Exact ITR availability per timer must be checked in RM0468 Table 168 during Phase 1. Fallback that always works: identical PSC/ARR on all six timers plus a single simultaneous CEN write, which gives sub-100 ns skew."
-    },
-    {
-      "id": "PWM-05",
-      "text": "Convert ADCs from timer-triggered rather than free-running, one scan per control period, aligned to the PWM period.",
-      "source": "C",
-      "status": "OK",
-      "note": "H11 runs the ADCs in continuous mode, so the sampling instant drifts against the 20 kHz PWM and produces a beat in the current measurement. This is a real controller-quality issue and costs nothing but firmware."
-    },
-    {
-      "id": "PWM-06",
-      "text": "Do NOT implement dead-time or complementary outputs on the LCU. The LPU has dedicated hardware for it.",
-      "source": "U",
-      "status": "OK",
-      "note": "Confirmed by the team. That is also why H11 gets away with two independent channels per LPU and no BDTR dead-time: the two signals are commands, not a bridge pair."
-    },
-    {
-      "id": "PWM-07",
-      "text": "Replace or requalify the SN74AHCT367 PWM buffers.",
-      "source": "U,C",
-      "status": "OK",
-      "note": "The buffer only has to deliver clean 5 V edges into a cable, not a gate-driver drive. See docs/phase0/README.md section 3.1: series resistor + TVS + fail-safe enable, and carry over the SN74LVC541A + 33 ohm pattern that LCU_H11 already uses on Buffer_CK."
-    },
-    {
-      "id": "RST-01",
-      "text": "The Master resets the Slave through a dedicated GPIO to the Slave's NRST pin.",
-      "source": "U,C",
-      "status": "OK",
-      "note": "Replaces H11's hack: 5 pulses on the fault line, counted by the Slave in software, then a software reset. Keep the fault line as a fault line."
-    },
-    {
-      "id": "RST-02",
-      "text": "Keep one reset GPIO per LPU (10), not one shared reset.",
-      "source": "C",
-      "status": "OK",
-      "note": "Confirmed: ten independent resets, one buffer channel each. RESET is active-low, so the release state is driven HIGH through the 5 V bank and the asserted state is the pull-down state."
-    },
-    {
-      "id": "RST-03",
-      "text": "The brake_fault override acts on the 3-state enable of the 5 V buffer bank, and every LPU RESET line has a pull resistor to its asserted level.",
-      "source": "C",
-      "status": "OK",
-      "note": "RESET travels through the same buffer as the two PWM lines, so a wired-AND on the reset nets is not possible: a push-pull buffer output cannot be overridden by another driver. The bank enable is the only override point. It is active-low and pulled to disabled, so a dead MCU already releases the bank; the brake_fault signal forces the same state in hardware. When the bank is released the RESET lines fall to their asserted level through their pull resistors, and the PWM lines go high-impedance, which is why the LPU inputs need their own pull-downs. Per-LPU reset still works in normal operation because every RESET has its own buffer channel. RESET is active-low: HIGH releases it, LOW asserts it. A pull resistor can therefore hold the asserted state when the bank is released, but it cannot hold the release state, which is what forces the push-pull buffer in the first place. This is also why an open-drain MCU pin with a 5 V pull-up is not an option."
-    },
-    {
-      "id": "RST-04",
-      "text": "One shared buffer enable, active-low, pulled to disabled, and gated with brake_fault in hardware.",
-      "source": "U,C",
-      "status": "OK",
-      "note": "One pin drives the enable of every buffer package. The gating with brake_fault is what makes the override firmware-independent. Sequencing: firmware must drive the RESET buffer inputs LOW before it asserts the enable. Until the inputs are configured, they float at TTL threshold, and enabling the bank first would present indeterminate levels to the LPUs for a few microseconds."
-    },
-    {
-      "id": "SAF-01",
-      "text": "brake_fault asserts all LPU resets in hardware, independent of firmware.",
-      "source": "U",
-      "status": "OK",
-      "note": "Source confirmed: the VCU's 2-pin brake connector. The LCU carries two of them so the signal can be daisy-chained through the board."
-    },
-    {
-      "id": "SAF-02",
-      "text": "The LCU latches and reports the brake_fault event; clearing it requires an explicit command, not just the input going away.",
-      "source": "C",
-      "status": "OK"
-    },
-    {
-      "id": "SAF-03",
-      "text": "Document the operational consequence: LPU reset means levitation off.",
-      "source": "C",
-      "status": "OK",
-      "note": "At speed this drops the pod. The override must be fail-safe but must not be reachable from a single noisy edge; specify a debounce/filter and a minimum pulse width."
-    },
-    {
-      "id": "SAF-04",
-      "text": "Add a watchdog on the Master (it is commented out in H11) and keep it on the Slave.",
-      "source": "C",
-      "status": "OK"
-    },
-    {
-      "id": "AUX-01",
-      "text": "Board-level status LEDs: power, Ethernet link/activity, CAN, SD, fault, debug.",
-      "source": "U,H10",
-      "status": "OK"
-    },
-    {
-      "id": "AUX-02",
-      "text": "Per-LPU status indication (connected / fault) for ten LPUs, driven from one constant-current LED driver rather than 20 GPIO.",
-      "source": "U,C",
-      "status": "AC",
-      "note": "Options: 16-channel sink driver on a dedicated serial bus, or two-colour LEDs on a shared bus. Do not spend 20 Master pins on this."
-    },
-    {
-      "id": "AUX-03",
-      "text": "Keep the IMU as an optional, unpopulated position-sensing element: a third measurement to fuse against the airgaps.",
-      "source": "U",
-      "status": "AC",
-      "note": "Function now defined, so it is no longer rejected: it is a position/velocity reference to filter between the airgap sensors and the IMU. Keep it as a DNP option (SPI + one chip select) and decide population after the control team has a fusion design; do not let it affect the pin plan or the board outline."
-    },
-    {
-      "id": "AUX-04",
-      "text": "Keep the CAN interface and wire it to BOTH MCUs, two transceivers on the same bus.",
-      "source": "U",
-      "status": "OK",
-      "note": "Confirmed. H10 does wire CAN to an MCU; H12 gives each MCU its own FDCAN1 node. Master on PD0/PD1, Slave on PB8/PB9. Two nodes on one bus is legal CAN and gives a redundant path, but only one of them should be a talker for any given message set."
-    },
-    {
-      "id": "AUX-05",
-      "text": "Add mechanical strain relief awareness to the connector choice: the only airgap failure seen on the pod so far was a connector/cable handling problem, not an electronics problem.",
-      "source": "C",
-      "status": "OK",
-      "note": "Same 2026-11-09 session: the glitch moved from one channel to another and vanished after reseating. Micro-Fit+ with a positive latch is a step in the right direction; consider keying and cable-side strain relief in the harness spec."
-    },
-    {
-      "id": "MEC-01",
-      "text": "Reorder the LPU and airgap connectors for harness reach and routing, within the unchanged outline.",
-      "source": "U",
-      "status": "AC",
-      "note": "Confirmed: connectors do not have to sit on the board edge; partial stacking is acceptable and has precedent. So the perimeter figure is a sanity bound, not a layout constraint. Placement strategy is a Phase 2 task."
-    },
-    {
-      "id": "MEC-02",
-      "text": "Micro-Fit+ is 3.00 mm pitch versus Nano-Fit 2.50 mm: recompute the connector-perimeter budget before committing to the reorder.",
-      "source": "C",
-      "status": "OK",
-      "note": "Micro-Fit+ is 3.00 mm pitch versus Nano-Fit 2.50 mm. The change is confined to the 10 connectors that change family, so the delta is small; the real constraint is the 26-pin LPU headers."
-    },
-    {
-      "id": "MEC-03",
-      "text": "Keep the 1.27 mm 26-pin LPU headers on the two long edges if the harness allows; they dominate the edge length.",
-      "source": "C",
-      "status": "OK",
-      "note": "The ten 26-pin headers are 445 mm of body length against 480 mm on the two 240 mm edges. Since stacking is allowed, this is a planning figure: five per side along the long edges is the natural arrangement, with the short edges plus interior space for everything else."
-    },
-    {
-      "id": "SAF-05",
-      "text": "brake_fault daisy chain is a straight passthrough by default, with a normally-closed alternative as a second population option on the same footprint.",
-      "source": "U",
-      "status": "OK",
-      "note": "Both options on the board, select at build time. Straight passthrough: an unplugged downstream segment simply carries nothing and the pod keeps levitating. Normally closed: a missing board also asserts the fault. The second is safer for levitation and worse for availability; having both costs one footprint."
-    },
-    {
-      "id": "ARCH-05",
-      "text": "Two independent SPI links between the Master and the Slave: the control link with the Master as SPI master, and a telemetry link with the SLAVE as SPI master.",
-      "source": "U",
-      "status": "OK",
-      "note": "The point is not bandwidth, it is isolation. H11 put the diagnostic record inside the 500 us control frame, which is why that frame reached 899 B and 84 percent of the period. Splitting them keeps the control frame at about 62 B (about 6 percent) no matter how much telemetry is being logged."
-    },
-    {
-      "id": "ARCH-06",
-      "text": "Link ownership: the control link is the only path for commands and setpoints, and carries a heartbeat up. The telemetry link carries measurements, diagnostics, configuration download and anything destined for the SD card.",
-      "source": "C",
-      "status": "OK",
-      "note": "If the telemetry link fails, levitation continues and raises a degraded-telemetry warning. If the control link fails, that is a fault. Two links means two independent failure modes, and this rule has to be explicit in the state machine."
-    },
-    {
-      "id": "ARCH-07",
-      "text": "The Master acts as SPI slave on the telemetry link with DMA and a ring buffer, and drives a credit line (TEL_CREDIT) so the Slave never starts a transfer that cannot be drained.",
-      "source": "C",
-      "status": "OK",
-      "note": "An SPI slave cannot stall an SPI master. Without flow control a 100 ms SD write stall overruns the bus. The Slave must also never block its control loop waiting on this link: DMA only."
-    },
-    {
-      "id": "ARCH-08",
-      "text": "Telemetry buffering: at 2 kHz and about 210 B per frame the log rate is about 420 kB/s. Budget at least 100 ms of buffer (about 42 kB) to survive SD write stalls.",
-      "source": "C",
-      "status": "AC",
-      "note": "Estimate; tighten once the logged signal set is frozen."
-    },
-    {
-      "id": "ARCH-09",
-      "text": "Use a single ADC kernel clock for both MCUs (36 MHz) even though only the Slave needs 16-bit.",
-      "source": "C",
-      "status": "AC",
-      "note": "PLL3 is configured in ST-LIB Halconfig.cpp, which both board builds share, so the Master cannot easily run at 96 MHz while the Slave runs at 36. 36 MHz is valid for both resolutions. Consequence: the Master's scans are about 2.5x longer than they could be, which is irrelevant for a battery rail and an NTC. Revisit only if ST-LIB is split per board."
-    },
-    {
-      "id": "LPU-06",
-      "text": "Do not put logic gates in the per-LPU status path.",
-      "source": "C",
-      "status": "OK",
-      "note": "VCU_H11 combines its sensor lines through SN74ALVC08 / SN74ALVC32. If the LCU ever did the same to READY/FAULT it would destroy the only thing those twenty pins are for: knowing which magnet is unhappy. Gates in a status path also multiply the floating-input problem, since every gate input needs its own termination. Keep the 20 lines point-to-point into the MCUs."
-    },
-    {
-      "id": "TMP-03",
-      "text": "The LCU provides the NTC excitation: pull-up to the ADC reference, RC filter, series resistor and ESD at the connector.",
-      "source": "C",
-      "status": "OK",
-      "note": "This is new work that the LPU used to absorb. LCU_H11's Temp_conditioning is only a 220 ohm series resistor plus 10 nF to ground -- an input filter that assumes somebody else is pulling the line up. With a directly connected NTC the LCU has to supply the top of the divider. Use the ADC reference (3V3) as the excitation rail so the reading is ratiometric and immune to 3V3 drift, with a matching pull-up to the NTC's nominal value (~10 kOhm) so the divider spans roughly half the reference. The cable runs to the pod corners next to the LPU power leads, so treat it as an off-board analog input: series R at the connector, RC at the ADC, TVS."
-    },
-    {
-      "id": "TMP-04",
-      "text": "Document the NTC part number and its beta/Steinhart constants; the LPU_H11 NTC and a corner-mounted NTC must be the same part.",
-      "source": "C",
-      "status": "TBD",
-      "note": "The corner NTC is the same part as the LPU_H11 one. Read it from the LPU_H11 schematic when Phase 1 starts. Not a blocker: it only fixes the pull-up value and the calibration constants, nothing structural. Two consequences if it later changes: the excitation resistor has to be re-matched so the divider still spans about half the ADC reference, and TMP-03's filter stays as is."
-    },
-    {
-      "id": "RST-05",
-      "text": "Every LPU RESET line carries a pull-down so that a released or unpowered buffer presents an asserted reset.",
-      "source": "C",
-      "status": "OK",
-      "note": "RESET is active-low, so asserted is LOW and a pull-down is the correct default: LCU dead, buffer disabled or connector unseated all give an unambiguous 'reset asserted'. 10 kOhm is adequate for a static signal and weak enough that the buffer drives HIGH without contention."
-    }
+
+  "mechanics": {
+    "note": "Body dimensions are typical values taken from the family datasheets and MUST be replaced with the real drawing before the connector reorder is frozen.",
+    "connectors": [
+      { "part": "TE 5499922-6 (LPU)", "qty": 10, "body_mm": [44.5, 12.7], "pitch_mm": 2.54, "edge": "long", "note": "AMP-LATCH universal header, 26 positions, 2.54 mm. Verify the 2.54 mm pitch and the body length against the drawing." },
+      { "part": "Molex 206832-0401 (airgap)", "qty": 8, "body_mm": [10.2, 8.5], "pitch_mm": 3.0, "edge": "any", "note": "Nano-Fit 105310-1204 -> Micro-Fit+." },
+      { "part": "Molex 206832-0401 (bootloader)", "qty": 2, "body_mm": [10.2, 8.5], "pitch_mm": 3.0, "edge": "any", "note": "One per MCU. Nano-Fit -> Micro-Fit+." },
+      { "part": "Molex 206832-0401 (brake_fault in)", "qty": 1, "body_mm": [10.2, 8.5], "pitch_mm": 3.0, "edge": "any" },
+      { "part": "Molex 206832-0401 (brake_fault out)", "qty": 1, "body_mm": [10.2, 8.5], "pitch_mm": 3.0, "edge": "any", "note": "Daisy-chain passthrough to the next board in the chain." },
+      { "part": "Molex 206832-0401 (corner NTC)", "qty": 4, "body_mm": [10.2, 8.5], "pitch_mm": 3.0, "edge": "any", "note": "One per pod corner, direct to the NTC." },
+      { "part": "Molex 206832-0401 (CAN)", "qty": 1, "body_mm": [10.2, 8.5], "pitch_mm": 3.0, "edge": "any" },
+      { "part": "RJ45 7499011222A", "qty": 1, "body_mm": [16.0, 21.5], "pitch_mm": 0, "edge": "any" },
+      { "part": "Power input", "qty": 1, "body_mm": [12.0, 10.0], "pitch_mm": 0, "edge": "any", "note": "TBD, from LCU_H10." },
+      { "part": "SWD 2x5 1.27 mm", "qty": 2, "body_mm": [10.0, 6.0], "pitch_mm": 1.27, "edge": "any" }
+    ]
+  },
+
+  "graph": [
+    ["pwr", "mcu_master", "+3V3M"],
+    ["pwr", "mcu_slave", "+3V3M"],
+    ["pwr", "lpu_buf", "+5V_LCU"],
+    ["pwr", "agp_afe", "+3V3 analog"],
+    ["mcu_master", "mcu_slave", "SPI3 control, M to S"],
+    ["mcu_slave", "mcu_master", "SPI1 telemetry, S to M"],
+    ["mcu_master", "mcu_slave", "NRST + FAULT"],
+    ["mcu_master", "eth", "RMII"],
+    ["eth", "if_eth", "MDI"],
+    ["mcu_master", "sd", "SDMMC1"],
+    ["mcu_master", "can", "FDCAN1"],
+    ["mcu_slave", "can", "FDCAN1"],
+    ["mcu_slave", "lpu_buf", "30 signals"],
+    ["lpu_buf", "lpu_conn", "2 PWM + RESET"],
+    ["lpu_conn", "mcu_slave", "SHUNT"],
+    ["lpu_conn", "mcu_master", "VBAT"],
+    ["lpu_conn", "tmp", "TEMP"],
+    ["tmp", "mcu_master", "0-3.3 V"],
+    ["lpu_conn", "mcu_master", "READY / FAULT"],
+    ["mcu_master", "lpu_conn", "RESET x10 into the buffer"],
+    ["brake_conn", "lpu_rst_logic", "brake_fault"],
+    ["lpu_rst_logic", "lpu_buf", "disable the bank"],
+    ["agp_conn", "agp_afe", "4-20 mA"],
+    ["agp_afe", "mcu_slave", "0.64-3.2 V, 16 bit"],
+    ["if_ntc", "ntc_afe", "NTC x4"],
+    ["ntc_afe", "mcu_slave", "0-3.3 V"],
+    ["mcu_master", "leds", "GPIO (board LEDs)"],
+    ["mcu_master", "imu", "SPI, optional"],
+    ["mcu_master", "dbg", "SWD"],
+    ["mcu_slave", "dbg", "SWD"]
   ],
+
+  "requirements": [
+    { "id": "ARCH-01", "text": "Keep the two-MCU topology: Master for comms/storage/supervision, Slave for the 500 us hard real-time loop.", "source": "U,H10", "status": "OK", "note": "The split is what makes the 2 kHz current loop immune to Ethernet/SD latency. Do not merge them. In H12 the Master-Slave link itself is also split in two (ARCH-05)." },
+    { "id": "ARCH-02", "text": "Both MCUs stay STM32H723ZGT6 (LQFP144) so the BOM, the linker scripts and the ST-LIB board support stay identical.", "source": "U,H10", "status": "OK" },
+    { "id": "ARCH-03", "text": "Board outline identical to LCU_H10: 240 mm x 160 mm.", "source": "U", "status": "OK", "note": "Confirmed. Perimeter 800 mm, two long edges of 240 mm and two short edges of 160 mm." },
+    { "id": "ARCH-04", "text": "Only the airgap needs 16 bits. VBAT and temperature may use any ADC at any resolution, so their allocation is driven purely by pin availability.", "source": "U,C", "status": "OK", "note": "The Master's ADCs both run 12-bit, so the 36 MHz 16-bit constraint only binds on the Slave's ADC1 (8 airgap channels). What limits the Master analog side is pin count: 21 usable analog pins after Ethernet and PHY_RST, of which 20 are taken by 10 VBAT + 10 NTC. That is why the 4 corner NTC channels sit on the Slave's empty ADC3." },
+    { "id": "ARCH-05", "text": "Two independent SPI links between the Master and the Slave: the control link with the Master as SPI master, and a telemetry link with the SLAVE as SPI master.", "source": "U", "status": "OK", "note": "The point is not bandwidth, it is isolation. H11 put the diagnostic record inside the 500 us control frame, which is why that frame reached 899 B and 84 percent of the period. Splitting them keeps the control frame at about 81 B regardless of how much telemetry is being logged." },
+    { "id": "ARCH-06", "text": "Link ownership: the control link is the only path for commands and setpoints, and carries a heartbeat up. The telemetry link carries measurements, diagnostics, configuration download and anything destined for the SD card.", "source": "C", "status": "OK", "note": "If the telemetry link fails, levitation continues and raises a degraded-telemetry warning. If the control link fails, that is a fault. Two links means two independent failure modes, and this rule has to be explicit in the state machine." },
+    { "id": "ARCH-07", "text": "The Master acts as SPI slave on the telemetry link with DMA and a ring buffer, and drives a credit line (TEL_CREDIT) so the Slave never starts a transfer that cannot be drained.", "source": "C", "status": "OK", "note": "An SPI slave cannot stall an SPI master. Without flow control a 100 ms SD write stall overruns the bus. The Slave must also never block its control loop waiting on this link: DMA only." },
+    { "id": "ARCH-08", "text": "Telemetry buffering: at 2 kHz and about 210 B per frame the log rate is about 420 kB/s. Budget at least 100 ms of buffer (about 42 kB) to survive SD write stalls.", "source": "C", "status": "AC", "note": "Estimate; tighten once the logged signal set is frozen." },
+    { "id": "ARCH-09", "text": "Use a single ADC kernel clock for both MCUs (36 MHz) even though only the Slave needs 16-bit.", "source": "C", "status": "AC", "note": "PLL3 is configured in ST-LIB Halconfig.cpp, which both board builds share, so the Master cannot easily run at 96 MHz while the Slave runs at 36. 36 MHz is valid for both resolutions. Revisit only if ST-LIB is split per board." },
+
+    { "id": "ETH-01", "text": "Use the KSZ8041TLI PHY.", "source": "U,VCU,DS", "status": "OK", "note": "The LAN8700 is end-of-life at Microchip. LCU_H11 already made this move; H12 inherits it, so the PHY is proven on the LCU form factor rather than only on the VCU." },
+    { "id": "ETH-02", "text": "Use the LCU_H11 / VCU_H11 PHY support circuit: 50 MHz oscillator, PHYAD straps = 00001, full-duplex strap, RJ45 7499011222A with integrated magnetics.", "source": "VCU", "status": "OK" },
+    { "id": "ETH-03", "text": "MCU-side RMII pinout = PINSET_H11 from ST-LIB (TX_EN PB11, TXD0 PB12, PHY_RST PF14, no RXER).", "source": "VCU", "status": "OK", "note": "Already supported by ST-LIB, so no new pinout code. Note this frees PG0/PG2/PG11/PG13 on the Master." },
+
+    { "id": "SD-01", "text": "microSD socket on the Master, SDMMC1 4-bit, same socket as VCU_H11.", "source": "U,VCU", "status": "OK", "note": "Confirmed proven. Molex 216571-2002, footprint carried over verbatim from the VCU_H11 design." },
+    { "id": "SD-02", "text": "Master SPI3 moves to PB3/PB4/PB5 because SDMMC1 owns PC10/PC11/PC12.", "source": "C", "status": "OK", "note": "Direct pin conflict between SDMMC1 and H11's SPI3 pinout." },
+    { "id": "SD-03", "text": "Card detect and write protect wired (PG4/PG3) plus ESD protection as in VCU_H11.", "source": "VCU", "status": "OK" },
+    { "id": "SD-04", "text": "SD is a port, not bring-up: the SD path has been proven.", "source": "U", "status": "OK", "note": "What remains for H12 is only the pin move (SD-02), plus confirming which upper layer is used so the telemetry buffer sizing in ARCH-08 matches how writes actually behave." },
+
+    { "id": "LPU-01", "text": "Ten LPU connectors, TE 5499922-6 26-pin, electrical interface unchanged from LPU_H11.", "source": "U,H10", "status": "OK", "note": "Frozen to the LPU_H11 pinout, and there are no spare contacts -- all 26 are assigned. H12 adds, removes and moves nothing." },
+    { "id": "LPU-02", "text": "Replace every Nano-Fit connector with Molex Micro-Fit+ 206832-0401: the 8 airgap sensor connectors and the 2 bootloader connectors. Everything else keeps its current connector.", "source": "U,VCU", "status": "OK", "note": "LCU_H10 has exactly 10 Nano-Fit 105310-1204 instances: 8 airgap connector footprints on the Airgap Sensors sheet (J10..J17) and one bootloader connector per MCU." },
+    { "id": "LPU-03", "text": "Pull READY_n and FAULT_n DOWN on the LCU side, so an un-driven line always reads as not-ready plus fault.", "source": "U", "status": "OK", "note": "Truth table confirmed: the LPU drives both lines 3.3 V push-pull, HIGH = healthy on both, and the fault/not-ready state is LOW on both. So the safe idle level is LOW on both, and both lines get a pull-DOWN. That makes an absent connector physically incapable of reading as healthy, because the only healthy combination is HIGH+HIGH and that requires an active push-pull driver. Telling 'faulted' from 'absent' is not achievable: a powered LPU in fault also drives both LOW. Both mean the same operationally, exclude that LPU." },
+    { "id": "LPU-04", "text": "Every READY_n/FAULT_n line gets a pull-down plus a series resistor and ESD protection at the connector.", "source": "C", "status": "OK", "note": "Baseline is the STM32 internal pull-down (roughly 40 kOhm), which costs nothing and fixes the floating-input defect on the twenty lines. External pull-down only if the harness proves too noisy for 40 kOhm. H11 configures these as floating inputs (Pull::None), which is unacceptable." },
+    { "id": "LPU-05", "text": "Signal conditioning at every off-board digital line: series resistor and TVS/ESD diode.", "source": "C", "status": "OK" },
+    { "id": "LPU-06", "text": "Do not put logic gates in the per-LPU status path.", "source": "C", "status": "OK", "note": "VCU_H11 combines its sensor lines through SN74ALVC08 / SN74ALVC32. Doing that to READY/FAULT would destroy the only thing those twenty pins are for: knowing which magnet is unhappy. Gates also multiply the floating-input problem." },
+
+    { "id": "AGP-01", "text": "Eight airgap channels: 4-20 mA into 160 ohm, buffered by an MCP6022, filtered by a 5th-order Butterworth switched-capacitor filter at 5 kHz, 0.64-3.2 V into the ADC.", "source": "H10", "status": "OK", "note": "The filter is an IC, not a discrete network: LCU_H10 uses a MAX7420 with its corner set by the internal oscillator. The 3.3 V analog rail forces the MAX7424 (3 V Butterworth) as the equivalent part. The actual filter design is deferred." },
+    { "id": "AGP-02", "text": "Airgap channels are converted at 16-bit.", "source": "U", "status": "OK", "note": "Requires fADC <= 36 MHz (16-bit limit), so PLL3 changes from 96 MHz to 36 MHz. The ADC1 scan of 16 ranks goes from ~3.5 us to ~7.6 us, still 2 percent of the 500 us period." },
+    { "id": "AGP-03", "text": "Airgap faults are detected from the 4-20 mA live zero: below 3.6 mA means open loop or dead sensor.", "source": "U,DS,C", "status": "OK", "note": "No extra hardware. Do not spend connector pins and ADC pins on the sensor's digital alarm output or on IO-Link." },
+    { "id": "AGP-04", "text": "16-bit conversion must not be sold as 16-bit accuracy.", "source": "C,DS", "status": "OK", "note": "STM32H7 16-bit ADC is specified at ~13.2 ENOB; the sensor's own linearity is +/-140 um over 140 mm (~0.1% FS, about 10 bits); the 0.1% sense resistor adds another 10-bit limit. Expect 10-12 effective bits. 16-bit buys oversampling headroom, not absolute accuracy." },
+    { "id": "AGP-06", "text": "Firmware must also flag the opposite failure: input at or above ADC full scale.", "source": "C", "status": "OK", "note": "Measured on the pod on 2026-11-09: airgap_4 jumped to 83.3 mm for 1 sample to 150 ms. 83.3 mm is exactly what the calibration (0.0579 m + 0.00772 m/V) returns at 3.3 V, so that reading is the ADC pinned at the rail, not a sensor value. An open loop reads 57.9 mm (0 V). Both thresholds are required." },
+    { "id": "AGP-07", "text": "Keep the existing 4-20 mA + MCP6022 analog front end, and power it from +3.3 V instead of +5 V so it cannot overdrive the ADC input.", "source": "U", "status": "OK", "note": "The sigma-delta A-ADC never worked, so it is not a candidate. A clamp is the wrong lever here: it limits damage but does not help diagnosis. Powering the AFE from +3.3 V removes the overdrive path entirely and costs nothing, since the required output span is 0.64-3.2 V. The coupling fix (ground reference and shielding) is the real Phase 1 work." },
+
+    { "id": "TMP-01", "text": "Ten LPU temperature channels arriving over the 26-pin connector, conditioned on the LCU (series 220 ohm + 10 nF), read by the Master.", "source": "U,H11", "status": "OK", "note": "Same topology as LCU_H11 Temp_conditioning, one per LPU instead of four. Requires LPU_H11." },
+    { "id": "TMP-02", "text": "Add 4 NTC connectors on the LCU that run directly to the NTCs at the corners of the pod, independent of the LPU connectors.", "source": "U", "status": "OK", "note": "Unlike the LPU connectors, the LCU owns the whole chain here. They sit on the SLAVE's ADC3 (PF3..PF6, 12-bit) because the Master's 21 analog pins are already 20/21 used." },
+    { "id": "TMP-03", "text": "The LCU provides the NTC excitation: pull-up to the ADC reference, RC filter, series resistor and ESD at the connector.", "source": "C", "status": "OK", "note": "New work that the LPU used to absorb. LCU_H11's Temp_conditioning is only a 220 ohm series resistor plus 10 nF to ground, an input filter that assumes somebody else pulls the line up. Use the ADC reference as the excitation rail so the reading is ratiometric, with a matching pull-up to the NTC's nominal value." },
+    { "id": "TMP-04", "text": "Document the NTC part number and its beta/Steinhart constants; the LPU_H11 NTC and a corner-mounted NTC must be the same part.", "source": "C", "status": "TBD", "note": "The corner NTC is the same part as the LPU_H11 one. Read it from the LPU_H11 schematic in Phase 1. Not a blocker: it only fixes the pull-up value and the calibration constants." },
+
+    { "id": "PWM-01", "text": "Twenty PWM channels at 20 kHz, two per LPU with independent duty.", "source": "U,H11", "status": "OK" },
+    { "id": "PWM-02", "text": "The two PWM signals of one LPU must come from the same timer.", "source": "C", "status": "OK", "note": "H11 violated this: LPU7 is driven by TIM17_CH1 and TIM16_CH1, two different timers, so its two half-bridge signals can never be edge-aligned. That is a bug, not a simplification." },
+    { "id": "PWM-03", "text": "Six timers instead of eight: TIM1/TIM3/TIM4/TIM8 with four channels each, TIM12/TIM15 with two.", "source": "C", "status": "OK", "note": "Requires freeing PB0/PB1 (airgap ADC) and using PC2/PC3 for two airgap channels; PC2/PC3 need the SYSCFG analog switch, which ST-LIB already handles for ADC3." },
+    { "id": "PWM-04", "text": "All PWM timers are phase-locked to one master timer (TIM1 TRGO -> slave-mode trigger).", "source": "U,C", "status": "AC", "note": "Exact ITR availability per timer must be checked in RM0468 Table 168 during Phase 1. Fallback that always works: identical PSC/ARR on all six timers plus a single simultaneous CEN write, giving sub-100 ns skew." },
+    { "id": "PWM-05", "text": "Convert ADCs from timer-triggered rather than free-running, one scan per control period, aligned to the PWM period.", "source": "C", "status": "OK", "note": "H11 runs the ADCs in continuous mode, so the sampling instant drifts against the 20 kHz PWM and produces a beat in the current measurement. Real controller-quality issue, costs nothing but firmware." },
+    { "id": "PWM-06", "text": "Do NOT implement dead-time or complementary outputs on the LCU. The LPU has dedicated hardware for it.", "source": "U", "status": "OK", "note": "Which is also why H11 gets away with two independent channels per LPU and no BDTR dead-time: the two signals are commands, not a bridge pair." },
+    { "id": "PWM-07", "text": "Replace the NRND SN74AHCT367 with SN74AHCT541, add series resistors and TVS on the LPU outputs, and make the enable fail-safe.", "source": "U,C", "status": "OK", "note": "The LPU needs 5 V and the MCU drives 3.3 V, which is what an AHCT part is for: TTL thresholds put VIH at 2.0 V. Eight channels per package, five packages for 30 signals (2 PWM + RESET per LPU). LVC541A rejected: a 3.3 V part cannot reach 5 V." },
+
+    { "id": "RST-01", "text": "The Master resets the Slave through a dedicated GPIO to the Slave's NRST pin.", "source": "U,C", "status": "OK", "note": "Replaces H11's hack: 5 pulses on the fault line, counted by the Slave in software, then a software reset." },
+    { "id": "RST-02", "text": "Keep one reset GPIO per LPU (10), not one shared reset.", "source": "C", "status": "OK", "note": "Confirmed: ten independent resets, one buffer channel each. A shared reset means a single LPU failure de-levitates the pod." },
+    { "id": "RST-03", "text": "The brake_fault override acts on the 3-state enable of the 5 V buffer bank, and every LPU RESET line has a pull resistor to its asserted level.", "source": "C", "status": "OK", "note": "RESET travels through the same buffer as the two PWM lines, so a wired-AND on the reset nets is not possible: a push-pull buffer output cannot be overridden. RESET is active-low, so a pull-down holds the asserted state when the bank is released, but cannot hold the release state -- which is what forces the push-pull buffer. A released bank also releases the PWM lines, so the LPU inputs need their own pull-downs." },
+    { "id": "RST-04", "text": "One shared buffer enable, active-low, pulled to disabled, and gated with brake_fault in hardware.", "source": "U,C", "status": "OK", "note": "One pin drives the enable of every buffer package. Sequencing: firmware must drive the RESET buffer inputs LOW before it asserts the enable, otherwise the first enabled instant presents indeterminate levels." },
+    { "id": "RST-05", "text": "Every LPU RESET line carries a pull-down so that a released or unpowered buffer presents an asserted reset.", "source": "C", "status": "OK", "note": "RESET is active-low, so asserted is LOW and a pull-down is the correct default: LCU dead, buffer disabled or connector unseated all give an unambiguous 'reset asserted'. 10 kOhm is adequate and weak enough that the buffer drives HIGH without contention." },
+
+    { "id": "SAF-01", "text": "brake_fault asserts all LPU resets in hardware, independently of firmware.", "source": "U", "status": "OK", "note": "Source confirmed: the VCU's 2-pin brake connector. The LCU carries two of them so the signal can be daisy-chained through the board." },
+    { "id": "SAF-02", "text": "The LCU latches and reports the brake_fault event; clearing it requires an explicit command, not just the input going away.", "source": "C", "status": "OK" },
+    { "id": "SAF-03", "text": "Document the operational consequence: LPU reset means levitation off.", "source": "C", "status": "OK", "note": "At speed this drops the pod. The override must be fail-safe but must not be reachable from a single noisy edge; specify debounce and a minimum pulse width." },
+    { "id": "SAF-04", "text": "Add a watchdog on the Master (it is commented out in H11) and keep it on the Slave.", "source": "C", "status": "OK" },
+    { "id": "SAF-05", "text": "brake_fault daisy chain is a straight passthrough by default, with a normally-closed alternative as a second population option on the same footprint.", "source": "U", "status": "OK", "note": "Straight passthrough: an unplugged downstream segment carries nothing and the pod keeps levitating. Normally closed: a missing board also asserts the fault. Both options on the board, select at build time." },
+
+    { "id": "AUX-01", "text": "Board-level status LEDs: power, Ethernet link/activity, CAN, SD, fault, debug.", "source": "U,H10", "status": "OK" },
+    { "id": "AUX-02", "text": "Per-LPU status indication driven in hardware from the status lines themselves, with no driver IC and no MCU pins.", "source": "U,C", "status": "AC", "note": "One LED per status line: green on READY (lit = levitating), a second on FAULT (lit = NO fault). Signalling the absence of a fault is what removes the need for an inverter: a 'lit on fault' LED would have to sink current into the active-low FAULT line, and unseated the only return is the 10 kOhm pull-down, lifting the line to about 0.9 V against a VIL of about 1.0 V." },
+    { "id": "AUX-03", "text": "Keep the IMU as an optional, unpopulated position-sensing element: a third measurement to fuse against the airgaps.", "source": "U", "status": "AC", "note": "Function now defined, so it is no longer rejected. Keep it as a DNP option (SPI + one chip select) and decide population after the control team has a fusion design; do not let it affect the pin plan or the board outline." },
+    { "id": "AUX-04", "text": "Keep the CAN interface and wire it to BOTH MCUs, two transceivers on the same bus.", "source": "U", "status": "OK", "note": "Master on PD0/PD1, Slave on PB8/PB9. Two nodes on one bus is legal CAN and gives a redundant path, but only one of them should be a talker for any given message set." },
+    { "id": "AUX-05", "text": "Add mechanical strain relief awareness to the connector choice: the only airgap failure seen on the pod so far was a connector/cable handling problem, not an electronics problem.", "source": "C", "status": "OK", "note": "Same 2026-11-09 session: the glitch moved from one channel to another and vanished after reseating. Micro-Fit+ with a positive latch is a step in the right direction." },
+
+    { "id": "MEC-01", "text": "Reorder the LPU and airgap connectors for harness reach and routing, within the unchanged outline.", "source": "U", "status": "AC", "note": "Connectors do not have to sit on the board edge; partial stacking is acceptable and has precedent. The perimeter figure is a sanity bound, not a layout constraint." },
+    { "id": "MEC-02", "text": "Micro-Fit+ is 3.00 mm pitch versus Nano-Fit 2.50 mm: recompute the connector-perimeter budget before committing to the reorder.", "source": "C", "status": "OK", "note": "The change is confined to the 10 connectors that change family, so the delta is small; the real constraint is the 26-pin LPU headers." },
+    { "id": "MEC-03", "text": "Keep the 2.54 mm 26-pin LPU headers on the two long edges if the harness allows; they dominate the edge length.", "source": "C", "status": "OK", "note": "The ten headers are 445 mm of body length against 480 mm on the two 240 mm edges. Five per side along the long edges is the natural arrangement, with the short edges plus interior space for everything else." }
+  ],
+
   "open_questions": [
-    {
-      "id": "Q-01",
-      "question": "What is the LCU_H10 board outline (W x H mm) and which edges carry connectors?",
-      "affects": [
-        "ARCH-03",
-        "MEC-01",
-        "MEC-02"
-      ],
-      "status": "closed",
-      "answer": "240 mm x 160 mm, horizontal x vertical."
-    },
-    {
-      "id": "Q-02",
-      "question": "Which connectors exactly are the 'nano fit' ones to replace with Micro-Fit+? My reading of LCU_H10 is: the 10 airgap sensor connectors (105310-1204, 4 pins used). The LPU connectors are already 26-pin TE headers.",
-      "affects": [
-        "LPU-02",
-        "AGP-05"
-      ],
-      "status": "closed",
-      "answer": "Every Nano-Fit becomes Micro-Fit+: the 8 airgap connectors and the 2 bootloader connectors. Nothing else changes connector family."
-    },
-    {
-      "id": "Q-03",
-      "question": "Is the LCU-to-LPU electrical contract frozen to LPU H10/H11, or may H12 add the PRESENCE pin?",
-      "affects": [
-        "LPU-01",
-        "LPU-03"
-      ],
-      "status": "closed",
-      "answer": "Frozen to the H11 pinout. Presence is derived from an existing diagnostic contact, pulled up on the LCU and tied on the LPU; the exact contact is a Phase 1 transcription."
-    },
-    {
-      "id": "Q-04",
-      "question": "Where does brake_fault come from: a discrete contact/line from the brake system, or a VCU GPIO (which does not exist today)?",
-      "affects": [
-        "SAF-01",
-        "SAF-02"
-      ],
-      "status": "closed",
-      "answer": "The VCU's 2-pin brake connector. The LCU carries the same 2-pin connector twice, daisy-chained."
-    },
-    {
-      "id": "Q-05",
-      "question": "One reset per LPU (10 pins, isolate a single LPU) or one shared reset (1 pin, any fault de-levitates everything)?",
-      "affects": [
-        "RST-02"
-      ],
-      "status": "closed",
-      "answer": "Ten independent resets, one per LPU."
-    },
-    {
-      "id": "Q-06",
-      "question": "Is the NTC on the LPU or on its way to the LCU, and how many channels are actually needed (4 or 10)?",
-      "affects": [
-        "TMP-01",
-        "TMP-02"
-      ],
-      "status": "closed",
-      "answer": "10 channels on the LPU (LPU_H11) plus 4 local fallback channels on the LCU for LPU_H10. The 4 go on the Slave's ADC3 because the Master has no free analog pin."
-    },
-    {
-      "id": "Q-07",
-      "question": "Do the LPU PWM inputs drive a gate driver directly (dead-time and complementary outputs needed on the LCU) or a local driver logic input?",
-      "affects": [
-        "PWM-06",
-        "PWM-07"
-      ],
-      "status": "closed",
-      "answer": "The LPUs have dedicated hardware for dead-time. The LCU sends two plain commands and implements no dead-time."
-    },
-    {
-      "id": "Q-08",
-      "question": "CAN: keeping it, since the H12 baseline lists FDCAN1 for every control board. Should H12 also wire the transceiver to the MCU (H10/H11 leave FDCAN uninstantiated)?",
-      "affects": [
-        "AUX-04"
-      ],
-      "status": "closed",
-      "answer": "CAN is wired to both MCUs, two transceivers on the same bus."
-    },
-    {
-      "id": "Q-09",
-      "question": "What would the IMU be for? If there is no concrete function, drop it.",
-      "affects": [
-        "AUX-03"
-      ],
-      "status": "closed",
-      "answer": "IMU is an optional third position measurement to fuse with the airgaps. Keep it as an unpopulated option."
-    },
-    {
-      "id": "Q-10",
-      "question": "Documents in English or Spanish?",
-      "affects": [],
-      "status": "closed",
-      "answer": "English."
-    },
-    {
-      "id": "Q-11",
-      "question": "Airgap front end: keep the 4-20 mA + MCP6022 chain, or move the eight channels to the sigma-delta A-ADC / DFSDM path?",
-      "affects": [
-        "AGP-07",
-        "AGP-02"
-      ],
-      "status": "closed",
-      "answer": "Keep the AFE; the sigma-delta path never worked. Move the amplifier from +5 V to +3.3 V so it cannot overdrive the ADC input. Ground reference and shielding are the real fix for the coupling."
-    },
-    {
-      "id": "Q-12",
-      "question": "Brake_fault daisy chain: straight passthrough, or normally-closed so an unplugged board also asserts the fault?",
-      "affects": [
-        "SAF-05"
-      ],
-      "status": "closed",
-      "answer": "Straight passthrough by default, with a normally-closed alternative as a second population option."
-    },
-    {
-      "id": "Q-13",
-      "question": "LPU_H11 READY/FAULT drive type and active level.",
-      "affects": [
-        "LPU-03",
-        "LPU-04"
-      ],
-      "status": "closed",
-      "answer": "Both 3.3 V push-pull, HIGH = healthy on both. READY is active-high (HIGH = all four drivers ready), FAULT is active-low (LOW = at least one driver faulted). The fault/not-ready state is LOW on both, so both lines get a pull-DOWN on the LCU. An absent connector then reads not-ready + fault, and the only healthy combination (HIGH+HIGH) requires an active driver."
-    },
-    {
-      "id": "Q-14",
-      "question": "Where do the 4 local NTC fallback channels physically go: on the LCU board itself, or connectorised so they can be routed to the four corners?",
-      "affects": [
-        "TMP-02"
-      ],
-      "status": "closed",
-      "answer": "Four connectors on the LCU, one per pod corner, wired direct to the NTC. The LCU provides excitation, filtering, protection and conversion -- unlike the LPU connectors, where the LPU does the work. They land on the Slave's ADC3."
-    },
-    {
-      "id": "Q-15",
-      "question": "Which NTC part is used at the pod corners, and is it the same one the LPU_H11 uses? The beta/Steinhart constants are needed for the conditioning to be right.",
-      "affects": [
-        "TMP-04",
-        "TMP-03"
-      ],
-      "status": "closed",
-      "answer": "Same NTC as LPU_H11. Value to be read from the LPU_H11 schematic in Phase 1; it only fixes the pull-up value and the calibration, nothing structural."
-    }
+    { "id": "Q-01", "status": "closed", "question": "What is the LCU_H10 board outline and which edges carry connectors?", "answer": "240 mm x 160 mm, horizontal x vertical.", "affects": ["ARCH-03", "MEC-01"] },
+    { "id": "Q-02", "status": "closed", "question": "Which connectors are the 'nano fit' ones to replace with Micro-Fit+?", "answer": "Every Nano-Fit becomes Micro-Fit+: the 8 airgap connectors and the 2 bootloader connectors. Nothing else changes family.", "affects": ["LPU-02"] },
+    { "id": "Q-03", "status": "closed", "question": "Is the LCU-to-LPU electrical contract frozen to LPU_H11, or may H12 add contacts?", "answer": "Frozen, and there are no spare contacts. Presence is inferred from READY and FAULT via their pull resistors.", "affects": ["LPU-01", "LPU-03"] },
+    { "id": "Q-04", "status": "closed", "question": "Where does brake_fault come from?", "answer": "The VCU's 2-pin brake connector. The LCU carries the same 2-pin connector twice, daisy-chained.", "affects": ["SAF-01"] },
+    { "id": "Q-05", "status": "closed", "question": "One reset per LPU or one shared reset?", "answer": "Ten independent resets, one per LPU.", "affects": ["RST-02"] },
+    { "id": "Q-06", "status": "closed", "question": "Is the NTC on the LPU or on its way to the LCU, and how many channels?", "answer": "10 channels on the LPU plus 4 corner NTC connectors direct from the LCU, which supplies the excitation itself.", "affects": ["TMP-01", "TMP-02"] },
+    { "id": "Q-07", "status": "closed", "question": "Do the LPU PWM inputs drive a gate driver directly, or a local logic input?", "answer": "The LPUs have dedicated hardware for dead-time. The LCU sends two plain 5 V commands and implements no dead-time.", "affects": ["PWM-06"] },
+    { "id": "Q-08", "status": "closed", "question": "Keep CAN?", "answer": "Keep, and wire it to both MCUs, two transceivers on the same bus.", "affects": ["AUX-04"] },
+    { "id": "Q-09", "status": "closed", "question": "What is the IMU for?", "answer": "A third position measurement to fuse against the airgaps. Optional, unpopulated.", "affects": ["AUX-03"] },
+    { "id": "Q-10", "status": "closed", "question": "Documents in English or Spanish?", "answer": "English.", "affects": [] },
+    { "id": "Q-11", "status": "closed", "question": "Airgap front end: keep the 4-20 mA chain or move to sigma-delta?", "answer": "Keep the AFE; the sigma-delta path never worked. Move the amplifier from +5 V to +3.3 V.", "affects": ["AGP-07"] },
+    { "id": "Q-12", "status": "closed", "question": "brake_fault daisy chain: straight passthrough or normally closed?", "answer": "Straight passthrough by default, with a normally-closed variant as a second population option.", "affects": ["SAF-05"] },
+    { "id": "Q-13", "status": "closed", "question": "LPU_H11 READY/FAULT drive type and active level.", "answer": "Both 3.3 V push-pull, HIGH = healthy on both. READY active-high, FAULT active-low. Both lines get a pull-DOWN.", "affects": ["LPU-03", "LPU-04"] },
+    { "id": "Q-14", "status": "closed", "question": "Where do the 4 corner NTC channels physically go?", "answer": "Connectors on the LCU that run directly to the NTCs at the pod corners.", "affects": ["TMP-02"] },
+    { "id": "Q-15", "status": "closed", "question": "Which NTC part sits at the pod corners?", "answer": "The same part as LPU_H11. Value to be read from the LPU_H11 schematic in Phase 1; it only fixes the pull-up value and the calibration.", "affects": ["TMP-03", "TMP-04"] }
   ]
 }

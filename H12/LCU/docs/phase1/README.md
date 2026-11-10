@@ -1,7 +1,7 @@
 # LCU_H12 — Phase 1: Component Picking, Datasheet Parsing and BOM Risk
 
 **Status:** 27 BOM lines across 22 parts. 9 carry over unchanged, 6 change, 4 are new, 5 are
-proposed pending sign-off, 3 still await selection. 6 of 7 decisions closed; 1 deferred. One
+proposed pending sign-off, 2 await selection, 1 deferred. 6 of 7 decisions closed; 1 deferred. One
 finding changes the Phase 0 analog description.
 
 **Inputs:** the LCU_H11 Altium LiveBOM (89 line items, 54 with a manufacturer part number),
@@ -103,8 +103,16 @@ Consequence for H12: the front end is reinstated from **LCU_H10** — 160 Ω sen
 parts are **not** in the LCU_H11 BOM. They have to be specified from the H10 schematic.
 Three BOM lines are affected: `L-AGP-AFE`, `L-AGP-RSENSE`, `L-AGP-FILTER`.
 
-The largest of those is the filter: roughly ten passives per channel over eight channels,
-about eighty parts, none of them inherited.
+Scope correction for the filter: LCU_H10 does not build a discrete network. The Airgap
+Sensors sheet uses **one switched-capacitor filter IC per channel** (`MAX7420`, 5 V,
+5th-order Butterworth) with its corner set by the internal oscillator from a 220 pF
+capacitor. So the missing block is eight ICs and a handful of passives, not the eighty
+discrete parts originally assumed.
+
+The 3.3 V analog rail then forces a part change: the family splits by supply
+(`MAX7418`–`MAX7421` at 5 V, `MAX7422`–`MAX7425` at 3 V) and by response
+(`MAX7419`/`MAX7423` Bessel, `MAX7420`/`MAX7424` Butterworth, the rest elliptic). The
+3 V Butterworth is therefore the **`MAX7424`** — same response, same 8-pin package.
 
 Phase 0 §4.2 describes the analog topology without saying which board it comes from. The
 description is correct; it describes LCU_H10, not LCU_H11.
@@ -127,7 +135,7 @@ the LPU PWM buffers.
 | `D-03` | Protection on off-board lines | **proposed** | Three tiers, costed in the BOM. Tier 1: the 50 signals that leave the board on the LPU connectors (20 PWM, 10 RESET, 10 READY, 10 FAULT). Tier 2: the 20 analog inputs (8 airgap loops, 4 corner NTC). Tier 3, board-internal signals, not proposed. CAN gets `SM712-02HTG`, already in the BOM. Awaits sign-off on the tier. |
 | `D-07` | Buffer bank part and package count | **decided** | Five `SN74AHCT541` packages. RESET is active-low, so releasing it needs an actively driven HIGH and the buffer is mandatory — that rules out the unbuffered-reset option. The 8-channel TSSOP-20 is the area optimum at 3.6 mm² per channel; 16-bit packages reduce part count, not area. See §3.2. |
 | `D-06` | Reset buffering and the brake override | **decided** | RESET shares the buffer bank, so the Phase 0 open-drain wired-AND cannot work against a push-pull output. The override moves to the buffer's 3-state enable: active-low, pulled to disabled, forced disabled by `brake_fault` through one gate shared by all five packages. Each RESET line gets a pull resistor to its asserted level. `L-RST-DRV` drops from twelve open-drain channels to a single gate. |
-| `D-04` | Status indication | **decided** | Hardware, taken straight from the received signals: one green LED per LPU on `READY`, plus one board-level red LED through a diode-OR of the ten `FAULT` lines. No driver IC, no serial interface, no MCU pins, no firmware. Per-LPU red LEDs are rejected on electrical grounds, not just part count — see §3.6. |
+| `D-04` | Status indication | **decided** | Two hardware LEDs per LPU, one per status line, each driven through a series resistor: lit on `READY` means levitating, lit on `FAULT` means no fault. No driver IC, no inverter, no diode-OR, no MCU pins, no firmware. See §3.6. |
 | `D-05` | Airgap amplifier | deferred | Keep `MCP6022`. Sensor linearity limits the chain to about 10 bits, so a lower-offset amplifier changes nothing measurable until that is fixed. Revisit later. |
 
 ### 3.1 The output bank: 30 channels, 5 packages, one enable
@@ -203,16 +211,20 @@ LPU pair on one package and one enable.
 | `L-SD-SOCKET` | `MOLEX-216571-2002` | Verified footprint and 3D model in VCU_H11; the TE alternative is flagged unavailable. |
 | `L-SD-ESD` | `82306050029` | Würth WE-VE ULC, already qualified on VCU_H11 and already in the BOM. |
 | `L-ESD-LPU`, `L-ESD-ANALOG` | per voltage class | 70 suppressors; see §3.5 for why one part number does not work. |
-| `L-LED-LPU`, `L-LED-BOARD` | `VLMTG1300-GS08`, `VLMS1300-GS08`, `BAT54S`, `BSS84` | 10 green LEDs on `READY`, one red on the fault OR. All hardware, all optional. |
+| `L-LED-LPU`, `L-LED-HEALTH` | `VLMTG1300-GS08` | 20 LEDs with series resistors, one per status line. All hardware, all optional. |
 | `L-ESD-CAN` | `SM712-02HTG` | Designed for two-line differential buses; already in the BOM. |
 
 ### 3.4 Lines still awaiting selection
 
 | Line | Function | Qty | Candidates |
 |---|---|---|---|
-| `L-AGP-FILTER` | Airgap Butterworth passives | ~80 | Transcribe from the LCU_H10 conditioning sub-block; re-check headroom if the amplifier moves to 3.3 V |
 | `L-RST-DRV` | `brake_fault` → buffer enable gate | 1 | `74AHC1G08`, `74AHC08`, or a discrete transistor pulling the enable high |
 | `L-NTC-EXC` | Corner NTC excitation and filter | 4 | 10 kΩ 0.1 % pull-up to 3V3 + 220 Ω + 10 nF, mirroring LCU_H11 `Temp_conditioning` |
+
+**Deferred (1):** `L-AGP-FILTER`, the airgap 5th-order Butterworth filter. A different
+filter design may be adopted, so it is not being specified now. Two things to carry when it
+is picked up: it is eight switched-capacitor filter ICs rather than a passive network, and
+the 3.3 V analog rail makes the `MAX7424` the equivalent of the `MAX7420` that LCU_H10 uses.
 
 ---
 
@@ -276,38 +288,50 @@ clamp at all.
 
 ### 3.6 Status indication
 
-Two tiers, both hardware, both optional:
+Two LEDs per LPU, both driven directly from the status line with nothing but a series resistor:
 
-| Line | What | Parts |
+| Line | Driven by | Lit means | Parts |
+|---|---|---|---|
+| `L-LED-LPU` | `READY` | that magnet is levitating | 10 LEDs + 10 resistors |
+| `L-LED-HEALTH` | `FAULT` | that LPU reports no fault | 10 LEDs + 10 resistors |
+
+Forty parts in total, all 0603, all optional, and the same topology repeated twenty times. No
+driver IC, no inverter, no diode-OR, no MCU pins, no firmware.
+
+The three states read as:
+
+| `READY` LED | `FAULT` LED | Meaning |
 |---|---|---|
-| `L-LED-LPU` | Green 0603 LED + 1 kΩ from each `READY` line to ground. Lights when that magnet is ready. | 10 LEDs + 10 resistors |
-| `L-LED-BOARD` | Red 0603 LED lit when any of the ten `FAULT` lines is low, through five `BAT54S` dual Schottkys, a 10 kΩ pull-up and one `BSS84` P-MOSFET. | 1 LED + 5 diodes + 1 FET + 3 resistors |
+| lit | lit | levitating |
+| dark | lit | healthy but idle |
+| dark | dark | faulted, or the connector is unseated |
 
-**Why the fault indication is not per LPU.** `FAULT` is active-low, so a red LED would sit
-between 3.3 V and the line and light by *sinking* current into it. While the LPU is driving the
-line low that is harmless. With the connector unseated there is no driver, only the 10 kΩ
-pull-down, and the LED current has to return through it — the line settles around **0.9 V**
-against a VIL of about 1.0 V. The presence detector would become marginal in exactly the state
-it exists to detect. Doing it per LPU properly needs a transistor on each line, about 40 extra
-parts.
+**Why the fault LED is inverted in meaning rather than in hardware.** `FAULT` is active-low, so
+the obvious version — a red LED that lights on a fault — has to *sink* current into the line.
+While the LPU drives the line low that is harmless, but with the connector unseated there is no
+driver and only the 10 kΩ pull-down, so the LED current returns through it and lifts the line to
+about **0.9 V** against a VIL of about 1.0 V. The presence detector would go marginal in exactly
+the state it exists to detect, and doing it per LPU properly would need a transistor on each
+line.
 
-Both tiers fit the presence detection as it stands:
+Indicating the **absence** of a fault removes the problem entirely. The LED sits from `FAULT` to
+ground exactly like the `READY` one, so it conducts only when the line is HIGH. Un-driven, the
+pull-down holds the line at 0 V, the LED stays off and draws nothing, and the logic level is
+untouched. Both signals now use one rule, which is worth more than the extra LED.
 
-- `READY` is unaffected because an LED needs about 2 V to conduct. An unseated connector leaves
-  the line at 0 V through its pull-down and the green LED stays dark.
-- The fault OR is decoupled by the `BSS84`: its gate draws no DC current, so the pull-downs
-  alone define the level of an unseated connector. When a `FAULT` line is driven low the LED
-  current flows through that line's driver — around 1 mA, which any CMOS output can sink — and
-  when one is unseated the OR node falls to the fault level and the red LED lights, which is the
-  correct reading anyway.
+The trade-off is that a fault is signalled by an absence of light rather than a red lamp coming
+on. For a bench diagnostic that is acceptable, and the board keeps the five firmware-driven LEDs
+inherited from LCU_H11 for an at-a-glance alarm if one is wanted.
 
-The information given up is only *which* LPU faulted, and the Ethernet telemetry already
-carries that.
+**Colour.** Green on both, because the forward drop is about 2.0 V and leaves 1.3 V across the
+series resistor on a 3.3 V rail. Blue would be a poor choice here: its forward voltage is around
+3.0 V, so on a 3.3 V rail the current would be tiny and very sensitive to part-to-part spread. If
+the two indicators need to look different, use an amber 0603 for the health LED rather than a
+blue one.
 
-Rejected: a 16-channel constant-current sink (`TLC5926` and similar). About 21 parts instead of
-28 and it would give per-LPU red and green, but it needs two or three MCU pins, a serial
-protocol, firmware support and a defined power-up state before it shows anything. For a
-diagnostic aid that is the wrong trade.
+Rejected: a 16-channel constant-current sink (`TLC5926` and similar). It would give the same
+information in fewer packages, but it needs two or three MCU pins, a serial protocol, firmware
+support and a defined power-up state before it shows anything.
 
 Everything is DNP-able: leaving the LEDs and their resistors unpopulated affects nothing else.
 
@@ -352,6 +376,9 @@ Full detail, including the two-axis scoring arithmetic, is in `generated/risk-re
 - **Passive re-verification.** The 49 passive lines in the H11 baseline are inherited
   wholesale. Their lifecycle data is a snapshot from when the Altium archive was produced;
   re-check at order time, not now.
+- **The airgap filter topology.** Deferred by decision, not by omission. If a different
+  filter is chosen, the eight switched-capacitor ICs and their surrounding passives change
+  with it, and the `MAX7424` substitution stops being relevant.
 - **Schematic capture.** Nothing has been drawn.
 
 ---
@@ -361,8 +388,9 @@ Full detail, including the two-axis scoring arithmetic, is in `generated/risk-re
 1. Sign off the protection (`D-03`). Parts, quantities and voltage classes are now specified;
    what is missing is confirmation that tiers 1 and 2 are both wanted, and the actual part
    numbers per voltage class.
-2. Transcribe the LCU_H10 `4-20mA conditioning sub-block` and specify `L-AGP-FILTER`. This is
-   the largest remaining selection task, about eighty parts, and it gates the analog design.
+2. Specify `L-AGP-FILTER` once the filter topology is decided. It is no longer the bottleneck
+   it appeared to be: eight filter ICs plus a few passives, not eighty discrete parts. The
+   `MAX7424` is the drop-in answer if the LCU_H10 topology is kept.
 3. Close `L-RST-DRV`, now a single gate rather than twelve channels, and close `L-LED-DRIVER`.
 4. Fetch the six missing datasheets by hand into `datasheets/` and re-run `build.py` so those
    parameters stop being unverified.

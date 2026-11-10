@@ -15,12 +15,14 @@ A low-risk, safety-impact line is a real category here: the connector is easy to
 | high | safety | 7 | `L-LPU-CONN` | `TE-5499922-6` | lifecycle_unknown (3), single_source (2), unverified (2) | Ten per board and frozen by the LPU_H11 interface, so there is no design freedom here -- only a supply question. Verify the lifecycle directly with TE and confirm the 44.5 mm body, which the Phase 0 m |
 | high | safety | 6 | `L-MCU` | `STM32H723ZGT6` | single_source (2), long_lead (3), datasheet_missing (1) | Two per board. Supply, not lifecycle, is the risk: H7 parts have had multi-month lead times. Ordering both MCUs early is the single most effective de-risking action on this board. |
 | medium | safety | 3 | `L-AGP-AFE` | `MCP6022-E/SN` | unverified (2), datasheet_missing (1) | Reinstated from LCU_H10 (F-01): LCU_H11 has no analog airgap front end. One MCP6022 per channel. Amplifier supply moves from +5 V to +3.3 V, which is a net change, not a part change. |
-| medium | safety | 3 | `L-AGP-FILTER` | `-` | not_selected (1) | Roughly ten passives per channel, so around eighty parts that are NOT in the LCU_H11 BOM (F-01). The corner frequency is 5 kHz; if the amplifier moves to 3.3 V the filter must be re-checked for headro |
 | medium | safety | 3 | `L-RST-DRV` | `-` | not_selected (1) | One gate: brake_fault AND the MCU enable, into the five package enable pins. RESET is active-low and buffered, so the override cannot act on the reset net; it releases the bank and the pull-downs asse |
 | medium | functional | 3 | `L-NTC-EXC` | `NTC-CONDITIONING-SET` | not_selected (1) | Values depend on the NTC part, which is the same device as LPU_H11 (Q-15). The 220 ohm / 10 nF values are inherited and only need re-checking against the chosen pull-up. |
 | medium | auxiliary | 3 | `L-IMU` | `ICM-42688-P` | new_to_design (1), single_source (2) | Unpopulated by default. |
 | low | safety | 2 | `L-ETH-JACK` | `7499011222A` | single_source (2) | Mechanical part: a substitute will almost certainly not fit the same footprint. Treat as a stock item to buy early. |
 | low | safety | 0 | `L-AGP-CONN` | `MOLEX-206832-0401` | none | Nano-Fit to Micro-Fit+. |
+| low | safety | 0 | `L-AGP-FILTER` | `-` | deferred (1) | DEFERRED: a different filter design may be adopted, so this is not being specified now.
+
+Corrected scope: LCU_H10 does not build a discrete filter. The Airgap Sensors sheet uses one switched-capacitor |
 | low | safety | 0 | `L-AGP-RSENSE` | `160R-0603-0.1pct` | none | Reinstated from LCU_H10 (F-01); absent from the LCU_H11 BOM. 0.1 % is already the accuracy limit at about 10 bits, matching the sensor's own +/-140 um linearity. |
 | low | safety | 0 | `L-BRAKE-CONN` | `MOLEX-206832-0401` | none | Replaces every Nano-Fit on the board: 8 airgap, 2 bootloader, 2 brake chain, 4 corner NTC. Using one part number for all four functions simplifies both the BOM and the harness crimp tooling. |
 | low | safety | 0 | `L-ESD-LPU` | `82306050029` | none | Protection tier 1: the 50 lines that leave the board on the LPU connectors -- 20 PWM, 10 RESET, 10 READY, 10 FAULT. One WE-VE ULC per line at the connector plus the series resistor already required on |
@@ -34,8 +36,8 @@ A low-risk, safety-impact line is a real category here: the connector is easy to
 | low | functional | 0 | `L-NTC-CONN` | `MOLEX-206832-0401` | none | Replaces every Nano-Fit on the board: 8 airgap, 2 bootloader, 2 brake chain, 4 corner NTC. Using one part number for all four functions simplifies both the BOM and the harness crimp tooling. |
 | low | functional | 0 | `L-PASSIVES` | `INHERITED` | none | The LCU_H11 BOM carries 49 passive and discrete lines, all in volume production with distributor stock above 5000 except a handful. They are not re-listed individually here; see bom/h11_baseline.json. |
 | low | auxiliary | 0 | `L-BOOT-CONN` | `MOLEX-206832-0401` | none | Nano-Fit to Micro-Fit+. Inherited function. |
-| low | auxiliary | 0 | `L-LED-BOARD` | `VLMS1300-GS08` | none | Red 0603 LED lit when any of the ten FAULT lines is low. Five BAT54S dual Schottkys form the OR, a 10 kOhm pull-up defines the node, and a BSS84 P-MOSFET switches the LED so that no LED current flows  |
-| low | auxiliary | 0 | `L-LED-LPU` | `VLMTG1300-GS08` | none | Green 0603 LED plus a 1 kOhm series resistor from each READY line to ground. Lights when that magnet is ready. Optional: leave unpopulated and nothing else is affected. No loading problem in the relea |
+| low | auxiliary | 0 | `L-LED-HEALTH` | `VLMTG1300-GS08` | none | LED with a 1 kOhm series resistor from each FAULT line to ground. FAULT is active-low, so the LED is lit when the line is HIGH, which is the healthy state: a dark LED means that LPU is faulted or unpl |
+| low | auxiliary | 0 | `L-LED-LPU` | `VLMTG1300-GS08` | none | Green 0603 LED plus a 1 kOhm series resistor from each READY line to ground. Lit when that magnet is ready. Together with L-LED-HEALTH this gives two bits per LPU with no logic at all: both lit means  |
 | low | auxiliary | 0 | `L-SD-ESD` | `82306050029` | none | Würth WE-VE ULC array, already in the LCU_H11 BOM and used on the VCU_H11 SD sheet. |
 | low | auxiliary | 0 | `L-SD-SOCKET` | `MOLEX-216571-2002` | none | Taken from the VCU_H11 design after checking both candidates. Molex 216571-2002 has a real footprint and an embedded 3D STEP model (216571-2002-Footprint-1 / 216571-2002.stp) in the VCU design; the TE |
 
@@ -44,8 +46,8 @@ A low-risk, safety-impact line is a real category here: the connector is easy to
 | Risk | Lines |
 |---|---|
 | high | 3 |
-| medium | 5 |
-| low | 19 |
+| medium | 4 |
+| low | 20 |
 
 ## Tally by impact
 

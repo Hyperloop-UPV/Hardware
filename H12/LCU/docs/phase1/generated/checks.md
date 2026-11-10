@@ -6,7 +6,7 @@
 |---|---|---|
 | OK | `LINE-OPEN` Line awaiting selection | L-AGP-FILTER (1 candidates) |
 | OK | `LINE-OPEN` Line awaiting selection | L-RST-DRV (3 candidates) |
-| OK | `PART-ORPHAN` Every declared part is used by a line | 23 parts |
+| OK | `PART-ORPHAN` Every declared part is used by a line | 21 parts |
 | OK | `CARRY-MATCH` Every carry-over line exists in the H11 baseline | 9 checked |
 | OK | `DEC` Decisions recorded | 7 total, 0 open or blocked |
 | OK | `DS-INDEX` Datasheet entries declared | 7 parts, 1 PDFs present on disk |

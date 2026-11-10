@@ -14,7 +14,7 @@
 | `lpu_status` | PF0, PF1, PF2, PF15, PG5, PG6, PG7, PG8, PG9, PG10, PG11, PG12, PG13, PG0, PG2, PB6, PB7, PB8, PB9, PB10 | 20 | 10 READY + 10 FAULT, one pin each, deliberately not shared. These are also the connector-presence detector: their pull resistors make an unplugged connector read as a fault. |
 | `lpu_reset` | PD4, PD5, PD7, PE3, PE4, PE5, PE6, PE7, PE8, PE9 | 10 | One per LPU. These drive buffer inputs, not the connector directly: each LPU has its own reset channel in the 5 V bank, so any single LPU can still be reset while the others run. |
 | `lpu_presence` | PD8, PD9, PD10, PD11, PD12, PD13, PE10, PD14, PD15, PC6 | 10 |  |
-| `leds` | PC7, PB2, PA8, PA10, PA15, PB14, PB15, PE15 | 8 |  |
+| `leds` | PC7, PB2, PA8, PA10, PA15, PB14, PB15, PE15 | 8 | Board-level firmware LEDs inherited from LCU_H11. The per-LPU indication is hardware-driven and uses no MCU pins. |
 | `debug` | PA13, PA14 | 2 | SWDIO, SWCLK |
 | `spi_ctrl` | PB3, PB4, PB5 | 3 | MOVED from PC10/PC11/PC12, which SDMMC1 needs. PB3/PB4/PB5 are SPI3 AF6. Costs SWO trace. |
 | `spi_tel` | PE12, PE13, PE14 | 3 | SPI4 used as a SLAVE here: the Slave drives SCK. AF5. |

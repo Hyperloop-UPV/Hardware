@@ -60,7 +60,8 @@
       "unverified": 2,
       "new_to_design": 1,
       "datasheet_missing": 1,
-      "manual_assembly": 2
+      "manual_assembly": 2,
+      "deferred": 1
     },
     "bands": {
       "critical": 9,
@@ -506,7 +507,7 @@
         "i_typ_ma": 1.3
       },
       "flags": [],
-      "note": "Per-LPU levitation indicator. Already in the LCU_H11 BOM."
+      "note": "Per-LPU status indicator, twenty pieces: ten on READY and ten on FAULT. Green because its forward drop is about 2.0 V, which leaves 1.3 V across the series resistor on a 3.3 V rail. A blue LED would be a poor choice here: its forward voltage is around 3.0 V, so on a 3.3 V rail the current would be tiny and extremely sensitive to part-to-part spread. If the two indicators need to look different, use an amber 0603 for the health LED rather than a blue one."
     },
     "VLMS1300-GS08": {
       "manufacturer": "Vishay",
@@ -525,52 +526,8 @@
         "i_typ_ma": 1.3
       },
       "flags": [],
-      "note": "Board-level fault indicator. Already in the LCU_H11 BOM."
-    },
-    "BAT54S": {
-      "manufacturer": "Nexperia",
-      "description": "Dual Schottky diode, series, SOT-23, 30 V 200 mA",
-      "package": "SOT-23",
-      "lifecycle": "active",
-      "lifecycle_source": "Commodity part with several second sources; not verified vendor by vendor",
-      "verified_on": "",
-      "single_source": false,
-      "alternates": [
-        "Vishay BAT54S",
-        "ON Semiconductor BAT54S",
-        "Diodes Inc BAT54S"
-      ],
-      "params": {
-        "v_r": 30,
-        "i_f_ma": 200,
-        "configuration": "dual series"
-      },
-      "flags": [],
-      "note": "Five packages make the diode-OR of the ten FAULT lines. A commodity with four second sources, so availability is not a concern even if one vendor obsoletes it."
-    },
-    "BSS84": {
-      "manufacturer": "onsemi",
-      "description": "P-channel MOSFET, logic level, -50 V, SOT-23",
-      "package": "SOT-23",
-      "lifecycle": "active",
-      "lifecycle_source": "Commodity small-signal PMOS with several second sources",
-      "verified_on": "",
-      "single_source": false,
-      "alternates": [
-        "Nexperia BSS84",
-        "Diodes Inc BSS84",
-        "Vishay BSS84"
-      ],
-      "params": {
-        "vds": -50,
-        "vgs_th": [
-          -0.8,
-          -2.0
-        ],
-        "i_d_ma": 130
-      },
-      "flags": [],
-      "note": "Switches the board-level fault LED from the diode-OR node. Its purpose is to keep the LED current out of the FAULT lines: the gate draws no DC current, so the 10 kOhm pull-downs alone define the level of an unseated connector."
+      "note": "Not used by the per-LPU indication, which is green on both signals. Kept because it is already in the LCU_H11 BOM driving the firmware-controlled board LEDs (led_fault and friends), which are inherited unchanged.",
+      "library_only": true
     }
   },
   "lines": [
@@ -663,15 +620,17 @@
     {
       "id": "L-AGP-FILTER",
       "block": "agp_afe",
-      "function": "Airgap 5th-order Butterworth anti-alias passives",
+      "function": "Airgap 5th-order Butterworth filter",
       "qty": 8,
       "part": "",
-      "status": "select",
+      "status": "deferred",
       "criticality": "safety",
       "candidates": [
-        "Transcribe values from the LCU_H10 '4-20mA conditioning sub-block' sheet and re-derive if the amplifier rail changes to 3.3 V"
+        "MAX7424 (3 V Butterworth, direct substitution)",
+        "MAX7420 if the analog rail stays at 5 V",
+        "a different topology altogether"
       ],
-      "note": "Roughly ten passives per channel, so around eighty parts that are NOT in the LCU_H11 BOM (F-01). The corner frequency is 5 kHz; if the amplifier moves to 3.3 V the filter must be re-checked for headroom, not re-tuned. This is the largest single selection task left in the phase."
+      "note": "DEFERRED: a different filter design may be adopted, so this is not being specified now.\n\nCorrected scope: LCU_H10 does not build a discrete filter. The Airgap Sensors sheet uses one switched-capacitor filter IC per channel (MAX7420, 5 V, 5th-order Butterworth), with its corner frequency set by the internal oscillator from a 220 pF capacitor. So the block is eight ICs and a handful of passives, not the eighty discrete parts this line originally assumed.\n\nKnock-on that has to be carried with the deferral: because the analog rail moves to 3.3 V, the 5 V MAX7420 is no longer usable and the equivalent part becomes the MAX7424. That is a forced change of part number, not a preference."
     },
     {
       "id": "L-AGP-CONN",
@@ -766,26 +725,22 @@
     {
       "id": "L-LED-LPU",
       "block": "leds",
-      "function": "Per-LPU levitation indicator, driven from READY",
+      "function": "Per-LPU levitation indicator, driven from READY (lit means levitating)",
       "qty": 10,
       "part": "VLMTG1300-GS08",
       "status": "proposed",
       "criticality": "auxiliary",
-      "note": "Green 0603 LED plus a 1 kOhm series resistor from each READY line to ground. Lights when that magnet is ready. Optional: leave unpopulated and nothing else is affected. No loading problem in the released state, because an LED needs about 2 V to conduct and the pull-down holds READY at 0 V when the connector is out. Parts already in the LCU_H11 BOM."
+      "note": "Green 0603 LED plus a 1 kOhm series resistor from each READY line to ground. Lit when that magnet is ready. Together with L-LED-HEALTH this gives two bits per LPU with no logic at all: both lit means levitating, READY dark with FAULT lit means healthy but idle, both dark means faulted or unplugged. Optional and DNP-able. Parts already in the LCU_H11 BOM."
     },
     {
-      "id": "L-LED-BOARD",
+      "id": "L-LED-HEALTH",
       "block": "leds",
-      "function": "Board-level fault indicator, diode-OR of the ten FAULT lines",
-      "qty": 1,
-      "part": "VLMS1300-GS08",
+      "function": "Per-LPU health indicator, driven from FAULT (lit means no fault)",
+      "qty": 10,
+      "part": "VLMTG1300-GS08",
       "status": "proposed",
       "criticality": "auxiliary",
-      "note": "Red 0603 LED lit when any of the ten FAULT lines is low. Five BAT54S dual Schottkys form the OR, a 10 kOhm pull-up defines the node, and a BSS84 P-MOSFET switches the LED so that no LED current flows through the FAULT lines themselves. That transistor is the part that makes the scheme safe, not decoration: see the Phase 1 document, section 3.6.",
-      "candidates": [
-        "BAT54S",
-        "BSS84"
-      ]
+      "note": "LED with a 1 kOhm series resistor from each FAULT line to ground. FAULT is active-low, so the LED is lit when the line is HIGH, which is the healthy state: a dark LED means that LPU is faulted or unplugged. Same topology as the READY LED, one resistor each, no inversion, no gate, no transistor."
     },
     {
       "id": "L-IMU",
@@ -935,12 +890,12 @@
       "status": "decided",
       "blocks": [
         "L-LED-LPU",
-        "L-LED-BOARD"
+        "L-LED-HEALTH"
       ],
       "question": "Driver IC on the MCU, or indication built from the signals themselves?",
-      "answer": "Hardware, taken straight from the received signals: one green LED per LPU on READY, plus one board-level red LED for faults. No driver IC, no serial interface, no MCU pins, no firmware.",
-      "recommendation": "Two tiers. Per LPU: one green LED from READY to ground through a resistor, so it lights when that magnet is levitating. At board level: one red LED driven through a diode-OR of the ten FAULT lines, so it lights when any LPU faults. About 28 parts, all 0603 or SOT-23, and every LED can be left unpopulated without affecting anything else.",
-      "note": "Per-LPU red LEDs were considered and rejected on electrical grounds, not only on part count. FAULT is active-low, so a red LED would sit between 3.3 V and the FAULT line and light by sinking current into it. While the LPU is driving the line low that is fine. With the connector unseated there is no driver, only the 10 kOhm pull-down, and the LED current has to return through it: the line settles around 0.9 V, against a VIL of about 1.0 V. The presence detector would then be marginal in exactly the state it exists to detect. Doing it properly needs a transistor per LPU, about 40 extra parts.\n\nThe board-level OR with one BSS84 gets the same information without touching the logic levels: the MOSFET gate draws no DC current, so the pull-downs alone hold an unseated connector at the fault level. The information lost is only which LPU faulted, and the Ethernet telemetry already provides that."
+      "answer": "Two hardware LEDs per LPU, both driven directly from the status line with nothing but a series resistor: green on READY, lit when levitating, and a second LED on FAULT, lit when there is no fault. No driver IC, no inverter, no diode-OR, no MCU pins, no firmware.",
+      "recommendation": "Drive both status lines active-high and let a dark LED mean the bad state. READY lights when ready; FAULT lights when healthy. Forty parts in total, all 0603, all optional, and the same topology repeated twenty times.",
+      "note": "The first version tried to indicate a fault with a lit red LED, which fails because FAULT is active-low: the LED has to sink current into the line, and with the connector unseated the only return is the 10 kOhm pull-down, which lifts the line to about 0.9 V against a VIL of about 1.0 V. That would make the presence detector marginal exactly where it matters.\n\nIndicating the ABSENCE of a fault instead removes the problem completely: the LED sits from FAULT to ground like the READY one, so it conducts only when the line is HIGH. Un-driven, the pull-down holds the line at 0 V, the LED stays off and draws nothing, and the logic level is untouched. Same topology for both signals, no inversion anywhere.\n\nThe cost is that the fault indication is now the absence of light rather than a red lamp coming on. For a bench diagnostic that is acceptable, and the board already has firmware-driven LEDs (the LCU_H11 five) for an at-a-glance alarm if one is wanted."
     }
   ],
   "datasheet_index": {
