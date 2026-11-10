@@ -1,0 +1,24 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "0cba5300-a95f-4d8f-a447-e8105831fa88")
+	(paper "A4")
+	(lib_symbols)
+	(wire
+		(pts
+			(xy 29.21 24.13) (xy 67.31 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f60bbc1b-e3cf-4c36-abfa-c31fc0734737")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "hyperloop-symbols")(type "KiCad")(uri "${KIPRJMOD}/../../libraries/symbols/hyperloop.kicad_sym")(options "")(descr "Shared HL UPV symbols"))
+)
