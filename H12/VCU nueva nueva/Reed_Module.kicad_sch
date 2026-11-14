@@ -4,7 +4,7 @@
 	(generator_version "10.0")
 	(uuid "159c9dfa-7c57-4894-aae4-ac69cb650e21")
 	(paper "A2")
-	(lib_symbols
+		(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -464,429 +464,6 @@
 						)
 					)
 					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "LM339PWR_1"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "IC"
-				(at 11.43 -19.812 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Value" "LM339PWR"
-				(at 11.43 -21.59 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" "SOP65P640X120-14N"
-				(at 24.13 -94.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm339.pdf"
-				(at 24.13 -194.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Height" "1.2"
-				(at 24.13 -394.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Manufacturer_Name" "Texas Instruments"
-				(at 24.13 -494.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Manufacturer_Part_Number" "LM339PWR"
-				(at 24.13 -594.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Mouser Part Number" "595-LM339PWR"
-				(at 24.13 -694.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM339PWR?qs=xJkDX%2FqrskPOxGrzLPW8oQ%3D%3D"
-				(at 24.13 -794.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Arrow Part Number" "LM339PWR"
-				(at 24.13 -894.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/lm339pwr/texas-instruments.html?utm_currency=USD&region=nac"
-				(at 24.13 -994.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(symbol "LM339PWR_1_0_1"
-				(polyline
-					(pts
-						(xy 0.254 -26.924) (xy 13.97 -33.02) (xy 0.254 -40.64) (xy 0.254 -26.924)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "LM339PWR_1_1_1"
-				(pin passive line
-					(at 19.05 -33.02 180)
-					(length 5.08)
-					(name "1OUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 -24.13 270)
-					(length 5.08)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -36.83 0)
-					(length 5.08)
-					(name "1IN-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -30.48 0)
-					(length 5.08)
-					(name "1IN+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 -43.18 90)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "LM339PWR_1_2_1"
-				(pin passive line
-					(at 19.05 -33.02 180)
-					(length 5.08)
-					(name "2OUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -36.83 0)
-					(length 5.08)
-					(name "2IN-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -30.48 0)
-					(length 5.08)
-					(name "2IN+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "LM339PWR_1_3_1"
-				(pin passive line
-					(at -5.08 -36.83 0)
-					(length 5.08)
-					(name "3IN-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -30.48 0)
-					(length 5.08)
-					(name "3IN+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 19.05 -33.02 180)
-					(length 5.08)
-					(name "OUT3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "LM339PWR_1_4_1"
-				(pin passive line
-					(at -5.08 -36.83 0)
-					(length 5.08)
-					(name "4IN-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -30.48 0)
-					(length 5.08)
-					(name "4IN+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 19.05 -33.02 180)
-					(length 5.08)
-					(name "OUT4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1562,6 +1139,429 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "SamacSys_Parts:LM339PWR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "IC"
+				(at 11.43 -19.812 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "LM339PWR"
+				(at 11.43 -21.59 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "SOP65P640X120-14N"
+				(at 24.13 -94.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm339.pdf"
+				(at 24.13 -194.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" "1.2"
+				(at 24.13 -394.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Name" "Texas Instruments"
+				(at 24.13 -494.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Part_Number" "LM339PWR"
+				(at 24.13 -594.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Part Number" "595-LM339PWR"
+				(at 24.13 -694.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM339PWR?qs=xJkDX%2FqrskPOxGrzLPW8oQ%3D%3D"
+				(at 24.13 -794.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Part Number" "LM339PWR"
+				(at 24.13 -894.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/lm339pwr/texas-instruments.html?utm_currency=USD&region=nac"
+				(at 24.13 -994.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(symbol "LM339PWR_0_1"
+				(polyline
+					(pts
+						(xy 0.254 -26.924) (xy 13.97 -33.02) (xy 0.254 -40.64) (xy 0.254 -26.924)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LM339PWR_1_1"
+				(pin passive line
+					(at 19.05 -33.02 180)
+					(length 5.08)
+					(name "1OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 -24.13 270)
+					(length 5.08)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -36.83 0)
+					(length 5.08)
+					(name "1IN-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -30.48 0)
+					(length 5.08)
+					(name "1IN+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 -43.18 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM339PWR_2_1"
+				(pin passive line
+					(at 19.05 -33.02 180)
+					(length 5.08)
+					(name "2OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -36.83 0)
+					(length 5.08)
+					(name "2IN-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -30.48 0)
+					(length 5.08)
+					(name "2IN+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM339PWR_3_1"
+				(pin passive line
+					(at -5.08 -36.83 0)
+					(length 5.08)
+					(name "3IN-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -30.48 0)
+					(length 5.08)
+					(name "3IN+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 19.05 -33.02 180)
+					(length 5.08)
+					(name "OUT3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM339PWR_4_1"
+				(pin passive line
+					(at -5.08 -36.83 0)
+					(length 5.08)
+					(name "4IN-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -30.48 0)
+					(length 5.08)
+					(name "4IN+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 19.05 -33.02 180)
+					(length 5.08)
+					(name "OUT4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -8919,7 +8919,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 511.81 22.86 0)
 		(unit 2)
@@ -9908,7 +9907,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 512.4037 157.48 0)
 		(unit 2)
@@ -11439,7 +11437,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 512.4037 90.17 0)
 		(unit 4)
@@ -12040,7 +12037,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 381 157.48 0)
 		(unit 1)
@@ -12773,7 +12769,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 127.6763 91.44 0)
 		(unit 3)
@@ -12976,7 +12971,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 380.4063 22.86 0)
 		(unit 1)
@@ -14244,7 +14238,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 258.4863 24.13 0)
 		(unit 2)
@@ -15756,7 +15749,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 259.08 91.44 0)
 		(unit 4)
@@ -17116,7 +17108,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 512.4037 223.52 0)
 		(unit 4)
@@ -17565,7 +17556,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 381 223.52 0)
 		(unit 3)
@@ -17928,7 +17918,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 259.08 224.79 0)
 		(unit 4)
@@ -18213,7 +18202,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 127.6763 224.79 0)
 		(unit 3)
@@ -19450,7 +19438,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 381 90.17 0)
 		(unit 3)
@@ -20219,7 +20206,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 127.6763 158.75 0)
 		(unit 1)
@@ -21206,7 +21192,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 259.08 158.75 0)
 		(unit 2)
@@ -22295,7 +22280,6 @@
 		)
 	)
 	(symbol
-		(lib_name "LM339PWR_1")
 		(lib_id "SamacSys_Parts:LM339PWR")
 		(at 127.0826 24.13 0)
 		(unit 1)

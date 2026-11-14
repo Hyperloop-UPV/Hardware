@@ -4,7 +4,7 @@
 	(generator_version "10.0")
 	(uuid "dc99afbc-f29f-4070-8d32-3769b7596be4")
 	(paper "A3")
-	(lib_symbols
+		(lib_symbols
 		(symbol "Hyperloop UPV:M3 Screw"
 			(pin_names
 				(hide yes)
@@ -314,7 +314,6 @@
 			)
 			(embedded_fonts no)
 		)
-	
 		(symbol "power:PWR_FLAG"
 			(power global)
 			(pin_numbers
@@ -429,7 +428,8 @@
 				)
 			)
 			(embedded_fonts no)
-		))
+		)
+	)
 	(text "PCB Manufacturing Notes"
 		(exclude_from_sim no)
 		(at 314.96 66.04 0)
