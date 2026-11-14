@@ -1558,7 +1558,7 @@
 		(uuid "5ee4d593-44c3-43e3-b29a-6dc54a3583d5")
 	)
 	(junction
-		(at 102.616 241.3)
+		(at 102.87 241.3)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "616844ca-51e0-4c8b-8b4e-6c9292f3390e")
@@ -1649,7 +1649,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.616 241.3) (xy 110.49 241.3)
+			(xy 102.87 241.3) (xy 110.49 241.3)
 		)
 		(stroke
 			(width 0)
@@ -1729,7 +1729,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 200.406) (xy 146.05 195.326)
+			(xy 146.05 200.406) (xy 146.05 195.58)
 		)
 		(stroke
 			(width 0)
@@ -1859,7 +1859,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 210.566) (xy 146.05 200.406)
+			(xy 146.05 210.82) (xy 146.05 200.406)
 		)
 		(stroke
 			(width 0)
@@ -1869,7 +1869,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 88.9) (xy 125.73 97.536)
+			(xy 125.73 88.9) (xy 125.73 97.79)
 		)
 		(stroke
 			(width 0)
@@ -1899,7 +1899,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 107.696) (xy 125.73 119.38)
+			(xy 125.73 107.95) (xy 125.73 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1919,7 +1919,7 @@
 	)
 	(wire
 		(pts
-			(xy 277.114 88.9) (xy 275.082 88.9)
+			(xy 276.86 88.9) (xy 275.082 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2059,7 +2059,7 @@
 	)
 	(wire
 		(pts
-			(xy 141.478 88.9) (xy 137.922 88.9)
+			(xy 141.478 88.9) (xy 138.43 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2089,7 +2089,7 @@
 	)
 	(wire
 		(pts
-			(xy 127.762 88.9) (xy 125.73 88.9)
+			(xy 128.27 88.9) (xy 125.73 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2099,7 +2099,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 241.3) (xy 102.616 241.3)
+			(xy 91.44 241.3) (xy 102.87 241.3)
 		)
 		(stroke
 			(width 0)
@@ -2139,7 +2139,7 @@
 	)
 	(wire
 		(pts
-			(xy 290.83 88.9) (xy 287.274 88.9)
+			(xy 290.83 88.9) (xy 287.02 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2179,7 +2179,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 137.414) (xy 128.27 139.954)
+			(xy 128.27 137.414) (xy 128.27 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2229,7 +2229,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 230.886) (xy 146.05 220.726)
+			(xy 146.05 230.886) (xy 146.05 220.98)
 		)
 		(stroke
 			(width 0)
@@ -3919,7 +3919,7 @@
 	)
 	(symbol
 		(lib_id "Celestial Altium Library - altium_library:LED")
-		(at 125.73 102.616 270)
+		(at 125.73 102.87 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3929,7 +3929,7 @@
 		(dnp no)
 		(uuid "36cb77a2-f9e3-4d74-9e5c-fd9e0d57363f")
 		(property "Reference" "D15"
-			(at 130.048 103.886 90)
+			(at 130.048 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3940,7 +3940,7 @@
 			)
 		)
 		(property "Value" "${ALTIUM_VALUE}"
-			(at 130.048 106.426 90)
+			(at 130.048 106.68 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3951,7 +3951,7 @@
 			)
 		)
 		(property "Footprint" "VCU_H11G-import-fps:LED 0603_1608 GREEN"
-			(at 125.73 102.616 0)
+			(at 125.73 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3962,7 +3962,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 102.616 0)
+			(at 125.73 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3973,7 +3973,7 @@
 			)
 		)
 		(property "Description" "LED GREEN CLEAR 0603 SMD"
-			(at 125.73 102.616 0)
+			(at 125.73 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3984,7 +3984,7 @@
 			)
 		)
 		(property "PART NUMBER" "QTLP601C4TR"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3996,7 +3996,7 @@
 			)
 		)
 		(property "COLOR" "Green"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4008,7 +4008,7 @@
 			)
 		)
 		(property "COMPONENTLINK1DESCRIPTION" "Datasheet"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4020,7 +4020,7 @@
 			)
 		)
 		(property "COMPONENTLINK1URL" "//media.digikey.com/pdf/Data%20Sheets/Everlight%20PDFs/QTLP601C-2,3,4,7,B.pdf"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4032,7 +4032,7 @@
 			)
 		)
 		(property "COMPONENTLINK2DESCRIPTION" "DigiKey Link"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4044,7 +4044,7 @@
 			)
 		)
 		(property "COMPONENTLINK2URL" "https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/QTLP601C4TR/2675896"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4056,7 +4056,7 @@
 			)
 		)
 		(property "CONFIGURATION" "Standard"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4068,7 +4068,7 @@
 			)
 		)
 		(property "CURRENT - TEST" "20mA"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4080,7 +4080,7 @@
 			)
 		)
 		(property "DEVICE PACKAGE" "0603 (1608 Metric)"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4092,7 +4092,7 @@
 			)
 		)
 		(property "HEIGHT (MAX)" "0.60mm"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4104,7 +4104,7 @@
 			)
 		)
 		(property "LASTUPDATED" "19/09/2022 13:49:59"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4116,7 +4116,7 @@
 			)
 		)
 		(property "LENS COLOR" "Colorless"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4128,7 +4128,7 @@
 			)
 		)
 		(property "LENS SIZE" "1.20mm x 0.80mm"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4140,7 +4140,7 @@
 			)
 		)
 		(property "LENS STYLE" "Rectangle with Flat Top"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4152,7 +4152,7 @@
 			)
 		)
 		(property "LENS TRANSPARENCY" "Clear"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4164,7 +4164,7 @@
 			)
 		)
 		(property "LIFECYCLE STATUS" "Active"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4176,7 +4176,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Everlight Electronics Co Ltd"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4188,7 +4188,7 @@
 			)
 		)
 		(property "MILLICANDELA RATING" "15mcd"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4200,7 +4200,7 @@
 			)
 		)
 		(property "MINIMUM ORDER" "1"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4212,7 +4212,7 @@
 			)
 		)
 		(property "MOUNTING TYPE" "Surface Mount"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4224,7 +4224,7 @@
 			)
 		)
 		(property "PACKAGE / CASE" "0603 (1608 Metric)"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4236,7 +4236,7 @@
 			)
 		)
 		(property "PACKAGING" "TapeAndReel"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4248,7 +4248,7 @@
 			)
 		)
 		(property "PARTID" "584"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4260,7 +4260,7 @@
 			)
 		)
 		(property "PART STATUS" "Active"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4272,7 +4272,7 @@
 			)
 		)
 		(property "PRICE" "0.05"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4284,7 +4284,7 @@
 			)
 		)
 		(property "SERIES" "-"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4296,7 +4296,7 @@
 			)
 		)
 		(property "SIZE / DIMENSION" "1.60mm L x 0.80mm W"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4308,7 +4308,7 @@
 			)
 		)
 		(property "SUPPLIER 1" "DigiKey"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4320,7 +4320,7 @@
 			)
 		)
 		(property "SUPPLIER PART NUMBER 1" "1080-1405-1-ND"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4332,7 +4332,7 @@
 			)
 		)
 		(property "SUPPLIER DEVICE PACKAGE" "0603"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4344,7 +4344,7 @@
 			)
 		)
 		(property "ALTIUM_VALUE" "Green"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4356,7 +4356,7 @@
 			)
 		)
 		(property "VIEWING ANGLE" "120°"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4368,7 +4368,7 @@
 			)
 		)
 		(property "VOLTAGE - FORWARD (VF) (TYP)" "2.1V"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4380,7 +4380,7 @@
 			)
 		)
 		(property "WAVELENGTH - DOMINANT" "570nm"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4392,7 +4392,7 @@
 			)
 		)
 		(property "WAVELENGTH - PEAK" "565nm"
-			(at 123.952 97.028 90)
+			(at 123.952 97.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5044,7 +5044,7 @@
 	)
 	(symbol
 		(lib_id "VCU_H11G-altium-import:GND_POWER_GROUND")
-		(at 128.27 139.954 0)
+		(at 128.27 139.7 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5054,7 +5054,7 @@
 		(dnp no)
 		(uuid "4fec2dd6-b26a-47a7-959a-47c811d2c23f")
 		(property "Reference" "#PWR0131"
-			(at 128.27 139.954 0)
+			(at 128.27 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5065,7 +5065,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 128.27 146.304 0)
+			(at 128.27 146.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5075,7 +5075,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 128.27 139.954 0)
+			(at 128.27 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5085,7 +5085,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 139.954 0)
+			(at 128.27 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5095,7 +5095,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 128.27 139.954 0)
+			(at 128.27 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5192,7 +5192,7 @@
 	)
 	(symbol
 		(lib_id "Celestial Altium Library - altium_library:Resistor")
-		(at 132.842 88.9 0)
+		(at 133.35 88.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5202,7 +5202,7 @@
 		(dnp no)
 		(uuid "55125b3c-f0f6-4b1f-9bca-377712c760f7")
 		(property "Reference" "R120"
-			(at 130.048 87.884 0)
+			(at 130.556 87.884 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5213,7 +5213,7 @@
 			)
 		)
 		(property "Value" "${ALTIUM_VALUE}"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5225,7 +5225,7 @@
 			)
 		)
 		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
-			(at 132.842 88.9 0)
+			(at 133.35 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5236,7 +5236,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.842 88.9 0)
+			(at 133.35 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5247,7 +5247,7 @@
 			)
 		)
 		(property "Description" "RES 10K OHM 0.1% 1/16W 0603"
-			(at 132.842 88.9 0)
+			(at 133.35 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5258,7 +5258,7 @@
 			)
 		)
 		(property "PART NUMBER" "RNCS0603BKE10K0"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5270,7 +5270,7 @@
 			)
 		)
 		(property "ALTIUM_VALUE" "1.5 kOhms"
-			(at 130.048 92.456 0)
+			(at 130.556 92.456 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5281,7 +5281,7 @@
 			)
 		)
 		(property "COMPONENTLINK1DESCRIPTION" "Datasheet"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5293,7 +5293,7 @@
 			)
 		)
 		(property "COMPONENTLINK1URL" "https://www.seielect.com/catalog/sei-rncs_rnch.pdf"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5305,7 +5305,7 @@
 			)
 		)
 		(property "COMPONENTLINK2DESCRIPTION" "DigiKey Link"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5317,7 +5317,7 @@
 			)
 		)
 		(property "COMPONENTLINK2URL" "https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCS0603BKE10K0/1708836"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5329,7 +5329,7 @@
 			)
 		)
 		(property "COMPOSITION" "Thin Film"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5341,7 +5341,7 @@
 			)
 		)
 		(property "DEVICE PACKAGE" "0603 (1608 Metric)"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5353,7 +5353,7 @@
 			)
 		)
 		(property "FEATURES" "Anti-Corrosive, Automotive AEC-Q200, Moisture Resistant"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5365,7 +5365,7 @@
 			)
 		)
 		(property "HEIGHT - SEATED (MAX)" "0.022\" (0.55mm)"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5377,7 +5377,7 @@
 			)
 		)
 		(property "LASTUPDATED" "09-Feb-24 20:43:37"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5389,7 +5389,7 @@
 			)
 		)
 		(property "LIFECYCLE STATUS" "Active"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5401,7 +5401,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Stackpole Electronics Inc"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5413,7 +5413,7 @@
 			)
 		)
 		(property "MINIMUM ORDER" "1"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5425,7 +5425,7 @@
 			)
 		)
 		(property "NUMBER OF TERMINATIONS" "2"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5437,7 +5437,7 @@
 			)
 		)
 		(property "OPERATING TEMPERATURE" "-55°C ~ 155°C"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5449,7 +5449,7 @@
 			)
 		)
 		(property "PACKAGE / CASE" "0603 (1608 Metric)"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5461,7 +5461,7 @@
 			)
 		)
 		(property "PACKAGING" "TapeAndReel"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5473,7 +5473,7 @@
 			)
 		)
 		(property "PARTID" "4838"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5485,7 +5485,7 @@
 			)
 		)
 		(property "PART STATUS" "Active"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5497,7 +5497,7 @@
 			)
 		)
 		(property "POWER (WATTS)" "0.063W, 1/16W"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5509,7 +5509,7 @@
 			)
 		)
 		(property "PRICE" "0.06"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5521,7 +5521,7 @@
 			)
 		)
 		(property "RATINGS" "AEC-Q200"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5533,7 +5533,7 @@
 			)
 		)
 		(property "RESISTANCE" "10 kOhms"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5545,7 +5545,7 @@
 			)
 		)
 		(property "SERIES" "RNCS"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5557,7 +5557,7 @@
 			)
 		)
 		(property "SIZE / DIMENSION" "0.061\" L x 0.031\" W (1.55mm x 0.80mm)"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5569,7 +5569,7 @@
 			)
 		)
 		(property "SUPPLIER 1" "DigiKey"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5581,7 +5581,7 @@
 			)
 		)
 		(property "SUPPLIER PART NUMBER 1" "RNCS0603BKE10K0CT-ND"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5593,7 +5593,7 @@
 			)
 		)
 		(property "SUPPLIER DEVICE PACKAGE" "0603"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5605,7 +5605,7 @@
 			)
 		)
 		(property "TEMPERATURE COEFFICIENT" "±25ppm/°C"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5617,7 +5617,7 @@
 			)
 		)
 		(property "TOLERANCE" "±0.1%"
-			(at 127.254 87.884 0)
+			(at 127.762 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6098,7 +6098,7 @@
 	)
 	(symbol
 		(lib_id "Celestial Altium Library - altium_library:Resistor")
-		(at 102.616 246.38 90)
+		(at 102.87 246.38 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6108,7 +6108,7 @@
 		(dnp no)
 		(uuid "5af7251f-c047-47fd-a31c-1696f7d9f4cf")
 		(property "Reference" "R127"
-			(at 103.632 246.126 90)
+			(at 103.886 246.126 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6119,7 +6119,7 @@
 			)
 		)
 		(property "Value" "${ALTIUM_VALUE}"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6131,7 +6131,7 @@
 			)
 		)
 		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
-			(at 102.616 246.38 0)
+			(at 102.87 246.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6142,7 +6142,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 102.616 246.38 0)
+			(at 102.87 246.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6153,7 +6153,7 @@
 			)
 		)
 		(property "Description" "RES 330 OHM 1% 1/10W 0603"
-			(at 102.616 246.38 0)
+			(at 102.87 246.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6164,7 +6164,7 @@
 			)
 		)
 		(property "PART NUMBER" "CRGCQ0603F330R"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6176,7 +6176,7 @@
 			)
 		)
 		(property "ALTIUM_VALUE" "10kOhms"
-			(at 103.632 248.666 90)
+			(at 103.886 248.666 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6187,7 +6187,7 @@
 			)
 		)
 		(property "COMPONENTLINK1DESCRIPTION" "Datasheet"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6199,7 +6199,7 @@
 			)
 		)
 		(property "COMPONENTLINK1URL" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773204-3&DocType=DS&DocLang=English"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6211,7 +6211,7 @@
 			)
 		)
 		(property "COMPONENTLINK2DESCRIPTION" "DigiKey Link"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6223,7 +6223,7 @@
 			)
 		)
 		(property "COMPONENTLINK2URL" "https://www.digikey.com/en/products/detail/te-connectivity-passive-product/CRGCQ0603F330R/8576284"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6235,7 +6235,7 @@
 			)
 		)
 		(property "COMPOSITION" "Thick Film"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6247,7 +6247,7 @@
 			)
 		)
 		(property "DEVICE PACKAGE" "0603 (1608 Metric)"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6259,7 +6259,7 @@
 			)
 		)
 		(property "FEATURES" "Automotive AEC-Q200, Moisture Resistant"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6271,7 +6271,7 @@
 			)
 		)
 		(property "HEIGHT - SEATED (MAX)" "0.022\" (0.55mm)"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6283,7 +6283,7 @@
 			)
 		)
 		(property "LASTUPDATED" "19/09/2022 13:21:15"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6295,7 +6295,7 @@
 			)
 		)
 		(property "LIFECYCLE STATUS" "Active"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6307,7 +6307,7 @@
 			)
 		)
 		(property "MANUFACTURER" "TE Connectivity Passive Product"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6319,7 +6319,7 @@
 			)
 		)
 		(property "MINIMUM ORDER" "1"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6331,7 +6331,7 @@
 			)
 		)
 		(property "NUMBER OF TERMINATIONS" "2"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6343,7 +6343,7 @@
 			)
 		)
 		(property "OPERATING TEMPERATURE" "-55°C ~ 155°C"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6355,7 +6355,7 @@
 			)
 		)
 		(property "PACKAGE / CASE" "0603 (1608 Metric)"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6367,7 +6367,7 @@
 			)
 		)
 		(property "PACKAGING" "CutTape"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6379,7 +6379,7 @@
 			)
 		)
 		(property "PARTID" "24001"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6391,7 +6391,7 @@
 			)
 		)
 		(property "PART STATUS" "Active"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6403,7 +6403,7 @@
 			)
 		)
 		(property "POWER (WATTS)" "0.1W, 1/10W"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6415,7 +6415,7 @@
 			)
 		)
 		(property "PRICE" "0.01"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6427,7 +6427,7 @@
 			)
 		)
 		(property "RATINGS" "AEC-Q200"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6439,7 +6439,7 @@
 			)
 		)
 		(property "RESISTANCE" "330 Ohms"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6451,7 +6451,7 @@
 			)
 		)
 		(property "SERIES" "CRGCQ"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6463,7 +6463,7 @@
 			)
 		)
 		(property "SIZE / DIMENSION" "0.063\" L x 0.031\" W (1.60mm x 0.80mm)"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6475,7 +6475,7 @@
 			)
 		)
 		(property "SUPPLIER 1" "DigiKey"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6487,7 +6487,7 @@
 			)
 		)
 		(property "SUPPLIER PART NUMBER 1" "A129682CT-ND"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6499,7 +6499,7 @@
 			)
 		)
 		(property "SUPPLIER DEVICE PACKAGE" "0603"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6511,7 +6511,7 @@
 			)
 		)
 		(property "TEMPERATURE COEFFICIENT" "±100ppm/°C"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6523,7 +6523,7 @@
 			)
 		)
 		(property "TOLERANCE" "±1%"
-			(at 101.6 240.792 90)
+			(at 101.854 240.792 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6770,7 +6770,7 @@
 	)
 	(symbol
 		(lib_id "VCU_H11G-altium-import:GND_POWER_GROUND")
-		(at 102.616 251.46 0)
+		(at 102.87 251.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6780,7 +6780,7 @@
 		(dnp no)
 		(uuid "67948be6-543c-4d8e-a060-99082e9f8138")
 		(property "Reference" "#PWR0224"
-			(at 102.616 251.46 0)
+			(at 102.87 251.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6791,7 +6791,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 102.616 257.81 0)
+			(at 102.87 257.81 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6801,7 +6801,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 102.616 251.46 0)
+			(at 102.87 251.46 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6811,7 +6811,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 102.616 251.46 0)
+			(at 102.87 251.46 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6821,7 +6821,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 102.616 251.46 0)
+			(at 102.87 251.46 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7516,7 +7516,7 @@
 	)
 	(symbol
 		(lib_id "Celestial Altium Library - altium_library:Diode")
-		(at 146.05 215.646 90)
+		(at 146.05 215.9 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7526,7 +7526,7 @@
 		(dnp no)
 		(uuid "a93553e2-70e2-43d0-a73b-a447cd2ffc1a")
 		(property "Reference" "D19"
-			(at 147.828 216.916 90)
+			(at 147.828 217.17 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7537,7 +7537,7 @@
 			)
 		)
 		(property "Value" "${PART NUMBER}"
-			(at 147.828 219.456 90)
+			(at 147.828 219.71 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7548,7 +7548,7 @@
 			)
 		)
 		(property "Footprint" "VCU_H11G-import-fps:DO214AC SMA"
-			(at 146.05 215.646 0)
+			(at 146.05 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7559,7 +7559,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 215.646 0)
+			(at 146.05 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7570,7 +7570,7 @@
 			)
 		)
 		(property "Description" "DIODE GEN PURP 100V 1A SMA"
-			(at 146.05 215.646 0)
+			(at 146.05 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7581,7 +7581,7 @@
 			)
 		)
 		(property "PART NUMBER" "RS1B-13-F"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7593,7 +7593,7 @@
 			)
 		)
 		(property "CAPACITANCE @ VR, F" "15pF @ 4V, 1MHz"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7605,7 +7605,7 @@
 			)
 		)
 		(property "COMPONENTLINK1DESCRIPTION" "Datasheet"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7617,7 +7617,7 @@
 			)
 		)
 		(property "COMPONENTLINK1URL" "https://www.diodes.com/assets/Datasheets/ds15002.pdf"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7629,7 +7629,7 @@
 			)
 		)
 		(property "COMPONENTLINK2DESCRIPTION" "DigiKey Link"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7641,7 +7641,7 @@
 			)
 		)
 		(property "COMPONENTLINK2URL" "https://www.digikey.com/en/products/detail/diodes-incorporated/RS1B-13-F/717796"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7653,7 +7653,7 @@
 			)
 		)
 		(property "CURRENT - AVERAGE RECTIFIED (IO)" "1A"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7665,7 +7665,7 @@
 			)
 		)
 		(property "CURRENT - REVERSE LEAKAGE @ VR" "5 µA @ 100 V"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7677,7 +7677,7 @@
 			)
 		)
 		(property "DIODE TYPE" "Standard"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7689,7 +7689,7 @@
 			)
 		)
 		(property "LASTUPDATED" "19/09/2022 13:46:17"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7701,7 +7701,7 @@
 			)
 		)
 		(property "LIFECYCLE STATUS" "Active"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7713,7 +7713,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Diodes Incorporated"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7725,7 +7725,7 @@
 			)
 		)
 		(property "MINIMUM ORDER" "1"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7737,7 +7737,7 @@
 			)
 		)
 		(property "MOUNTING TYPE" "Surface Mount"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7749,7 +7749,7 @@
 			)
 		)
 		(property "OPERATING TEMPERATURE - JUNCTION" "-65°C ~ 150°C"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7761,7 +7761,7 @@
 			)
 		)
 		(property "PACKAGE / CASE" "DO-214AC, SMA"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7773,7 +7773,7 @@
 			)
 		)
 		(property "PACKAGING" "TapeAndReel"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7785,7 +7785,7 @@
 			)
 		)
 		(property "PARTID" "624"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7797,7 +7797,7 @@
 			)
 		)
 		(property "PART STATUS" "Active"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7809,7 +7809,7 @@
 			)
 		)
 		(property "PRICE" "0.06"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7821,7 +7821,7 @@
 			)
 		)
 		(property "REVERSE RECOVERY TIME (TRR)" "150 ns"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7833,7 +7833,7 @@
 			)
 		)
 		(property "SERIES" "-"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7845,7 +7845,7 @@
 			)
 		)
 		(property "SPEED" "Fast Recovery =< 500ns, > 200mA (Io)"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7857,7 +7857,7 @@
 			)
 		)
 		(property "SUPPLIER 1" "DigiKey"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7869,7 +7869,7 @@
 			)
 		)
 		(property "SUPPLIER PART NUMBER 1" "31-RS1B-13-FCT-ND"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7881,7 +7881,7 @@
 			)
 		)
 		(property "SUPPLIER DEVICE PACKAGE" "SMA"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7893,7 +7893,7 @@
 			)
 		)
 		(property "VOLTAGE - DC REVERSE (VR) (MAX)" "100 V"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7905,7 +7905,7 @@
 			)
 		)
 		(property "VOLTAGE - FORWARD (VF) (MAX) @ IF" "1.3 V @ 1 A"
-			(at 144.272 210.058 90)
+			(at 144.272 210.312 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8081,7 +8081,7 @@
 	)
 	(symbol
 		(lib_id "Celestial Altium Library - altium_library:Resistor")
-		(at 282.194 88.9 0)
+		(at 281.94 88.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8091,7 +8091,7 @@
 		(dnp no)
 		(uuid "addb741f-0d14-4125-9250-fad6ec23581e")
 		(property "Reference" "R121"
-			(at 279.4 87.884 0)
+			(at 279.146 87.884 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8102,7 +8102,7 @@
 			)
 		)
 		(property "Value" "${ALTIUM_VALUE}"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8114,7 +8114,7 @@
 			)
 		)
 		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
-			(at 282.194 88.9 0)
+			(at 281.94 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8125,7 +8125,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 282.194 88.9 0)
+			(at 281.94 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8136,7 +8136,7 @@
 			)
 		)
 		(property "Description" "RES 10K OHM 0.1% 1/16W 0603"
-			(at 282.194 88.9 0)
+			(at 281.94 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8147,7 +8147,7 @@
 			)
 		)
 		(property "PART NUMBER" "RNCS0603BKE10K0"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8159,7 +8159,7 @@
 			)
 		)
 		(property "ALTIUM_VALUE" "1.5 kOhms"
-			(at 279.4 92.456 0)
+			(at 279.146 92.456 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8170,7 +8170,7 @@
 			)
 		)
 		(property "COMPONENTLINK1DESCRIPTION" "Datasheet"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8182,7 +8182,7 @@
 			)
 		)
 		(property "COMPONENTLINK1URL" "https://www.seielect.com/catalog/sei-rncs_rnch.pdf"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8194,7 +8194,7 @@
 			)
 		)
 		(property "COMPONENTLINK2DESCRIPTION" "DigiKey Link"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8206,7 +8206,7 @@
 			)
 		)
 		(property "COMPONENTLINK2URL" "https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCS0603BKE10K0/1708836"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8218,7 +8218,7 @@
 			)
 		)
 		(property "COMPOSITION" "Thin Film"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8230,7 +8230,7 @@
 			)
 		)
 		(property "DEVICE PACKAGE" "0603 (1608 Metric)"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8242,7 +8242,7 @@
 			)
 		)
 		(property "FEATURES" "Anti-Corrosive, Automotive AEC-Q200, Moisture Resistant"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8254,7 +8254,7 @@
 			)
 		)
 		(property "HEIGHT - SEATED (MAX)" "0.022\" (0.55mm)"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8266,7 +8266,7 @@
 			)
 		)
 		(property "LASTUPDATED" "09-Feb-24 20:43:37"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8278,7 +8278,7 @@
 			)
 		)
 		(property "LIFECYCLE STATUS" "Active"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8290,7 +8290,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Stackpole Electronics Inc"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8302,7 +8302,7 @@
 			)
 		)
 		(property "MINIMUM ORDER" "1"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8314,7 +8314,7 @@
 			)
 		)
 		(property "NUMBER OF TERMINATIONS" "2"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8326,7 +8326,7 @@
 			)
 		)
 		(property "OPERATING TEMPERATURE" "-55°C ~ 155°C"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8338,7 +8338,7 @@
 			)
 		)
 		(property "PACKAGE / CASE" "0603 (1608 Metric)"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8350,7 +8350,7 @@
 			)
 		)
 		(property "PACKAGING" "TapeAndReel"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8362,7 +8362,7 @@
 			)
 		)
 		(property "PARTID" "4838"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8374,7 +8374,7 @@
 			)
 		)
 		(property "PART STATUS" "Active"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8386,7 +8386,7 @@
 			)
 		)
 		(property "POWER (WATTS)" "0.063W, 1/16W"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8398,7 +8398,7 @@
 			)
 		)
 		(property "PRICE" "0.06"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8410,7 +8410,7 @@
 			)
 		)
 		(property "RATINGS" "AEC-Q200"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8422,7 +8422,7 @@
 			)
 		)
 		(property "RESISTANCE" "10 kOhms"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8434,7 +8434,7 @@
 			)
 		)
 		(property "SERIES" "RNCS"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8446,7 +8446,7 @@
 			)
 		)
 		(property "SIZE / DIMENSION" "0.061\" L x 0.031\" W (1.55mm x 0.80mm)"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8458,7 +8458,7 @@
 			)
 		)
 		(property "SUPPLIER 1" "DigiKey"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8470,7 +8470,7 @@
 			)
 		)
 		(property "SUPPLIER PART NUMBER 1" "RNCS0603BKE10K0CT-ND"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8482,7 +8482,7 @@
 			)
 		)
 		(property "SUPPLIER DEVICE PACKAGE" "0603"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8494,7 +8494,7 @@
 			)
 		)
 		(property "TEMPERATURE COEFFICIENT" "±25ppm/°C"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8506,7 +8506,7 @@
 			)
 		)
 		(property "TOLERANCE" "±0.1%"
-			(at 276.606 87.884 0)
+			(at 276.352 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10665,7 +10665,7 @@
 	)
 	(symbol
 		(lib_id "VCU_H11G-altium-import:+12V_BAR")
-		(at 146.05 195.326 180)
+		(at 146.05 195.58 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10675,7 +10675,7 @@
 		(dnp no)
 		(uuid "e5e8125f-f891-4048-a5ff-85f781d43372")
 		(property "Reference" "#PWR0226"
-			(at 146.05 195.326 0)
+			(at 146.05 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10686,7 +10686,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 146.05 191.516 0)
+			(at 146.05 191.77 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10696,7 +10696,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 146.05 195.326 0)
+			(at 146.05 195.58 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10706,7 +10706,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 195.326 0)
+			(at 146.05 195.58 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10716,7 +10716,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 146.05 195.326 0)
+			(at 146.05 195.58 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

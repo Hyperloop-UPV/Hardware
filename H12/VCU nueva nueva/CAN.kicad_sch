@@ -2365,7 +2365,7 @@
 		(uuid "f2c20a7a-bc15-42a2-a0f3-7de402907bc0")
 	)
 	(bus_entry
-		(at 37.846 154.94)
+		(at 38.1 154.94)
 		(size -2.54 -2.54)
 		(stroke
 			(width 0)
@@ -2374,7 +2374,7 @@
 		(uuid "678d0a2b-e0d4-4bb5-8a96-ac8d3500574f")
 	)
 	(bus_entry
-		(at 37.846 160.02)
+		(at 38.1 160.02)
 		(size -2.54 -2.54)
 		(stroke
 			(width 0)
@@ -2554,7 +2554,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.294 154.94) (xy 50.292 154.94)
+			(xy 66.04 154.94) (xy 50.292 154.94)
 		)
 		(stroke
 			(width 0)
@@ -2584,7 +2584,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.292 154.94) (xy 37.846 154.94)
+			(xy 50.292 154.94) (xy 38.1 154.94)
 		)
 		(stroke
 			(width 0)
@@ -2784,7 +2784,7 @@
 	)
 	(bus
 		(pts
-			(xy 23.368 157.48) (xy 35.56 157.48)
+			(xy 22.86 157.48) (xy 35.56 157.48)
 		)
 		(stroke
 			(width 0.508)
@@ -2805,7 +2805,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.724 170.18) (xy 78.74 170.18)
+			(xy 77.47 170.18) (xy 78.74 170.18)
 		)
 		(stroke
 			(width 0)
@@ -2815,7 +2815,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.294 160.02) (xy 50.292 160.02)
+			(xy 66.04 160.02) (xy 50.292 160.02)
 		)
 		(stroke
 			(width 0)
@@ -2845,7 +2845,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.292 160.02) (xy 37.846 160.02)
+			(xy 50.292 160.02) (xy 38.1 160.02)
 		)
 		(stroke
 			(width 0)
@@ -2936,7 +2936,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.454 160.02) (xy 81.28 160.02)
+			(xy 76.2 160.02) (xy 81.28 160.02)
 		)
 		(stroke
 			(width 0)
@@ -3006,7 +3006,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.454 154.94) (xy 81.28 154.94)
+			(xy 76.2 154.94) (xy 81.28 154.94)
 		)
 		(stroke
 			(width 0)
@@ -3237,7 +3237,7 @@
 	)
 	(hierarchical_label "{CAN_Harness}"
 		(shape bidirectional)
-		(at 23.368 157.48 180)
+		(at 22.86 157.48 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6714,7 +6714,7 @@
 	)
 	(symbol
 		(lib_id "Celestial Altium Library - altium_library:Resistor")
-		(at 71.374 154.94 0)
+		(at 71.12 154.94 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6724,7 +6724,7 @@
 		(dnp no)
 		(uuid "91998a70-9bb5-44bf-8660-6f448539ca70")
 		(property "Reference" "R40"
-			(at 68.58 153.924 0)
+			(at 68.326 153.924 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6735,7 +6735,7 @@
 			)
 		)
 		(property "Value" "${ALTIUM_VALUE}"
-			(at 70.104 158.75 0)
+			(at 69.85 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6747,7 +6747,7 @@
 			)
 		)
 		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
-			(at 71.374 154.94 0)
+			(at 71.12 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6758,7 +6758,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.374 154.94 0)
+			(at 71.12 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6769,7 +6769,7 @@
 			)
 		)
 		(property "Description" "RES 100 OHM 1% 1/10W 0603"
-			(at 71.374 154.94 0)
+			(at 71.12 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6780,7 +6780,7 @@
 			)
 		)
 		(property "PART NUMBER" "CRCW0603100RFKEAC"
-			(at 65.786 151.13 0)
+			(at 65.532 151.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6792,7 +6792,7 @@
 			)
 		)
 		(property "ALTIUM_VALUE" "100 Ohms"
-			(at 72.136 153.924 0)
+			(at 71.882 153.924 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6803,7 +6803,7 @@
 			)
 		)
 		(property "COMPONENTLINK1DESCRIPTION" "Datasheet"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6815,7 +6815,7 @@
 			)
 		)
 		(property "COMPONENTLINK1URL" "http://www.vishay.com/docs/28773/crcwce3.pdf"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6827,7 +6827,7 @@
 			)
 		)
 		(property "COMPONENTLINK2DESCRIPTION" "DigiKey Link"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6839,7 +6839,7 @@
 			)
 		)
 		(property "COMPONENTLINK2URL" "https://www.digikey.com/en/products/detail/vishay-dale/CRCW0603100RFKEAC/7928373"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6851,7 +6851,7 @@
 			)
 		)
 		(property "COMPOSITION" "Thick Film"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6863,7 +6863,7 @@
 			)
 		)
 		(property "DEVICE PACKAGE" "0603 (1608 Metric)"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6875,7 +6875,7 @@
 			)
 		)
 		(property "HEIGHT - SEATED (MAX)" "0.022\" (0.55mm)"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6887,7 +6887,7 @@
 			)
 		)
 		(property "LASTUPDATED" "19/09/2022 13:22:05"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6899,7 +6899,7 @@
 			)
 		)
 		(property "LIFECYCLE STATUS" "Active"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6911,7 +6911,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Vishay Dale"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6923,7 +6923,7 @@
 			)
 		)
 		(property "MINIMUM ORDER" "1"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6935,7 +6935,7 @@
 			)
 		)
 		(property "NUMBER OF TERMINATIONS" "2"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6947,7 +6947,7 @@
 			)
 		)
 		(property "OPERATING TEMPERATURE" "-55°C ~ 155°C"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6959,7 +6959,7 @@
 			)
 		)
 		(property "PACKAGE / CASE" "0603 (1608 Metric)"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6971,7 +6971,7 @@
 			)
 		)
 		(property "PACKAGING" "CutTape"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6983,7 +6983,7 @@
 			)
 		)
 		(property "PARTID" "12546"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6995,7 +6995,7 @@
 			)
 		)
 		(property "PART STATUS" "Active"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7007,7 +7007,7 @@
 			)
 		)
 		(property "POWER (WATTS)" "0.1W, 1/10W"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7019,7 +7019,7 @@
 			)
 		)
 		(property "PRICE" "0.01"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7031,7 +7031,7 @@
 			)
 		)
 		(property "RESISTANCE" "100 Ohms"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7043,7 +7043,7 @@
 			)
 		)
 		(property "SERIES" "CRCW-C"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7055,7 +7055,7 @@
 			)
 		)
 		(property "SUPPLIER 1" "DigiKey"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7067,7 +7067,7 @@
 			)
 		)
 		(property "SUPPLIER PART NUMBER 1" "541-3951-1-ND"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7079,7 +7079,7 @@
 			)
 		)
 		(property "SUPPLIER DEVICE PACKAGE" "0603"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7091,7 +7091,7 @@
 			)
 		)
 		(property "TEMPERATURE COEFFICIENT" "±100ppm/°C"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7103,7 +7103,7 @@
 			)
 		)
 		(property "TOLERANCE" "±1%"
-			(at 65.786 148.59 0)
+			(at 65.532 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8939,7 +8939,7 @@
 	)
 	(symbol
 		(lib_id "Celestial Altium Library - altium_library:Resistor")
-		(at 71.374 160.02 0)
+		(at 71.12 160.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8949,7 +8949,7 @@
 		(dnp no)
 		(uuid "decdaf74-0171-4bb6-93be-b18050256045")
 		(property "Reference" "R41"
-			(at 68.58 159.004 0)
+			(at 68.326 159.004 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8960,7 +8960,7 @@
 			)
 		)
 		(property "Value" "${ALTIUM_VALUE}"
-			(at 70.104 163.83 0)
+			(at 69.85 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8972,7 +8972,7 @@
 			)
 		)
 		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
-			(at 71.374 160.02 0)
+			(at 71.12 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8983,7 +8983,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.374 160.02 0)
+			(at 71.12 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8994,7 +8994,7 @@
 			)
 		)
 		(property "Description" "RES 100 OHM 1% 1/10W 0603"
-			(at 71.374 160.02 0)
+			(at 71.12 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9005,7 +9005,7 @@
 			)
 		)
 		(property "PART NUMBER" "CRCW0603100RFKEAC"
-			(at 65.786 156.21 0)
+			(at 65.532 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9017,7 +9017,7 @@
 			)
 		)
 		(property "ALTIUM_VALUE" "100 Ohms"
-			(at 72.136 159.004 0)
+			(at 71.882 159.004 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9028,7 +9028,7 @@
 			)
 		)
 		(property "COMPONENTLINK1DESCRIPTION" "Datasheet"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9040,7 +9040,7 @@
 			)
 		)
 		(property "COMPONENTLINK1URL" "http://www.vishay.com/docs/28773/crcwce3.pdf"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9052,7 +9052,7 @@
 			)
 		)
 		(property "COMPONENTLINK2DESCRIPTION" "DigiKey Link"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9064,7 +9064,7 @@
 			)
 		)
 		(property "COMPONENTLINK2URL" "https://www.digikey.com/en/products/detail/vishay-dale/CRCW0603100RFKEAC/7928373"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9076,7 +9076,7 @@
 			)
 		)
 		(property "COMPOSITION" "Thick Film"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9088,7 +9088,7 @@
 			)
 		)
 		(property "DEVICE PACKAGE" "0603 (1608 Metric)"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9100,7 +9100,7 @@
 			)
 		)
 		(property "HEIGHT - SEATED (MAX)" "0.022\" (0.55mm)"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9112,7 +9112,7 @@
 			)
 		)
 		(property "LASTUPDATED" "19/09/2022 13:22:05"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9124,7 +9124,7 @@
 			)
 		)
 		(property "LIFECYCLE STATUS" "Active"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9136,7 +9136,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Vishay Dale"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9148,7 +9148,7 @@
 			)
 		)
 		(property "MINIMUM ORDER" "1"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9160,7 +9160,7 @@
 			)
 		)
 		(property "NUMBER OF TERMINATIONS" "2"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9172,7 +9172,7 @@
 			)
 		)
 		(property "OPERATING TEMPERATURE" "-55°C ~ 155°C"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9184,7 +9184,7 @@
 			)
 		)
 		(property "PACKAGE / CASE" "0603 (1608 Metric)"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9196,7 +9196,7 @@
 			)
 		)
 		(property "PACKAGING" "CutTape"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9208,7 +9208,7 @@
 			)
 		)
 		(property "PARTID" "12546"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9220,7 +9220,7 @@
 			)
 		)
 		(property "PART STATUS" "Active"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9232,7 +9232,7 @@
 			)
 		)
 		(property "POWER (WATTS)" "0.1W, 1/10W"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9244,7 +9244,7 @@
 			)
 		)
 		(property "PRICE" "0.01"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9256,7 +9256,7 @@
 			)
 		)
 		(property "RESISTANCE" "100 Ohms"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9268,7 +9268,7 @@
 			)
 		)
 		(property "SERIES" "CRCW-C"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9280,7 +9280,7 @@
 			)
 		)
 		(property "SUPPLIER 1" "DigiKey"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9292,7 +9292,7 @@
 			)
 		)
 		(property "SUPPLIER PART NUMBER 1" "541-3951-1-ND"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9304,7 +9304,7 @@
 			)
 		)
 		(property "SUPPLIER DEVICE PACKAGE" "0603"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9316,7 +9316,7 @@
 			)
 		)
 		(property "TEMPERATURE COEFFICIENT" "±100ppm/°C"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9328,7 +9328,7 @@
 			)
 		)
 		(property "TOLERANCE" "±1%"
-			(at 65.786 153.67 0)
+			(at 65.532 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10040,7 +10040,7 @@
 	)
 	(symbol
 		(lib_id "VCU_H11G-altium-import:+5V_BAR")
-		(at 77.724 170.18 270)
+		(at 77.47 170.18 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10050,7 +10050,7 @@
 		(dnp no)
 		(uuid "fbeb7a1e-99f0-4ad8-82e0-5d96ea9d505c")
 		(property "Reference" "#PWR086"
-			(at 77.724 170.18 0)
+			(at 77.47 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10061,7 +10061,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 73.914 170.18 90)
+			(at 73.66 170.18 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10072,7 +10072,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 77.724 170.18 0)
+			(at 77.47 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10082,7 +10082,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 77.724 170.18 0)
+			(at 77.47 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10092,7 +10092,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 77.724 170.18 0)
+			(at 77.47 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10115,7 +10115,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 77.724 170.18 0)
+		(at 77.47 170.18 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10125,7 +10125,7 @@
 		(dnp no)
 		(uuid "31eedf46-8c0d-4d56-a482-a2d182464666")
 		(property "Reference" "#FLG10"
-			(at 77.724 168.275 0)
+			(at 77.47 168.275 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10136,7 +10136,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 77.724 166.37 0)
+			(at 77.47 166.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10146,7 +10146,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 77.724 170.18 0)
+			(at 77.47 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10157,7 +10157,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 77.724 170.18 0)
+			(at 77.47 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10168,7 +10168,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 77.724 170.18 0)
+			(at 77.47 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

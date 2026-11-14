@@ -3086,7 +3086,7 @@
 	)
 	(bus
 		(pts
-			(xy 98.806 147.32) (xy 119.38 147.32)
+			(xy 99.06 147.32) (xy 119.38 147.32)
 		)
 		(stroke
 			(width 0.508)
@@ -3777,7 +3777,7 @@
 	)
 	(hierarchical_label "{SDMMC}"
 		(shape passive)
-		(at 98.806 147.32 180)
+		(at 99.06 147.32 180)
 		(effects
 			(font
 				(size 1.27 1.27)
