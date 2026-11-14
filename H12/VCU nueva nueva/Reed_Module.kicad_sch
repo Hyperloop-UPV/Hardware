@@ -5706,7 +5706,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 538.5657 119.38 90)
 			(hide yes)
 			(show_name no)
@@ -6014,7 +6014,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 538.5657 252.73 90)
 			(hide yes)
 			(show_name no)
@@ -6170,7 +6170,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 115.2811 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -7056,7 +7056,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 246.6848 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -7212,7 +7212,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 500.0085 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -7516,7 +7516,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 407.162 186.69 90)
 			(hide yes)
 			(show_name no)
@@ -7746,7 +7746,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 114.6874 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -7996,7 +7996,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 342.392 187.96 90)
 			(hide yes)
 			(show_name no)
@@ -8320,7 +8320,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 246.6848 198.12 0)
 			(hide yes)
 			(show_name no)
@@ -8870,7 +8870,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 368.0111 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9549,7 +9549,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 500.0085 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -9779,7 +9779,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 220.472 121.92 90)
 			(hide yes)
 			(show_name no)
@@ -9859,7 +9859,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 386.7563 35.8648 0)
 			(hide yes)
 			(show_name no)
@@ -10526,7 +10526,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 220.472 255.27 90)
 			(hide yes)
 			(show_name no)
@@ -10608,7 +10608,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 285.242 187.96 90)
 			(hide yes)
 			(show_name no)
@@ -10838,7 +10838,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 89.0683 121.92 90)
 			(hide yes)
 			(show_name no)
@@ -11072,7 +11072,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 220.472 189.23 90)
 			(hide yes)
 			(show_name no)
@@ -11154,7 +11154,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 59.182 330.2 90)
 			(hide yes)
 			(show_name no)
@@ -11308,7 +11308,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 133.4326 37.1348 0)
 			(hide yes)
 			(show_name no)
@@ -11390,7 +11390,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 89.0683 189.23 90)
 			(hide yes)
 			(show_name no)
@@ -12428,7 +12428,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 342.392 254 90)
 			(hide yes)
 			(show_name no)
@@ -13212,7 +13212,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 407.162 252.73 90)
 			(hide yes)
 			(show_name no)
@@ -13516,7 +13516,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 368.6048 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -13879,7 +13879,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 368.6048 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14761,7 +14761,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 406.5683 52.07 90)
 			(hide yes)
 			(show_name no)
@@ -14843,7 +14843,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 153.8383 254 90)
 			(hide yes)
 			(show_name no)
@@ -14925,7 +14925,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 473.202 53.34 90)
 			(hide yes)
 			(show_name no)
@@ -15005,7 +15005,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 387.35 170.4848 0)
 			(hide yes)
 			(show_name no)
@@ -15235,7 +15235,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 153.8383 187.96 90)
 			(hide yes)
 			(show_name no)
@@ -15395,7 +15395,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 246.0911 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -15625,7 +15625,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 219.8783 54.61 90)
 			(hide yes)
 			(show_name no)
@@ -15707,7 +15707,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 153.2446 53.34 90)
 			(hide yes)
 			(show_name no)
@@ -16328,7 +16328,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 284.6483 53.34 90)
 			(hide yes)
 			(show_name no)
@@ -16558,7 +16558,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 285.242 254 90)
 			(hide yes)
 			(show_name no)
@@ -16638,7 +16638,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 134.0263 171.7548 0)
 			(hide yes)
 			(show_name no)
@@ -17801,7 +17801,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 153.8383 120.65 90)
 			(hide yes)
 			(show_name no)
@@ -18164,7 +18164,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 499.4148 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -18675,7 +18675,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 115.2811 198.12 0)
 			(hide yes)
 			(show_name no)
@@ -18999,7 +18999,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 368.6048 262.89 0)
 			(hide yes)
 			(show_name no)
@@ -19081,7 +19081,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 500.0085 262.89 0)
 			(hide yes)
 			(show_name no)
@@ -19760,7 +19760,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 538.5657 186.69 90)
 			(hide yes)
 			(show_name no)
@@ -19842,7 +19842,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 45.212 330.2 90)
 			(hide yes)
 			(show_name no)
@@ -19924,7 +19924,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 473.7957 254 90)
 			(hide yes)
 			(show_name no)
@@ -20006,7 +20006,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 89.0683 255.27 90)
 			(hide yes)
 			(show_name no)
@@ -20088,7 +20088,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 88.4746 54.61 90)
 			(hide yes)
 			(show_name no)
@@ -20170,7 +20170,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 341.7983 53.34 90)
 			(hide yes)
 			(show_name no)
@@ -20529,7 +20529,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 473.7957 187.96 90)
 			(hide yes)
 			(show_name no)
@@ -20611,7 +20611,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 342.392 120.65 90)
 			(hide yes)
 			(show_name no)
@@ -20767,7 +20767,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 473.7957 120.65 90)
 			(hide yes)
 			(show_name no)
@@ -20849,7 +20849,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 537.972 52.07 90)
 			(hide yes)
 			(show_name no)
@@ -20931,7 +20931,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 285.242 120.65 90)
 			(hide yes)
 			(show_name no)
@@ -21516,7 +21516,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 115.2811 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -21766,7 +21766,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 407.162 119.38 90)
 			(hide yes)
 			(show_name no)
@@ -21996,7 +21996,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 246.6848 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -22246,7 +22246,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOP65P640X120-14N"
+		(property "Footprint" "VCU_H11G-import-fps:RES 0603_1608"
 			(at 45.212 314.96 90)
 			(hide yes)
 			(show_name no)

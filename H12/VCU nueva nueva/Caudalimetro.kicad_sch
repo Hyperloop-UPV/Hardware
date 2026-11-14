@@ -6489,16 +6489,7 @@
 		)
 		(uuid "eaaccae6-a03e-4037-9344-0bda985d19a4")
 	)
-	(wire
-		(pts
-			(xy -47.498 78.3082) (xy -50.292 78.3082)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ebcfb40e-6892-45f8-8c7e-975c748b2b19")
-	)
+	
 	(wire
 		(pts
 			(xy 177.8 204.47) (xy 177.8 201.93)

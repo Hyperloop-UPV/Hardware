@@ -2540,7 +2540,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 174.9552 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -3050,5 +3050,29 @@
 				)
 			)
 		)
+	)
+	(no_connect
+		(at 165.1 105.41)
+		(uuid "d675f4b3-ad78-4a88-af01-0fe9225f6c17")
+	)
+	(no_connect
+		(at 165.1 102.87)
+		(uuid "6ffa2c4b-e3e7-4e13-aa67-b5b8318cf341")
+	)
+	(no_connect
+		(at 165.1 100.33)
+		(uuid "a95fa70b-7984-4103-9987-95dc1a47aaf0")
+	)
+	(no_connect
+		(at 165.1 97.79)
+		(uuid "303c8270-3c87-45dd-85b3-b0817239b43b")
+	)
+	(no_connect
+		(at 165.1 95.25)
+		(uuid "738587be-93a0-40e0-b52a-1ec90cd36fae")
+	)
+	(no_connect
+		(at 165.1 92.71)
+		(uuid "62dd3b40-3bd9-453e-8930-707f285f11ff")
 	)
 )

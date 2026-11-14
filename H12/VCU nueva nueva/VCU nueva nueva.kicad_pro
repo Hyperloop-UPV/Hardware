@@ -1047,6 +1047,11 @@
     ]
   ],
   "text_variables": {
+    "AUTHOR": "Hyperloop UPV",
+    "CHECKEDBY": "Hyperloop UPV",
+    "CREATIONDATE": "2026-11-14",
+    "DOCUMENTNUMBER": "VCU-H12",
+    "MODIFIEDDATE": "2026-11-14",
     "SHEETTOTAL": "14"
   },
   "tuning_profiles": {

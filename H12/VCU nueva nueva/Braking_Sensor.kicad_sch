@@ -9857,7 +9857,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 221.9452 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -12473,7 +12473,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 221.9452 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12961,7 +12961,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 221.9452 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -13359,7 +13359,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 221.9452 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -18249,7 +18249,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 221.9452 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -18331,7 +18331,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOIC127P600X175-16N"
+		(property "Footprint" "VCU_H11G-import-fps:CAP 0603_1608"
 			(at 221.9452 97.79 0)
 			(hide yes)
 			(show_name no)
