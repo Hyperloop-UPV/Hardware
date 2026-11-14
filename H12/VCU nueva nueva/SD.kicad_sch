@@ -5136,7 +5136,7 @@
 		)
 		(uuid "fca5670b-40da-4e1d-9320-82bd8b05c050")
 	)
-	(hierarchical_label "SDMMC{SDMMC}"
+	(hierarchical_label "{SDMMC}"
 		(shape passive)
 		(at 99.139 147.5232 180)
 		(effects

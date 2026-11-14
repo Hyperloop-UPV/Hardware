@@ -1635,7 +1635,7 @@
 		)
 		(uuid "47005b92-89e1-4d0f-85bb-16f4f39f2893")
 	)
-	(label "BUFF_ENABLE_IN"
+	(label "BUFF_ENABLE"
 		(at 121.92 87.63 0)
 		(effects
 			(font
@@ -1665,7 +1665,7 @@
 		)
 		(uuid "6eda2d47-c5a9-4ee7-a987-fc371e545ce3")
 	)
-	(label "BUFF_ENABLE_IN"
+	(label "BUFF_ENABLE"
 		(at 166.37 90.17 0)
 		(effects
 			(font
@@ -1725,7 +1725,7 @@
 		)
 		(uuid "f0423128-569f-48e8-a4bf-5415d6adac84")
 	)
-	(label "BUFF_ENABLE_IN"
+	(label "BUFF_ENABLE"
 		(at 58.42 96.52 0)
 		(effects
 			(font

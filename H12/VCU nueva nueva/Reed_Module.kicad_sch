@@ -5661,7 +5661,7 @@
 		)
 		(uuid "fc5ad423-231a-4d59-a222-01fb7f6445c6")
 	)
-	(hierarchical_label "SENSORS{SENSORS}"
+	(hierarchical_label "{SENSORS}"
 		(shape passive)
 		(at 194.31 375.92 0)
 		(effects

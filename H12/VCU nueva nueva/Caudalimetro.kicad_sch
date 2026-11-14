@@ -6901,7 +6901,7 @@
 		)
 		(uuid "e810ffde-cf0d-4658-83a7-d3577ebb00d8")
 	)
-	(hierarchical_label "CAUDALIMETRO{CAUDALIMETRO}"
+	(hierarchical_label "{CAUDALIMETRO}"
 		(shape passive)
 		(at 173.99 247.65 0)
 		(effects

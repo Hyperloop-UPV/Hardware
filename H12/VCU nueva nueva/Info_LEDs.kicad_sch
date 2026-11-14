@@ -3488,7 +3488,7 @@
 		)
 		(uuid "dc179aa2-a07e-477e-a140-bdc792f77230")
 	)
-	(hierarchical_label "LEDS_INFO{LEDS_INFO}"
+	(hierarchical_label "{LEDS_INFO}"
 		(shape passive)
 		(at 56.098 103.3272 180)
 		(effects

@@ -9569,7 +9569,7 @@
 		)
 		(uuid "2bbbaeef-0df7-4f7b-b360-c57e61105887")
 	)
-	(label "RESET"
+	(label "BRAKE_RESET"
 		(at 130.81 95.25 0)
 		(effects
 			(font
@@ -9779,7 +9779,7 @@
 		)
 		(uuid "f5ea0bc7-d30b-4a48-9bb7-43d5bd540fee")
 	)
-	(hierarchical_label "SENSORS{SENSORS}"
+	(hierarchical_label "{SENSORS}"
 		(shape passive)
 		(at 46.99 27.94 0)
 		(effects

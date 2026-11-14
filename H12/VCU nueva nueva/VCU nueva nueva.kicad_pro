@@ -867,6 +867,8 @@
     },
     "bus_aliases": {
       "CAN_Harness": [
+        "CAN1_N",
+        "CAN1_P",
         "TXD",
         "RXD"
       ],
@@ -890,6 +892,7 @@
         "LOW_PRESSURE"
       ],
       "RMII": [
+        "MCU_CLK_50M",
         "MDIO",
         "MDC",
         "RXD1",

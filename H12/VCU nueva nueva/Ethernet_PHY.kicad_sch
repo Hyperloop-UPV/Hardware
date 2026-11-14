@@ -11651,7 +11651,7 @@
 		)
 		(uuid "5875de7c-092e-4106-97b1-424dae2b9c6c")
 	)
-	(label "LAN_INTE"
+	(label "LAN_INT"
 		(at 152.4 55.7022 0)
 		(effects
 			(font
@@ -11821,7 +11821,7 @@
 		)
 		(uuid "9ce191ec-9319-4ea1-95fa-1c5a952ecf9f")
 	)
-	(label "LAN_INTE"
+	(label "LAN_INT"
 		(at 231.14 269.0622 90)
 		(effects
 			(font
@@ -11971,7 +11971,7 @@
 		)
 		(uuid "dc05f3cf-09c8-49c2-a4a2-25259b4d45bc")
 	)
-	(label "LAN_INTE"
+	(label "LAN_INT"
 		(at 289.56 253.8222 0)
 		(effects
 			(font
@@ -12051,7 +12051,7 @@
 		)
 		(uuid "ffc7418e-e96c-429e-b713-44cae33d8d45")
 	)
-	(hierarchical_label "RMII{RMII}"
+	(hierarchical_label "{RMII}"
 		(shape passive)
 		(at 332.74 256.3622 180)
 		(effects

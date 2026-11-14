@@ -4062,7 +4062,7 @@
 		)
 		(uuid "3d6f2c96-7f70-4430-af84-16bd054920f5")
 	)
-	(hierarchical_label "CAN{CAN_Harness}"
+	(hierarchical_label "{CAN_Harness}"
 		(shape bidirectional)
 		(at 23.368 157.0482 180)
 		(effects

@@ -11679,7 +11679,7 @@
 		)
 		(uuid "021c4069-e263-40d6-beb1-94539156fa19")
 	)
-	(label "LAN_INTE"
+	(label "LAN_INT"
 		(at 83.82 237.49 90)
 		(effects
 			(font
@@ -11839,7 +11839,7 @@
 		)
 		(uuid "1fef799c-3724-4a6a-9872-e055e37be304")
 	)
-	(label "REGULADOR_IN"
+	(label "REGULATOR_IN"
 		(at 60.96 238.76 90)
 		(effects
 			(font
@@ -11869,7 +11869,7 @@
 		)
 		(uuid "265b6d44-cdf4-4c78-9a4c-606c54d480a1")
 	)
-	(label "PHY_RESET"
+	(label "PHY_RST"
 		(at 332.74 199.39 0)
 		(effects
 			(font
@@ -11879,7 +11879,7 @@
 		)
 		(uuid "269c07c4-2ad2-48b7-94ae-582dc77577bf")
 	)
-	(label "SLNT_MCU"
+	(label "SLNT"
 		(at 139.7 149.86 0)
 		(effects
 			(font
@@ -11959,7 +11959,7 @@
 		)
 		(uuid "3b0e1a18-7841-4c5b-b797-a51d502bad70")
 	)
-	(label "RESET_BRAKE"
+	(label "BRAKE_RESET"
 		(at 247.65 238.76 0)
 		(effects
 			(font
@@ -11979,7 +11979,7 @@
 		)
 		(uuid "41152b8b-a718-4ca2-95a1-de8feb04d90b")
 	)
-	(label "REGULADOR_OUT"
+	(label "REGULATOR_OUT"
 		(at 58.42 238.76 90)
 		(effects
 			(font
@@ -11989,7 +11989,7 @@
 		)
 		(uuid "41eca486-703a-49cf-9fec-7156f3a605cc")
 	)
-	(label "BRAKES_RELEASED"
+	(label "RELEASED"
 		(at 140.97 185.42 0)
 		(effects
 			(font
@@ -12059,7 +12059,7 @@
 		)
 		(uuid "49e29a50-c9c5-4ae8-9e53-eaa862929456")
 	)
-	(label "SLNT_MCU"
+	(label "SLNT"
 		(at 344.17 226.06 0)
 		(effects
 			(font
@@ -12079,7 +12079,7 @@
 		)
 		(uuid "4d72809c-61dc-47b2-ade7-2c7474abdef0")
 	)
-	(label "SDC"
+	(label "SDC_CLOSED"
 		(at 19.05 172.72 0)
 		(effects
 			(font
@@ -12139,7 +12139,7 @@
 		)
 		(uuid "56ee9a5d-e98b-42bf-ab6e-ae87e850d855")
 	)
-	(label "SDC"
+	(label "SDC_CLOSED"
 		(at 231.14 281.94 0)
 		(effects
 			(font
@@ -12369,7 +12369,7 @@
 		)
 		(uuid "8206375a-db3f-47e6-9484-a7dd4c0cdc76")
 	)
-	(label "RESET_BRAKE"
+	(label "BRAKE_RESET"
 		(at 139.7 180.34 0)
 		(effects
 			(font
@@ -12389,7 +12389,7 @@
 		)
 		(uuid "88836a70-7748-4692-ba3a-f5142a840ca5")
 	)
-	(label "ELECTROVALV"
+	(label "ELECTROVALVULA"
 		(at 116.84 237.49 90)
 		(effects
 			(font
@@ -12439,7 +12439,7 @@
 		)
 		(uuid "9b1dbf5f-cc4b-43e2-98a9-f50c370222da")
 	)
-	(label "FAULT_BRAKE"
+	(label "BRAKE_FAULT"
 		(at 140.97 182.88 0)
 		(effects
 			(font
@@ -12469,7 +12469,7 @@
 		)
 		(uuid "a11294fc-d759-4d84-8a6e-75ad87c358fe")
 	)
-	(label "REGULADOR_IN"
+	(label "REGULATOR_IN"
 		(at 308.61 220.98 0)
 		(effects
 			(font
@@ -12639,7 +12639,7 @@
 		)
 		(uuid "c0c1646c-097a-4dd2-81c2-6f9131c9f68a")
 	)
-	(label "LAN_INTE"
+	(label "LAN_INT"
 		(at 332.74 204.47 0)
 		(effects
 			(font
@@ -12649,7 +12649,7 @@
 		)
 		(uuid "c1e99b4b-878a-4fd2-8b9d-ce8397c59f44")
 	)
-	(label "BRAKES_RELEASED"
+	(label "RELEASED"
 		(at 54.61 271.78 0)
 		(effects
 			(font
@@ -12659,7 +12659,7 @@
 		)
 		(uuid "c21347db-88f9-4118-9381-a35d9bd7cf6a")
 	)
-	(label "REGULADOR_OUT"
+	(label "REGULATOR_OUT"
 		(at 283.21 214.63 0)
 		(effects
 			(font
@@ -12759,7 +12759,7 @@
 		)
 		(uuid "de61809c-2996-46e2-9e02-da9246ba7283")
 	)
-	(label "ELECTROVALV"
+	(label "ELECTROVALVULA"
 		(at 355.6 262.89 0)
 		(effects
 			(font
@@ -12769,7 +12769,7 @@
 		)
 		(uuid "deb69447-4726-437b-9e47-b150f017e836")
 	)
-	(label "FAULT_BRAKE"
+	(label "BRAKE_FAULT"
 		(at 246.38 245.11 0)
 		(effects
 			(font
@@ -12799,7 +12799,7 @@
 		)
 		(uuid "e5725b74-30d3-4d23-b061-654074564322")
 	)
-	(label "PHY_RESET"
+	(label "PHY_RST"
 		(at 86.36 237.49 90)
 		(effects
 			(font
@@ -12939,7 +12939,7 @@
 		)
 		(uuid "ff4f4596-6721-46ce-b111-6722631fef58")
 	)
-	(hierarchical_label "LEDS_INFO{LEDS_INFO}"
+	(hierarchical_label "{LEDS_INFO}"
 		(shape passive)
 		(at 364.49 243.84 0)
 		(effects
@@ -12972,7 +12972,7 @@
 		)
 		(uuid "1dcead9e-0852-49a7-97b1-97978bf549dc")
 	)
-	(hierarchical_label "CAUDALIMETRO{CAUDALIMETRO}"
+	(hierarchical_label "{CAUDALIMETRO}"
 		(shape passive)
 		(at 251.46 224.79 0)
 		(effects
@@ -13016,7 +13016,7 @@
 		)
 		(uuid "3d427f92-dde4-40f5-8b20-d1a729e388e4")
 	)
-	(hierarchical_label "RMII{RMII}"
+	(hierarchical_label "{RMII}"
 		(shape passive)
 		(at 369.57 181.61 0)
 		(effects
@@ -13082,7 +13082,7 @@
 		)
 		(uuid "64b5893f-b2e2-49e4-a814-90857a7bd28e")
 	)
-	(hierarchical_label "PRESSURE_SENS{PRESSURE_SENS}"
+	(hierarchical_label "{PRESSURE_SENS}"
 		(shape bidirectional)
 		(at 248.92 262.89 0)
 		(effects
@@ -13104,7 +13104,7 @@
 		)
 		(uuid "7df01b8f-33f1-44dc-89eb-3c460469371d")
 	)
-	(hierarchical_label "SDMMC{SDMMC}"
+	(hierarchical_label "{SDMMC}"
 		(shape passive)
 		(at 370.84 152.4 0)
 		(effects
@@ -13148,7 +13148,7 @@
 		)
 		(uuid "b332844a-acc9-4423-882e-e7fe4e29485b")
 	)
-	(hierarchical_label "CAN{CAN_Harness}"
+	(hierarchical_label "{CAN_Harness}"
 		(shape bidirectional)
 		(at 364.49 215.9 0)
 		(effects

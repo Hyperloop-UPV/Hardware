@@ -6889,7 +6889,7 @@
 		)
 		(uuid "bd4a006c-c6ac-4687-8ad0-5305874bcc55")
 	)
-	(hierarchical_label "PRESSURE_SENS{PRESSURE_SENS}"
+	(hierarchical_label "{PRESSURE_SENS}"
 		(shape bidirectional)
 		(at 97.965 194.2592 0)
 		(effects
