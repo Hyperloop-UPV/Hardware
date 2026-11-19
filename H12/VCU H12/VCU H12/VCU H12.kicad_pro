@@ -108,7 +108,7 @@
         "length_out_of_range": "error",
         "lib_footprint_issues": "warning",
         "lib_footprint_mismatch": "warning",
-        "malformed_courtyard": "error",
+        "malformed_courtyard": "warning",
         "microvia_drill_out_of_range": "error",
         "mirrored_text_on_front_layer": "warning",
         "missing_courtyard": "ignore",
@@ -139,16 +139,16 @@
         "track_width": "error",
         "tracks_crossing": "error",
         "tuning_profile_track_geometries": "ignore",
-        "unconnected_items": "error",
+        "unconnected_items": "warning",
         "unresolved_variable": "error",
         "via_dangling": "warning",
         "zones_intersect": "error"
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.1,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_copper_edge_clearance": 0.1,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
@@ -501,14 +501,14 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "VCU H12.kicad_pro",
+    "filename": "VCU nueva nueva.kicad_pro",
     "version": 3
   },
   "net_settings": {
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.1,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -527,7 +527,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.1,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -545,7 +545,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.1,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -563,7 +563,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.1,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -581,7 +581,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.1,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -599,7 +599,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.1,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -617,7 +617,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.1,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -988,7 +988,7 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "VCU H12.kicad_sch",
+        "filename": "VCU nueva nueva.kicad_sch",
         "name": "Architecture",
         "uuid": "e2069ca5-8c6f-44b9-8779-a09e413ab832"
       }
