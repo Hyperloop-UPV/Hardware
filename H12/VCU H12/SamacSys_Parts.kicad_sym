@@ -2539,7 +2539,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "IC"
-			(at 29.21 7.62 0)
+			(at 12.954 -16.256 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2550,7 +2550,7 @@
 			)
 		)
 		(property "Value" "LM339BIPWR"
-			(at 29.21 5.08 0)
+			(at 12.954 -18.796 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2584,7 +2584,7 @@
 				(justify left top)
 			)
 		)
-		(property "Description" "Analog Comparators 36-V, -40C to 85C quad standard comparator 14-TSSOP -40 to 85"
+		(property "Description" ""
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2679,20 +2679,31 @@
 				(justify left top)
 			)
 		)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(symbol "LM339BIPWR_1_1"
-			(rectangle
-				(start 5.08 2.54)
-				(end 27.94 -17.78)
+			(polyline
+				(pts
+					(xy 17.78 -40.64) (xy 0 -30.48) (xy 0 -50.8) (xy 17.78 -40.64)
+				)
 				(stroke
-					(width 0.254)
+					(width 0)
 					(type default)
 				)
 				(fill
-					(type background)
+					(type none)
 				)
 			)
 			(pin passive line
-				(at 0 0 0)
+				(at 22.86 -40.64 180)
 				(length 5.08)
 				(name "1OUT"
 					(effects
@@ -2710,25 +2721,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -2.54 0)
-				(length 5.08)
-				(name "2OUT"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -5.08 0)
+				(at 7.62 -29.21 270)
 				(length 5.08)
 				(name "VCC"
 					(effects
@@ -2746,43 +2739,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -7.62 0)
-				(length 5.08)
-				(name "2IN-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -10.16 0)
-				(length 5.08)
-				(name "2IN+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -12.7 0)
+				(at -5.08 -45.72 0)
 				(length 5.08)
 				(name "1IN-"
 					(effects
@@ -2800,7 +2757,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -15.24 0)
+				(at -5.08 -35.56 0)
 				(length 5.08)
 				(name "1IN+"
 					(effects
@@ -2818,7 +2775,107 @@
 				)
 			)
 			(pin passive line
-				(at 33.02 -15.24 180)
+				(at 7.62 -50.8 90)
+				(length 5.08)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "LM339BIPWR_2_1"
+			(polyline
+				(pts
+					(xy 17.78 -35.56) (xy 0 -25.4) (xy 0 -45.72) (xy 17.78 -35.56)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at 22.86 -35.56 180)
+				(length 5.08)
+				(name "2OUT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -40.64 0)
+				(length 5.08)
+				(name "2IN-"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -30.48 0)
+				(length 5.08)
+				(name "2IN+"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "LM339BIPWR_3_1"
+			(polyline
+				(pts
+					(xy 17.78 -33.02) (xy 0 -22.86) (xy 0 -43.18) (xy 17.78 -33.02)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 -38.1 0)
 				(length 5.08)
 				(name "3IN-"
 					(effects
@@ -2836,7 +2893,7 @@
 				)
 			)
 			(pin passive line
-				(at 33.02 -12.7 180)
+				(at -5.08 -27.94 0)
 				(length 5.08)
 				(name "3IN+"
 					(effects
@@ -2854,7 +2911,39 @@
 				)
 			)
 			(pin passive line
-				(at 33.02 -10.16 180)
+				(at 22.86 -33.02 180)
+				(length 5.08)
+				(name "3OUT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "LM339BIPWR_4_1"
+			(polyline
+				(pts
+					(xy 17.78 -35.56) (xy 0 -25.4) (xy 0 -45.72) (xy 17.78 -35.56)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 -40.64 0)
 				(length 5.08)
 				(name "4IN-"
 					(effects
@@ -2872,7 +2961,7 @@
 				)
 			)
 			(pin passive line
-				(at 33.02 -7.62 180)
+				(at -5.08 -30.48 0)
 				(length 5.08)
 				(name "4IN+"
 					(effects
@@ -2890,25 +2979,7 @@
 				)
 			)
 			(pin passive line
-				(at 33.02 -5.08 180)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 33.02 -2.54 180)
+				(at 22.86 -35.56 180)
 				(length 5.08)
 				(name "4OUT"
 					(effects
@@ -2918,24 +2989,6 @@
 					)
 				)
 				(number "13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 33.02 0 180)
-				(length 5.08)
-				(name "3OUT"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "14"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7502,42 +7555,6 @@
 					)
 				)
 				(number "13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 53.34 -3.81 0)
-				(length 5.08)
-				(name "VCC"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "14-UA"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 53.34 -7.62 0)
-				(length 5.08)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "GND-UA"
 					(effects
 						(font
 							(size 1.27 1.27)

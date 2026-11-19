@@ -33,7 +33,7 @@
 					(justify left top)
 				)
 			)
-			(property "Footprint" "AO4407A"
+			(property "Footprint" "SamacSys_Parts:AO4407A"
 				(at 21.59 -94.92 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -639,7 +639,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Celestial Altium Library - altium_library:Resistor"
+			(symbol "Celestial Altium Library - altium_library:Resistor"
 			(pin_numbers
 				(hide yes)
 			)
@@ -693,7 +693,7 @@
 					)
 				)
 			)
-			(property "Description" "RES 330 OHM 1% 1/10W 0603"
+			(property "Description" "RES 10K OHM 0.1% 1/16W 0603"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -943,7 +943,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Hyperloop UPV:206832-0401-Symbol-1"
+			(symbol "Hyperloop UPV:206832-0401-Symbol-1"
 			(pin_numbers
 				(hide yes)
 			)
@@ -1017,6 +1017,18 @@
 				)
 			)
 			(symbol "206832-0401-Symbol-1_1_0"
+				(rectangle
+					(start 0 0)
+					(end 7.62 7.62)
+					(stroke
+						(width 0.0254)
+						(type solid)
+						(color 128 0 0 1)
+					)
+					(fill
+						(type background)
+					)
+				)
 				(polyline
 					(pts
 						(xy 3.81 6.35) (xy 3.81 1.27) (xy 1.27 1.27) (xy 1.27 3.81) (xy 6.35 3.81) (xy 6.35 1.27) (xy 1.27 1.27)
@@ -1028,18 +1040,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(rectangle
-					(start 7.62 7.62)
-					(end 0 0)
-					(stroke
-						(width 0.0254)
-						(type solid)
-						(color 128 0 0 1)
-					)
-					(fill
-						(type background)
 					)
 				)
 				(pin passive line
@@ -3290,7 +3290,7 @@
 			(uuid "771e0341-71d9-4c00-9c9d-d7ca43b132c7")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0211")
 					(unit 1)
@@ -3372,7 +3372,7 @@
 			(uuid "020755a7-d9b0-464f-9d4d-9998dd028043")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R146")
 					(unit 1)
@@ -3415,7 +3415,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "AO4407A"
+		(property "Footprint" "SamacSys_Parts:AO4407A"
 			(at 53.67 204.47 0)
 			(hide yes)
 			(show_name no)
@@ -3559,7 +3559,7 @@
 			(uuid "6ae69d07-d19b-47c5-81db-d748fad89b63")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "Q6")
 					(unit 1)
@@ -3633,7 +3633,7 @@
 			(uuid "e94fdc24-4db8-49b0-b003-f6c9f3e10d40")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0206")
 					(unit 1)
@@ -3707,7 +3707,7 @@
 			(uuid "c0a3cdea-4c8a-43c3-8d4f-c89c89cb23db")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0201")
 					(unit 1)
@@ -3781,7 +3781,7 @@
 			(uuid "00906911-5cfa-430e-b4fa-d05be9b375b0")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0210")
 					(unit 1)
@@ -3855,7 +3855,7 @@
 			(uuid "e721ec7a-235f-47dd-9e1a-49b437f2b509")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0200")
 					(unit 1)
@@ -4356,7 +4356,7 @@
 			(uuid "4a09a6c1-c0ba-4ec7-ad94-b9697bac13e0")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "D34")
 					(unit 1)
@@ -4810,7 +4810,7 @@
 			(uuid "7336b71e-d700-470b-a58e-ab0a37e6797b")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R145")
 					(unit 1)
@@ -4884,7 +4884,7 @@
 			(uuid "a8faf6de-9773-4bb4-8f60-0297dd349266")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0205")
 					(unit 1)
@@ -4958,7 +4958,7 @@
 			(uuid "fe9c3c50-a9e3-49d4-ba7f-967a7dfd5313")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0209")
 					(unit 1)
@@ -5032,7 +5032,7 @@
 			(uuid "13b2f665-53ad-4d18-9f42-07f863f2ac47")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0208")
 					(unit 1)
@@ -5203,7 +5203,7 @@
 			(uuid "304562f4-564d-410c-ab31-4603daddd5dd")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "Q7")
 					(unit 1)
@@ -5277,7 +5277,7 @@
 			(uuid "e69ca11a-e40e-4e6a-bae0-1c46057f52f4")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0213")
 					(unit 1)
@@ -5351,7 +5351,7 @@
 			(uuid "d6ad6046-3fc3-4493-949f-84a3e74d5e8d")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0199")
 					(unit 1)
@@ -5425,7 +5425,7 @@
 			(uuid "6ce04960-cf79-4b0b-aacd-c8c39757f87d")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0212")
 					(unit 1)
@@ -5842,7 +5842,7 @@
 			(uuid "b904d948-27ec-4acc-8955-cb6c9ae31c5e")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "D31")
 					(unit 1)
@@ -6259,7 +6259,7 @@
 			(uuid "420c2fed-bb84-4bb5-8bd8-903ddca3eada")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "D35")
 					(unit 1)
@@ -6333,7 +6333,7 @@
 			(uuid "f40e203d-e38b-478e-8bab-96e3ccbbe3d7")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0202")
 					(unit 1)
@@ -6504,7 +6504,7 @@
 			(uuid "f4af957d-93bb-41f6-ab94-af43f3a73435")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "Q5")
 					(unit 1)
@@ -6957,7 +6957,7 @@
 			(uuid "5b887b3c-9213-45a0-8078-9cf42f1dbf58")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R148")
 					(unit 1)
@@ -7411,7 +7411,7 @@
 			(uuid "7ec42d70-b616-41e3-9ecb-e769857af979")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R144")
 					(unit 1)
@@ -7864,7 +7864,7 @@
 			(uuid "151652cd-e6fc-4818-80a4-a5c83de98f31")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R143")
 					(unit 1)
@@ -7944,7 +7944,7 @@
 			(uuid "d9e81e7a-39e4-436b-80cb-3de666f7a3a9")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R147")
 					(unit 1)
@@ -8151,7 +8151,7 @@
 			(uuid "e9fde090-42c3-43a7-9847-86ac18236367")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "J24")
 					(unit 1)
@@ -8605,7 +8605,7 @@
 			(uuid "78bfa145-c25f-4958-8192-7ef7efc9e7dd")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R149")
 					(unit 1)
@@ -8687,7 +8687,7 @@
 			(uuid "d870312c-87ed-4ce9-8fa2-2811caa7fdfa")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R139")
 					(unit 1)
@@ -9188,7 +9188,7 @@
 			(uuid "81335ca6-b81a-4a68-837a-83e32ab290c4")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "D30")
 					(unit 1)
@@ -9270,7 +9270,7 @@
 			(uuid "2445ea44-35b6-4479-aaf0-8e2395c7393d")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R138")
 					(unit 1)
@@ -9477,7 +9477,7 @@
 			(uuid "c1e2ccd4-f1e2-4df2-9e8e-4dead6c33afe")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "J26")
 					(unit 1)
@@ -9557,7 +9557,7 @@
 			(uuid "4ef99923-00e6-4d7d-bbe5-ee149b874a88")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R141")
 					(unit 1)
@@ -9600,7 +9600,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "AO4407A"
+		(property "Footprint" "SamacSys_Parts:AO4407A"
 			(at 38.43 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -9744,7 +9744,7 @@
 			(uuid "4e78f0db-9a11-4711-a6e3-ceb1733f56ab")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "Q2")
 					(unit 1)
@@ -9824,7 +9824,7 @@
 			(uuid "fa1b6ee6-8454-4f7b-89b6-bf93ea1b5fa9")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R140")
 					(unit 1)
@@ -9898,7 +9898,7 @@
 			(uuid "dbdf9eaa-ad16-4c69-9b55-ba8d7941b1a0")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0207")
 					(unit 1)
@@ -9941,7 +9941,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "AO4407A"
+		(property "Footprint" "SamacSys_Parts:AO4407A"
 			(at 230.2 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -10085,7 +10085,7 @@
 			(uuid "76f8148f-a2a0-4230-8eaf-256284e63557")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "Q3")
 					(unit 1)
@@ -10159,7 +10159,7 @@
 			(uuid "d5dabf57-6f66-42c7-9560-c38e8d0782a1")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0204")
 					(unit 1)
@@ -10612,7 +10612,7 @@
 			(uuid "de09aabc-e1fa-46a5-a746-5cd518ccd99c")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "R142")
 					(unit 1)
@@ -10686,7 +10686,7 @@
 			(uuid "c2d53426-9370-41e6-9412-c24491533f10")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "#PWR0203")
 					(unit 1)
@@ -11103,7 +11103,7 @@
 			(uuid "4b171247-ce92-4cbf-98b5-00bfc3fc0edb")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "D33")
 					(unit 1)
@@ -11604,7 +11604,7 @@
 			(uuid "4fbf6a73-b54f-4961-92c1-16f9968830ae")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "D32")
 					(unit 1)
@@ -11775,7 +11775,7 @@
 			(uuid "d7f15655-9a90-4e0c-82f2-eaffbfd1cb55")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "Q4")
 					(unit 1)
@@ -11982,7 +11982,7 @@
 			(uuid "ccf73d97-54ee-47de-9dd9-a7e6f7703c75")
 		)
 		(instances
-			(project "VCU nueva nueva"
+			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/c7db247b-47de-49e8-b197-d50329bd7ce4"
 					(reference "J25")
 					(unit 1)

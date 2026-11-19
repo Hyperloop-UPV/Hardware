@@ -4,5 +4,6 @@
 	(lib (name "Celestial Altium Library - altium_library") (type "KiCad") (uri "${KIPRJMOD}/Celestial_Altium_Library.kicad_sym") (options "") (descr ""))
 	(lib (name "Hyperloop UPV") (type "KiCad") (uri "${KIPRJMOD}/Hyperloop_UPV.kicad_sym") (options "") (descr ""))
 	(lib (name "SamacSys_Parts") (type "KiCad") (uri "${KIPRJMOD}/SamacSys_Parts.kicad_sym") (options "") (descr ""))
+	(lib (name "SN74LVC1G17DBVR") (type "KiCad") (uri "${KIPRJMOD}/SN74LVC1G17DBVR.kicad_sym") (options "") (descr ""))
 	(lib (name "VCU_H11G-altium-import") (type "KiCad") (uri "${KIPRJMOD}/VCU_H11G-altium-import.kicad_sym") (options "") (descr ""))
 )
