@@ -1,0 +1,29 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\cargu\Documents\Repositorio Hyperloop Hardware\Hardware\H12\VCU H12\VCU simulations\BOMBA_3.net
+Start Time: Wed Nov 18 23:47:53 2026
+Options: plotwinsize=0
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.549 seconds.
+
+Files loaded:
+C:\Users\cargu\Documents\Repositorio Hyperloop Hardware\Hardware\H12\VCU H12\VCU simulations\BOMBA_3.net
+C:\Users\cargu\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\cargu\AppData\Local\LTspice\lib\cmp\standard.bjt
+C:\Users\cargu\AppData\Local\LTspice\lib\cmp\standard.mos
+
+vout_avg: AVG(V(OUT))=8.51440581613 FROM 0.0002 TO 0.0004
+vout_min: MIN(V(OUT))=-0.259819507599 FROM 0.0002 TO 0.0004
+vout_max: MAX(V(OUT))=11.9950037003 FROM 0.0002 TO 0.0004
+iload_avg: AVG(I(RLOAD))=0.354766909172 FROM 0.0002 TO 0.0004
+iled_avg: AVG(I(R149))=0.00468546434294 FROM 0.0002 TO 0.0004
+vgate_min: MIN(V(GATE))=0.071498721838 FROM 0.0002 TO 0.0004
+vgate_max: MAX(V(GATE))=11.9790201187 FROM 0.0002 TO 0.0004
+vbe_max: MAX(V(BASE))=0.855616152287 FROM 0.0002 TO 0.0004
+iq7_pk: MAX(I(R146))=0.0119285015389 FROM 0.0002 TO 0.0004
+iq6_pk: MAX(I(RLOAD))=0.499791800976 FROM 0.0002 TO 0.0004
+pq6_avg: AVG(V(V12)-V(OUT))*I(RLOAD)=0.0747085257983 FROM 0.0002 TO 0.0004
