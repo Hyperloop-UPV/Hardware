@@ -1,0 +1,361 @@
+(footprint "AO4407A"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "SO8")
+	(tags "Transistor")
+	(property "Reference" "Q6"
+		(at 0 0 180)
+		(layer "F.SilkS")
+		(uuid "50f344ef-f93a-452c-87ac-7a8ec4492750")
+		(effects
+			(font
+				(face "KiCad Font")
+				(size 0.4 0.4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(property "Value" "AO4407A"
+		(at 0 0 180)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "5348323d-8ded-484d-b3ee-c88f834225fa")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Datasheet" "http://aosmd.com/res/data_sheets/AO4407A.pdf"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8845385d-f564-400a-99ef-5dc3b6aa58cb")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" "30V P-Channel MOSFET"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "005690bd-02a9-406d-9485-904b776f253e")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Height" "1.75"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6c46224f-d9d9-4e56-9f04-4d8c63d12cd9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "Alpha & Omega Semiconductors"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dc7375d9-7dd8-4792-a82a-57f72452c0bd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "AO4407A"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7172390d-a9d9-4fba-873e-b7959cfbcb55")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "37bcfba5-34f0-45db-b575-68fbed69e732")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0ec0b421-0b54-4468-8279-d97ea07cbb35")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Arrow Part Number" "AO4407A"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3cdda5ff-395e-4d67-9ccd-d2e378347485")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ao4407a/alpha-and-omega-semiconductor.html?utm_currency=USD&region=nac"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "547660df-75d1-4639-8785-c8cecc8c4f3c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/Bomba_Refri/")
+	(sheetfile "Bomba_Refri.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.475 -2.58)
+		(end -1.95 -2.58)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a73b363e-f797-4eb1-ab98-555a1a17495c")
+	)
+	(fp_line
+		(start -1.6 -2.45)
+		(end 1.6 -2.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b7eb41e6-ab95-415a-8594-474d7ee35fa0")
+	)
+	(fp_line
+		(start -1.6 2.45)
+		(end -1.6 -2.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a0343c41-505a-4773-9af7-74a8e95065a3")
+	)
+	(fp_line
+		(start 1.6 -2.45)
+		(end 1.6 2.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e8504fec-8e15-46f6-8e64-b7cc9be751b1")
+	)
+	(fp_line
+		(start 1.6 2.45)
+		(end -1.6 2.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7a4163ca-3922-418c-9e44-2a11374d8729")
+	)
+	(fp_line
+		(start -3.725 -2.75)
+		(end 3.725 -2.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "b3d68de5-8a56-49a2-b837-2b49e8ed3029")
+	)
+	(fp_line
+		(start -3.725 2.75)
+		(end -3.725 -2.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "df44475e-67d4-4159-af8d-1397193f56c0")
+	)
+	(fp_line
+		(start 3.725 -2.75)
+		(end 3.725 2.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cfc3a8df-63d2-4c57-85a8-0bf1bf6ca71a")
+	)
+	(fp_line
+		(start 3.725 2.75)
+		(end -3.725 2.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "5174a938-0bb3-46a0-89c9-2e6a6b83569b")
+	)
+	(fp_line
+		(start -1.95 -2.45)
+		(end 1.95 -2.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ae6664f6-c9da-4c44-910f-88766c632327")
+	)
+	(fp_line
+		(start -1.95 -1.18)
+		(end -0.68 -2.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0b67e068-667e-459e-a2cc-e8743b2be82d")
+	)
+	(fp_line
+		(start -1.95 2.45)
+		(end -1.95 -2.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "bb8bec10-05a9-493c-910d-075927f42c76")
+	)
+	(fp_line
+		(start 1.95 -2.45)
+		(end 1.95 2.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0a95568b-ac58-4b22-925c-04d28a2534c7")
+	)
+	(fp_line
+		(start 1.95 2.45)
+		(end -1.95 2.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "32593b7e-8f98-4d92-942f-53a04b2dbb7a")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 1.327 3.027 180)
+		(layer "F.SilkS")
+		(uuid "f71ae6a3-6c2a-42d2-a1be-984aeae5e46b")
+		(effects
+			(font
+				(face "KiCad Font")
+				(size 0.4 0.4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.712 -1.905 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8310fe00-a146-4f2b-ad5f-0d5b01bfff63")
+	)
+	(pad "2" smd rect
+		(at -2.712 -0.635 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ca00d465-2de3-4171-b87a-26d67a92ef78")
+	)
+	(pad "3" smd rect
+		(at -2.712 0.635 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "efe74a82-bc25-4016-a4d5-1b59e4761d25")
+	)
+	(pad "4" smd rect
+		(at -2.712 1.905 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "523650ea-648e-4ca8-bb84-9a8318f545ca")
+	)
+	(pad "5" smd rect
+		(at 2.712 1.905 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "e3f19290-4aef-431d-a56f-b47dc1295f02")
+	)
+	(pad "6" smd rect
+		(at 2.712 0.635 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "227eeb7e-231e-44ea-a11f-62e7060c68c6")
+	)
+	(pad "7" smd rect
+		(at 2.712 -0.635 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8e04c029-6cc2-4f97-8f88-6a9efd977ad2")
+	)
+	(pad "8" smd rect
+		(at 2.712 -1.905 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "bd8b5436-9dbf-40c6-8f08-c43df948b9c1")
+	)
+	(embedded_fonts no)
+	(model "C:\\Users\\cargu\\Documents\\LIBRERIAS KICAD\\SamacSys_Parts.3dshapes\\AO4407A.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

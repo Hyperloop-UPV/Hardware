@@ -1,0 +1,80 @@
+(version 1)
+
+# ==============================================================================
+# NCAB Group Custom DRC Rules - KiCad
+# Configuración recomendada para 2 Capas (1 oz cobre / Standard)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Ancho de pista y aislamiento (Track Width & Clearance)
+# ------------------------------------------------------------------------------
+
+(rule "NCAB Track Width and Clearance (2 Layers)"
+   (constraint track_width (min 0.127mm))
+   (constraint clearance (min 0.127mm))
+   (condition "A.Type == 'track'"))
+
+# ------------------------------------------------------------------------------
+# 2. Vías y Taladros (Vias & Drill Holes)
+# ------------------------------------------------------------------------------
+
+(rule "NCAB Minimum Via Size (2-Layer Standard)"
+   (constraint hole_size (min 0.300mm))
+   (constraint via_diameter (min 0.500mm))
+   (condition "A.Type == 'via'"))
+
+(rule "NCAB Mechanical Drill Limits"
+   (constraint hole_size (min 0.200mm) (max 6.350mm)))
+
+(rule "NCAB PTH Hole Size"
+   (constraint hole_size (min 0.200mm) (max 6.350mm))
+   (condition "A.Type != 'via' && A.isPlated()"))
+
+(rule "NCAB Minimum NPTH Hole Size"
+   (constraint hole_size (min 0.500mm))
+   (condition "A.Type == 'pad' && !A.isPlated()"))
+
+(rule "NCAB Pad Annular Ring"
+   (constraint annular_width (min 0.150mm))
+   (condition "A.Type == 'pad' && A.isPlated()"))
+
+# ------------------------------------------------------------------------------
+# 3. Distancias de Aislamiento (Clearances entre objetos)
+# ------------------------------------------------------------------------------
+
+(rule "NCAB Hole to Hole Clearance (Different Nets)"
+   (constraint hole_to_hole (min 0.500mm))
+   (condition "A.Net != B.Net"))
+
+(rule "NCAB Via to Track Clearance"
+   (constraint hole_clearance (min 0.254mm))
+   (condition "(A.Type == 'via' && B.Type == 'track') || (A.Type == 'track' && B.Type == 'via')"))
+
+(rule "NCAB Via to Via Clearance (Same Net)"
+   (constraint hole_to_hole (min 0.254mm))
+   (condition "A.Type == 'via' && B.Type == 'via' && A.Net == B.Net"))
+
+(rule "NCAB Pad to Pad Clearance"
+   (constraint clearance (min 0.127mm))
+   (condition "A.Type == 'pad' && B.Type == 'pad' && A.Net != B.Net"))
+
+(rule "NCAB NPTH to Track Clearance"
+   (constraint hole_clearance (min 0.254mm))
+   (condition "(A.Pad_Type == 'NPTH, mechanical' && B.Type == 'track') || (A.Type == 'track' && B.Pad_Type == 'NPTH, mechanical')"))
+
+(rule "NCAB PTH to Track Clearance"
+   (constraint hole_clearance (min 0.330mm))
+   (condition "(A.isPlated() && A.Type != 'via' && B.Type == 'track') || (A.Type == 'track' && B.isPlated() && B.Type != 'via')"))
+
+# ------------------------------------------------------------------------------
+# 4. Borde de Placa y Serigrafía (Edge & Silkscreen)
+# ------------------------------------------------------------------------------
+
+(rule "NCAB Track to Edge Clearance"
+   (constraint edge_clearance (min 0.300mm))
+   (condition "A.Type == 'track'"))
+
+(rule "NCAB Pad to Silkscreen Clearance"
+   (constraint silk_clearance (min 0.150mm))
+   (layer outer)
+   (condition "A.Type == 'pad' && (B.Type == 'text' || B.Type == 'graphic')"))

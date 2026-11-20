@@ -1,0 +1,409 @@
+(footprint "SOIC127P600X175-16N"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "D (R-PDSO-G16)")
+	(tags "Integrated Circuit")
+	(property "Reference" "IC5"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "d6fa54bf-2b62-4862-94c2-0a0e7eecd612")
+		(effects
+			(font
+				(face "KiCad Font")
+				(size 0.4 0.4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(property "Value" "SN74AHCT367DR"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "d34aedd2-7395-4246-8354-9f1d1893277a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Datasheet" "http://www.ti.com/lit/gpn/sn74ahct367"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "de24e993-89bc-4c8e-ba75-3839b57f0c04")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" "Hex Buffers And Line Drivers With 3-State Outputs"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b97f49f8-d10f-4e28-b5a9-ae2ebefcaf1a")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Height" "1.75"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fdf5d3cc-f3f3-4e22-ba99-a926003b200a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "Texas Instruments"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5bb88397-ac14-4d49-9942-2fc703170129")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "SN74AHCT367DR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "72b36eb4-aad6-4c3e-82d1-0664a8e8084f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" "595-SN74AHCT367DR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0b860c78-68f2-439a-967c-5e4dc0c173cd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/SN74AHCT367DR?qs=5nGYs9Do7G1iI4OsV5Z1aQ%3D%3D"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "db054ab9-a9b5-42c1-bfe3-91f4be5fb447")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Arrow Part Number" "SN74AHCT367DR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "16b180cb-89c3-4bfe-abdd-af36b197e0a7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Arrow Price/Stock" "https://www.arrow.com/en/products/sn74ahct367dr/texas-instruments.html?utm_currency=USD&region=nac"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "eb1282b2-a249-45f3-bdca-38a75334e5f8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/Buffer/")
+	(sheetfile "Buffer.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.475 -5.12)
+		(end -1.95 -5.12)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ff492d5a-30a2-4870-97b8-8205e2224b63")
+	)
+	(fp_line
+		(start -1.6 -4.95)
+		(end 1.6 -4.95)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6a42bd0e-b063-48d2-8443-5c8260a63b6f")
+	)
+	(fp_line
+		(start -1.6 4.95)
+		(end -1.6 -4.95)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "898ecf03-617c-4b00-86ec-6bc0b67c81c8")
+	)
+	(fp_line
+		(start 1.6 -4.95)
+		(end 1.6 4.95)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e880beb5-1bff-430e-8478-f83931476a49")
+	)
+	(fp_line
+		(start 1.6 4.95)
+		(end -1.6 4.95)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7cff25e1-134e-4148-8ae0-547b115097a8")
+	)
+	(fp_line
+		(start -3.725 -5.25)
+		(end 3.725 -5.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "972c5c19-2f1d-4401-a3f5-1941daab64a8")
+	)
+	(fp_line
+		(start -3.725 5.25)
+		(end -3.725 -5.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2d29ceea-183a-4321-aecc-b8d4681e5cf9")
+	)
+	(fp_line
+		(start 3.725 -5.25)
+		(end 3.725 5.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "d55b5cb8-7949-47af-aa24-96cc093a3a01")
+	)
+	(fp_line
+		(start 3.725 5.25)
+		(end -3.725 5.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "693867b6-b4d4-486e-9232-1f7f0e08369b")
+	)
+	(fp_line
+		(start -1.95 -4.95)
+		(end 1.95 -4.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f6ba9f3a-bc5a-4829-923d-e84caa1d4f75")
+	)
+	(fp_line
+		(start -1.95 -3.68)
+		(end -0.68 -4.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8b9711ea-48a3-467d-91ee-3db90a27e66f")
+	)
+	(fp_line
+		(start -1.95 4.95)
+		(end -1.95 -4.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "46827e0d-b1dd-405f-ab01-33ed23026fed")
+	)
+	(fp_line
+		(start 1.95 -4.95)
+		(end 1.95 4.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6a5d679b-9285-41a0-9bd9-3fa240ecc9c0")
+	)
+	(fp_line
+		(start 1.95 4.95)
+		(end -1.95 4.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "67520228-f7db-4a4a-8821-d19e4c42aefe")
+	)
+	(fp_text user "${REFERENCE}"
+		(at -1.192 -5.603 0)
+		(layer "F.SilkS")
+		(uuid "bc564034-40a1-4e43-a6a7-329241897569")
+		(effects
+			(font
+				(face "KiCad Font")
+				(size 0.4 0.4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.712 -4.445 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "743f5d75-da07-4101-a183-d6ecae29d86c")
+	)
+	(pad "2" smd rect
+		(at -2.712 -3.175 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "30f003df-316a-4d07-82ae-3d56a0b0a79a")
+	)
+	(pad "3" smd rect
+		(at -2.712 -1.905 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "11359e50-e708-46c1-8206-f25d08623c39")
+	)
+	(pad "4" smd rect
+		(at -2.712 -0.635 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "086141b9-0cdf-41c5-bca2-6cb73c914b1c")
+	)
+	(pad "5" smd rect
+		(at -2.712 0.635 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ec76e4c3-ac1a-4e5c-8f30-be22433608c6")
+	)
+	(pad "6" smd rect
+		(at -2.712 1.905 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "1dca4c1e-5689-4ba6-a9e2-b076a6e36cef")
+	)
+	(pad "7" smd rect
+		(at -2.712 3.175 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "48d5dfa7-1e85-46a4-b65b-2a00e30711a8")
+	)
+	(pad "8" smd rect
+		(at -2.712 4.445 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8c0cb85b-af73-447f-ba91-fcef6ed125d4")
+	)
+	(pad "9" smd rect
+		(at 2.712 4.445 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "b93f16a0-0824-45ab-8bf5-7e52cbd588b7")
+	)
+	(pad "10" smd rect
+		(at 2.712 3.175 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "de8575f4-a49c-4d7e-bd57-b9dcb6b21186")
+	)
+	(pad "11" smd rect
+		(at 2.712 1.905 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "e60cb2cd-7e9f-447b-af4b-db32cff35890")
+	)
+	(pad "12" smd rect
+		(at 2.712 0.635 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ed8ad3c5-78d5-4dd1-94bb-12b225d5e67b")
+	)
+	(pad "13" smd rect
+		(at 2.712 -0.635 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "c14f3ec8-ef85-4dc3-acb4-d59e8d2e9e98")
+	)
+	(pad "14" smd rect
+		(at 2.712 -1.905 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "152094ee-1442-4ed5-97c9-9226c26a0bef")
+	)
+	(pad "15" smd rect
+		(at 2.712 -3.175 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "105c6c5d-7851-4f5d-a2a2-4312e3e2d9db")
+	)
+	(pad "16" smd rect
+		(at 2.712 -4.445 90)
+		(size 0.65 1.525)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "b866336f-0ecd-4baa-b992-8524c34e06f0")
+	)
+	(embedded_fonts no)
+	(model "C:\\Users\\cargu\\Documents\\LIBRERIAS KICAD\\SamacSys_Parts.3dshapes\\SN74AHCT367DR.stp"
+		(offset
+			(xyz 0 0.009999999626 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

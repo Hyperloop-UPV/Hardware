@@ -1,0 +1,343 @@
+(footprint "SN74LVC1G17DBVR"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "DBV0005A - SOT-23-5 / SOT-95P280X145-5N")
+	(tags "Integrated Circuit")
+	(property "Reference" "IC13"
+		(at -1.524 -2.085 0)
+		(layer "F.SilkS")
+		(uuid "49e4b2c2-d0c0-4177-856b-bfa74f822db3")
+		(effects
+			(font
+				(face "KiCad Font")
+				(size 0.4 0.4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(property "Value" "SN74LVC1G17DBVR"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "9f4fedcd-4941-4615-971d-4003be79fb3f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Datasheet" "http://www.ti.com/lit/gpn/sn74lvc1g17"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "29b68dd6-d59d-47c8-84e2-5ff339266a50")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" "SINGLE SCHMITT-TRIGGER BUFFER"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6d0ad5a6-5c41-4f24-835f-757f84a38393")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Height" "1.45"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c265a206-5b1f-4ae5-8198-d45eb239763c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "Texas Instruments"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "cbe711ba-02dc-4d7b-9807-ac2c8a841ab4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "SN74LVC1G17DBVR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6ce39c4f-d46f-4c4f-b05f-533b21c0ecbd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" "595-SN74LVC1G17DBVR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2cc74bef-c143-4dd9-a15a-eaf40505a05e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/SN74LVC1G17DBVR?qs=fvkeCqCHl3BQIcdbAa1fbQ%3D%3D"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "59e564cb-d8a9-4d77-9814-de04416c87ca")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Arrow Part Number" "SN74LVC1G17DBVR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d153ef74-afcb-4133-8ec3-33f8d93ef0de")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Arrow Price/Stock" "https://www.arrow.com/en/products/sn74lvc1g17dbvr/texas-instruments.html?utm_currency=USD&region=asia"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "839542e2-0b6a-426e-9b86-800edc8e22b9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/Braking_Sensor/")
+	(sheetfile "Braking_Sensor.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.85 -1.5)
+		(end -0.65 -1.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d1daa02a-e648-43c6-a214-cfdeac54493e")
+	)
+	(fp_line
+		(start -0.3 -1.45)
+		(end 0.3 -1.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "07ada5ad-e562-4960-9392-b3b9bbb7cd63")
+	)
+	(fp_line
+		(start -0.3 1.45)
+		(end -0.3 -1.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "cbf92751-cee3-4dc7-8633-ab26b2f321fa")
+	)
+	(fp_line
+		(start 0.3 -1.45)
+		(end 0.3 1.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9228ff71-ea57-4489-a439-f2a9221f8a80")
+	)
+	(fp_line
+		(start 0.3 1.45)
+		(end -0.3 1.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b01949e6-6445-4dd1-9797-3571ea9eeec9")
+	)
+	(fp_line
+		(start -2.1 -1.775)
+		(end 2.1 -1.775)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "d35449c6-62b5-4a20-971b-3dd59c577249")
+	)
+	(fp_line
+		(start -2.1 1.775)
+		(end -2.1 -1.775)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "97a26a97-cd02-45c7-8430-ea5953c0a2f7")
+	)
+	(fp_line
+		(start 2.1 -1.775)
+		(end 2.1 1.775)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "84b6d125-d113-4ab7-8e97-dde779349255")
+	)
+	(fp_line
+		(start 2.1 1.775)
+		(end -2.1 1.775)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a607f7fc-54ec-491b-bde0-7dce118b2327")
+	)
+	(fp_line
+		(start -0.8 -1.45)
+		(end 0.8 -1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "7aa7bf3a-a9d1-4a41-8efb-c55a8ed666c0")
+	)
+	(fp_line
+		(start -0.8 -0.5)
+		(end 0.15 -1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "983f37e0-a273-4d52-a759-21e49fa435f2")
+	)
+	(fp_line
+		(start -0.8 1.45)
+		(end -0.8 -1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "1f52ad5f-8a9c-4844-bc55-28e00c630ce1")
+	)
+	(fp_line
+		(start 0.8 -1.45)
+		(end 0.8 1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b2a1262a-f6af-4e7b-9f56-7652bcaf657d")
+	)
+	(fp_line
+		(start 0.8 1.45)
+		(end -0.8 1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8b13087e-f39f-4387-95f6-23a814ba2c11")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "67853275-79b4-413a-b097-6b5dcc569253")
+		(effects
+			(font
+				(face "KiCad Font")
+				(size 0.4 0.4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.25 -0.95 90)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f3e0f7ff-6467-457b-804a-402c84939870")
+	)
+	(pad "2" smd rect
+		(at -1.25 0 90)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "d934835a-919e-460b-b129-3811291b4d49")
+	)
+	(pad "3" smd rect
+		(at -1.25 0.95 90)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8369d1a5-dede-42ca-9322-79b6888a4507")
+	)
+	(pad "4" smd rect
+		(at 1.25 0.95 90)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "4d337b3a-e5ab-441b-9de6-6c930836010b")
+	)
+	(pad "5" smd rect
+		(at 1.25 -0.95 90)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "2fd9228e-076a-47f0-923e-2d5cec342ee0")
+	)
+	(embedded_fonts no)
+	(model "C:\\Users\\cargu\\Documents\\LIBRERIAS KICAD\\IMPORTADOS_3D\\SN74LVC1G17DBVR.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

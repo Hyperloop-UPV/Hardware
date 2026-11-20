@@ -1,0 +1,397 @@
+(footprint "SOP65P640X120-14N"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "PW (R-PDSO-G14)")
+	(tags "Integrated Circuit")
+	(property "Reference" "IC4"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "e9886bd3-f2fa-4888-bea0-c15aa7077ee1")
+		(effects
+			(font
+				(face "KiCad Font")
+				(size 0.4 0.4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(property "Value" "LM339PWR"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "688d8b90-b60d-4cca-85da-3a654ed3a685")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm339.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "46147e2c-79a5-4872-b2e4-847f1823b244")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "884af939-10e2-4bd6-8989-c28ccb6bffce")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Height" "1.2"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "cdc699ce-02c4-4c4e-afc3-f916220f233e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "Texas Instruments"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d9251777-f228-42aa-9ddd-28aeafbe8f96")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "LM339PWR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "55820dd4-e5df-42c7-8dd3-5041e79e6076")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" "595-LM339PWR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5cf3b2c4-6c59-42f7-851a-5904007388eb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM339PWR?qs=xJkDX%2FqrskPOxGrzLPW8oQ%3D%3D"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dfc36dec-3e92-4771-b5c5-71e3055f5ee5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Arrow Part Number" "LM339PWR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0dbf9b6e-e0db-4247-a16a-a5629c760300")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Arrow Price/Stock" "https://www.arrow.com/en/products/lm339pwr/texas-instruments.html?utm_currency=USD&region=nac"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "05639c0c-87fc-437c-a200-2e8d0085cb65")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(sheetname "/Reed_Module/")
+	(sheetfile "Reed_Module.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.675 -2.525)
+		(end -2.2 -2.525)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4b952253-82f3-44f5-a71c-cd4f505ecbc0")
+	)
+	(fp_line
+		(start -1.85 -2.5)
+		(end 1.85 -2.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5e326243-08d9-457d-b1ec-3eea2e181253")
+	)
+	(fp_line
+		(start -1.85 2.5)
+		(end -1.85 -2.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "599c6e2a-dd94-4cdc-960d-4fb51ecbea27")
+	)
+	(fp_line
+		(start 1.85 -2.5)
+		(end 1.85 2.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e0e4a01b-345f-431b-b02a-abbfabd86e40")
+	)
+	(fp_line
+		(start 1.85 2.5)
+		(end -1.85 2.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b2e2cb8d-a16c-45da-9d17-4bf56ae3c65a")
+	)
+	(fp_line
+		(start -3.925 -2.8)
+		(end 3.925 -2.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f59dec44-ec5f-4b65-b320-4a255d2f981b")
+	)
+	(fp_line
+		(start -3.925 2.8)
+		(end -3.925 -2.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cc50d97f-b6bf-4f6c-9386-2aece1fafa10")
+	)
+	(fp_line
+		(start 3.925 -2.8)
+		(end 3.925 2.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "5dd17229-cd73-4812-8da4-18ac21c3f28d")
+	)
+	(fp_line
+		(start 3.925 2.8)
+		(end -3.925 2.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "bc1c01be-c40a-4588-b474-5c68bdd33392")
+	)
+	(fp_line
+		(start -2.2 -2.5)
+		(end 2.2 -2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "04a19fda-d664-4e79-ab53-f7292c0f0bab")
+	)
+	(fp_line
+		(start -2.2 -1.85)
+		(end -1.55 -2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ae5ab234-d359-49d2-bcb3-0d0fdb8b8f0b")
+	)
+	(fp_line
+		(start -2.2 2.5)
+		(end -2.2 -2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "5e43461c-efad-48f6-a685-d7768eeb5b6d")
+	)
+	(fp_line
+		(start 2.2 -2.5)
+		(end 2.2 2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "fc4699fa-204b-45d3-98ea-4571ea76e671")
+	)
+	(fp_line
+		(start 2.2 2.5)
+		(end -2.2 2.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "67ef2234-9c30-47c5-a322-aa93f8dcbd38")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0.04 -3.114 0)
+		(layer "F.SilkS")
+		(uuid "1b838aa1-e6b0-42d4-ba45-9930b3931b0b")
+		(effects
+			(font
+				(face "KiCad Font")
+				(size 0.4 0.4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.938 -1.95 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8f00da32-a6b4-4369-a3f9-64680d7a797d")
+	)
+	(pad "2" smd rect
+		(at -2.938 -1.3 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "fa035862-16f7-41e4-a3fc-798fa5d5037b")
+	)
+	(pad "3" smd rect
+		(at -2.938 -0.65 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "51b110d6-8a8b-44f6-94e6-02b6517e241c")
+	)
+	(pad "4" smd rect
+		(at -2.938 0 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "4f1ee320-22ac-4588-99e1-aa4cf612fb25")
+	)
+	(pad "5" smd rect
+		(at -2.938 0.65 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "c12f8817-721d-4f2e-a0a1-68a0e6692e6f")
+	)
+	(pad "6" smd rect
+		(at -2.938 1.3 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "5126cde7-80b4-4f8c-b91f-4e3b25abd57a")
+	)
+	(pad "7" smd rect
+		(at -2.938 1.95 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ac694fcf-c11e-4f7f-8ae3-64a24eeacb80")
+	)
+	(pad "8" smd rect
+		(at 2.938 1.95 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "64ab1ce5-6416-4abd-b900-c3b225c4b10f")
+	)
+	(pad "9" smd rect
+		(at 2.938 1.3 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "3ca340c0-f39a-4253-bb94-a7f0c1f03e1b")
+	)
+	(pad "10" smd rect
+		(at 2.938 0.65 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "c451b0e1-dd2f-41b7-b050-52e036520197")
+	)
+	(pad "11" smd rect
+		(at 2.938 0 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "60149f3c-37b1-4a6f-a78e-09b9af579528")
+	)
+	(pad "12" smd rect
+		(at 2.938 -0.65 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "22ea1d08-684a-4a04-a576-783eddce98bc")
+	)
+	(pad "13" smd rect
+		(at 2.938 -1.3 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "0da1e0f2-0c6f-475d-be76-4f7900836bd9")
+	)
+	(pad "14" smd rect
+		(at 2.938 -1.95 90)
+		(size 0.45 1.475)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7c783972-c30c-4ff5-b3f3-0b7dc2e56c8d")
+	)
+	(embedded_fonts no)
+	(model "C:\\Users\\cargu\\Documents\\LIBRERIAS KICAD\\SamacSys_Parts.3dshapes\\LM339BIPWR.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
