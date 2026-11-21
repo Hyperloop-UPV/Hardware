@@ -639,7 +639,7 @@
 			)
 			(embedded_fonts no)
 		)
-			(symbol "Celestial Altium Library - altium_library:Resistor"
+		(symbol "Celestial Altium Library - altium_library:Resistor"
 			(pin_numbers
 				(hide yes)
 			)
@@ -943,7 +943,7 @@
 			)
 			(embedded_fonts no)
 		)
-			(symbol "Hyperloop UPV:206832-0401-Symbol-1"
+		(symbol "Hyperloop UPV:206832-0401-Symbol-1"
 			(pin_numbers
 				(hide yes)
 			)
