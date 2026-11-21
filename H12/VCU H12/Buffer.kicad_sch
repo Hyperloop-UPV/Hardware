@@ -1606,18 +1606,6 @@
 		(color 0 0 0 0)
 		(uuid "f147e2ce-f08f-4c25-a2ce-21761607eaf7")
 	)
-	(no_connect
-		(at 165.1 95.25)
-		(uuid "738587be-93a0-40e0-b52a-1ec90cd36fae")
-	)
-	(no_connect
-		(at 165.1 100.33)
-		(uuid "a95fa70b-7984-4103-9987-95dc1a47aaf0")
-	)
-	(no_connect
-		(at 165.1 105.41)
-		(uuid "d675f4b3-ad78-4a88-af01-0fe9225f6c17")
-	)
 	(wire
 		(pts
 			(xy 167.64 71.12) (xy 167.64 87.63)
@@ -2127,6 +2115,85 @@
 	)
 	(symbol
 		(lib_id "Hyperloop UPV:Test point 1.2mm-Symbol-1")
+		(at 165.1 105.41 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "06dc5991-88e2-4ca9-abbc-05f619812136")
+		(property "Reference" "OUT14"
+			(at 169.164 105.156 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "Test point 1.2mm"
+			(at 162.052 104.775 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "VCU_H11G-import-fps:Test point 1.2mm-Footprint-1"
+			(at 165.1 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1.2mm Test point"
+			(at 165.1 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0a77fdbf-3e7d-49b5-88eb-a060cf3a8680")
+		)
+		(instances
+			(project "VCU H12"
+				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/586b3e30-cb7f-43e3-b768-04bdfc6afccd"
+					(reference "OUT14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Hyperloop UPV:Test point 1.2mm-Symbol-1")
 		(at 113.03 92.71 0)
 		(unit 1)
 		(body_style 1)
@@ -2136,7 +2203,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1e5d0626-9ac4-4753-a163-ea25f200f5b9")
-		(property "Reference" "OUT1"
+		(property "Reference" "OUT11"
 			(at 107.95 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2198,7 +2265,7 @@
 		(instances
 			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/586b3e30-cb7f-43e3-b768-04bdfc6afccd"
-					(reference "OUT1")
+					(reference "OUT11")
 					(unit 1)
 				)
 			)
@@ -2736,7 +2803,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5bfc56de-db46-49b3-b702-5d742ea4d161")
-		(property "Reference" "IN1"
+		(property "Reference" "IN11"
 			(at 113.03 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2798,7 +2865,7 @@
 		(instances
 			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/586b3e30-cb7f-43e3-b768-04bdfc6afccd"
-					(reference "IN1")
+					(reference "IN11")
 					(unit 1)
 				)
 			)
@@ -2895,7 +2962,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "793ae672-b228-4a8e-a09f-5de37750c3cf")
-		(property "Reference" "IN3"
+		(property "Reference" "IN13"
 			(at 91.44 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2957,7 +3024,7 @@
 		(instances
 			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/586b3e30-cb7f-43e3-b768-04bdfc6afccd"
-					(reference "IN3")
+					(reference "IN13")
 					(unit 1)
 				)
 			)
@@ -3056,7 +3123,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8e08ad5e-288b-4914-80fb-f8377525b628")
-		(property "Reference" "IN2"
+		(property "Reference" "IN12"
 			(at 102.87 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3118,7 +3185,86 @@
 		(instances
 			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/586b3e30-cb7f-43e3-b768-04bdfc6afccd"
-					(reference "IN2")
+					(reference "IN12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Hyperloop UPV:Test point 1.2mm-Symbol-1")
+		(at 165.1 95.25 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9d58883d-83d2-4e3f-bc9d-369315c19f72")
+		(property "Reference" "OUT22"
+			(at 169.164 94.996 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "Test point 1.2mm"
+			(at 162.052 94.615 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "VCU_H11G-import-fps:Test point 1.2mm-Footprint-1"
+			(at 165.1 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1.2mm Test point"
+			(at 165.1 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8b4d8ca3-c863-4d87-88f3-5daa0cb2d245")
+		)
+		(instances
+			(project "VCU H12"
+				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/586b3e30-cb7f-43e3-b768-04bdfc6afccd"
+					(reference "OUT22")
 					(unit 1)
 				)
 			)
@@ -3135,7 +3281,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a97d2945-69a9-4cd3-a1df-547f08af983d")
-		(property "Reference" "OUT3"
+		(property "Reference" "OUT13"
 			(at 85.09 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3197,7 +3343,7 @@
 		(instances
 			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/586b3e30-cb7f-43e3-b768-04bdfc6afccd"
-					(reference "OUT3")
+					(reference "OUT13")
 					(unit 1)
 				)
 			)
@@ -3283,6 +3429,85 @@
 	)
 	(symbol
 		(lib_id "Hyperloop UPV:Test point 1.2mm-Symbol-1")
+		(at 165.1 100.33 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bad15d7c-07f6-4058-b95b-dd4639ad94f6")
+		(property "Reference" "OUT21"
+			(at 169.164 100.076 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Value" "Test point 1.2mm"
+			(at 162.052 99.695 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "VCU_H11G-import-fps:Test point 1.2mm-Footprint-1"
+			(at 165.1 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1.2mm Test point"
+			(at 165.1 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "599a6b6a-b4f2-4786-9025-7c943a9b080c")
+		)
+		(instances
+			(project "VCU H12"
+				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/586b3e30-cb7f-43e3-b768-04bdfc6afccd"
+					(reference "OUT21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Hyperloop UPV:Test point 1.2mm-Symbol-1")
 		(at 102.87 97.79 0)
 		(unit 1)
 		(body_style 1)
@@ -3292,7 +3517,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bf311f84-9558-42d1-95d1-84664775582f")
-		(property "Reference" "OUT2"
+		(property "Reference" "OUT12"
 			(at 97.79 95.25 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3354,7 +3579,7 @@
 		(instances
 			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/586b3e30-cb7f-43e3-b768-04bdfc6afccd"
-					(reference "OUT2")
+					(reference "OUT12")
 					(unit 1)
 				)
 			)
