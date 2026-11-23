@@ -357,47 +357,38 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Hyperloop UPV:ULN2002A"
+		(symbol "ULN2003A:ULN2003A"
 			(pin_names
-				(hide yes)
+				(offset 1.016)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" ""
-				(at 0 0 0)
+			(property "Reference" "IC"
+				(at -7.62 10.922 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Value" ""
-				(at 0 0 0)
+			(property "Value" "ULN2003A"
+				(at -7.62 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
+			(property "Footprint" "IMPORTADOS:ULN2003AD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -408,7 +399,7 @@
 					)
 				)
 			)
-			(property "Description" "ULN200x, ULQ200x High-Voltage, High-Current Darlington Transistor Arrays"
+			(property "Datasheet" "https://s3.amazonaws.com/snapeda/datasheet/ULN2003A_STMicroelectronics.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -417,9 +408,10 @@
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
-			(property "ki_fp_filters" "*SOIC16*"
+			(property "Description" "DARLINGTON ARRAY 7NPN, 2003, DIP16; Transistor Polarity:NPN; Collector Emitter Voltage V(br)ceo:50V; DC Collector Current:500mA; DC Current Gain hFE:1000; Operating Temperature Range:-20°C to +85°C; Transistor Case Style:DIP; No. of Pins:16; SVHC:No SVHC (20-Jun-2011); Base Number:2003; Current Ic Continuous a Max:500mA; Device Marking:ULN2003A; IC Generic Number:2003; Input Type:TTL, CMOS 5V; Input Voltage Max:5V; Logic Function Number:2003; Module Configuration:Seven; No. of Channels:7; No. of Transistors:7; Operating Temperature Max:85°C; Operating Temperature Min:-20°C; Output Current Max:500mA; Output Type:Open Collector; Output Voltage Max:50V; Package / Case:DIP; Termination Type:Through Hole; Transistor Type:Power Darlington"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -428,1104 +420,365 @@
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
-			(symbol "ULN2002A_1_0"
-				(polyline
-					(pts
-						(xy 0 22.86) (xy 2.54 22.86)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 20.32) (xy 2.54 20.32)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 17.78) (xy 2.54 17.78)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 15.24) (xy 2.54 15.24)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 12.7) (xy 2.54 12.7)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 10.16) (xy 2.54 10.16)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 7.62) (xy 2.54 7.62)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 5.08) (xy 1.778 5.08) (xy 1.778 4.318)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 4.318) (xy 2.286 4.318)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.524 4.064) (xy 2.032 4.064)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.651 3.81) (xy 1.905 3.81)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 22.606) (xy 2.54 24.13) (xy 4.572 22.86) (xy 2.54 21.59) (xy 2.54 22.86)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 20.32) (xy 2.54 21.59) (xy 4.572 20.32) (xy 2.54 19.05) (xy 2.54 20.32)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 17.78) (xy 2.54 19.05) (xy 4.572 17.78) (xy 2.54 16.51) (xy 2.54 17.78)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 14.986) (xy 2.54 16.51) (xy 4.572 15.24) (xy 2.54 13.97) (xy 2.54 15.24)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 12.446) (xy 2.54 13.97) (xy 4.572 12.7) (xy 2.54 11.43) (xy 2.54 12.7)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 10.16) (xy 2.54 11.43) (xy 4.572 10.16) (xy 2.54 8.89) (xy 2.54 10.16)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 7.62) (xy 2.54 8.89) (xy 4.572 7.62) (xy 2.54 6.35) (xy 2.54 7.62)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 5.08 22.86)
-					(radius 0.292)
-					(stroke
-						(width 0)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 5.08 20.32)
-					(radius 0.292)
-					(stroke
-						(width 0)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 5.08 17.78)
-					(radius 0.292)
-					(stroke
-						(width 0)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 5.08 15.24)
-					(radius 0.292)
-					(stroke
-						(width 0)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 5.08 12.7)
-					(radius 0.292)
-					(stroke
-						(width 0)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 5.08 10.16)
-					(radius 0.292)
-					(stroke
-						(width 0)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 5.08 7.62)
-					(radius 0.292)
-					(stroke
-						(width 0)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.588 22.86) (xy 12.7 22.86)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.588 20.32) (xy 12.7 20.32)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.588 17.78) (xy 12.7 17.78)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.588 15.24) (xy 12.7 15.24)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.588 12.7) (xy 12.7 12.7)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.588 10.16) (xy 12.7 10.16)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.588 7.62) (xy 12.7 7.62)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 21.59) (xy 6.35 21.59) (xy 6.35 22.86)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 20.828) (xy 8.382 21.59) (xy 7.112 22.352) (xy 7.112 20.828)
-					)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 19.05) (xy 6.35 19.05) (xy 6.35 20.32)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 18.288) (xy 8.382 19.05) (xy 7.112 19.812) (xy 7.112 18.288)
-					)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 16.51) (xy 6.35 16.51) (xy 6.35 17.78)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 15.748) (xy 8.382 16.51) (xy 7.112 17.272) (xy 7.112 15.748)
-					)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 13.97) (xy 6.35 13.97) (xy 6.35 15.24)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 13.208) (xy 8.382 13.97) (xy 7.112 14.732) (xy 7.112 13.208)
-					)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 11.43) (xy 6.35 11.43) (xy 6.35 12.7)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 10.668) (xy 8.382 11.43) (xy 7.112 12.192) (xy 7.112 10.668)
-					)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 8.89) (xy 6.35 8.89) (xy 6.35 10.16)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 8.128) (xy 8.382 8.89) (xy 7.112 9.652) (xy 7.112 8.128)
-					)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 6.35) (xy 6.35 6.35) (xy 6.35 7.62)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.112 5.588) (xy 8.382 6.35) (xy 7.112 7.112) (xy 7.112 5.588)
-					)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 22.352) (xy 8.382 20.828)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 21.59) (xy 10.414 21.59) (xy 10.414 5.08) (xy 11.43 5.08)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 19.812) (xy 8.382 18.288)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 19.05) (xy 10.414 19.05)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 17.272) (xy 8.382 15.748)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 16.51) (xy 10.414 16.51)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 14.732) (xy 8.382 13.208)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 13.97) (xy 10.414 13.97) (xy 10.414 16.51)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 12.192) (xy 8.382 10.668)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 11.43) (xy 10.414 11.43)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 9.652) (xy 8.382 8.128)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 7.112) (xy 8.382 5.588)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 6.35) (xy 10.414 6.35) (xy 10.414 8.89) (xy 8.382 8.89)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 10.414 19.05)
-					(radius 0.127)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 10.414 16.51)
-					(radius 0.127)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 10.414 13.97)
-					(radius 0.127)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 10.414 11.43)
-					(radius 0.127)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 10.414 8.89)
-					(radius 0.127)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 10.414 6.35)
-					(radius 0.127)
-					(stroke
-						(width -0.0001)
-						(type solid)
-						(color 0 0 0 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
+			(property "DATASHEET_URL" "https://s3.amazonaws.com/snapeda/datasheet/ULN2003A_STMicroelectronics.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MANUFACTURER" "STMicroelectronics"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MPN" "ULN2003A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Package" "DIP-16 Sprague"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "SOURCE_URL" "https://www.snapeda.com/parts/ULN2003A/STMicroelectronics/view-part/"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(symbol "ULN2003A_0_0"
 				(rectangle
-					(start 12.7 25.4)
-					(end 0 2.54)
+					(start -7.62 -12.7)
+					(end 7.62 10.16)
 					(stroke
-						(width 0.0254)
-						(type solid)
-						(color 128 0 0 1)
+						(width 0.4064)
+						(type default)
 					)
 					(fill
 						(type background)
 					)
 				)
-				(polyline
-					(pts
-						(xy 12.7 5.08) (xy 10.414 5.08)
-					)
-					(stroke
-						(width 0.0254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 22.86 0)
+				(pin input line
+					(at -12.7 7.62 0)
 					(length 5.08)
-					(name "1"
+					(name "I1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at -5.08 20.32 0)
+				(pin input line
+					(at -12.7 5.08 0)
 					(length 5.08)
-					(name "2"
+					(name "I2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at -5.08 17.78 0)
+				(pin input line
+					(at -12.7 2.54 0)
 					(length 5.08)
-					(name "3"
+					(name "I3"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "3"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at -5.08 15.24 0)
+				(pin input line
+					(at -12.7 0 0)
 					(length 5.08)
-					(name "4"
+					(name "I4"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "4"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at -5.08 12.7 0)
+				(pin input line
+					(at -12.7 -2.54 0)
 					(length 5.08)
-					(name "5"
+					(name "I5"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "5"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at -5.08 10.16 0)
+				(pin input line
+					(at -12.7 -5.08 0)
 					(length 5.08)
-					(name "6"
+					(name "I6"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "6"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at -5.08 7.62 0)
+				(pin input line
+					(at -12.7 -7.62 0)
 					(length 5.08)
-					(name "7"
+					(name "I7"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "7"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at -5.08 5.08 0)
+				(pin power_in line
+					(at -12.7 -10.16 0)
 					(length 5.08)
-					(name "8"
+					(name "GND"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "8"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 17.78 5.08 180)
+					(at 12.7 -10.16 180)
 					(length 5.08)
-					(name "9"
+					(name "CD+"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "9"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at 17.78 7.62 180)
+				(pin open_collector line
+					(at 12.7 -7.62 180)
 					(length 5.08)
-					(name "10"
+					(name "O7"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "10"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at 17.78 10.16 180)
+				(pin open_collector line
+					(at 12.7 -5.08 180)
 					(length 5.08)
-					(name "11"
+					(name "O6"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "11"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at 17.78 12.7 180)
+				(pin open_collector line
+					(at 12.7 -2.54 180)
 					(length 5.08)
-					(name "12"
+					(name "O5"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "12"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at 17.78 15.24 180)
+				(pin open_collector line
+					(at 12.7 0 180)
 					(length 5.08)
-					(name "13"
+					(name "O4"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "13"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at 17.78 17.78 180)
+				(pin open_collector line
+					(at 12.7 2.54 180)
 					(length 5.08)
-					(name "14"
+					(name "O3"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "14"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at 17.78 20.32 180)
+				(pin open_collector line
+					(at 12.7 5.08 180)
 					(length 5.08)
-					(name "15"
+					(name "O2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "15"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at 17.78 22.86 180)
+				(pin open_collector line
+					(at 12.7 7.62 180)
 					(length 5.08)
-					(name "16"
+					(name "O1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "16"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1906,6 +1159,12 @@
 		(uuid "4ed22e95-b4c8-495a-ab50-e9d0c64deef8")
 	)
 	(junction
+		(at 110.49 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5887b1ec-3126-478c-b170-c44f496a1cb1")
+	)
+	(junction
 		(at 110.49 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1935,19 +1194,13 @@
 		(color 0 0 0 0)
 		(uuid "d359037c-1142-405e-b89c-e9c3df576950")
 	)
-	(junction
-		(at 110.49 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ffd3f40c-c345-4977-8f1e-82b6f0381e8f")
+	(no_connect
+		(at 140.97 110.49)
+		(uuid "10130495-5f66-4fa6-b20a-df3bce538fce")
 	)
 	(no_connect
-		(at 138.43 110.49)
-		(uuid "108227ff-88f4-4012-a901-e1658ceb8942")
-	)
-	(no_connect
-		(at 138.43 113.03)
-		(uuid "277a8e77-aceb-4afc-b1f6-3ef8bfaca62c")
+		(at 140.97 113.03)
+		(uuid "1a603281-86bb-4123-97d0-49054749b193")
 	)
 	(bus_entry
 		(at 88.9 97.79)
@@ -2036,16 +1289,6 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 100.33) (xy 158.75 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0acfdca9-1923-461c-9ee0-e0c499c6514e")
-	)
-	(wire
-		(pts
 			(xy 110.49 110.49) (xy 115.57 110.49)
 		)
 		(stroke
@@ -2056,23 +1299,13 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 105.41) (xy 158.75 105.41)
+			(xy 140.97 100.33) (xy 158.75 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1d65b182-64c0-4b5d-9996-b5872412b294")
-	)
-	(wire
-		(pts
-			(xy 138.43 115.57) (xy 140.97 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "31a04a5a-3bd0-4259-9a62-0cc356fcc0b6")
+		(uuid "311fa5ee-4efe-4a17-8286-68ea9cac6149")
 	)
 	(wire
 		(pts
@@ -2086,7 +1319,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 115.57) (xy 110.49 113.03)
+			(xy 110.49 113.03) (xy 110.49 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2229,13 +1462,13 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 115.57) (xy 110.49 115.57)
+			(xy 110.49 115.57) (xy 110.49 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "76fce3e0-190a-476f-8609-4ffb7e691427")
+		(uuid "748c3ee4-02f2-4aac-8331-0caf19394797")
 	)
 	(wire
 		(pts
@@ -2269,7 +1502,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 97.79) (xy 138.43 97.79)
+			(xy 156.21 97.79) (xy 140.97 97.79)
 		)
 		(stroke
 			(width 0)
@@ -2289,13 +1522,23 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 102.87) (xy 138.43 102.87)
+			(xy 163.83 102.87) (xy 140.97 102.87)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "988cb050-c842-432d-b71c-f975f44c4bb5")
+	)
+	(wire
+		(pts
+			(xy 140.97 115.57) (xy 146.05 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f3504fc-2aad-415e-a77f-6ef7ff94cb32")
 	)
 	(wire
 		(pts
@@ -2309,13 +1552,13 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 120.65) (xy 110.49 115.57)
+			(xy 110.49 115.57) (xy 115.57 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a31a9938-8a91-412f-85f2-ed27b1755036")
+		(uuid "a538f490-fd5b-4fa0-9aa4-bb11a61f92a2")
 	)
 	(wire
 		(pts
@@ -2329,7 +1572,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 107.95) (xy 138.43 107.95)
+			(xy 156.21 107.95) (xy 140.97 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2460,6 +1703,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 105.41) (xy 158.75 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efcbce62-cb8b-4ee3-bd3c-952d7aa78e3a")
+	)
+	(wire
+		(pts
 			(xy 173.99 115.57) (xy 201.93 115.57)
 		)
 		(stroke
@@ -2558,225 +1811,6 @@
 			(justify right)
 		)
 		(uuid "9ef099b0-a535-4241-8203-344677fc1d1c")
-	)
-	(symbol
-		(lib_id "Hyperloop UPV:ULN2002A")
-		(at 120.65 120.65 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "01504c17-be39-4283-a842-747b2e70c7c8")
-		(property "Reference" "U1"
-			(at 120.65 95.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Value" "ULN2002A"
-			(at 120.65 120.65 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "VCU_H11G-import-fps:SOIC16"
-			(at 120.65 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 120.65 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "ULN200x, ULQ200x High-Voltage, High-Current Darlington Transistor Arrays"
-			(at 120.65 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "COMPONENTLINK1URL" "https://es.rs-online.com/web/p/pares-darlington/0858196/"
-			(at 115.062 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "DESIGN ITEM ID" "ULN2002A"
-			(at 115.062 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "SOURCE" "Hyperlibrary.SchLib"
-			(at 115.062 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "COMPONENTLINK2URL" "https://www.mouser.es/ProductDetail/Diodes-Incorporated/ULN2004AS16-13/?qs=54i18ELixbWDuHWYyAaNGg%3D%3D"
-			(at 115.062 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
-			(at 115.062 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "PIN COUNT" "16"
-			(at 115.062 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "COMPONENTLINK1DESCRIPTION" "RS"
-			(at 115.062 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "COMPONENTLINK2DESCRIPTION" "MOUSER"
-			(at 115.062 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(pin "5"
-			(uuid "5525a7ee-85f3-4af6-b944-f78568c8b5c6")
-		)
-		(pin "2"
-			(uuid "5423798d-5fc4-4dbf-a92e-69d09061ebc7")
-		)
-		(pin "4"
-			(uuid "f7a34d4c-46f2-4eb7-92f7-b731222d46b5")
-		)
-		(pin "8"
-			(uuid "31e715cc-a586-4ab6-96b2-cf581afd3add")
-		)
-		(pin "1"
-			(uuid "8c1c7ade-b619-45b7-a24c-b9baa6d73ba6")
-		)
-		(pin "7"
-			(uuid "8a97e3a3-80da-43d0-b831-95aa2e59ca85")
-		)
-		(pin "10"
-			(uuid "a465c387-ba5e-4b29-84eb-562659701edf")
-		)
-		(pin "3"
-			(uuid "abfba79c-dfba-4c29-a387-ca1baf6b6e85")
-		)
-		(pin "12"
-			(uuid "99b4140f-7020-488b-a5e6-24193d7dc174")
-		)
-		(pin "9"
-			(uuid "69e35539-0f18-4bf3-8f6c-ba908e3c1d15")
-		)
-		(pin "13"
-			(uuid "878b41c0-7921-4bea-8252-07c4d8c39f5f")
-		)
-		(pin "6"
-			(uuid "073076ef-ba63-4761-b8f8-f02971f2a1da")
-		)
-		(pin "11"
-			(uuid "79951ea4-05c4-4121-bbd1-e3630c98ef4b")
-		)
-		(pin "15"
-			(uuid "3e2c789c-f071-46a2-a730-32758dcb386e")
-		)
-		(pin "16"
-			(uuid "e11a9a4a-7119-4d7e-a2ec-cba11ec9545a")
-		)
-		(pin "14"
-			(uuid "b90d8a17-1028-48c2-877e-48f341f88310")
-		)
-		(instances
-			(project "VCU H12"
-				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/3c0c3225-49f2-4410-b2af-0f14a4cfd596"
-					(reference "U1")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Celestial Altium Library - altium_library:LED")
@@ -3251,6 +2285,190 @@
 			(project "VCU H12"
 				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/3c0c3225-49f2-4410-b2af-0f14a4cfd596"
 					(reference "D20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ULN2003A:ULN2003A")
+		(at 128.27 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0699e9f5-e6ed-4519-956d-b4aba7157bfc")
+		(property "Reference" "IC14"
+			(at 128.27 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ULN2003A"
+			(at 128.27 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "IMPORTADOS:ULN2003AD"
+			(at 128.27 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://s3.amazonaws.com/snapeda/datasheet/ULN2003A_STMicroelectronics.pdf"
+			(at 128.27 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Description" "DARLINGTON ARRAY 7NPN, 2003, DIP16; Transistor Polarity:NPN; Collector Emitter Voltage V(br)ceo:50V; DC Collector Current:500mA; DC Current Gain hFE:1000; Operating Temperature Range:-20°C to +85°C; Transistor Case Style:DIP; No. of Pins:16; SVHC:No SVHC (20-Jun-2011); Base Number:2003; Current Ic Continuous a Max:500mA; Device Marking:ULN2003A; IC Generic Number:2003; Input Type:TTL, CMOS 5V; Input Voltage Max:5V; Logic Function Number:2003; Module Configuration:Seven; No. of Channels:7; No. of Transistors:7; Operating Temperature Max:85°C; Operating Temperature Min:-20°C; Output Current Max:500mA; Output Type:Open Collector; Output Voltage Max:50V; Package / Case:DIP; Termination Type:Through Hole; Transistor Type:Power Darlington"
+			(at 128.27 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "DATASHEET_URL" "https://s3.amazonaws.com/snapeda/datasheet/ULN2003A_STMicroelectronics.pdf"
+			(at 128.27 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "STMicroelectronics"
+			(at 128.27 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MPN" "ULN2003A"
+			(at 128.27 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Package" "DIP-16 Sprague"
+			(at 128.27 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "SOURCE_URL" "https://www.snapeda.com/parts/ULN2003A/STMicroelectronics/view-part/"
+			(at 128.27 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(pin "8"
+			(uuid "92f31f71-7d8e-4741-a69f-6a8b43c04cb0")
+		)
+		(pin "14"
+			(uuid "21a9e3a3-d3fe-4631-9779-5b611b52a148")
+		)
+		(pin "10"
+			(uuid "ee0c92cc-8edd-4458-bc23-3123d3ee5bcc")
+		)
+		(pin "2"
+			(uuid "d5f3cce5-c437-4d51-9f92-6f6feb9e585a")
+		)
+		(pin "9"
+			(uuid "3c506ea2-5b0d-4eab-8066-a9bd93eacb7c")
+		)
+		(pin "16"
+			(uuid "9d764861-51a7-4d96-8ce2-59724fbe58f7")
+		)
+		(pin "4"
+			(uuid "539168b0-c12d-4c8f-86b3-abc4329fa29f")
+		)
+		(pin "15"
+			(uuid "65b4327c-a12b-478d-b1cd-988b54c138af")
+		)
+		(pin "11"
+			(uuid "62d8e682-659d-4a08-bbce-e30388ff33af")
+		)
+		(pin "1"
+			(uuid "8343652c-0811-4fff-90ac-04f88855c25c")
+		)
+		(pin "13"
+			(uuid "53f7b841-2163-4100-bd68-93547d255cb0")
+		)
+		(pin "3"
+			(uuid "b0c050ca-4be1-41fb-aaf6-a96b3993a9b9")
+		)
+		(pin "5"
+			(uuid "18221e4a-2ab7-47ee-8cfd-c1cf5ac15502")
+		)
+		(pin "12"
+			(uuid "a7a17279-9d5f-4950-beae-230939428f18")
+		)
+		(pin "6"
+			(uuid "489f1c90-4461-4704-ac12-ad17359cdda2")
+		)
+		(pin "7"
+			(uuid "77e9f9d0-18ab-465f-a3cf-a0f3cc98f701")
+		)
+		(instances
+			(project "VCU H12"
+				(path "/e2069ca5-8c6f-44b9-8779-a09e413ab832/3c0c3225-49f2-4410-b2af-0f14a4cfd596"
+					(reference "IC14")
 					(unit 1)
 				)
 			)
@@ -8526,7 +7744,7 @@
 	)
 	(symbol
 		(lib_id "VCU_H11G-altium-import:+3V3_BAR")
-		(at 140.97 115.57 90)
+		(at 146.05 115.57 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8536,7 +7754,7 @@
 		(dnp no)
 		(uuid "eb450ef8-0aa8-4eca-8300-ee6c265df700")
 		(property "Reference" "#PWR0124"
-			(at 140.97 115.57 0)
+			(at 146.05 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8547,7 +7765,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 144.78 115.57 90)
+			(at 149.86 115.57 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8558,7 +7776,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 140.97 115.57 0)
+			(at 146.05 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8568,7 +7786,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 140.97 115.57 0)
+			(at 146.05 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8578,7 +7796,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 140.97 115.57 0)
+			(at 146.05 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

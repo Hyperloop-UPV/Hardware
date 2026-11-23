@@ -1,87 +1,88 @@
 (version 1)
 
-# ==============================================================================
-# NCAB Group Custom DRC Rules - KiCad
-# Configuración recomendada para Multicapa (4 capas / 1 oz cobre)
-# ==============================================================================
+# =====================================================================
+# NCAB Group - Multilayer Design Guidelines 3.1 (septiembre 2025)
+# VALORES PERSONALIZADOS (resto de reglas: NCAB nivel General, 1 oz)
+# Rigid ML. Generado para KiCad 8 / 9 / 10 (sintaxis "version 1").
+#
+# Valores personalizados (anular, gap, agujero a cobre, NPTH, pista, borde).
+# Se aplican igual a capas internas y externas.
+# En KiCad la ultima regla que coincide gana. Si tienes net classes con
+# clearance mayor (alta tension, etc.), anade esas reglas DESPUES de este bloque.
+#
+# Combinar parametros de varios niveles requiere revision con el FAE de NCAB.
+# =====================================================================
 
-# ------------------------------------------------------------------------------
-# 1. Ancho de pista y aislamiento (Track Width & Clearance)
-# ------------------------------------------------------------------------------
+# ---------------- Pistas y gaps (Track & Gap) ----------------
+(rule "NCAB track width - todas las capas"
+	(constraint track_width (min 0.10mm))
+	(condition "A.Type == 'Track'"))
 
-(rule "NCAB Track Width and Clearance (Outer Layer)"
-   (constraint track_width (min 0.100mm))
-   (constraint clearance (min 0.100mm))
-   (layer outer)
-   (condition "A.Type == 'track'"))
+(rule "NCAB copper gap (clearance) - todas las capas"
+	(constraint clearance (min 0.10mm)))
 
-(rule "NCAB Track Width and Clearance (Inner Layer)"
-   (constraint track_width (min 0.100mm))
-   (constraint clearance (min 0.100mm))
-   (layer inner)
-   (condition "A.Type == 'track'"))
+# ---------------- Anillo anular de vias (IPC clase 2: se acepta 90 grados roto) ----------------
+(rule "NCAB via annular ring - todas las capas"
+	(constraint annular_width (min 0.15mm))
+	(condition "A.Type == 'Via'"))
 
-# ------------------------------------------------------------------------------
-# 2. Vías y Taladros (Vias & Drill Holes)
-# ------------------------------------------------------------------------------
+# ---------------- Agujero a cobre ----------------
+(rule "NCAB PTH/via hole to copper - todas las capas"
+	(constraint hole_clearance (min 0.25mm))
+	(condition "A.Type == 'Via' || B.Type == 'Via' || A.Pad_Type == 'Through-hole' || B.Pad_Type == 'Through-hole'"))
 
-(rule "NCAB Minimum Via Size"
-   (constraint hole_size (min 0.200mm))
-   (constraint via_diameter (min 0.400mm))
-   (condition "A.Type == 'via'"))
+(rule "NCAB NPTH to copper - todas las capas"
+	(constraint hole_clearance (min 0.2521mm))
+	(condition "A.Pad_Type == 'NPTH, mechanical' || B.Pad_Type == 'NPTH, mechanical'"))
 
-(rule "NCAB Mechanical Drill Limits"
-   (constraint hole_size (min 0.200mm) (max 6.350mm)))
+# ---------------- Separacion entre paredes de agujeros de vias ----------------
+(rule "NCAB via hole wall to hole wall - different net"
+	(constraint hole_to_hole (min 0.40mm))
+	(condition "A.Type == 'Via' || B.Type == 'Via'"))
+(rule "NCAB via hole wall to hole wall - same net"
+	(constraint hole_to_hole (min 0.30mm))
+	(condition "(A.Type == 'Via' || B.Type == 'Via') && A.NetName == B.NetName && A.NetName != ''"))
 
-(rule "NCAB PTH Hole Size"
-   (constraint hole_size (min 0.200mm) (max 6.350mm))
-   (condition "A.Type != 'via' && A.isPlated()"))
+# Vias IPC-4761 tipo VII (resina + sobre-chapado / via in pad):
+# separacion hole-to-hole minima 0.50mm (misma net) / 0.60mm (distinta net).
+# KiCad no distingue vias rellenas en las condiciones, asi que se deja
+# como referencia. Si todas tus vias son tipo VII, sustituye los valores
+# de las dos reglas anteriores por estos.
 
-(rule "NCAB NPTH Hole Size"
-   (constraint hole_size (min 0.500mm))
-   (condition "A.Type == 'pad' && !A.isPlated()"))
+# ---------------- Contorno (Profile) ----------------
+# Distancia recomendada patron-borde (routing).
+(rule "NCAB copper to board edge"
+	(constraint edge_clearance (min 0.10mm))
+	(condition "A.Type == 'Track' || A.Type == 'Via' || A.Type == 'Pad' || A.Type == 'Zone'"))
 
-(rule "NCAB Pad Annular Ring"
-   (constraint annular_width (min 0.125mm))
-   (condition "A.Type == 'pad' && A.isPlated()"))
+# ---------------- Texto de serigrafia ----------------
+# Altura minima del texto en serigrafia = 0.4 mm (KiCad usa 0.8 mm por defecto).
+# Cubre los nombres de capa "Top/Bottom Overlay" y "F/B.Silkscreen".
+(rule "NCAB silk text height"
+	(constraint text_height (min 0.4mm))
+	(condition "A.Layer == 'Top Overlay' || A.Layer == 'Bottom Overlay' || A.Layer == 'F.Silkscreen' || A.Layer == 'B.Silkscreen'"))
 
-# ------------------------------------------------------------------------------
-# 3. Distancias de Aislamiento (Clearances entre objetos)
-# ------------------------------------------------------------------------------
+# ---------------- Mascara de soldadura ----------------
+# C: oversize de mascara por lado = 0.08mm
+(rule "NCAB solder mask oversize"
+	(constraint solder_mask_expansion (opt 0.08mm))
+	(condition "A.Type == 'Pad'"))
 
-(rule "NCAB Hole to Hole Clearance (Different Nets)"
-   (constraint hole_to_hole (min 0.250mm))
-   (condition "A.Net != B.Net"))
+# Valores de mascara que NO se pueden fijar con reglas personalizadas.
+# Introducelos en Configuracion de la placa > Estructura de la placa > Mascara/pasta
+# (Board Setup > Board Stackup > Solder Mask/Paste):
+#   D: ancho minimo de puente de mascara (web) ....... 0.10mm
+#   Oversize de mascara .............................. 0.08mm
+# Informativo (no aplicable como regla):
+#   A: SMT a cobre cubierto .......................... 0.20mm
+#   B: cobre a cobre (para que exista puente) ........ 0.24mm
 
-(rule "NCAB Via to Track Clearance"
-   (constraint hole_clearance (min 0.200mm))
-   (condition "(A.Type == 'via' && B.Type == 'track') || (A.Type == 'track' && B.Type == 'via')"))
+# ---------------- Wrap copper (vias enterradas / microvias / nucleos 2L) ----------------
+# Wrap copper 5 um (IPC clase 2 y 3): N/A en nivel General.
 
-(rule "NCAB Via to Via Clearance (Same Net)"
-   (constraint hole_to_hole (min 0.200mm))
-   (condition "A.Type == 'via' && B.Type == 'via' && A.Net == B.Net"))
-
-(rule "NCAB Pad to Pad Clearance"
-   (constraint clearance (min 0.100mm))
-   (condition "A.Type == 'pad' && B.Type == 'pad' && A.Net != B.Net"))
-
-(rule "NCAB NPTH to Track Clearance"
-   (constraint hole_clearance (min 0.250mm))
-   (condition "(A.Pad_Type == 'NPTH, mechanical' && B.Type == 'track') || (A.Type == 'track' && B.Pad_Type == 'NPTH, mechanical')"))
-
-(rule "NCAB PTH to Track Clearance"
-   (constraint hole_clearance (min 0.250mm))
-   (condition "(A.isPlated() && A.Type != 'via' && B.Type == 'track') || (A.Type == 'track' && B.isPlated() && B.Type != 'via')"))
-
-# ------------------------------------------------------------------------------
-# 4. Borde de Placa y Serigrafía (Edge & Silkscreen)
-# ------------------------------------------------------------------------------
-
-(rule "NCAB Track to Edge Clearance"
-   (constraint edge_clearance (min 0.250mm))
-   (condition "A.Type == 'track'"))
-
-(rule "NCAB Pad to Silkscreen Clearance"
-   (constraint silk_clearance (min 0.100mm))
-   (layer outer)
-   (condition "A.Type == 'pad' && (B.Type == 'text' || B.Type == 'graphic')"))
+# ---------------- Solo informativo (no se puede expresar como regla DRC) ----------------
+# Espesor placa: ver tabla "Board thickness" de la guia.
+# Dielectrico minimo: 0.05 mm (PCB).
+# V-cut: keep-out de cobre a la linea de corte >= 0.50mm.
+# Tolerancias de taladro/fresado: ver tablas "Drilling" y "Profile".
+# La guia no indica diametro minimo de taladro: consultar a NCAB.
